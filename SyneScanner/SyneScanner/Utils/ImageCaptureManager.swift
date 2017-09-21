@@ -231,10 +231,10 @@ extension ImageCaptureManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         if self.didNotifyFullConfidence == true && self.timer == nil
         {
-            self.timer =   Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.callDelegateAutoCapture), userInfo: nil, repeats: false)
+            self.timer =   Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(self.callDelegateAutoCapture), userInfo: nil, repeats: false)
             
         }
-                UIView.animate(withDuration: 0.3, delay: 0, options: .beginFromCurrentState, animations: {
+                UIView.animate(withDuration: 0.2, delay: 0, options: .beginFromCurrentState, animations: {
                     edgeDetectionView?.alpha = hidden ? 0 : 0.4
         
                 }, completion: { (finished: Bool) in
