@@ -9,11 +9,13 @@
 import Foundation
 import UIKit
 
+/** 
+ * ImageEditManager utilises the Quadrangle object to get a UIImage object
+ */
 class ImageEditManager {
-    
-    class func cut(quadrangle: Quadrangle,
-                   outOfImageWith imageData: Data,
-                   completion: @escaping (UIImage?)->Void){
+    // Class function to cut a UIImage object from a Quadrangle object and Data that the circumfrence occupies
+    class func cut(quadrangle: Quadrangle, outOfImageWith imageData: Data,
+                   completion: @escaping (UIImage?)->Void) {
         DispatchQueue.global().async {
             var uiImage: UIImage? = nil
             let rawImage = CIImage(data: imageData)
@@ -26,6 +28,9 @@ class ImageEditManager {
         }
     }
     
+    // MARK: Image Edit Class functions
+    
+    // Class function to get UIImage from CIImage object
     private class func makeUIImageFromCIImage(_ ciImage: CIImage) -> UIImage? {
         let size = CGSize(width: ciImage.extent.height, height: ciImage.extent.width)
         _ = UIGraphicsBeginImageContext(size)
@@ -35,6 +40,7 @@ class ImageEditManager {
         return uiImage
     }
     
+    // Class function to get CIImage from Quadrangle vertices
     private class func correctPerspective(for image: CIImage?,
                                           with quadrangle: Quadrangle) -> CIImage? {
         let rectangleCoordinates = ["inputTopLeft":CIVector(cgPoint: quadrangle.topLeft),

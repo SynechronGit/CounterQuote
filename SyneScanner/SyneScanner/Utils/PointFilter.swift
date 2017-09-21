@@ -18,6 +18,7 @@ class PointFilter {
     private var hitCount: CGFloat = 0
     private var missCount: CGFloat = 0
     
+    // Function to get filtered CGPoint variables
     func filteredPoint(from point: CGPoint) -> CGPoint {
         if point.equalTo(.zero){
             return .zero

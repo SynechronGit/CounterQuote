@@ -12,47 +12,50 @@ import CoreVideo
 import CoreImage
 import UIKit
 
+/**
+ * Protocol with a required method fired when image detected is of full confidence
+ */
 protocol ImageCaptureManagerProtocol {
     func didGainFullDetectionConfidence()
 }
+
 typealias ImageCaptureBlock = (Data?, Quadrangle?) -> Void
 
 class ImageCaptureManager: NSObject {
     
     var didNotifyFullConfidence = false
-    
     var isCapturing = false
     var delegate:ImageCaptureManagerProtocol?
     var imageDedectionConfidence = 0.0
     var timer:Timer?
-    ///  the view to show the detected edges
+    //  the view to show the detected edges
     weak var edgeDetectionView: EdgeDetectionView?
     
-    ///  the image capture session
+    //  the image capture session
     private let captureSession: AVCaptureSession
     
-    ///  the capture photo output
+    //  the capture photo output
     fileprivate let capturePhotoOutput: AVCapturePhotoOutput
     
-    ///  the size of the video output image
+    //  the size of the video output image
     fileprivate var videoOutputImageSize: CGSize?
     
-    ///  the quadrangle stablizer that stablize the quadrangle
+    //  the quadrangle stablizer that stablize the quadrangle
     fileprivate let quadrangleFilter = QuadrangleFilter()
     
-    ///  the detected quadrangle
+    //  the detected quadrangle
     fileprivate var detectedQuadrangle: Quadrangle?
     
-    ///  the image capture block
+    //  the image capture block
     fileprivate var imageCaptureBlock: ImageCaptureBlock?
     
-    /// the rectange detector that's used to detect the edge of the document
-    //TODO: settings
+    // the rectange detector that's used to detect the edge of the document
     fileprivate let rectangleDetector = CIDetector(ofType: CIDetectorTypeRectangle, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])
     
-    /// Initialize a ImageCaptureManager instance
-    /// - parameter layer: the layer that shows the camera feeds
-    /// - parameter edgeDetectionView: the view that shows the detected edge
+    //MARK: Initializer methods
+    // Initialize a ImageCaptureManager instance
+    // - parameter layer: the layer that shows the camera feeds
+    // - parameter edgeDetectionView: the view that shows the detected edge
     init?(layer: AVCaptureVideoPreviewLayer,
           edgeDetectionView: EdgeDetectionView) {
         
@@ -88,16 +91,16 @@ class ImageCaptureManager: NSObject {
         videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "video_output"))
     }
     
-    
-    /// Start showing the camera feeds
+    // Resets the camera properties
     func resetProperties()
     {
         isCapturing = false
         didNotifyFullConfidence = false
         self.timer?.invalidate()
         self.timer = nil
-
     }
+    
+    // Start showing the camera feeds
     func startSession() {
         isCapturing = false
         didNotifyFullConfidence = false
@@ -115,20 +118,22 @@ class ImageCaptureManager: NSObject {
             self.captureSession.startRunning()
         }
         else {
-            //TODO: present error
+            let keyWindow = UIApplication.shared.keyWindow
+            let rootController = keyWindow?.rootViewController
+            let alert = UIAlertController(title: "Alert", message: "Your device does not support video capturing!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            rootController?.present(alert, animated: true, completion: nil)
         }
     }
     
-    
-    /// Stop showing the camera feeds
-    func stopSession(){
+    // Stop showing the camera feeds
+    func stopSession() {
         self.captureSession.stopRunning()
     }
     
-    
-    /// Capture the image
-    /// - parameter completion: the completion block
-    func capture(completion: @escaping ImageCaptureBlock){
+    // Capture the image
+    // - parameter completion: the completion block
+    func capture(completion: @escaping ImageCaptureBlock) {
         if isCapturing
         {
             return
@@ -144,7 +149,7 @@ class ImageCaptureManager: NSObject {
 
 //MARK: AVCapturePhotoCaptureDelegate
 extension ImageCaptureManager: AVCapturePhotoCaptureDelegate {
-    
+    // Provides the delegate a captured image in a processed format (such as JPEG).
     func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
         DispatchQueue.global().async {[weak self] in
             guard let photoSampleBuffer = photoSampleBuffer,
@@ -178,7 +183,7 @@ extension ImageCaptureManager: AVCapturePhotoCaptureDelegate {
 
 //MARK: AVCaptureVideoDataOutputSampleBufferDelegate
 extension ImageCaptureManager: AVCaptureVideoDataOutputSampleBufferDelegate {
-    
+    // Notifies the delegate that a new video frame was written
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
         if isCapturing
         {
@@ -197,7 +202,6 @@ extension ImageCaptureManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         let landscapeImageSize = videoOutputImage.extent.size
         if quadrangle.isValid() {
-            
             didNotifyFullConfidence = true
             DispatchQueue.main.async { [weak self] in
                 
@@ -207,58 +211,40 @@ extension ImageCaptureManager: AVCaptureVideoDataOutputSampleBufferDelegate {
                 self?.setEdgeDetectionView(self?.edgeDetectionView, hidden: false)
             }
         }
-        else {
-            didNotifyFullConfidence = false
-            self.timer?.invalidate()
-            self.timer = nil
-            DispatchQueue.main.async { [weak self] in
+        else { didNotifyFullConfidence = false
+                self.timer?.invalidate()
+                self.timer = nil
+                DispatchQueue.main.async { [weak self] in
+                    
                 self?.videoOutputImageSize = videoOutputImage.extent.size
                 self?.detectedQuadrangle = nil
                 self?.setEdgeDetectionView(self?.edgeDetectionView, hidden: true)
+                }
             }
-        }
     }
     
-    private func setEdgeDetectionView(_ edgeDetectionView: EdgeDetectionView?, hidden: Bool){
+    // Fuction that sets and animates the view with detected edges
+    private func setEdgeDetectionView(_ edgeDetectionView: EdgeDetectionView?, hidden: Bool) {
         
-//        if hidden
-//        {
-//            edgeDetectionView?.alpha = 0
-//        }
-//        else{
-//            edgeDetectionView?.alpha = 0.4
-//        }
-        
-        if self.didNotifyFullConfidence == true && self.timer == nil
-        {
-            self.timer =   Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(self.callDelegateAutoCapture), userInfo: nil, repeats: false)
+        if self.didNotifyFullConfidence == true && self.timer == nil {
             
-        }
-                UIView.animate(withDuration: 0.2, delay: 0, options: .beginFromCurrentState, animations: {
+            self.timer =   Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.callDelegateAutoCapture), userInfo: nil, repeats: false)
+            
+            }
+            UIView.animate(withDuration: 0.2, delay: 0, options: .beginFromCurrentState, animations: {
                     edgeDetectionView?.alpha = hidden ? 0 : 0.4
-        
-                }, completion: { (finished: Bool) in
-        
-        
+                }, completion:
+                { (finished: Bool) in
         
                 })
-        
-        
-        
-        
     }
-    
-    func callDelegateAutoCapture()
-    {
+    // Calls the delegate's required method
+    func callDelegateAutoCapture() {
         self.timer?.invalidate()
         self.timer = nil
         
-        if self.didNotifyFullConfidence == true && isCapturing == false
-        {
+        if self.didNotifyFullConfidence == true && isCapturing == false {
             self.delegate?.didGainFullDetectionConfidence()
-            
         }
-        
-        
     }
 }
