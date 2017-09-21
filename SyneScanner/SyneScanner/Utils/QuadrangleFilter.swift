@@ -16,6 +16,7 @@ class QuadrangleFilter {
     private let bottomRightFilter = PointFilter()
     private let bottomLeftFilter = PointFilter()
     
+    // Function to get filtered Quadrangle vertices
     func filteredQuadrangle(from quadrangle: Quadrangle) -> Quadrangle {
         
         let topLeft = self.topLeftFilter.filteredPoint(from: quadrangle.topLeft)

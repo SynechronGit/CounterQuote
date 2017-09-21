@@ -8,7 +8,9 @@
 
 import Foundation
 import CoreImage
-
+/**
+ * Extension for creating a quadrangle object from CoreImage Rectangle vertex points
+ */
 extension CIRectangleFeature {
     
     func makeQuadrangle() -> Quadrangle {
@@ -20,10 +22,13 @@ extension CIRectangleFeature {
     
 }
 
+/**
+ * Extension for retrieving the element with the biggest rectangle from an array
+ */
 extension Array where Element: CIRectangleFeature {
     
-    /// Find the biggest rectange feature within a list of rectange features
-    /// - returns: the biggest rectange or nil if the array is empty
+    // Find the biggest rectange feature within a list of rectange features
+    // - Returns: the biggest rectange or nil if the array is empty
     func findBiggestRectangle() -> CIRectangleFeature? {
         guard self.count > 0 else {
             return nil
