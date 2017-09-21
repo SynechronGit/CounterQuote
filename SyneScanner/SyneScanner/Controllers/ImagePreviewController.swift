@@ -60,8 +60,8 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImagePreviewCollectionViewCell
-       
-        cell.imagePreview.image = SharedData.sharedInstance.arrImage[indexPath.row]
+       let model = SharedData.sharedInstance.arrImage[indexPath.row]
+        cell.imagePreview.image = model.image
         cell.deleteDelegate = self
         return cell
     
@@ -95,7 +95,9 @@ extension ImagePreviewController:ImageShareAndDeleteDelegate
     
     func shareSelectedImageAt(cell : UICollectionViewCell) {
         let indexPath = self.collectionView.indexPath(for: cell)
-        let image:UIImage = SharedData.sharedInstance.arrImage[(indexPath?.row)!]
+        let model = SharedData.sharedInstance.arrImage[(indexPath?.row)!]
+
+        let image:UIImage = model.image!
         let imageToShare = [ image ]
         let activityViewController = UIActivityViewController(activityItems: imageToShare , applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash

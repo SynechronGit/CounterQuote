@@ -8,6 +8,6 @@
 
 import Foundation
 
-let BASE_URL = "https://ocr-api.azurewebsites.net/api/"
+let BASE_URL = "https://ocr-demo-api.azurewebsites.net/api/"
 let UPLOAD_FILE = "CommonBlob/UploadFile"
 let START_WORKFLOW = "DocumentExtractor/StartWorkflow"

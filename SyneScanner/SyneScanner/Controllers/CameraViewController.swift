@@ -109,9 +109,12 @@ class CameraViewController: UIViewController {
             //  show the cropped image
             
             ImageEditManager.cut(quadrangle: detectedQuadrangle, outOfImageWith: imageData, completion: { (image) in
-                SharedData.sharedInstance.arrImage.append(image!)
+               let model = ImageDataModel()
+                model.image = image
+                SharedData.sharedInstance.arrImage.append(model)
                 self.galleryBtn.setImage(image, for: .normal)
                 self.galleryBtnClicked()
+                self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
             })
         }
     }
@@ -131,10 +134,26 @@ extension CameraViewController:ImageDeleteDelegate
 {
     func updateCollectionWhenImageDeletedAt(index: Int) {
         if SharedData.sharedInstance.arrImage.count > 0 {
-            self.galleryBtn.setImage(SharedData.sharedInstance.arrImage.last, for: .normal)
+            let model = SharedData.sharedInstance.arrImage.last
+            self.galleryBtn.setImage(model?.image, for: .normal)
         } else {
             self.galleryBtn.setImage(nil, for: .normal)
         }
     }
 }
 
+extension CameraViewController:DataAdapterDelegate
+{
+    func callUploadImageApi(indexNo:Int)
+    {
+        let dataAdapter = DataAdapter()
+        dataAdapter.delegate = self
+        let model = SharedData.sharedInstance.arrImage[indexNo]
+        dataAdapter.uploadImage(indexNo: indexNo, img: model.image!)
+    }
+    func dataAdapterDidExecuteRequest(sender pSender:DataAdapter, request pRequest :DataAdapterRequest, result pResult :DataAdapterResult)
+    {
+      
+        
+    }
+}

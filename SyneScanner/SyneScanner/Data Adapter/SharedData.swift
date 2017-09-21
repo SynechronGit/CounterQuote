@@ -18,6 +18,6 @@ class SharedData: NSObject {
     private override init() {
         
     }
-    var arrImage:[UIImage] = []
+    var arrImage:[ImageDataModel] = []
 
 }
