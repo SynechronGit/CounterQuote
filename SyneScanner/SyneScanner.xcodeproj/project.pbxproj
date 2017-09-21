@@ -10,7 +10,6 @@
 		1B5403DC1F728842007CF73B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403DB1F728842007CF73B /* RootViewController.swift */; };
 		1B5403DE1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403DD1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift */; };
 		1B5403E11F73A35F007CF73B /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403E01F73A35F007CF73B /* SharedData.swift */; };
-		1B5403E41F73C59A007CF73B /* ATKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B5403E31F73C59A007CF73B /* ATKit.framework */; };
 		1B5403E61F73C5D7007CF73B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403E51F73C5D7007CF73B /* NetworkManager.swift */; };
 		1B5403E81F73C5FB007CF73B /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403E71F73C5FB007CF73B /* APIURL.swift */; };
 		536A33631F725AE500F019C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A33621F725AE500F019C5 /* AppDelegate.swift */; };
@@ -53,7 +52,6 @@
 		1B5403DB1F728842007CF73B /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		1B5403DD1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		1B5403E01F73A35F007CF73B /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
-		1B5403E31F73C59A007CF73B /* ATKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKit.framework; sourceTree = "<group>"; };
 		1B5403E51F73C5D7007CF73B /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1B5403E71F73C5FB007CF73B /* APIURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 		536A335F1F725AE500F019C5 /* SyneScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyneScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B5403E41F73C59A007CF73B /* ATKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,14 +114,6 @@
 			path = "Data Adapter";
 			sourceTree = "<group>";
 		};
-		1B5403E21F73C58A007CF73B /* Third Party */ = {
-			isa = PBXGroup;
-			children = (
-				1B5403E31F73C59A007CF73B /* ATKit.framework */,
-			);
-			path = "Third Party";
-			sourceTree = "<group>";
-		};
 		536A33561F725AE500F019C5 = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +137,6 @@
 		536A33611F725AE500F019C5 /* SyneScanner */ = {
 			isa = PBXGroup;
 			children = (
-				1B5403E21F73C58A007CF73B /* Third Party */,
 				1B5403DF1F73A2F2007CF73B /* Data Adapter */,
 				536A33901F725B0C00F019C5 /* Models */,
 				536A33911F725B1A00F019C5 /* Utils */,
