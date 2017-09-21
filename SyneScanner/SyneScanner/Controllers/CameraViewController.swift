@@ -142,18 +142,30 @@ extension CameraViewController:ImageDeleteDelegate
     }
 }
 
-extension CameraViewController:DataAdapterDelegate
+extension CameraViewController:UploadImageProxyDelegate
 {
     func callUploadImageApi(indexNo:Int)
     {
-        let dataAdapter = DataAdapter()
-        dataAdapter.delegate = self
         let model = SharedData.sharedInstance.arrImage[indexNo]
-        dataAdapter.uploadImage(indexNo: indexNo, img: model.image!)
+
+        let uploadImageProxy =  UploadImageProxy()
+        uploadImageProxy.delegate = self
+        uploadImageProxy.uploadScanningImage(image: model.image!, indexNo: indexNo)
     }
-    func dataAdapterDidExecuteRequest(sender pSender:DataAdapter, request pRequest :DataAdapterRequest, result pResult :DataAdapterResult)
+    func imageSuccessfullyUpload(responseData:[String:AnyObject],indexNo:Int)
     {
-      
+        SharedData.sharedInstance.updateModel(dict: responseData, indexNo: indexNo)
+    }
+    func imageFailedToUpload(errorMessage:String,indexNo:Int)
+    {
         
     }
+    func progressResult(progress:Float,indexNo:Int)
+    {
+         let model = SharedData.sharedInstance.arrImage[indexNo]
+        model.progress = progress
+        SharedData.sharedInstance.arrImage[indexNo] = model
+    }
+
+    
 }

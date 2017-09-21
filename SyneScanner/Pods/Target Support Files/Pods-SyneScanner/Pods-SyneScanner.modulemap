@@ -1,0 +1,6 @@
+framework module Pods_SyneScanner {
+  umbrella header "Pods-SyneScanner-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -19,5 +19,10 @@ class SharedData: NSObject {
         
     }
     var arrImage:[ImageDataModel] = []
-
+    
+    func updateModel(dict:[String:AnyObject],indexNo:Int)
+    {
+        let model = SharedData.sharedInstance.arrImage[indexNo]
+        model.fileUrl = dict["FileUrl"] as! String
+    }
 }
