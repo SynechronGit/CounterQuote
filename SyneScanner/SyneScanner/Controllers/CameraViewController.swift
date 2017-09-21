@@ -12,11 +12,14 @@ import AVFoundation
 /// The view controller that display the camera feeds and shows the edges of the document if detected.
 class CameraViewController: UIViewController {
     
+    // MARK: - Properties
     @IBOutlet var edgeDetectionView: EdgeDetectionView!
     @IBOutlet var galleryBtn: UIButton!
-    var arrImage:[UIImage] = []
+
     /// the image capture manager
     private var imageCaptureManager: ImageCaptureManager?
+    
+    // MARK: - View LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +33,7 @@ class CameraViewController: UIViewController {
         else {
             debugPrint("The layer of the root view must be a subclass of AVCaptureVideoPreviewLayer")
         }
-        let notificationName = Notification.Name("CaptureImage")
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(CameraViewController.capture), name: notificationName, object: nil)
+
         
     }
     
@@ -57,17 +58,20 @@ class CameraViewController: UIViewController {
         self.imageCaptureManager?.stopSession()
     }
     
+    // MARK: - Button actions
+    
     @IBAction func close() {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func galleryBtnClicked() {
         
-        if arrImage.count == 0 {
+        guard SharedData.sharedInstance.arrImage.count > 0 else {
+            //TODO: display error
             return
         }
+
         let viewController:ImagePreviewController = self.storyboard?.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
         viewController.deleteDelegate = self
-        viewController.imageArr = arrImage
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 
@@ -82,10 +86,9 @@ class CameraViewController: UIViewController {
         
     }
     
-    @IBAction func openGalleryOnClick(_ sender: Any) {
-    }
+  
     
-    
+    // MARK: - Image Capture Handler
     private func showImageCaptureLoadingView(){
         //TODO
         self.view.isUserInteractionEnabled = false
@@ -106,13 +109,15 @@ class CameraViewController: UIViewController {
             //  show the cropped image
             
             ImageEditManager.cut(quadrangle: detectedQuadrangle, outOfImageWith: imageData, completion: { (image) in
-                self.arrImage.append(image!)
+                SharedData.sharedInstance.arrImage.append(image!)
                 self.galleryBtn.setImage(image, for: .normal)
                 self.galleryBtnClicked()
             })
         }
     }
 }
+
+// MARK: - Auto Image Capture Handler
 
 extension CameraViewController:ImageCaptureManagerProtocol
 {
@@ -124,10 +129,9 @@ extension CameraViewController:ImageCaptureManagerProtocol
 
 extension CameraViewController:ImageDeleteDelegate
 {
-    func updateColectionWhenImageDeletedAt(index: Int) {
-        self.arrImage.remove(at: index)
-        if arrImage.count > 0 {
-            self.galleryBtn.setImage(self.arrImage.last, for: .normal)
+    func updateCollectionWhenImageDeletedAt(index: Int) {
+        if SharedData.sharedInstance.arrImage.count > 0 {
+            self.galleryBtn.setImage(SharedData.sharedInstance.arrImage.last, for: .normal)
         } else {
             self.galleryBtn.setImage(nil, for: .normal)
         }

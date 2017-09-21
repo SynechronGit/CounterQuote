@@ -9,14 +9,16 @@
 import UIKit
 
 protocol ImageDeleteDelegate {
-    func updateColectionWhenImageDeletedAt(index : Int)
+    func updateCollectionWhenImageDeletedAt(index : Int)
 }
 
 class ImagePreviewController: UIViewController {
+    // MARK: - Properties
+    
     var deleteDelegate : ImageDeleteDelegate?
-    var imageArr:[UIImage]?
     @IBOutlet var collectionView: UICollectionView!
 
+     // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.reloadData()
@@ -32,7 +34,7 @@ class ImagePreviewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let index = IndexPath(item: (self.imageArr?.count)! - 1, section: 0)
+        let index = IndexPath(item: (SharedData.sharedInstance.arrImage.count) - 1, section: 0)
         self.collectionView?.scrollToItem(at: index, at: UICollectionViewScrollPosition.right, animated: true)
     }
     
@@ -44,6 +46,7 @@ class ImagePreviewController: UIViewController {
    
    }
 
+ // MARK: - UICollection View DataSource and Delegate Method
 extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate
 {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -52,13 +55,13 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return (imageArr?.count)!
+        return SharedData.sharedInstance.arrImage.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImagePreviewCollectionViewCell
        
-        cell.imagePreview.image = imageArr?[indexPath.row]
+        cell.imagePreview.image = SharedData.sharedInstance.arrImage[indexPath.row]
         cell.deleteDelegate = self
         return cell
     
@@ -75,28 +78,30 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
    
 }
 
+// MARK: - ImagePreviewCollectionViewCell Delegate Method
+
 extension ImagePreviewController:ImageShareAndDeleteDelegate
 {
     func updateColelctionWhenImageDeletedAt(cell : UICollectionViewCell)
     {
         let indexPath = self.collectionView.indexPath(for: cell)
-        imageArr?.remove(at: (indexPath?.row)!)
-        deleteDelegate?.updateColectionWhenImageDeletedAt(index: (indexPath?.row)!)
+        SharedData.sharedInstance.arrImage.remove(at: (indexPath?.row)!)
+        deleteDelegate?.updateCollectionWhenImageDeletedAt(index: (indexPath?.row)!)
         self.collectionView.reloadData()
-        if imageArr?.count == 0 {
+        if SharedData.sharedInstance.arrImage.count == 0 {
             self.navigationController?.popViewController(animated: true)
         }
     }
     
     func shareSelectedImageAt(cell : UICollectionViewCell) {
         let indexPath = self.collectionView.indexPath(for: cell)
-        if let image = imageArr?[(indexPath?.row)!] {
-            let imageToShare = [ image ]
-            let activityViewController = UIActivityViewController(activityItems: imageToShare , applicationActivities: nil)
-            activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
-            // present the view controller
-            self.present(activityViewController, animated: true, completion: nil)
-        }
+        let image:UIImage = SharedData.sharedInstance.arrImage[(indexPath?.row)!]
+        let imageToShare = [ image ]
+        let activityViewController = UIActivityViewController(activityItems: imageToShare , applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+        
     }
     
 }

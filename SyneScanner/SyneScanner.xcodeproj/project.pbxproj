@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B5403DC1F728842007CF73B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403DB1F728842007CF73B /* RootViewController.swift */; };
 		1B5403DE1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403DD1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift */; };
+		1B5403E11F73A35F007CF73B /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403E01F73A35F007CF73B /* SharedData.swift */; };
 		536A33631F725AE500F019C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A33621F725AE500F019C5 /* AppDelegate.swift */; };
 		536A33681F725AE500F019C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536A33661F725AE500F019C5 /* Main.storyboard */; };
 		536A336A1F725AE500F019C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536A33691F725AE500F019C5 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		1B5403DB1F728842007CF73B /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		1B5403DD1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		1B5403E01F73A35F007CF73B /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		536A335F1F725AE500F019C5 /* SyneScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyneScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		536A33621F725AE500F019C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		536A33671F725AE500F019C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B5403DF1F73A2F2007CF73B /* Data Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				1B5403E01F73A35F007CF73B /* SharedData.swift */,
+			);
+			path = "Data Adapter";
+			sourceTree = "<group>";
+		};
 		536A33561F725AE500F019C5 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +131,7 @@
 		536A33611F725AE500F019C5 /* SyneScanner */ = {
 			isa = PBXGroup;
 			children = (
+				1B5403DF1F73A2F2007CF73B /* Data Adapter */,
 				536A33901F725B0C00F019C5 /* Models */,
 				536A33911F725B1A00F019C5 /* Utils */,
 				536A33921F725B2200F019C5 /* Views */,
@@ -338,6 +349,7 @@
 				536A339C1F725BFB00F019C5 /* ImageEditManager.swift in Sources */,
 				536A33951F725B4A00F019C5 /* Quadrangle.swift in Sources */,
 				536A33631F725AE500F019C5 /* AppDelegate.swift in Sources */,
+				1B5403E11F73A35F007CF73B /* SharedData.swift in Sources */,
 				536A33AA1F725D5C00F019C5 /* CameraViewController.swift in Sources */,
 				536A33A01F725C4600F019C5 /* PointFilter.swift in Sources */,
 				536A33981F725BB600F019C5 /* CALayer+Extension.swift in Sources */,

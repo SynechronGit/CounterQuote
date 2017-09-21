@@ -10,6 +10,7 @@ import UIKit
 
 class RootViewController: UIViewController {
 
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +22,7 @@ class RootViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+     // MARK: - Button actions
     @IBAction func startScanning() {
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "CameraViewController")
         let navigationController = UINavigationController(rootViewController: viewController!)
