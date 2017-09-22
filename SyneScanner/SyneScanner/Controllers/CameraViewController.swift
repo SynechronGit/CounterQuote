@@ -64,17 +64,7 @@ class CameraViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func galleryBtnClicked() {
-       /*
-        guard SharedData.sharedInstance.arrImage.count > 0 else {
-            //TODO: display error
-            return
-        }
 
-        let viewController:ImagePreviewController = self.storyboard?.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
-        viewController.deleteDelegate = self
-        viewController.uploadDelegate = self
-        self.navigationController?.pushViewController(viewController, animated: true)
- */
     }
 
     @IBAction func capture() {
@@ -91,9 +81,6 @@ class CameraViewController: UIViewController {
     @IBAction func finishScanningTapped(_ sender: Any) {
     }
     
-    
-  
-    
     // MARK: - Image Capture Handler
     private func showImageCaptureLoadingView(){
         //TODO
@@ -106,7 +93,7 @@ class CameraViewController: UIViewController {
     }
     
     private func previewImage(with imageData: Data?,
-                              detectedQuadrangle: Quadrangle?){
+                              detectedQuadrangle: Quadrangle?) {
         guard let imageData = imageData else {
             //TODO: display error
             return
@@ -119,9 +106,20 @@ class CameraViewController: UIViewController {
                 model.image = image
                 SharedData.sharedInstance.arrImage.append(model)
                 self.galleryBtn.setImage(image, for: .normal)
-                self.galleryBtnClicked()
+                self.previewCapturedImage()
             })
         }
+    }
+    
+    func previewCapturedImage() {
+        guard SharedData.sharedInstance.arrImage.count > 0 else {
+            //TODO: display error
+            return
+        }
+        let viewController:ImagePreviewController = self.storyboard?.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
+        viewController.deleteDelegate = self
+        viewController.uploadDelegate = self
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
