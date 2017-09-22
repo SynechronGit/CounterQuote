@@ -64,7 +64,7 @@ class CameraViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func galleryBtnClicked() {
-        
+       /*
         guard SharedData.sharedInstance.arrImage.count > 0 else {
             //TODO: display error
             return
@@ -72,7 +72,9 @@ class CameraViewController: UIViewController {
 
         let viewController:ImagePreviewController = self.storyboard?.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
         viewController.deleteDelegate = self
+        viewController.uploadDelegate = self
         self.navigationController?.pushViewController(viewController, animated: true)
+ */
     }
 
     @IBAction func capture() {
@@ -85,6 +87,10 @@ class CameraViewController: UIViewController {
         
         
     }
+    
+    @IBAction func finishScanningTapped(_ sender: Any) {
+    }
+    
     
   
     
@@ -114,7 +120,6 @@ class CameraViewController: UIViewController {
                 SharedData.sharedInstance.arrImage.append(model)
                 self.galleryBtn.setImage(image, for: .normal)
                 self.galleryBtnClicked()
-                self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
             })
         }
     }
@@ -139,6 +144,13 @@ extension CameraViewController:ImageDeleteDelegate
         } else {
             self.galleryBtn.setImage(nil, for: .normal)
         }
+    }
+}
+
+extension CameraViewController:ImageUploadOnBackActionDelegate
+{
+    func uploadImageOnBackAction() {
+        self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
     }
 }
 

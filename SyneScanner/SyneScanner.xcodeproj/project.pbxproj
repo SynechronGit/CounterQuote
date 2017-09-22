@@ -14,6 +14,7 @@
 		1B5403F51F73EFB2007CF73B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403F41F73EFB2007CF73B /* NetworkManager.swift */; };
 		1B5403F71F73EFC0007CF73B /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403F61F73EFC0007CF73B /* APIURL.swift */; };
 		1B5403FA1F73F451007CF73B /* UploadImageProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403F91F73F451007CF73B /* UploadImageProxy.swift */; };
+		5346F1B11F752031000E6AC5 /* ImageWorkflowProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1B01F752031000E6AC5 /* ImageWorkflowProxy.swift */; };
 		536A33631F725AE500F019C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A33621F725AE500F019C5 /* AppDelegate.swift */; };
 		536A33681F725AE500F019C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536A33661F725AE500F019C5 /* Main.storyboard */; };
 		536A336A1F725AE500F019C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536A33691F725AE500F019C5 /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		349831C8100594A2ABFB4F99 /* Pods-SyneScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyneScanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-SyneScanner/Pods-SyneScanner.release.xcconfig"; sourceTree = "<group>"; };
 		410CDDF85111FCE66A77C52C /* Pods_SyneScannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SyneScannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C33F0BD7E2D6EEF64F5A57C /* Pods_SyneScannerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SyneScannerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5346F1B01F752031000E6AC5 /* ImageWorkflowProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageWorkflowProxy.swift; sourceTree = "<group>"; };
 		536A335F1F725AE500F019C5 /* SyneScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyneScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		536A33621F725AE500F019C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		536A33671F725AE500F019C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				1B5403F91F73F451007CF73B /* UploadImageProxy.swift */,
+				5346F1B01F752031000E6AC5 /* ImageWorkflowProxy.swift */,
 			);
 			path = Proxy;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				1B5403DE1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift in Sources */,
 				1B5403EF1F73D70A007CF73B /* ImageDataModel.swift in Sources */,
 				1B5403FA1F73F451007CF73B /* UploadImageProxy.swift in Sources */,
+				5346F1B11F752031000E6AC5 /* ImageWorkflowProxy.swift in Sources */,
 				1B5403DC1F728842007CF73B /* RootViewController.swift in Sources */,
 				536A33A41F725C9100F019C5 /* EdgeDetectionView.swift in Sources */,
 				536A339A1F725BDD00F019C5 /* CIRectangleFeature+Extension.swift in Sources */,

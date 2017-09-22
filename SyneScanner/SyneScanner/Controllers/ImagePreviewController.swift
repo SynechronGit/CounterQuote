@@ -8,21 +8,18 @@
 
 import UIKit
 
-protocol ImageDeleteDelegate {
-    func updateCollectionWhenImageDeletedAt(index : Int)
-}
-
 class ImagePreviewController: UIViewController {
     // MARK: - Properties
     
     var deleteDelegate : ImageDeleteDelegate?
+    var uploadDelegate : ImageUploadOnBackActionDelegate?
     @IBOutlet var collectionView: UICollectionView!
 
      // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.reloadData()
-
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.saveButtonTapped))
         // Do any additional setup after loading the view.
     }
     
@@ -33,9 +30,6 @@ class ImagePreviewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        let index = IndexPath(item: (SharedData.sharedInstance.arrImage.count) - 1, section: 0)
-        self.collectionView?.scrollToItem(at: index, at: UICollectionViewScrollPosition.right, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,7 +37,18 @@ class ImagePreviewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-   
+    func saveButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
+        let visibleCells = self.collectionView.visibleCells
+        if let cell = visibleCells.first {
+            let indexPath = self.collectionView.indexPath(for: cell)
+            let model = SharedData.sharedInstance.arrImage[(indexPath?.row)!]
+            if model.fileUrl == "" {
+                self.uploadDelegate?.uploadImageOnBackAction()
+            }
+        }
+    }
+       
    }
 
  // MARK: - UICollection View DataSource and Delegate Method
@@ -55,14 +60,15 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return SharedData.sharedInstance.arrImage.count
+        return 1
+        //return SharedData.sharedInstance.arrImage.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImagePreviewCollectionViewCell
-       let model = SharedData.sharedInstance.arrImage[indexPath.row]
-        cell.imagePreview.image = model.image
-        cell.deleteDelegate = self
+       let model = SharedData.sharedInstance.arrImage.last
+        cell.imagePreview.image = model?.image
+        cell.retakeDelegate = self
         return cell
     
     }
@@ -80,17 +86,15 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
 
 // MARK: - ImagePreviewCollectionViewCell Delegate Method
 
-extension ImagePreviewController:ImageShareAndDeleteDelegate
+extension ImagePreviewController:ImageShareAndRetakeDelegate
 {
     func updateColelctionWhenImageDeletedAt(cell : UICollectionViewCell)
     {
         let indexPath = self.collectionView.indexPath(for: cell)
-        SharedData.sharedInstance.arrImage.remove(at: (indexPath?.row)!)
+        SharedData.sharedInstance.arrImage.removeLast()
         deleteDelegate?.updateCollectionWhenImageDeletedAt(index: (indexPath?.row)!)
         self.collectionView.reloadData()
-        if SharedData.sharedInstance.arrImage.count == 0 {
-            self.navigationController?.popViewController(animated: true)
-        }
+        self.navigationController?.popViewController(animated: true)
     }
     
     func shareSelectedImageAt(cell : UICollectionViewCell) {
@@ -106,4 +110,13 @@ extension ImagePreviewController:ImageShareAndDeleteDelegate
         
     }
     
+}
+
+
+protocol ImageDeleteDelegate {
+    func updateCollectionWhenImageDeletedAt(index : Int)
+}
+
+protocol ImageUploadOnBackActionDelegate {
+    func uploadImageOnBackAction()
 }
