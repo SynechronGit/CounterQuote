@@ -39,14 +39,7 @@ class ImagePreviewController: UIViewController {
     
     func saveButtonTapped() {
         self.navigationController?.popViewController(animated: true)
-        let visibleCells = self.collectionView.visibleCells
-        if let cell = visibleCells.first {
-            let indexPath = self.collectionView.indexPath(for: cell)
-            let model = SharedData.sharedInstance.arrImage[(indexPath?.row)!]
-            if model.fileUrl == "" {
-                self.uploadDelegate?.uploadImageOnBackAction()
-            }
-        }
+        self.uploadDelegate?.uploadImageOnBackAction()
     }
        
    }
@@ -61,8 +54,8 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return 1
-        //return SharedData.sharedInstance.arrImage.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImagePreviewCollectionViewCell

@@ -281,8 +281,11 @@
 				536A33A71F725CEF00F019C5 /* ImagePreviewController.swift */,
 				536A33A91F725D5C00F019C5 /* CameraViewController.swift */,
 				1B5403DB1F728842007CF73B /* RootViewController.swift */,
+<<<<<<< HEAD
 				1B5403FD1F75459D007CF73B /* SplashScreenViewController.swift */,
+=======
 				5346F1B21F7542BC000E6AC5 /* ScanCompleteViewController.swift */,
+>>>>>>> 3f2b8ea4e2873258fd49b0f856c4381bd08c8b0b
 			);
 			path = Controllers;
 			sourceTree = "<group>";
