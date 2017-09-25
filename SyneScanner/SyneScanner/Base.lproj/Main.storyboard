@@ -9,6 +9,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="DEw-QH-TOw">
@@ -60,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9A9-Mi-bgM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-574" y="262"/>
+            <point key="canvasLocation" x="-599" y="300"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -75,7 +80,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jms-y3-2Ao">
-                                <rect key="frame" x="151.5" y="318.5" width="71" height="30"/>
+                                <rect key="frame" x="147.5" y="317.5" width="79" height="32"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Let's Start"/>
                                 <connections>
                                     <action selector="startScanning" destination="BYZ-38-t0r" eventType="touchUpInside" id="auo-mc-6jD"/>
@@ -250,7 +256,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="oPF-UW-6C6" id="D3j-ft-NWi"/>
-                        <segue destination="YUz-6e-M4T" kind="show" identifier="NavToStartWorkFlow" id="6fl-yH-VTC"/>
+                        <segue destination="bcB-w8-SKA" kind="show" identifier="NavToStartWorkFlow" id="LoE-l0-Lvj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DBR-cb-6Sd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -273,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HU4-Bo-HrI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2510" y="337"/>
+            <point key="canvasLocation" x="3542" y="300"/>
         </scene>
         <!--Scan Complete View Controller-->
         <scene sceneID="LBb-V8-bqm">
@@ -288,7 +294,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2gK-S7-cjS">
-                                <rect key="frame" x="16" y="20" width="343" height="577"/>
+                                <rect key="frame" x="16" y="20" width="343" height="575"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vJ1-MT-93V">
                                     <size key="itemSize" width="100" height="100"/>
@@ -306,6 +312,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G01-wt-gg8">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <color key="backgroundColor" red="0.89411764705882346" green="0.94509803921568625" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -326,9 +333,12 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7K-y7-pKo">
-                                <rect key="frame" x="46" y="607" width="283" height="30"/>
-                                <color key="backgroundColor" red="0.95535136010362698" green="0.95535136010362698" blue="0.95535136010362698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Done"/>
+                                <rect key="frame" x="46" y="605" width="283" height="32"/>
+                                <color key="backgroundColor" red="0.24705882352941178" green="0.63529411764705879" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="scanningDoneTapped:" destination="bcB-w8-SKA" eventType="touchUpInside" id="RyG-9F-IRA"/>
                                 </connections>
@@ -348,11 +358,12 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="2gK-S7-cjS" id="FPM-WB-QQJ"/>
+                        <segue destination="YUz-6e-M4T" kind="show" identifier="StartWorkflowToSuccess" id="JuW-ZD-1mT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHt-A8-6kt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000.8" y="1147.3763118440781"/>
+            <point key="canvasLocation" x="2670" y="300"/>
         </scene>
     </scenes>
     <resources>

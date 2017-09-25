@@ -24,10 +24,8 @@ class ScanCompleteViewController: UIViewController {
     //MARK: UIButton action methods
 
     @IBAction func scanningDoneTapped(_ sender: Any) {
-        SharedData.sharedInstance.arrImage.removeAll()
-        self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "StartWorkflowToSuccess", sender: nil)
     }
-
 }
 
 extension ScanCompleteViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -40,6 +38,7 @@ extension ScanCompleteViewController: UICollectionViewDataSource, UICollectionVi
     {
         return SharedData.sharedInstance.arrImage.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reviewCell", for: indexPath) as! ImageReviewCollectionViewCell

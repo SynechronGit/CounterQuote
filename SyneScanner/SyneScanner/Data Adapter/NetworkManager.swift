@@ -54,6 +54,7 @@ class NetworkManager: NSObject {
             
         }
     }
+    
     func callPostMethod(paramaters:[String:Any], url:String)
     {
         let serverUrl = BASE_URL + url

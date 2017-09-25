@@ -13,5 +13,4 @@ class ImageDataModel: NSObject {
     var image:UIImage?
     var progress:Float = 0
     var fileUrl = ""
-    lazy var correlationId = UUID().uuidString
 }

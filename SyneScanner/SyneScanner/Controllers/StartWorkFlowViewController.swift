@@ -12,7 +12,8 @@ class StartWorkFlowViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.showProgressLoader()
+        self.startWorkflowApi()
         // Do any additional setup after loading the view.
     }
 
@@ -21,15 +22,42 @@ class StartWorkFlowViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func startWorkflowApi() {
+        var blobUrl: String?
+        for scanItem in SharedData.sharedInstance.arrImage {
+            blobUrl?.append(scanItem.fileUrl + ";")
+        }
+        guard (blobUrl != nil) else {
+            return
+        }
+        let startWorkflowProxy =  ImageWorkflowProxy()
+        startWorkflowProxy.delegate = self
+        startWorkflowProxy.startWorkflowApi(blobUrl: blobUrl!, corelationId: SharedData.sharedInstance.corelationId)
     }
-    */
+    
+    //MARK: LineProgress methods
+    
+    func showProgressLoader() {
+        if ARSLineProgress.shown { return }
+        
+        ARSLineProgress.showWithPresentCompetionBlock { () -> Void in
+            print("Showed with completion block")
+        }
+    }
 
+}
+
+//MARK: StartWorkflowDelegate methods
+extension StartWorkFlowViewController: StartWorkflowDelegate {
+    func workflowSuccessfullyStarted(responseData: [String : AnyObject]) {
+        ARSLineProgress.hideWithCompletionBlock({ () -> Void in
+            ARSLineProgress.showSuccess()
+        })
+    }
+    
+    func workflowFailedToStart(errorMessage: String) {
+        ARSLineProgress.hideWithCompletionBlock({ () -> Void in
+            ARSLineProgress.showFail()
+        })
+    }
 }
