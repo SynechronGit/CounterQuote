@@ -22,7 +22,7 @@ class ImagePreviewController: UIViewController {
         self.navigationItem.rightBarButtonItem = rightBarButton
         
         
-        let leftBarButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.done, target: self, action: #selector(ImagePreviewController.backBtnTapped))
+        let leftBarButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ImagePreviewController.backBtnTapped))
         self.navigationItem.leftBarButtonItem = leftBarButton
         // Do any additional setup after loading the view.
     }
@@ -81,8 +81,10 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
     {
         let width = collectionView.frame.size.width
         let height = collectionView.frame.size.height
+        print(width,height)
         return CGSize(width: width, height: height)
     }
+    
    
 }
 
