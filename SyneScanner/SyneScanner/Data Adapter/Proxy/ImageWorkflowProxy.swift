@@ -17,6 +17,11 @@ class ImageWorkflowProxy: NetworkManager {
 
     var delegate:StartWorkflowDelegate?
     
+    func startWorkflowApi(blobUrl: String, corelationId: String) {
+        let parameters = ["BlobUrl": blobUrl, "CorelationId": corelationId]
+        super.callPostMethod(paramaters: parameters, url: START_WORKFLOW)
+    }
+    
     override func successCallBack(response:Any)
     {
         if    let dataArr:[[String:Any]] = response as? [[String : Any]]

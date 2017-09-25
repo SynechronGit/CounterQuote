@@ -14,7 +14,7 @@ import UIKit
 
 class SharedData: NSObject {
     public static let sharedInstance :SharedData = SharedData()
-    
+    var corelationId = UUID().uuidString
     private override init() {
         
     }
