@@ -457,7 +457,6 @@
 				1B5403DB1F728842007CF73B /* RootViewController.swift */,
 				1B5403FD1F75459D007CF73B /* SplashScreenViewController.swift */,
 				5346F1B21F7542BC000E6AC5 /* ScanCompleteViewController.swift */,
-				1BE2859C1F78F43300314168 /* StartWorkFlowViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -835,7 +834,6 @@
 				5346F1B31F7542BC000E6AC5 /* ScanCompleteViewController.swift in Sources */,
 				1B5403DC1F728842007CF73B /* RootViewController.swift in Sources */,
 				536A33A41F725C9100F019C5 /* EdgeDetectionView.swift in Sources */,
-				1BE2859D1F78F43300314168 /* StartWorkFlowViewController.swift in Sources */,
 				536A339A1F725BDD00F019C5 /* CIRectangleFeature+Extension.swift in Sources */,
 				5346F1D71F79191E000E6AC5 /* ARSLineProgress.swift in Sources */,
 				5346F1DA1F79191E000E6AC5 /* ARSLineProgressExtensions.swift in Sources */,
