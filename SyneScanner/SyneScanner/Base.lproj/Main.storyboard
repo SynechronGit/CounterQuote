@@ -22,7 +22,7 @@
         <scene sceneID="DEw-QH-TOw">
             <objects>
                 <navigationController navigationBarHidden="YES" id="gpf-RY-wRS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zxw-PL-fh8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Zxw-PL-fh8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -392,16 +392,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TuO-G0-VMe">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TuO-G0-VMe">
+                                <rect key="frame" x="0.0" y="20" width="375" height="574"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4V-6K-ax0">
+                                <rect key="frame" x="30" y="604" width="315" height="33"/>
+                                <color key="backgroundColor" red="0.2470588235" green="0.63529411759999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="C9E-ZZ-6Pa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="17"/>
+                                <state key="normal" title="Accept">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buyBtnClicked:" destination="e6W-xa-aRU" eventType="touchUpInside" id="F5x-2Z-5RT"/>
+                                    <action selector="scanningDoneTapped:" destination="bcB-w8-SKA" eventType="touchUpInside" id="mem-QU-wZj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TuO-G0-VMe" firstAttribute="leading" secondItem="pwu-sy-Eqs" secondAttribute="leading" id="CWt-9o-fyv"/>
+                            <constraint firstItem="S4V-6K-ax0" firstAttribute="leading" secondItem="pwu-sy-Eqs" secondAttribute="leading" constant="30" id="G6Q-Il-1hJ"/>
                             <constraint firstAttribute="trailing" secondItem="TuO-G0-VMe" secondAttribute="trailing" id="K8y-hp-Vwf"/>
-                            <constraint firstItem="lEl-fu-YaU" firstAttribute="top" secondItem="TuO-G0-VMe" secondAttribute="bottom" id="hGo-A3-zOc"/>
+                            <constraint firstItem="lEl-fu-YaU" firstAttribute="top" secondItem="S4V-6K-ax0" secondAttribute="bottom" constant="30" id="Mmo-DK-ar8"/>
+                            <constraint firstItem="S4V-6K-ax0" firstAttribute="top" secondItem="TuO-G0-VMe" secondAttribute="bottom" constant="10" id="NB8-8B-bB9"/>
+                            <constraint firstAttribute="trailing" secondItem="S4V-6K-ax0" secondAttribute="trailing" constant="30" id="U6W-jy-spx"/>
                             <constraint firstItem="TuO-G0-VMe" firstAttribute="top" secondItem="kLR-Bs-4uE" secondAttribute="bottom" id="sgj-AR-Brx"/>
                         </constraints>
                     </view>
@@ -411,7 +430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X7z-iJ-CFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4475" y="337"/>
+            <point key="canvasLocation" x="4474.3999999999996" y="336.88155922038982"/>
         </scene>
     </scenes>
     <resources>

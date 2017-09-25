@@ -14,6 +14,8 @@ class PDFViewController: UIViewController {
     var fileName:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: false)
+
         loadPdfFile()
         // Do any additional setup after loading the view.
     }
@@ -30,6 +32,12 @@ class PDFViewController: UIViewController {
             let req = NSURLRequest(url: pdf)
             webView.loadRequest(req as URLRequest)
         }
+    }
+    
+    //MARK: UIButton action methods
+    
+    @IBAction func buyBtnClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
