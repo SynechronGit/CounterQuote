@@ -181,6 +181,10 @@
                                     <action selector="finishScanningTapped:" destination="E7d-Mn-lBf" eventType="touchUpInside" id="2wt-KU-FDV"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HNG-Tb-F5J">
+                                <rect key="frame" x="127" y="173.5" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -197,6 +201,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="centerImageView" destination="HNG-Tb-F5J" id="Npr-Jc-jSp"/>
                         <outlet property="edgeDetectionView" destination="Dvn-de-eNQ" id="b6q-g3-UDF"/>
                         <outlet property="galleryBtn" destination="ncn-3A-lAg" id="OQV-Is-COQ"/>
                     </connections>

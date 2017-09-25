@@ -15,6 +15,7 @@ class CameraViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet var edgeDetectionView: EdgeDetectionView!
     @IBOutlet var galleryBtn: UIButton!
+    @IBOutlet var centerImageView: UIImageView!
 
     /// the image capture manager
     private var imageCaptureManager: ImageCaptureManager?
@@ -126,10 +127,36 @@ class CameraViewController: UIViewController {
                     self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
 
                 }
+                self.centerImageView.frame = CGRect(x: self.view.frame.size.width/2 - 60 , y: self.view.frame.size.height/2 - 80, width: 120, height: 120)
+                self.centerImageView.image = image
                 self.imageCaptureManager?.resetProperties()
+                self.animateImageAfterCapturing()
+
               //  self.previewCapturedImage()
             })
         }
+    }
+    
+    func animateImageAfterCapturing()
+    {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            //Frame Option 1:
+            self.centerImageView.frame =  self.galleryBtn.frame
+            
+         
+            
+        },completion: { finish in
+            self.galleryBtn.isHidden = true
+            UIView.animate(withDuration: 0.5, delay: 0.0,options: UIViewAnimationOptions.curveEaseOut,animations: {
+                self.centerImageView.transform = CGAffineTransform(scaleX: 0.25, y: 0.25)
+                
+                
+            },completion: { finish in
+                self.centerImageView.image = nil
+                self.centerImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
+                self.galleryBtn.isHidden = false
+            })})
+        
     }
     
     
