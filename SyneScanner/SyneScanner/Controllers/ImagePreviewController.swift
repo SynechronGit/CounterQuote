@@ -22,8 +22,6 @@ class ImagePreviewController: UIViewController {
         self.navigationItem.rightBarButtonItem = rightBarButton
         
         
-        let leftBarButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ImagePreviewController.backBtnTapped))
-        self.navigationItem.leftBarButtonItem = leftBarButton
         // Do any additional setup after loading the view.
     }
     
@@ -45,11 +43,7 @@ class ImagePreviewController: UIViewController {
     {
         self.performSegue(withIdentifier: "NavToStartWorkFlow", sender: nil)
     }
-    func backBtnTapped()
-    {
-        self.navigationController?.popViewController(animated: true)
-  
-    }
+   
        
    }
 

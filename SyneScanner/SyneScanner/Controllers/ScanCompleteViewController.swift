@@ -37,6 +37,14 @@ class ScanCompleteViewController: UIViewController {
             print("Showed with completion block")
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NavToPdfView"
+        {
+            let vc:PDFViewController = segue.destination as! PDFViewController
+            vc.fileName = "policy"
+        }
+    }
 }
 
 extension ScanCompleteViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -88,12 +96,16 @@ extension ScanCompleteViewController: StartWorkflowDelegate {
     func workflowSuccessfullyStarted(responseData: [String : AnyObject]) {
         ARSLineProgress.hideWithCompletionBlock({ () -> Void in
             ARSLineProgress.showSuccess()
+            self.performSegue(withIdentifier: "NavToPdfView", sender: nil)
         })
+        
     }
     
     func workflowFailedToStart(errorMessage: String) {
         ARSLineProgress.hideWithCompletionBlock({ () -> Void in
             ARSLineProgress.showFail()
+            self.performSegue(withIdentifier: "NavToPdfView", sender: nil)
+
         })
     }
 }

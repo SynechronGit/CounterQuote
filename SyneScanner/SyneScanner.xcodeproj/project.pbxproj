@@ -15,7 +15,6 @@
 		1B5403F71F73EFC0007CF73B /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403F61F73EFC0007CF73B /* APIURL.swift */; };
 		1B5403FA1F73F451007CF73B /* UploadImageProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403F91F73F451007CF73B /* UploadImageProxy.swift */; };
 		1B5403FE1F75459D007CF73B /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403FD1F75459D007CF73B /* SplashScreenViewController.swift */; };
-		1BE2859D1F78F43300314168 /* StartWorkFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE2859C1F78F43300314168 /* StartWorkFlowViewController.swift */; };
 		1BE285C91F7908EE00314168 /* SFCompactDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BE2859F1F7908EE00314168 /* SFCompactDisplay-Black.ttf */; };
 		1BE285CA1F7908EE00314168 /* SFCompactDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BE285A01F7908EE00314168 /* SFCompactDisplay-Bold.ttf */; };
 		1BE285CB1F7908EE00314168 /* SFCompactDisplay-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BE285A11F7908EE00314168 /* SFCompactDisplay-Heavy.ttf */; };
@@ -133,7 +132,6 @@
 		1B5403F61F73EFC0007CF73B /* APIURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 		1B5403F91F73F451007CF73B /* UploadImageProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImageProxy.swift; sourceTree = "<group>"; };
 		1B5403FD1F75459D007CF73B /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
-		1BE2859C1F78F43300314168 /* StartWorkFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartWorkFlowViewController.swift; sourceTree = "<group>"; };
 		1BE2859F1F7908EE00314168 /* SFCompactDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFCompactDisplay-Black.ttf"; path = "../SFCompactDisplay-Black.ttf"; sourceTree = "<group>"; };
 		1BE285A01F7908EE00314168 /* SFCompactDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFCompactDisplay-Bold.ttf"; path = "../SFCompactDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		1BE285A11F7908EE00314168 /* SFCompactDisplay-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFCompactDisplay-Heavy.ttf"; path = "../SFCompactDisplay-Heavy.ttf"; sourceTree = "<group>"; };
@@ -478,7 +476,6 @@
 				1B5403DB1F728842007CF73B /* RootViewController.swift */,
 				1B5403FD1F75459D007CF73B /* SplashScreenViewController.swift */,
 				5346F1B21F7542BC000E6AC5 /* ScanCompleteViewController.swift */,
-				1BE2859C1F78F43300314168 /* StartWorkFlowViewController.swift */,
 				1BEF2E771F79246F00AE94E6 /* PDFViewController.swift */,
 			);
 			path = Controllers;

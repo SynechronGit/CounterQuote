@@ -14,7 +14,7 @@ class PDFViewController: UIViewController {
     var fileName:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadPdfFile()
         // Do any additional setup after loading the view.
     }
 
