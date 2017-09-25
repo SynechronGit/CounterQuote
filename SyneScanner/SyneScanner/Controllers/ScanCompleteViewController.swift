@@ -24,11 +24,22 @@ class ScanCompleteViewController: UIViewController {
     //MARK: UIButton action methods
 
     @IBAction func scanningDoneTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "StartWorkflowToSuccess", sender: nil)
+        self.showProgressLoader()
+        self.startWorkflowApi()
+    }
+    
+    //MARK: LineProgress methods
+    
+    func showProgressLoader() {
+        if ARSLineProgress.shown { return }
+        
+        ARSLineProgress.showWithPresentCompetionBlock { () -> Void in
+            print("Showed with completion block")
+        }
     }
 }
 
-extension ScanCompleteViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension ScanCompleteViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     //MARK: UICollectionView DataSource methods
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -47,4 +58,42 @@ extension ScanCompleteViewController: UICollectionViewDataSource, UICollectionVi
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let width = collectionView.frame.size.width/2 - 20
+        let height = width
+        return CGSize(width: width, height: height)
+    }
+    
+}
+
+//MARK: StartWorkflowDelegate methods
+extension ScanCompleteViewController: StartWorkflowDelegate {
+    
+    func startWorkflowApi() {
+        var blobUrl = ""
+        for scanItem in 0..<SharedData.sharedInstance.arrImage.count {
+            blobUrl.append(SharedData.sharedInstance.arrImage[scanItem].fileUrl)
+            if scanItem != SharedData.sharedInstance.arrImage.count - 1 {
+                blobUrl.append(";")
+            }
+        }
+        let startWorkflowProxy =  ImageWorkflowProxy()
+        startWorkflowProxy.delegate = self
+        startWorkflowProxy.startWorkflowApi(blobUrl: blobUrl, corelationId: SharedData.sharedInstance.corelationId)
+    }
+    
+    func workflowSuccessfullyStarted(responseData: [String : AnyObject]) {
+        ARSLineProgress.hideWithCompletionBlock({ () -> Void in
+            ARSLineProgress.showSuccess()
+        })
+    }
+    
+    func workflowFailedToStart(errorMessage: String) {
+        ARSLineProgress.hideWithCompletionBlock({ () -> Void in
+            ARSLineProgress.showFail()
+        })
+    }
 }
