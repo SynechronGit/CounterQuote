@@ -19,6 +19,7 @@ class CameraViewController: UIViewController {
     /// the image capture manager
     private var imageCaptureManager: ImageCaptureManager?
     
+    var retakeIndexNo = -1
     // MARK: - View LifeCycle
     
     override func viewDidLoad() {
@@ -63,9 +64,7 @@ class CameraViewController: UIViewController {
     @IBAction func close() {
         self.dismiss(animated: true, completion: nil)
     }
-    @IBAction func galleryBtnClicked() {
-
-    }
+ 
 
     @IBAction func capture() {
         
@@ -79,6 +78,14 @@ class CameraViewController: UIViewController {
     }
     
     @IBAction func finishScanningTapped(_ sender: Any) {
+        guard SharedData.sharedInstance.arrImage.count > 0 else {
+            //TODO: display error
+            return
+        }
+        let viewController:ImagePreviewController = self.storyboard?.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
+        viewController.deleteDelegate = self
+        self.navigationController?.pushViewController(viewController, animated: true)
+
     }
     
     // MARK: - Image Capture Handler
@@ -102,25 +109,31 @@ class CameraViewController: UIViewController {
             //  show the cropped image
             
             ImageEditManager.cut(quadrangle: detectedQuadrangle, outOfImageWith: imageData, completion: { (image) in
-               let model = ImageDataModel()
-                model.image = image
-                SharedData.sharedInstance.arrImage.append(model)
+                
                 self.galleryBtn.setImage(image, for: .normal)
-                self.previewCapturedImage()
+                if self.retakeIndexNo != -1
+                {
+                    let model = SharedData.sharedInstance.arrImage[self.retakeIndexNo]
+                    model.image = image
+                    SharedData.sharedInstance.arrImage[self.retakeIndexNo] = model
+                    self.callUploadImageApi(indexNo: self.retakeIndexNo)
+  
+                }
+                else{
+                    let model = ImageDataModel()
+                    model.image = image
+                    SharedData.sharedInstance.arrImage.append(model)
+                    self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
+
+                }
+                self.imageCaptureManager?.resetProperties()
+              //  self.previewCapturedImage()
             })
         }
     }
     
-    func previewCapturedImage() {
-        guard SharedData.sharedInstance.arrImage.count > 0 else {
-            //TODO: display error
-            return
-        }
-        let viewController:ImagePreviewController = self.storyboard?.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
-        viewController.deleteDelegate = self
-        viewController.uploadDelegate = self
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
+    
+ 
 }
 
 // MARK: - Auto Image Capture Handler
@@ -139,6 +152,7 @@ extension CameraViewController:ImageDeleteDelegate
         if SharedData.sharedInstance.arrImage.count > 0 {
             let model = SharedData.sharedInstance.arrImage.last
             self.galleryBtn.setImage(model?.image, for: .normal)
+            retakeIndexNo = index
         } else {
             self.galleryBtn.setImage(nil, for: .normal)
         }

@@ -126,6 +126,14 @@ class ImageCaptureManager: NSObject {
         }
     }
     
+    func resetLocalProperties()
+    {
+        isCapturing = false
+        didNotifyFullConfidence = false
+        self.timer?.invalidate()
+        self.timer = nil
+
+    }
     // Stop showing the camera feeds
     func stopSession() {
         self.captureSession.stopRunning()
@@ -228,7 +236,7 @@ extension ImageCaptureManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         if self.didNotifyFullConfidence == true && self.timer == nil {
             
-            self.timer =   Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(self.callDelegateAutoCapture), userInfo: nil, repeats: false)
+            self.timer =   Timer.scheduledTimer(timeInterval: 2.2, target: self, selector: #selector(self.callDelegateAutoCapture), userInfo: nil, repeats: false)
             
             }
             UIView.animate(withDuration: 0.2, delay: 0, options: .beginFromCurrentState, animations: {

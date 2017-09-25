@@ -24,7 +24,8 @@ class ScanCompleteViewController: UIViewController {
     //MARK: UIButton action methods
 
     @IBAction func scanningDoneTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        SharedData.sharedInstance.arrImage.removeAll()
+        self.dismiss(animated: true, completion: nil)
     }
 
 }

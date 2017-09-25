@@ -26,28 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SyneScanner/Controllers/CameraViewController.swift"
-            timestampString = "527694788.118626"
+            timestampString = "528019676.346418"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
-            landmarkName = "callUploadImageApi(indexNo:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SyneScanner/Controllers/CameraViewController.swift"
-            timestampString = "527694788.118626"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "callUploadImageApi(indexNo:)"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
+            landmarkName = "progressResult(progress:indexNo:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

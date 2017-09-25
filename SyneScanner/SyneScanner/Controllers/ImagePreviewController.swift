@@ -12,14 +12,18 @@ class ImagePreviewController: UIViewController {
     // MARK: - Properties
     
     var deleteDelegate : ImageDeleteDelegate?
-    var uploadDelegate : ImageUploadOnBackActionDelegate?
     @IBOutlet var collectionView: UICollectionView!
 
      // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.reloadData()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.saveButtonTapped))
+        let rightBarButton = UIBarButtonItem(title: "Finish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ImagePreviewController.finishBtnTapped))
+        self.navigationItem.rightBarButtonItem = rightBarButton
+        
+        
+        let leftBarButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.done, target: self, action: #selector(ImagePreviewController.backBtnTapped))
+        self.navigationItem.leftBarButtonItem = leftBarButton
         // Do any additional setup after loading the view.
     }
     
@@ -37,9 +41,14 @@ class ImagePreviewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func saveButtonTapped() {
+    func finishBtnTapped()
+    {
+        self.performSegue(withIdentifier: "NavToStartWorkFlow", sender: nil)
+    }
+    func backBtnTapped()
+    {
         self.navigationController?.popViewController(animated: true)
-        self.uploadDelegate?.uploadImageOnBackAction()
+  
     }
        
    }
@@ -53,14 +62,14 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 1
+        return SharedData.sharedInstance.arrImage.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImagePreviewCollectionViewCell
-       let model = SharedData.sharedInstance.arrImage.last
-        cell.imagePreview.image = model?.image
+       let model = SharedData.sharedInstance.arrImage[indexPath.row]
+        cell.imagePreview.image = model.image
         cell.retakeDelegate = self
         return cell
     
@@ -84,9 +93,7 @@ extension ImagePreviewController:ImageShareAndRetakeDelegate
     func updateColelctionWhenImageDeletedAt(cell : UICollectionViewCell)
     {
         let indexPath = self.collectionView.indexPath(for: cell)
-        SharedData.sharedInstance.arrImage.removeLast()
         deleteDelegate?.updateCollectionWhenImageDeletedAt(index: (indexPath?.row)!)
-        self.collectionView.reloadData()
         self.navigationController?.popViewController(animated: true)
     }
     

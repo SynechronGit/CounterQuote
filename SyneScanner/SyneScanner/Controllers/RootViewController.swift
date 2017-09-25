@@ -27,6 +27,9 @@ class RootViewController: UIViewController {
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "CameraViewController")
         let navigationController = UINavigationController(rootViewController: viewController!)
         navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.barTintColor = UIColor(red: 41/255, green: 127/255, blue: 202/255, alpha: 1.0)
+        navigationController.navigationBar.tintColor = UIColor.white
+
         self.present(navigationController, animated: true, completion: nil)
     }
     /*
