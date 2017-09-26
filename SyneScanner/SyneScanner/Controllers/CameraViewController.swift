@@ -63,10 +63,21 @@ class CameraViewController: UIViewController {
     // MARK: - Button actions
     
     @IBAction func close() {
+        if SharedData.sharedInstance.arrImage.count > 0 {
+            let alert = UIAlertController(title: "Discard", message: "Do you want to discard \(SharedData.sharedInstance.arrImage.count) pictures?", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: discardScans))
+            alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func discardScans(action: UIAlertAction) {
+        SharedData.sharedInstance.arrImage.removeAll()
         self.dismiss(animated: true, completion: nil)
     }
  
-
     @IBAction func capture() {
         
         self.showImageCaptureLoadingView()
@@ -74,8 +85,6 @@ class CameraViewController: UIViewController {
                 self?.hideImageCaptureLoadingView()
                 self?.previewImage(with: imageData, detectedQuadrangle: detectedQuadrangle)
         })
-        
-        
     }
     
     @IBAction func finishScanningTapped(_ sender: Any) {

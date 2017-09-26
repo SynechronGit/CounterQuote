@@ -21,10 +21,20 @@
         <!--Navigation Controller-->
         <scene sceneID="DEw-QH-TOw">
             <objects>
+<<<<<<< HEAD
+                <navigationController id="gpf-RY-wRS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Zxw-PL-fh8">
+=======
                 <navigationController navigationBarHidden="YES" id="gpf-RY-wRS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Zxw-PL-fh8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zxw-PL-fh8">
+>>>>>>> 88c2a176c35302a2899922a9cfd771e18e2c58c6
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.1803921568627451" green="0.54509803921568623" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="SeW-bc-LSM" kind="relationship" relationship="rootViewController" id="Mnq-AN-CJU"/>
@@ -43,11 +53,11 @@
                         <viewControllerLayoutGuide type="bottom" id="5Qh-In-zID"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0bD-6C-gNb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgLogo" translatesAutoresizingMaskIntoConstraints="NO" id="00R-fp-OV6">
-                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="251.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="8Cz-rH-BPW"/>
                                     <constraint firstAttribute="width" constant="100" id="XgZ-0A-qvs"/>
@@ -79,19 +89,31 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jms-y3-2Ao">
-                                <rect key="frame" x="147.5" y="317.5" width="79" height="32"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <state key="normal" title="Let's Start"/>
+                                <rect key="frame" x="107.5" y="490" width="160" height="33"/>
+                                <color key="backgroundColor" red="0.1803921568627451" green="0.54509803921568623" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="Ks9-Gb-sXN"/>
+                                    <constraint firstAttribute="height" constant="33" id="zxi-ov-ILF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="14"/>
+                                <state key="normal" title="Let's Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="startScanning" destination="BYZ-38-t0r" eventType="touchUpInside" id="auo-mc-6jD"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="T4j-6Z-Tt0">
-                                <rect key="frame" x="25" y="60" width="325" height="269"/>
+                                <rect key="frame" x="25" y="40" width="325" height="269"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="269" id="RqN-4a-d5G"/>
@@ -119,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="211.875" y="300"/>
+            <point key="canvasLocation" x="210.40000000000001" y="300"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="4rH-fX-gxU">
@@ -143,7 +165,7 @@
                                     <constraint firstAttribute="height" constant="30" id="a5e-bi-zAi"/>
                                     <constraint firstAttribute="width" constant="46" id="pwh-Pk-OgL"/>
                                 </constraints>
-                                <state key="normal" image="ic_close_white"/>
+                                <state key="normal" image="Close"/>
                                 <connections>
                                     <action selector="close" destination="E7d-Mn-lBf" eventType="touchUpInside" id="NZd-nd-sbn"/>
                                 </connections>
@@ -154,7 +176,7 @@
                                     <constraint firstAttribute="height" constant="48" id="1nA-mY-5Gi"/>
                                     <constraint firstAttribute="width" constant="48" id="elb-AF-thP"/>
                                 </constraints>
-                                <state key="normal" image="ic_photo_camera_white_48pt"/>
+                                <state key="normal" image="Capture"/>
                                 <connections>
                                     <action selector="capture" destination="E7d-Mn-lBf" eventType="touchUpInside" id="IlC-G0-jPV"/>
                                 </connections>
@@ -169,6 +191,10 @@
                                     <action selector="finishScanningTapped:" destination="E7d-Mn-lBf" eventType="touchUpInside" id="2wt-KU-FDV"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HNG-Tb-F5J">
+                                <rect key="frame" x="127" y="173.5" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -185,6 +211,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="centerImageView" destination="HNG-Tb-F5J" id="Npr-Jc-jSp"/>
                         <outlet property="edgeDetectionView" destination="Dvn-de-eNQ" id="b6q-g3-UDF"/>
                         <outlet property="galleryBtn" destination="ncn-3A-lAg" id="OQV-Is-COQ"/>
                     </connections>
@@ -229,18 +256,53 @@
                                                     <rect key="frame" x="0.0" y="602" width="371" height="45"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irV-3V-zw3">
-                                                            <rect key="frame" x="317" y="8.5" width="46" height="29"/>
+                                                            <rect key="frame" x="319" y="8.5" width="44" height="29"/>
                                                             <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="14"/>
                                                             <state key="normal" title="Retake"/>
                                                             <connections>
                                                                 <action selector="retakeImageTapped:" destination="SOn-YS-Q1g" eventType="touchUpInside" id="jaI-av-H8X"/>
                                                             </connections>
                                                         </button>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DJ-hr-UcC" customClass="UICircularProgressRingView" customModule="UICircularProgressRing">
+                                                            <rect key="frame" x="163" y="0.0" width="45" height="45"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="45" id="7XD-gj-xun"/>
+                                                                <constraint firstAttribute="height" constant="45" id="Mag-wh-wNB"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                                    <real key="value" value="50"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="minValue">
+                                                                    <real key="value" value="0.0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                                    <real key="value" value="100"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="outerRingColor">
+                                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="innerRingWidth">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="innerRingColor">
+                                                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="innerRingSpacing">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="shouldShowValueText" value="NO"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="fullCircle" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.18039215689999999" green="0.5450980392" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
+                                                        <constraint firstItem="7DJ-hr-UcC" firstAttribute="centerY" secondItem="Ehw-P4-9eH" secondAttribute="centerY" id="4nN-cD-zAQ"/>
                                                         <constraint firstItem="irV-3V-zw3" firstAttribute="centerY" secondItem="Ehw-P4-9eH" secondAttribute="centerY" id="8he-zw-iRS"/>
                                                         <constraint firstAttribute="trailing" secondItem="irV-3V-zw3" secondAttribute="trailing" constant="8" id="J8p-F6-POR"/>
+                                                        <constraint firstItem="7DJ-hr-UcC" firstAttribute="centerX" secondItem="Ehw-P4-9eH" secondAttribute="centerX" id="X8V-SQ-xKx"/>
                                                         <constraint firstAttribute="height" constant="45" id="jbc-PZ-Mpp"/>
                                                     </constraints>
                                                 </view>
@@ -258,6 +320,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="imagePreview" destination="ksd-Jd-MBK" id="BfU-Jc-Gip"/>
+                                            <outlet property="progressView" destination="7DJ-hr-UcC" id="7y9-pd-UST"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -284,24 +347,6 @@
             </objects>
             <point key="canvasLocation" x="1856.8" y="300"/>
         </scene>
-        <!--Start Work Flow View Controller-->
-        <scene sceneID="fAt-bX-NkH">
-            <objects>
-                <viewController id="YUz-6e-M4T" customClass="StartWorkFlowViewController" customModule="SyneScanner" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UjD-uo-a4w"/>
-                        <viewControllerLayoutGuide type="bottom" id="IUf-oj-nf5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3cs-ce-bZb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HU4-Bo-HrI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3542" y="300"/>
-        </scene>
         <!--Scan Complete View Controller-->
         <scene sceneID="LBb-V8-bqm">
             <objects>
@@ -321,11 +366,11 @@
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="20" maxX="10" maxY="20"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reviewCell" id="0hJ-Zh-3bW" customClass="ImageReviewCollectionViewCell" customModule="SyneScanner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <rect key="frame" x="10" y="20" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -356,7 +401,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7K-y7-pKo">
                                 <rect key="frame" x="46" y="605" width="283" height="32"/>
                                 <color key="backgroundColor" red="0.24705882352941178" green="0.63529411764705879" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="17"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -379,17 +424,69 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="2gK-S7-cjS" id="FPM-WB-QQJ"/>
-                        <segue destination="YUz-6e-M4T" kind="show" identifier="StartWorkflowToSuccess" id="JuW-ZD-1mT"/>
+                        <segue destination="e6W-xa-aRU" kind="show" identifier="NavToPdfView" id="KQS-bw-7Tf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHt-A8-6kt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2670" y="300"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="SSa-yU-jWm">
+            <objects>
+                <viewController id="e6W-xa-aRU" customClass="PDFViewController" customModule="SyneScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kLR-Bs-4uE"/>
+                        <viewControllerLayoutGuide type="bottom" id="lEl-fu-YaU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pwu-sy-Eqs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TuO-G0-VMe">
+                                <rect key="frame" x="0.0" y="20" width="375" height="574"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4V-6K-ax0">
+                                <rect key="frame" x="30" y="604" width="315" height="33"/>
+                                <color key="backgroundColor" red="0.2470588235" green="0.63529411759999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="C9E-ZZ-6Pa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="17"/>
+                                <state key="normal" title="Accept">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buyBtnClicked:" destination="e6W-xa-aRU" eventType="touchUpInside" id="F5x-2Z-5RT"/>
+                                    <action selector="scanningDoneTapped:" destination="bcB-w8-SKA" eventType="touchUpInside" id="mem-QU-wZj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TuO-G0-VMe" firstAttribute="leading" secondItem="pwu-sy-Eqs" secondAttribute="leading" id="CWt-9o-fyv"/>
+                            <constraint firstItem="S4V-6K-ax0" firstAttribute="leading" secondItem="pwu-sy-Eqs" secondAttribute="leading" constant="30" id="G6Q-Il-1hJ"/>
+                            <constraint firstAttribute="trailing" secondItem="TuO-G0-VMe" secondAttribute="trailing" id="K8y-hp-Vwf"/>
+                            <constraint firstItem="lEl-fu-YaU" firstAttribute="top" secondItem="S4V-6K-ax0" secondAttribute="bottom" constant="30" id="Mmo-DK-ar8"/>
+                            <constraint firstItem="S4V-6K-ax0" firstAttribute="top" secondItem="TuO-G0-VMe" secondAttribute="bottom" constant="10" id="NB8-8B-bB9"/>
+                            <constraint firstAttribute="trailing" secondItem="S4V-6K-ax0" secondAttribute="trailing" constant="30" id="U6W-jy-spx"/>
+                            <constraint firstItem="TuO-G0-VMe" firstAttribute="top" secondItem="kLR-Bs-4uE" secondAttribute="bottom" id="sgj-AR-Brx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="TuO-G0-VMe" id="iS0-0J-GIQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X7z-iJ-CFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3719" y="300"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="ic_close_white" width="24" height="24"/>
-        <image name="ic_photo_camera_white_48pt" width="48" height="48"/>
+        <image name="Capture" width="58" height="58"/>
+        <image name="Close" width="18" height="18"/>
         <image name="imgLogo" width="300" height="300"/>
     </resources>
 </document>

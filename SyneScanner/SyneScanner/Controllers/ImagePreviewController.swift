@@ -22,8 +22,6 @@ class ImagePreviewController: UIViewController {
         collectionView.reloadData()
         let rightBarButton = UIBarButtonItem(title: "Finish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ImagePreviewController.finishBtnTapped))
         self.navigationItem.rightBarButtonItem = rightBarButton
-        
-        
         // Do any additional setup after loading the view.
     }
     
@@ -46,7 +44,6 @@ class ImagePreviewController: UIViewController {
         self.performSegue(withIdentifier: "NavToStartWorkFlow", sender: nil)
     }
    
-       
    }
 
  // MARK: - UICollection View DataSource and Delegate Method
