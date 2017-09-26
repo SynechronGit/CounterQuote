@@ -12,6 +12,7 @@ class ScanCompleteViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Scan Complete"
 
         // Do any additional setup after loading the view.
     }

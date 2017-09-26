@@ -146,16 +146,18 @@ class CameraViewController: UIViewController {
          
             
         },completion: { finish in
-            self.galleryBtn.isHidden = true
-            UIView.animate(withDuration: 0.5, delay: 0.0,options: UIViewAnimationOptions.curveEaseOut,animations: {
-                self.centerImageView.transform = CGAffineTransform(scaleX: 0.25, y: 0.25)
-                
-                
-            },completion: { finish in
-                self.centerImageView.image = nil
-                self.centerImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
-                self.galleryBtn.isHidden = false
-            })})
+//            self.galleryBtn.isHidden = true
+//            UIView.animate(withDuration: 0.5, delay: 0.0,options: UIViewAnimationOptions.curveEaseOut,animations: {
+//                self.centerImageView.transform = CGAffineTransform(scaleX: 0.25, y: 0.25)
+//                
+//                
+//            },completion: { finish in
+//                self.centerImageView.image = nil
+//                self.centerImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
+//                self.galleryBtn.isHidden = false
+//            }
+//            )
+        })
         
     }
     

@@ -12,10 +12,11 @@ class PDFViewController: UIViewController {
 
     @IBOutlet var webView: UIWebView!
     var fileName:String = ""
+    var navTitle:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
-
+        self.title = navTitle
         loadPdfFile()
         // Do any additional setup after loading the view.
     }

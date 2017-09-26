@@ -6,7 +6,7 @@ target 'SyneScanner' do
   use_frameworks!
 
     pod 'Alamofire', '~> 4.5'
-
+    pod 'UICircularProgressRing'
   target 'SyneScannerTests' do
     inherit! :search_paths
     # Pods for testing

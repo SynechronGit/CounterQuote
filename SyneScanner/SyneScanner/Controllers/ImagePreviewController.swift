@@ -17,6 +17,8 @@ class ImagePreviewController: UIViewController {
      // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Picture Review"
+
         collectionView.reloadData()
         let rightBarButton = UIBarButtonItem(title: "Finish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ImagePreviewController.finishBtnTapped))
         self.navigationItem.rightBarButtonItem = rightBarButton

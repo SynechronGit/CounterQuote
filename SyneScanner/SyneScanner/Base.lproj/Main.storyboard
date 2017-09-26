@@ -21,10 +21,15 @@
         <!--Navigation Controller-->
         <scene sceneID="DEw-QH-TOw">
             <objects>
-                <navigationController navigationBarHidden="YES" id="gpf-RY-wRS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Zxw-PL-fh8">
+                <navigationController id="gpf-RY-wRS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Zxw-PL-fh8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.1803921568627451" green="0.54509803921568623" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="SeW-bc-LSM" kind="relationship" relationship="rootViewController" id="Mnq-AN-CJU"/>
@@ -43,11 +48,11 @@
                         <viewControllerLayoutGuide type="bottom" id="5Qh-In-zID"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0bD-6C-gNb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgLogo" translatesAutoresizingMaskIntoConstraints="NO" id="00R-fp-OV6">
-                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="251.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="8Cz-rH-BPW"/>
                                     <constraint firstAttribute="width" constant="100" id="XgZ-0A-qvs"/>
@@ -79,11 +84,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jms-y3-2Ao">
-                                <rect key="frame" x="107.5" y="554" width="160" height="33"/>
+                                <rect key="frame" x="107.5" y="490" width="160" height="33"/>
                                 <color key="backgroundColor" red="0.1803921568627451" green="0.54509803921568623" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="Ks9-Gb-sXN"/>
@@ -103,7 +108,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="T4j-6Z-Tt0">
-                                <rect key="frame" x="25" y="60" width="325" height="269"/>
+                                <rect key="frame" x="25" y="40" width="325" height="269"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="269" id="RqN-4a-d5G"/>
@@ -131,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="211.875" y="300"/>
+            <point key="canvasLocation" x="210.40000000000001" y="300"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="4rH-fX-gxU">
@@ -253,11 +258,46 @@
                                                                 <action selector="retakeImageTapped:" destination="SOn-YS-Q1g" eventType="touchUpInside" id="jaI-av-H8X"/>
                                                             </connections>
                                                         </button>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DJ-hr-UcC" customClass="UICircularProgressRingView" customModule="UICircularProgressRing">
+                                                            <rect key="frame" x="163" y="0.0" width="45" height="45"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="45" id="7XD-gj-xun"/>
+                                                                <constraint firstAttribute="height" constant="45" id="Mag-wh-wNB"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                                    <real key="value" value="50"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="minValue">
+                                                                    <real key="value" value="0.0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                                    <real key="value" value="100"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="outerRingColor">
+                                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="innerRingWidth">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="innerRingColor">
+                                                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="innerRingSpacing">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="shouldShowValueText" value="NO"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="fullCircle" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.18039215689999999" green="0.5450980392" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
+                                                        <constraint firstItem="7DJ-hr-UcC" firstAttribute="centerY" secondItem="Ehw-P4-9eH" secondAttribute="centerY" id="4nN-cD-zAQ"/>
                                                         <constraint firstItem="irV-3V-zw3" firstAttribute="centerY" secondItem="Ehw-P4-9eH" secondAttribute="centerY" id="8he-zw-iRS"/>
                                                         <constraint firstAttribute="trailing" secondItem="irV-3V-zw3" secondAttribute="trailing" constant="8" id="J8p-F6-POR"/>
+                                                        <constraint firstItem="7DJ-hr-UcC" firstAttribute="centerX" secondItem="Ehw-P4-9eH" secondAttribute="centerX" id="X8V-SQ-xKx"/>
                                                         <constraint firstAttribute="height" constant="45" id="jbc-PZ-Mpp"/>
                                                     </constraints>
                                                 </view>
@@ -275,6 +315,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="imagePreview" destination="ksd-Jd-MBK" id="BfU-Jc-Gip"/>
+                                            <outlet property="progressView" destination="7DJ-hr-UcC" id="7y9-pd-UST"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
