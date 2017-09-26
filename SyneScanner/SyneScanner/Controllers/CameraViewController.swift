@@ -163,7 +163,7 @@ class CameraViewController: UIViewController {
     }
     func animateImageAfterCapturing()
     {
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+        UIView.animate(withDuration: 0.8, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
             //Frame Option 1:
             self.centerImageView.frame =  self.galleryBtn.frame
             

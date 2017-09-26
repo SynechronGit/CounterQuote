@@ -47,7 +47,7 @@
                         <viewControllerLayoutGuide type="top" id="fwQ-Ep-oY3"/>
                         <viewControllerLayoutGuide type="bottom" id="5Qh-In-zID"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="0bD-6C-gNb">
+                    <view key="view" contentMode="scaleToFill" id="0bD-6C-gNb">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -83,7 +83,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -493,7 +493,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sio-sv-B2S" id="rI7-ZS-RGF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AZk-Be-Vn8">

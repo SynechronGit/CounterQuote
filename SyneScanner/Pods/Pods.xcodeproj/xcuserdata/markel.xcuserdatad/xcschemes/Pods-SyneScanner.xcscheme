@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "041FA2FC0150E3FC471F571613F0D84D"
+               BlueprintIdentifier = "7E990B1722646B34CFFA3A6474C566BC"
                BuildableName = "Pods_SyneScanner.framework"
                BlueprintName = "Pods-SyneScanner"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "041FA2FC0150E3FC471F571613F0D84D"
+            BlueprintIdentifier = "7E990B1722646B34CFFA3A6474C566BC"
             BuildableName = "Pods_SyneScanner.framework"
             BlueprintName = "Pods-SyneScanner"
             ReferencedContainer = "container:Pods.xcodeproj">
