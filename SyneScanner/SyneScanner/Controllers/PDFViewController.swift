@@ -35,12 +35,6 @@ class PDFViewController: UIViewController {
         }
     }
     
-    //MARK: UIButton action methods
-    
-    @IBAction func buyBtnClicked(_ sender: Any) {
-        SharedData.sharedInstance.arrImage.removeAll()
-        self.dismiss(animated: true, completion: nil)
-    }
     /*
     // MARK: - Navigation
 

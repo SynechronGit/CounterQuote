@@ -7,6 +7,8 @@ target 'SyneScanner' do
 
     pod 'Alamofire', '~> 4.5'
     pod 'TCProgressBar'
+    pod 'IQKeyboardManagerSwift', '4.0.10'
+
   target 'SyneScannerTests' do
     inherit! :search_paths
     # Pods for testing
