@@ -99,7 +99,6 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
     {
         let width = collectionView.frame.size.width
         let height = collectionView.frame.size.height
-        print(width,height)
         return CGSize(width: width, height: height)
     }
     

@@ -17,8 +17,8 @@ class AddCardViewController: UIViewController {
     var cardTypeText: String?
     var cardTypeName: CardTypeName = CardTypeName.cardType
     var onDateSelected: ((_ month: Int, _ year: Int) -> Void)?
-    var month: String? = "1"
-    var year: String? = "2017"
+    var month: String?
+    var year: String?
     
     @IBOutlet var tableView: UITableView!
     
@@ -153,13 +153,16 @@ extension AddCardViewController: TextFieldActionDelegate, UIPickerViewDelegate, 
         if isDatePicker {
             switch component {
             case 0:
+                month = pickerMonthArray.first
                 return pickerMonthArray[row]
             case 1:
+                year = String(pickerYearArray.first!)
                 return "\(pickerYearArray[row])"
             default:
                 return nil
             }
         } else {
+            cardTypeText = pickerArray.first
             return pickerArray[row]
         }
     }
@@ -168,7 +171,7 @@ extension AddCardViewController: TextFieldActionDelegate, UIPickerViewDelegate, 
         if isDatePicker {
             switch component {
             case 0:
-                month = String(row + 1)
+                month = pickerMonthArray[row]
             case 1:
                 year = "\(pickerYearArray[row])"
             default:

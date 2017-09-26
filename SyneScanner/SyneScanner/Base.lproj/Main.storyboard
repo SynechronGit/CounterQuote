@@ -534,10 +534,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnC-IE-6Ld">
-                                <rect key="frame" x="0.0" y="604" width="375" height="33"/>
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.2470588235" green="0.63529411759999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="L0s-pY-Flv"/>
+                                    <constraint firstAttribute="height" constant="50" id="L0s-pY-Flv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="17"/>
                                 <state key="normal" title="Make Payment">
@@ -550,7 +550,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.89411764705882346" green="0.94509803921568625" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Mau-j6-jDt" firstAttribute="top" secondItem="bnC-IE-6Ld" secondAttribute="bottom" constant="30" id="4IO-ZJ-C3c"/>
+                            <constraint firstItem="Mau-j6-jDt" firstAttribute="top" secondItem="bnC-IE-6Ld" secondAttribute="bottom" id="4IO-ZJ-C3c"/>
                             <constraint firstItem="nnW-Jj-Sfu" firstAttribute="leading" secondItem="oSc-Ic-HAJ" secondAttribute="leading" id="IB0-Lg-KbX"/>
                             <constraint firstItem="bnC-IE-6Ld" firstAttribute="leading" secondItem="oSc-Ic-HAJ" secondAttribute="leading" id="P9b-5h-FIn"/>
                             <constraint firstAttribute="trailing" secondItem="bnC-IE-6Ld" secondAttribute="trailing" id="hAZ-Va-Rp5"/>
