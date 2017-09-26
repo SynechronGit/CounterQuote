@@ -17,11 +17,7 @@ class ImagePreviewController: UIViewController {
      // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Picture Review"
-
-        collectionView.reloadData()
-        let rightBarButton = UIBarButtonItem(title: "Finish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ImagePreviewController.finishBtnTapped))
-        self.navigationItem.rightBarButtonItem = rightBarButton
+       configureUI()
         // Do any additional setup after loading the view.
     }
     
@@ -39,6 +35,35 @@ class ImagePreviewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func configureUI()
+    {
+        self.title = "Picture Review"
+        
+        
+        let rightBarButton = UIBarButtonItem(title: "Finish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ImagePreviewController.finishBtnTapped))
+        self.navigationItem.rightBarButtonItem = rightBarButton
+        
+        
+        self.navigationController?.setNavigationBarHidden(false, animated:false)
+        
+        //Create back button of type custom
+        
+        let myBackButton:UIButton = UIButton.init(type: .custom)
+        myBackButton.addTarget(self, action: #selector(ImagePreviewController.popToRoot), for: .touchUpInside)
+        myBackButton.setImage(UIImage(named: "BackArrow"), for: .normal)
+        myBackButton.sizeToFit()
+        
+        //Add back button to navigationBar as left Button
+        
+        let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
+        self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
+        collectionView.reloadData()
+
+    }
+    func popToRoot()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
     func finishBtnTapped()
     {
         self.performSegue(withIdentifier: "NavToStartWorkFlow", sender: nil)

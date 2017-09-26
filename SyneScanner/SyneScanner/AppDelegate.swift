@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        setCustomNavigationBar()
         return true
     }
 
@@ -44,8 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: Initial setup methods
     
     func setCustomNavigationBar() {
-        let navBackImage:UIImage! = UIImage(named: "BackArrow")
-        UIBarButtonItem.appearance().setBackButtonBackgroundImage(navBackImage, for: .normal, barMetrics: .default)
+
+               
     }
 
 

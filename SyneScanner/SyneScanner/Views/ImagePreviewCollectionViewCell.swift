@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import UICircularProgressRing
 class ImagePreviewCollectionViewCell: UICollectionViewCell {
     var retakeDelegate : ImageShareAndRetakeDelegate?
     @IBOutlet weak var imagePreview: UIImageView!
-    @IBOutlet weak var progressView: UICircularProgressRingView!
 
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var retakeButton: UIBarButtonItem!

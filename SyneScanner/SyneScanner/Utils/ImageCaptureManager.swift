@@ -25,6 +25,8 @@ class ImageCaptureManager: NSObject {
     
     var didNotifyFullConfidence = false
     var isCapturing = false
+    var isCapturManually = false
+
     var delegate:ImageCaptureManagerProtocol?
     var imageDedectionConfidence = 0.0
     var timer:Timer?
@@ -168,7 +170,7 @@ extension ImageCaptureManager: AVCapturePhotoCaptureDelegate {
                     return
             }
             
-            if self?.detectedQuadrangle != nil && (self?.detectedQuadrangle?.isValid())! {
+            if (self?.detectedQuadrangle != nil && (self?.detectedQuadrangle?.isValid())! ) || (self?.isCapturManually)! {
                 let scale = image.extent.size.width / videoOutputImageSize.width
                 let transform = CGAffineTransform(scaleX: scale, y: scale)
                 var detectedQuadrangleOnImage = self?.detectedQuadrangle

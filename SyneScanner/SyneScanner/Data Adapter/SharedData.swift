@@ -15,6 +15,7 @@ import UIKit
 class SharedData: NSObject {
     public static let sharedInstance :SharedData = SharedData()
     var corelationId = UUID().uuidString
+    
     private override init() {
         
     }
@@ -23,6 +24,21 @@ class SharedData: NSObject {
     func updateModel(dict:[String:AnyObject],indexNo:Int)
     {
         let model = SharedData.sharedInstance.arrImage[indexNo]
+        model.imageSuccesfullyUpload = true
         model.fileUrl = dict["FileUrl"] as! String
+    }
+    
+    func calculateCurrentProgress() -> Float
+    {
+        let totalImg:Float = Float(SharedData.sharedInstance.arrImage.count)
+        let filteredArray = SharedData.sharedInstance.arrImage.filter( { (model: ImageDataModel) -> Bool in
+            return model.imageSuccesfullyUpload == true
+        })
+        let uploadeImgCount:Float = Float(filteredArray.count)
+        let progress:Float = uploadeImgCount/totalImg
+        print("Progressss  %f,%f,%f",uploadeImgCount,totalImg,progress)
+        return progress
+        
+        
     }
 }

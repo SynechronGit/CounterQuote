@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import TCProgressBar
 
 class ScanCompleteViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var progressBar: TCProgressBar!
+    @IBOutlet var btnComplete: UIButton!
+
+    var progressObject: Progress?
+    var isSuccess: Bool?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Scan Complete"
-
+      configureUI()
         // Do any additional setup after loading the view.
     }
 
@@ -22,6 +27,47 @@ class ScanCompleteViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func configureUI()
+    {
+        self.title = "Scan Complete"
+        
+        
+        //Create back button of type custom
+        
+        let myBackButton:UIButton = UIButton.init(type: .custom)
+        myBackButton.addTarget(self, action: #selector(ScanCompleteViewController.popToRoot), for: .touchUpInside)
+        myBackButton.setImage(UIImage(named: "BackArrow"), for: .normal)
+        myBackButton.sizeToFit()
+        
+        //Add back button to navigationBar as left Button
+        
+        let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
+        self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
+        
+        let notificationName = Notification.Name("updateProgress")
+        NotificationCenter.default.addObserver(self, selector: #selector(ScanCompleteViewController.updateProgress), name: notificationName, object: nil)
+        updateProgress()
+
+    }
+    func popToRoot()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func updateProgress()
+    {
+        progressBar.value =  CGFloat(SharedData.sharedInstance.calculateCurrentProgress())
+        if progressBar.value >= 1.0
+        {
+            btnComplete.isEnabled = true
+            btnComplete.alpha = 1.0
+        }
+        else {
+            btnComplete.alpha = 0.5
+  
+        }
+ 
+    }
     //MARK: UIButton action methods
 
     @IBAction func scanningDoneTapped(_ sender: Any) {
@@ -34,9 +80,13 @@ class ScanCompleteViewController: UIViewController {
     func showProgressLoader() {
         if ARSLineProgress.shown { return }
         
-        ARSLineProgress.showWithPresentCompetionBlock { () -> Void in
-            print("Showed with completion block")
-        }
+        progressObject = Progress(totalUnitCount: 100)
+        ARSLineProgress.showWithProgressObject(progressObject!, completionBlock: {
+            print("Success completion block")
+        })
+        
+        progressDemoHelper(success: true)
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,6 +94,7 @@ class ScanCompleteViewController: UIViewController {
         {
             let vc:PDFViewController = segue.destination as! PDFViewController
             vc.fileName = "policy"
+            vc.navTitle = "Quote"
         }
     }
 }
@@ -92,21 +143,51 @@ extension ScanCompleteViewController: StartWorkflowDelegate {
         let startWorkflowProxy =  ImageWorkflowProxy()
         startWorkflowProxy.delegate = self
         startWorkflowProxy.startWorkflowApi(blobUrl: blobUrl, corelationId: SharedData.sharedInstance.corelationId)
+        
+        
     }
     
     func workflowSuccessfullyStarted(responseData: [String : AnyObject]) {
-        ARSLineProgress.hideWithCompletionBlock({ () -> Void in
-            ARSLineProgress.showSuccess()
-            self.performSegue(withIdentifier: "NavToPdfView", sender: nil)
-        })
+//        ARSLineProgress.hideWithCompletionBlock({ () -> Void in
+//            ARSLineProgress.showSuccess()
+//            self.performSegue(withIdentifier: "NavToPdfView", sender: nil)
+//        })
         
     }
     
     func workflowFailedToStart(errorMessage: String) {
-        ARSLineProgress.hideWithCompletionBlock({ () -> Void in
-            ARSLineProgress.showFail()
-            self.performSegue(withIdentifier: "NavToPdfView", sender: nil)
-
-        })
+//        ARSLineProgress.hideWithCompletionBlock({ () -> Void in
+//            ARSLineProgress.showFail()
+//            self.performSegue(withIdentifier: "NavToPdfView", sender: nil)
+//
+//        })
     }
 }
+
+
+
+extension ScanCompleteViewController {
+    
+     func progressDemoHelper(success: Bool) {
+        isSuccess = success
+        ars_launchTimer()
+    }
+    
+    fileprivate func ars_launchTimer() {
+        let dispatchTime = DispatchTime.now() + Double(Int64(0.7 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC);
+        
+        DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
+            self.progressObject!.completedUnitCount += Int64(arc4random_uniform(30))
+            
+            
+                if Double((self.progressObject?.fractionCompleted)!) >= 1.0 {
+                      self.performSegue(withIdentifier: "NavToPdfView", sender: nil)
+                    return
+            }
+            
+            self.ars_launchTimer()
+        })
+    }
+    
+}
+

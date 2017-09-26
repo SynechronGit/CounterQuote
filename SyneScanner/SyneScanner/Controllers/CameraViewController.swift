@@ -18,7 +18,7 @@ class CameraViewController: UIViewController {
     @IBOutlet var centerImageView: UIImageView!
 
     /// the image capture manager
-    private var imageCaptureManager: ImageCaptureManager?
+  fileprivate   var imageCaptureManager: ImageCaptureManager?
     
     var retakeIndexNo = -1
     // MARK: - View LifeCycle
@@ -75,18 +75,24 @@ class CameraViewController: UIViewController {
     
     func discardScans(action: UIAlertAction) {
         SharedData.sharedInstance.arrImage.removeAll()
-        self.dismiss(animated: true, completion: nil)
+        self.galleryBtn.setImage(nil, for: .normal)
+       // self.dismiss(animated: true, completion: nil)
     }
  
     @IBAction func capture() {
+        self.imageCaptureManager?.isCapturManually = true
+        startCapturing()
         
-        self.showImageCaptureLoadingView()
-        self.imageCaptureManager?.capture(completion: {[weak self] (imageData, detectedQuadrangle) in
-                self?.hideImageCaptureLoadingView()
-                self?.previewImage(with: imageData, detectedQuadrangle: detectedQuadrangle)
-        })
     }
     
+    func startCapturing()
+    {
+        self.showImageCaptureLoadingView()
+        self.imageCaptureManager?.capture(completion: {[weak self] (imageData, detectedQuadrangle) in
+            self?.hideImageCaptureLoadingView()
+            self?.previewImage(with: imageData, detectedQuadrangle: detectedQuadrangle)
+        })
+    }
     @IBAction func finishScanningTapped(_ sender: Any) {
         guard SharedData.sharedInstance.arrImage.count > 0 else {
             //TODO: display error
@@ -115,37 +121,46 @@ class CameraViewController: UIViewController {
             //TODO: display error
             return
         }
-        if let detectedQuadrangle = detectedQuadrangle {
+        if (self.imageCaptureManager?.isCapturManually)!
+        {
+            self.storeNuploadImage(image: UIImage(data:imageData)!)
+
+        }
+       else  if let detectedQuadrangle = detectedQuadrangle {
             //  show the cropped image
             
             ImageEditManager.cut(quadrangle: detectedQuadrangle, outOfImageWith: imageData, completion: { (image) in
+                self.storeNuploadImage(image: image!)
                 
-                self.galleryBtn.setImage(image, for: .normal)
-                if self.retakeIndexNo != -1
-                {
-                    let model = SharedData.sharedInstance.arrImage[self.retakeIndexNo]
-                    model.image = image
-                    SharedData.sharedInstance.arrImage[self.retakeIndexNo] = model
-                    self.callUploadImageApi(indexNo: self.retakeIndexNo)
-  
-                }
-                else{
-                    let model = ImageDataModel()
-                    model.image = image
-                    SharedData.sharedInstance.arrImage.append(model)
-                    self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
-
-                }
-                self.centerImageView.frame = CGRect(x: self.view.frame.size.width/2 - 60 , y: self.view.frame.size.height/2 - 80, width: 120, height: 120)
-                self.centerImageView.image = image
-                self.imageCaptureManager?.resetProperties()
-                self.animateImageAfterCapturing()
-
               //  self.previewCapturedImage()
             })
         }
     }
     
+    func storeNuploadImage(image:UIImage)
+    {
+        self.galleryBtn.setImage(image, for: .normal)
+        if self.retakeIndexNo != -1
+        {
+            let model = SharedData.sharedInstance.arrImage[self.retakeIndexNo]
+            model.image = image
+            SharedData.sharedInstance.arrImage[self.retakeIndexNo] = model
+            self.callUploadImageApi(indexNo: self.retakeIndexNo)
+            
+        }
+        else{
+            let model = ImageDataModel()
+            model.image = image
+            SharedData.sharedInstance.arrImage.append(model)
+            self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
+            
+        }
+        self.centerImageView.frame = CGRect(x: self.view.frame.size.width/2 - 60 , y: self.view.frame.size.height/2 - 80, width: 120, height: 120)
+        self.centerImageView.image = image
+        self.imageCaptureManager?.resetProperties()
+        self.animateImageAfterCapturing()
+
+    }
     func animateImageAfterCapturing()
     {
         UIView.animate(withDuration: 1.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
@@ -180,7 +195,9 @@ extension CameraViewController:ImageCaptureManagerProtocol
 {
     func didGainFullDetectionConfidence()
     {
-        capture()
+        self.imageCaptureManager?.isCapturManually =  false
+
+        startCapturing()
     }
 }
 
@@ -217,6 +234,9 @@ extension CameraViewController:UploadImageProxyDelegate
     func imageSuccessfullyUpload(responseData:[String:AnyObject],indexNo:Int)
     {
         SharedData.sharedInstance.updateModel(dict: responseData, indexNo: indexNo)
+        let notificationName = Notification.Name("updateProgress")
+        NotificationCenter.default.post(name: notificationName, object: nil)
+
     }
     func imageFailedToUpload(errorMessage:String,indexNo:Int)
     {

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0709E9DE874390C2469A394C4BC47D64'
-               BlueprintName = 'UICircularProgressRing'
+               BlueprintIdentifier = 'A91C867C8D142464F2C52E952F645DD3'
+               BlueprintName = 'TCProgressBar'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'UICircularProgressRing.framework'>
+               BuildableName = 'TCProgressBar.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
