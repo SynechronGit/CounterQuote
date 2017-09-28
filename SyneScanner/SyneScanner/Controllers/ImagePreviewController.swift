@@ -107,33 +107,32 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
 
 extension ImagePreviewController:ImageShareAndRetakeDelegate
 {
-    func updateColelctionWhenImageDeletedAt(cell : UICollectionViewCell)
+    func retakeImageAt(cell : UICollectionViewCell)
+    {
+        let indexPath = self.collectionView.indexPath(for: cell)
+        deleteDelegate?.updateCollectionWhenImageretakeAt(index: (indexPath?.row)!)
+        self.navigationController?.popViewController(animated: true)
+
+    }
+    func deleteImageAt(cell : UICollectionViewCell)
     {
         let indexPath = self.collectionView.indexPath(for: cell)
         deleteDelegate?.updateCollectionWhenImageDeletedAt(index: (indexPath?.row)!)
         self.navigationController?.popViewController(animated: true)
+
+    }
+    func updateColelctionWhenImageDeletedAt(cell : UICollectionViewCell)
+    {
     }
     
-    func shareSelectedImageAt(cell : UICollectionViewCell) {
-        let indexPath = self.collectionView.indexPath(for: cell)
-        let model = SharedData.sharedInstance.arrImage[(indexPath?.row)!]
-
-        let image:UIImage = model.image!
-        let imageToShare = [ image ]
-        let activityViewController = UIActivityViewController(activityItems: imageToShare , applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
-        // present the view controller
-        self.present(activityViewController, animated: true, completion: nil)
-        
-    }
     
 }
 
 
 protocol ImageDeleteDelegate {
     func updateCollectionWhenImageDeletedAt(index : Int)
+    func updateCollectionWhenImageretakeAt(index : Int)
+
 }
 
-protocol ImageUploadOnBackActionDelegate {
-    func uploadImageOnBackAction()
-}
+

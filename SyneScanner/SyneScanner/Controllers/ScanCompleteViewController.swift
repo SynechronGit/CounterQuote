@@ -130,8 +130,9 @@ extension ScanCompleteViewController: UICollectionViewDataSource, UICollectionVi
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        let width = collectionView.frame.size.width/2 - 20
+        let width = (collectionView.frame.size.width - 6)/4
         let height = width
+        print(width)
         return CGSize(width: width, height: height)
     }
     

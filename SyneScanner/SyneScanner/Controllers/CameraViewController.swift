@@ -17,6 +17,7 @@ class CameraViewController: UIViewController {
     @IBOutlet var galleryBtn: UIButton!
     @IBOutlet var centerImageView: UIImageView!
     @IBOutlet weak var galleryView: UIView!
+    @IBOutlet weak var lblImageCount: UILabel!
 
     /// the image capture manager
   fileprivate   var imageCaptureManager: ImageCaptureManager?
@@ -83,6 +84,7 @@ class CameraViewController: UIViewController {
     
     func discardScans(action: UIAlertAction) {
         
+        lblImageCount.text = "0"
         SharedData.sharedInstance.clearAllData()
         //self.galleryBtn.setImage(nil, for: .normal)
        // self.dismiss(animated: true, completion: nil)
@@ -167,10 +169,13 @@ class CameraViewController: UIViewController {
             self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
             
         }
+        self.retakeIndexNo = -1
         self.centerImageView.isHidden = false
         self.centerImageView.frame = CGRect(x: self.view.frame.size.width/2 - 60 , y: self.view.frame.size.height/2 - 80, width: 120, height: 120)
         self.centerImageView.image = image
         self.imageCaptureManager?.resetProperties()
+        lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
+
         self.animateImageAfterCapturing()
 
     }
@@ -219,21 +224,19 @@ extension CameraViewController:ImageDeleteDelegate
 {
     func updateCollectionWhenImageDeletedAt(index: Int) {
         if SharedData.sharedInstance.arrImage.count > 0 {
-            let model = SharedData.sharedInstance.arrImage.last
-            //self.galleryBtn.setImage(model?.image, for: .normal)
             retakeIndexNo = index
-        } else {
-            //self.galleryBtn.setImage(nil, for: .normal)
         }
+        
+    }
+    func updateCollectionWhenImageretakeAt(index : Int)
+    {
+        SharedData.sharedInstance.arrImage.remove(at: index)
+        lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
+
     }
 }
 
-extension CameraViewController:ImageUploadOnBackActionDelegate
-{
-    func uploadImageOnBackAction() {
-        self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
-    }
-}
+
 
 extension CameraViewController:UploadImageProxyDelegate
 {

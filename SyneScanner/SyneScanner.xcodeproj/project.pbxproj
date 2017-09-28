@@ -15,6 +15,7 @@
 		1B5403F71F73EFC0007CF73B /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403F61F73EFC0007CF73B /* APIURL.swift */; };
 		1B5403FA1F73F451007CF73B /* UploadImageProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403F91F73F451007CF73B /* UploadImageProxy.swift */; };
 		1B5403FE1F75459D007CF73B /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403FD1F75459D007CF73B /* SplashScreenViewController.swift */; };
+		1B6E110F1F7CE71800C4069A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E110E1F7CE71800C4069A /* UIColor+Extension.swift */; };
 		1BEF2E781F79246F00AE94E6 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF2E771F79246F00AE94E6 /* PDFViewController.swift */; };
 		1BEF2E7C1F79293900AE94E6 /* policy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1BEF2E7B1F79293900AE94E6 /* policy.pdf */; };
 		5346F1B11F752031000E6AC5 /* ImageWorkflowProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1B01F752031000E6AC5 /* ImageWorkflowProxy.swift */; };
@@ -144,6 +145,7 @@
 		1B5403F61F73EFC0007CF73B /* APIURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 		1B5403F91F73F451007CF73B /* UploadImageProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImageProxy.swift; sourceTree = "<group>"; };
 		1B5403FD1F75459D007CF73B /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		1B6E110E1F7CE71800C4069A /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1BEF2E771F79246F00AE94E6 /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		1BEF2E7B1F79293900AE94E6 /* policy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = policy.pdf; sourceTree = "<group>"; };
 		349831C8100594A2ABFB4F99 /* Pods-SyneScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyneScanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-SyneScanner/Pods-SyneScanner.release.xcconfig"; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 			children = (
 				536A33971F725BB600F019C5 /* CALayer+Extension.swift */,
 				536A33991F725BDD00F019C5 /* CIRectangleFeature+Extension.swift */,
+				1B6E110E1F7CE71800C4069A /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -920,6 +923,7 @@
 				1B5403DC1F728842007CF73B /* RootViewController.swift in Sources */,
 				536A33A41F725C9100F019C5 /* EdgeDetectionView.swift in Sources */,
 				536A339A1F725BDD00F019C5 /* CIRectangleFeature+Extension.swift in Sources */,
+				1B6E110F1F7CE71800C4069A /* UIColor+Extension.swift in Sources */,
 				5346F1D71F79191E000E6AC5 /* ARSLineProgress.swift in Sources */,
 				5346F1DA1F79191E000E6AC5 /* ARSLineProgressExtensions.swift in Sources */,
 				5346F1B51F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift in Sources */,

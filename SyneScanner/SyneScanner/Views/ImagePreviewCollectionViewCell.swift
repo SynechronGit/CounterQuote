@@ -13,17 +13,17 @@ class ImagePreviewCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var retakeButton: UIBarButtonItem!
-    @IBAction func shareImageOptionsTapped(_ sender: Any) {
-        retakeDelegate?.shareSelectedImageAt(cell: self)
+    @IBAction func deleteOptionTapped(_ sender: Any) {
+        retakeDelegate?.deleteImageAt(cell: self)
     }
     
     @IBAction func retakeImageTapped(_ sender: Any) {
-        retakeDelegate?.updateColelctionWhenImageDeletedAt(cell: self)
+        retakeDelegate?.retakeImageAt(cell: self)
     }
     
 }
 
 protocol ImageShareAndRetakeDelegate {
-    func updateColelctionWhenImageDeletedAt(cell : UICollectionViewCell)
-    func shareSelectedImageAt(cell : UICollectionViewCell)
+    func retakeImageAt(cell : UICollectionViewCell)
+    func deleteImageAt(cell : UICollectionViewCell)
 }
