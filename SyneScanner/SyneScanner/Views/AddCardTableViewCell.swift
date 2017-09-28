@@ -11,6 +11,7 @@ import UIKit
 class AddCardTableViewCell: UITableViewCell {
     @IBOutlet weak var headerField: UITextField!
     
+    @IBOutlet weak var cardImageView: UIImageView!
     var actionDelegate : TextFieldActionDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()

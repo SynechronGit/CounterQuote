@@ -9,7 +9,7 @@
 import UIKit
 
 class AddCardViewController: UIViewController {
-    let pickerArray = ["MasterCard", "VISA"]
+    let pickerArray = ["Mastercard", "Visa", "Discover", "American Express"]
     var pickerYearArray = [Int]()
     var pickerMonthArray = [String]()
     var isDatePicker = false
@@ -21,9 +21,16 @@ class AddCardViewController: UIViewController {
     var year: String?
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var makePaymentButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Create back button of type custom
+        let myBackButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        myBackButton.setBackgroundImage(UIImage(named: "BackArrow"), for: .normal)
+        myBackButton.addTarget(self, action: #selector(ImagePreviewController.popToRoot), for: .touchUpInside)
+        myBackButton.sizeThatFits(CGSize(width: 22, height: 22))
+        self.makePaymentButton.isEnabled = true
         self.commonSetup()
         self.title  = "Add Card Details"
         tableView.tableFooterView = UIView()
@@ -36,8 +43,22 @@ class AddCardViewController: UIViewController {
     }
     
     @IBAction func buyTapped(_ sender: Any) {
-        SharedData.sharedInstance.arrImage.removeAll()
-        self.dismiss(animated: true, completion: nil)
+        var cardDetailsArray : [String] = [String]()
+        for item in 0...CardTypeName.allValues.count {
+            let indexPath = IndexPath(row: item, section: 0)
+            let cell : AddCardTableViewCell? = self.tableView.cellForRow(at: indexPath) as! AddCardTableViewCell?
+            if let details = cell?.headerField.text {
+                cardDetailsArray.append(details)
+            }
+        }
+        if cardDetailsArray.contains(where: { $0 == "" }) {
+            let alert = UIAlertController(title: "Alert", message: "Please fill all card details!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            SharedData.sharedInstance.arrImage.removeAll()
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
     func commonSetup() {
@@ -75,17 +96,17 @@ extension AddCardViewController: UITableViewDataSource {
         cell.headerField.placeholder = CardTypeName.allValues[indexPath.row].rawValue
         switch indexPath.row {
         case 0:
-            cell.headerField.text = cardTypeText
-            break
+            if let cardType = cardTypeText {
+               let row = pickerArray.index(of: cardType)
+                cell.cardImageView.image = UIImage(named: pickerArray[row!])
+                cell.headerField.text = cardTypeText
+            }
         case 1:
             cell.headerField.keyboardType = .alphabet
-            break
         case 3:
             cell.headerField.text = month?.appendingFormat(" %@", year!)
-            break
         case 5:
             cell.headerField.keyboardType = .emailAddress
-            break
         default:
             cell.headerField.keyboardType = .phonePad
             break
@@ -134,6 +155,40 @@ extension AddCardViewController: TextFieldActionDelegate, UIPickerViewDelegate, 
         }
     }
     
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let myView = UIView(frame: CGRect(x: 0, y: 0, width: pickerView.frame.size.width, height: 44))
+        if !isDatePicker {
+            let myImageView = UIImageView(frame: CGRect(x: myView.frame.size.width/4, y: ((myView.frame.size.height/2) - myView.frame.size.height/4), width: 22, height: 22))
+            var rowString = String()
+            cardTypeText = pickerArray.first
+            
+            rowString = pickerArray[row]
+            myImageView.image = UIImage(named: pickerArray[row])
+            
+            let myLabel = UILabel(frame: CGRect(x: myImageView.frame.origin.x + myImageView.frame.size.width + 10, y: myImageView.frame.origin.y, width: pickerView.bounds.width - 100, height: myImageView.bounds.height))
+            myLabel.text = rowString
+            myView.addSubview(myLabel)
+            myView.addSubview(myImageView)
+            return myView
+        } else {
+            let myLabel = UILabel(frame: CGRect(x: myView.frame.size.width/4 + 10, y: 0, width: pickerView.bounds.width - 100, height: myView.bounds.height))
+            switch component {
+            case 0:
+                month = pickerMonthArray.first
+                myLabel.text = pickerMonthArray[row]
+            case 1:
+                year = String(pickerYearArray.first!)
+                myLabel.text = "\(pickerYearArray[row])"
+            default:
+                myLabel.text = ""
+                break
+            }
+            myView.addSubview(myLabel)
+            return myView
+        }
+        
+    }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if isDatePicker {
             switch component {
@@ -146,24 +201,6 @@ extension AddCardViewController: TextFieldActionDelegate, UIPickerViewDelegate, 
             }
         } else {
             return pickerArray.count
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if isDatePicker {
-            switch component {
-            case 0:
-                month = pickerMonthArray.first
-                return pickerMonthArray[row]
-            case 1:
-                year = String(pickerYearArray.first!)
-                return "\(pickerYearArray[row])"
-            default:
-                return nil
-            }
-        } else {
-            cardTypeText = pickerArray.first
-            return pickerArray[row]
         }
     }
     

@@ -14,13 +14,14 @@ public typealias SplashAnimatableExecution = () -> Void
 class SplashScreenViewController: UIViewController {
 
     @IBOutlet var imgLogo: UIImageView!
+    var timer:Timer?
     var duration: Double = 2.0
     open var delay: Double = 0.5
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        
+        self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.endSplashScreenView), userInfo: nil, repeats: false)
         // Do any additional setup after loading the view.
     }
 
@@ -38,6 +39,12 @@ class SplashScreenViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func endSplashScreenView() {
+        self.performSegue(withIdentifier: "navToIntroVc", sender: nil)
+        self.timer?.invalidate()
+        self.timer = nil
     }
     
     func playSwingAnimation(_ completion: SplashAnimatableCompletion? = nil)

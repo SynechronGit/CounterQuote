@@ -24,6 +24,9 @@ class NetworkManager: NSObject {
             case .success(let upload, _, _):
                 
                 upload.uploadProgress(closure: { (Progress) in
+                    if ((Progress.fractionCompleted * 100) != 100) {
+                        self.progressCallBack(progress: Float(Progress.fractionCompleted))
+                    }
                     print("Upload Progress: \(Progress.fractionCompleted)")
                 })
                 

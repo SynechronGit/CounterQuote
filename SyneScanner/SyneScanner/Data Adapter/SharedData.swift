@@ -28,7 +28,7 @@ class SharedData: NSObject {
         model.fileUrl = dict["FileUrl"] as! String
     }
     
-    func calculateCurrentProgress() -> Float
+    func calculateCurrentProgress() -> (progressValue : Float, uploadedImgCount: Int)
     {
         let totalImg:Float = Float(SharedData.sharedInstance.arrImage.count)
         let filteredArray = SharedData.sharedInstance.arrImage.filter( { (model: ImageDataModel) -> Bool in
@@ -37,7 +37,7 @@ class SharedData: NSObject {
         let uploadeImgCount:Float = Float(filteredArray.count)
         let progress:Float = uploadeImgCount/totalImg
         print("Progressss  %f,%f,%f",uploadeImgCount,totalImg,progress)
-        return progress
+        return (progress,Int(uploadeImgCount))
         
         
     }

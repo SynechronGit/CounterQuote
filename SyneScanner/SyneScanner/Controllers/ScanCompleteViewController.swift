@@ -13,6 +13,8 @@ class ScanCompleteViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var progressBar: TCProgressBar!
     @IBOutlet var btnComplete: UIButton!
+    @IBOutlet weak var progressPercentageLabel: UILabel!
+    @IBOutlet weak var progressPendingLabel: UILabel!
 
     var progressObject: Progress?
     var isSuccess: Bool?
@@ -34,10 +36,11 @@ class ScanCompleteViewController: UIViewController {
         
         //Create back button of type custom
         
-        let myBackButton:UIButton = UIButton.init(type: .custom)
-        myBackButton.addTarget(self, action: #selector(ScanCompleteViewController.popToRoot), for: .touchUpInside)
-        myBackButton.setImage(UIImage(named: "BackArrow"), for: .normal)
-        myBackButton.sizeToFit()
+        //Create back button of type custom
+        let myBackButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        myBackButton.setBackgroundImage(UIImage(named: "BackArrow"), for: .normal)
+        myBackButton.addTarget(self, action: #selector(ImagePreviewController.popToRoot), for: .touchUpInside)
+        myBackButton.sizeThatFits(CGSize(width: 22, height: 22))
         
         //Add back button to navigationBar as left Button
         
@@ -56,11 +59,16 @@ class ScanCompleteViewController: UIViewController {
     
     func updateProgress()
     {
-        progressBar.value =  CGFloat(SharedData.sharedInstance.calculateCurrentProgress())
+        let calculateProgress = SharedData.sharedInstance.calculateCurrentProgress()
+        progressBar.value =  CGFloat(calculateProgress.progressValue)
+        progressPercentageLabel.text = String(Int(progressBar.value) * 100).appending("% Complete")
+        progressPendingLabel.text = String("\(Int(calculateProgress.uploadedImgCount)) of \(SharedData.sharedInstance.arrImage.count)")
         if progressBar.value >= 1.0
         {
             btnComplete.isEnabled = true
             btnComplete.alpha = 1.0
+            //let buttonColor = UIColor(hex: "#D95857")
+            //btnComplete.backgroundColor = buttonColor
         }
         else {
             btnComplete.alpha = 0.5

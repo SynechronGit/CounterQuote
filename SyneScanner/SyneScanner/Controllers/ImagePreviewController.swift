@@ -37,21 +37,19 @@ class ImagePreviewController: UIViewController {
     
     func configureUI()
     {
-        self.title = "Picture Review"
+        self.title = "Preview"
         
-        
-        let rightBarButton = UIBarButtonItem(title: "Finish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ImagePreviewController.finishBtnTapped))
-        self.navigationItem.rightBarButtonItem = rightBarButton
+        //let rightBarButton = UIBarButtonItem(title: "Finish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ImagePreviewController.finishBtnTapped))
+        //self.navigationItem.rightBarButtonItem = rightBarButton
         
         
         self.navigationController?.setNavigationBarHidden(false, animated:false)
         
         //Create back button of type custom
-        
-        let myBackButton:UIButton = UIButton.init(type: .custom)
+        let myBackButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        myBackButton.setBackgroundImage(UIImage(named: "BackArrow"), for: .normal)
         myBackButton.addTarget(self, action: #selector(ImagePreviewController.popToRoot), for: .touchUpInside)
-        myBackButton.setImage(UIImage(named: "BackArrow"), for: .normal)
-        myBackButton.sizeToFit()
+        myBackButton.sizeThatFits(CGSize(width: 22, height: 22))
         
         //Add back button to navigationBar as left Button
         
