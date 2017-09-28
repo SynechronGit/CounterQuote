@@ -110,6 +110,7 @@
 		53DD338B1F7BE29F0067C082 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53DD33811F7BE29F0067C082 /* Lato-Light.ttf */; };
 		53DD338C1F7BE29F0067C082 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53DD33821F7BE29F0067C082 /* Lato-LightItalic.ttf */; };
 		53DD338D1F7BE29F0067C082 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53DD33831F7BE29F0067C082 /* Lato-Regular.ttf */; };
+		53DE22531F7D07C50045E9EA /* PaymentReceiptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DE22521F7D07C50045E9EA /* PaymentReceiptTableViewCell.swift */; };
 		585DD141C79AE6F8DD27C862 /* Pods_SyneScannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 410CDDF85111FCE66A77C52C /* Pods_SyneScannerUITests.framework */; };
 		59E20E354CE125BD1EFEFBE5 /* Pods_SyneScannerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C33F0BD7E2D6EEF64F5A57C /* Pods_SyneScannerTests.framework */; };
 		E385531379DB2609BFC1A289 /* Pods_SyneScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C121FD2BE6577BD61AE0A59B /* Pods_SyneScanner.framework */; };
@@ -262,6 +263,7 @@
 		53DD33811F7BE29F0067C082 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = SOURCE_ROOT; };
 		53DD33821F7BE29F0067C082 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = SOURCE_ROOT; };
 		53DD33831F7BE29F0067C082 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		53DE22521F7D07C50045E9EA /* PaymentReceiptTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentReceiptTableViewCell.swift; sourceTree = "<group>"; };
 		B06D7EDAC7307D7F93064F68 /* Pods-SyneScannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyneScannerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SyneScannerUITests/Pods-SyneScannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C121FD2BE6577BD61AE0A59B /* Pods_SyneScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SyneScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1FFF7AAE418293C09369C62 /* Pods-SyneScannerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyneScannerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SyneScannerTests/Pods-SyneScannerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -532,6 +534,7 @@
 				5346F1B41F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift */,
 				5346F1E01F7A3B7C000E6AC5 /* AddCardTableViewCell.swift */,
 				535888761F7CF0D300A6E0D0 /* AddCardSecureTableViewCell.swift */,
+				53DE22521F7D07C50045E9EA /* PaymentReceiptTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -966,6 +969,7 @@
 				1B5403FA1F73F451007CF73B /* UploadImageProxy.swift in Sources */,
 				5346F1B11F752031000E6AC5 /* ImageWorkflowProxy.swift in Sources */,
 				5346F1E11F7A3B7C000E6AC5 /* AddCardTableViewCell.swift in Sources */,
+				53DE22531F7D07C50045E9EA /* PaymentReceiptTableViewCell.swift in Sources */,
 				5346F1B31F7542BC000E6AC5 /* ScanCompleteViewController.swift in Sources */,
 				1B5403DC1F728842007CF73B /* RootViewController.swift in Sources */,
 				536A33A41F725C9100F019C5 /* EdgeDetectionView.swift in Sources */,

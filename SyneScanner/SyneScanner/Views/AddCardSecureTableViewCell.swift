@@ -27,6 +27,15 @@ class AddCardSecureTableViewCell: UITableViewCell {
 }
 
 extension AddCardSecureTableViewCell: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newLength = textField.text!.characters.count + string.characters.count - range.length
+        if textField.tag == 2 {
+            return newLength <= 3
+        }
+        return true
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         actionDelegate?.secureTextFieldTappedAt(cell: self)
     }

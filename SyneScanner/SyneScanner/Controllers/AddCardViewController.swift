@@ -9,7 +9,7 @@
 import UIKit
 
 class AddCardViewController: UIViewController {
-    var cardDetailsArray = [String]()
+    var cardHeaderArray = [String]()
     let cardSecurityArray = ["Valid Thru", "CVV"]
     let pickerArray = ["Mastercard", "Visa", "Discover", "American Express"]
     var pickerYearArray = [Int]()
@@ -32,6 +32,7 @@ class AddCardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Create back button of type custom
+        self.defaultValues()
         let myBackButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         myBackButton.setBackgroundImage(UIImage(named: "BackArrow"), for: .normal)
         myBackButton.addTarget(self, action: #selector(ImagePreviewController.popToRoot), for: .touchUpInside)
@@ -48,27 +49,48 @@ class AddCardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func defaultValues() {
+        self.cardTypeImageView.image = UIImage(named: pickerArray.first!)
+        self.cardNumberLabel.text = "**** **** **** 1111"
+        self.validThruLabel.text = "06/18"
+        self.cardVerifiedImageView.image = UIImage(named: "VerifiedCard")
+    }
+    
     @IBAction func buyTapped(_ sender: Any) {
         var cardDetailsArray : [String] = [String]()
-        for item in 0...cardDetailsArray.count {
+        for item in 0...cardHeaderArray.count {
             let indexPath = IndexPath(row: item, section: 0)
-            let cell : AddCardTableViewCell? = self.tableView.cellForRow(at: indexPath) as! AddCardTableViewCell?
-            if let details = cell?.descriptionField.text {
-                cardDetailsArray.append(details)
+            if indexPath.row != 2 {
+                let cell : AddCardTableViewCell? = self.tableView.cellForRow(at: indexPath) as! AddCardTableViewCell?
+                if let details = cell?.descriptionField.text {
+                    cardDetailsArray.append(details)
+                }
             }
         }
-        if cardDetailsArray.contains(where: { $0 == "" }) {
-            let alert = UIAlertController(title: "Alert", message: "Please fill all card details!", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        } else {
-            let paymentReceiptVC = self.storyboard?.instantiateViewController(withIdentifier: "PaymentReceiptViewController")
-            self.navigationController?.pushViewController(paymentReceiptVC!, animated: true)
+        if (cardDetailsArray.contains(where: { $0 == "" })) {
+            let message = "Please fill all card details!"
+            self.showAlert(message: message)
         }
+        else if(!isValidEmail(testStr: cardDetailsArray[2])) {
+            let message = "Invalid Email Address!"
+            self.showAlert(message: message)
+        } else {
+            let paymentReceiptVC = self.storyboard?.instantiateViewController(withIdentifier: "PaymentReceiptViewController") as! PaymentReceiptViewController
+            for item in 0...2 {
+                paymentReceiptVC.cardDetailsArray.append(cardDetailsArray[item])
+            }
+            self.navigationController?.pushViewController(paymentReceiptVC, animated: true)
+        }
+    }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     func commonSetup() {
-        cardDetailsArray = ["Card number", "Cardholder name", "Email Address (receipt will be sent on this ID)", "Mailing Address"]
+        cardHeaderArray = ["Card number", "Cardholder name", "Email Address (receipt will be sent on this ID)", "Mailing Address"]
         // population years
         var years: [Int] = []
         if years.count == 0 {
@@ -88,36 +110,50 @@ class AddCardViewController: UIViewController {
         }
         pickerMonthArray = months
     }
+    
+    func isValidEmail(testStr:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
+    }
 
 }
 
 //MARK: UITableViewDataSource delegate methods
 extension AddCardViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cardDetailsArray.count + 1
+        return cardHeaderArray.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "secureCell") as! AddCardSecureTableViewCell
+            cell.cvvField.tag = indexPath.row
+            cell.validField.text = "06/18"
+            cell.cvvField.text = "***"
             cell.validField.text = month?.appendingFormat(" %@", year!)
             cell.actionDelegate = self
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell") as! AddCardTableViewCell
+            cell.descriptionField.tag = indexPath.row
             cell.actionDelegate = self
             if indexPath.row < 2 {
-                cell.headerLabel.text = cardDetailsArray[indexPath.row]
+                cell.headerLabel.text = cardHeaderArray[indexPath.row]
             } else if indexPath.row > 2 {
-                cell.headerLabel.text = cardDetailsArray[indexPath.row - 1]
+                cell.headerLabel.text = cardHeaderArray[indexPath.row - 1]
             }
             
             switch indexPath.row {
+            case 0:
+                cell.descriptionField.text = "4111111111111111"
             case 1:
                 cell.descriptionField.keyboardType = .alphabet
             case 3:
+                cell.descriptionField.text = "igor.save68@gmail.com"
                 cell.descriptionField.keyboardType = .emailAddress
             case 4:
+                cell.descriptionField.text = "119 Shaftesbury Avenue, Charing Cross NJ, 08817"
                 cell.descriptionField.keyboardType = .default
             default:
                 cell.descriptionField.keyboardType = .phonePad
@@ -158,10 +194,12 @@ extension AddCardViewController: SecureTextFieldActionDelegate, UIPickerViewDele
         let myLabel = UILabel(frame: CGRect(x: myView.frame.size.width/4 + 10, y: 0, width: pickerView.bounds.width - 100, height: myView.bounds.height))
         switch component {
         case 0:
-            month = pickerMonthArray.first
+            month = "01"
             myLabel.text = pickerMonthArray[row]
         case 1:
-            year = String(pickerYearArray.first!)
+            let yearString = (String(pickerYearArray.first!))
+            let index = yearString.index(yearString.startIndex, offsetBy: 2)
+            year = yearString.substring(from: index)
             myLabel.text = "\(pickerYearArray[row])"
         default:
             myLabel.text = ""
@@ -185,9 +223,16 @@ extension AddCardViewController: SecureTextFieldActionDelegate, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component {
         case 0:
-            month = pickerMonthArray[row]
+            if row < 10 {
+                month = "0".appending(String(row))
+            } else {
+                month = String(row)
+            }
         case 1:
             year = "\(pickerYearArray[row])"
+            let yearString = year
+            let index = yearString?.index((yearString?.startIndex)!, offsetBy: 2)
+            year = yearString?.substring(from: index!)
         default:
             break
         }
