@@ -14,7 +14,7 @@ class COIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
-        self.title = "Quote"
+        self.title = "Certificate Of Insurance"
         loadPdfFile()
 
         // Do any additional setup after loading the view.

@@ -32,7 +32,7 @@
         <scene sceneID="DEw-QH-TOw">
             <objects>
                 <navigationController id="gpf-RY-wRS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Zxw-PL-fh8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Zxw-PL-fh8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.1529411765" green="0.2901960784" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -194,7 +194,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dvn-de-eNQ" customClass="EdgeDetectionView" customModule="SyneScanner" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HNG-Tb-F5J">
@@ -307,9 +307,9 @@
                             <constraint firstItem="Dvn-de-eNQ" firstAttribute="top" secondItem="7Jx-UP-NwP" secondAttribute="top" id="3Y6-Eo-EDP"/>
                             <constraint firstItem="AQI-xp-QIj" firstAttribute="top" secondItem="pG2-Q2-qvg" secondAttribute="bottom" id="Fs5-YJ-fG8"/>
                             <constraint firstAttribute="trailing" secondItem="Dvn-de-eNQ" secondAttribute="trailing" id="Q0L-iz-o9A"/>
+                            <constraint firstItem="AQI-xp-QIj" firstAttribute="top" secondItem="Dvn-de-eNQ" secondAttribute="bottom" id="eUh-KI-hFd"/>
                             <constraint firstItem="pG2-Q2-qvg" firstAttribute="leading" secondItem="7Jx-UP-NwP" secondAttribute="leading" id="nRq-fd-koi"/>
                             <constraint firstAttribute="trailing" secondItem="pG2-Q2-qvg" secondAttribute="trailing" id="pAy-f5-ST2"/>
-                            <constraint firstItem="pG2-Q2-qvg" firstAttribute="top" secondItem="Dvn-de-eNQ" secondAttribute="bottom" id="sL8-x6-g8X"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1194,6 +1194,6 @@
         <image name="uncheck" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LoE-l0-Lvj"/>
+        <segue reference="Q13-jj-gmT"/>
     </inferredMetricsTieBreakers>
 </document>
