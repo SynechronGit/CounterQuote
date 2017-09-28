@@ -32,7 +32,7 @@
         <scene sceneID="DEw-QH-TOw">
             <objects>
                 <navigationController id="gpf-RY-wRS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Zxw-PL-fh8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Zxw-PL-fh8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.1529411765" green="0.2901960784" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -62,7 +62,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="jvZ-6P-m9x">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewBg" translatesAutoresizingMaskIntoConstraints="NO" id="jvZ-6P-m9x">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TextLogo" translatesAutoresizingMaskIntoConstraints="NO" id="IHM-5K-QS3">
@@ -419,14 +419,15 @@
                                     <outlet property="delegate" destination="SAj-WX-AcZ" id="fa5-4n-3em"/>
                                 </connections>
                             </collectionView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lo1-P5-gKO">
-                                <rect key="frame" x="168" y="317" width="39" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lo1-P5-gKO">
+                                <rect key="frame" x="168" y="566" width="39" height="37"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="0.1529411765" green="0.2901960784" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="lo1-P5-gKO" firstAttribute="centerX" secondItem="QCO-Up-PNE" secondAttribute="centerX" id="D0r-Rt-CLY"/>
                             <constraint firstAttribute="trailing" secondItem="oPF-UW-6C6" secondAttribute="trailing" id="RLh-0l-K2m"/>
+                            <constraint firstItem="9Dh-YM-g7Z" firstAttribute="top" secondItem="lo1-P5-gKO" secondAttribute="bottom" constant="64" id="iiH-Vy-Fdf"/>
                             <constraint firstItem="9Dh-YM-g7Z" firstAttribute="top" secondItem="oPF-UW-6C6" secondAttribute="bottom" id="p1a-IS-b1M"/>
                             <constraint firstItem="oPF-UW-6C6" firstAttribute="top" secondItem="vZv-tm-3F4" secondAttribute="bottom" id="v07-wV-fqD"/>
                             <constraint firstItem="oPF-UW-6C6" firstAttribute="leading" secondItem="QCO-Up-PNE" secondAttribute="leading" id="zwh-AI-glj"/>
@@ -434,6 +435,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="oPF-UW-6C6" id="D3j-ft-NWi"/>
+                        <outlet property="pageControl" destination="lo1-P5-gKO" id="mor-uB-Lg3"/>
                         <segue destination="bcB-w8-SKA" kind="show" identifier="NavToStartWorkFlow" id="LoE-l0-Lvj"/>
                     </connections>
                 </viewController>
@@ -1279,6 +1281,7 @@
         <image name="Done" width="53" height="39"/>
         <image name="Gallery" width="60" height="52"/>
         <image name="IntroBackground" width="750" height="1334"/>
+        <image name="NewBg" width="750" height="1334"/>
         <image name="TextLogo" width="431" height="64"/>
         <image name="uncheck" width="30" height="30"/>
     </resources>
