@@ -16,7 +16,9 @@
 		1B5403FA1F73F451007CF73B /* UploadImageProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403F91F73F451007CF73B /* UploadImageProxy.swift */; };
 		1B5403FE1F75459D007CF73B /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403FD1F75459D007CF73B /* SplashScreenViewController.swift */; };
 		1B6E110F1F7CE71800C4069A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E110E1F7CE71800C4069A /* UIColor+Extension.swift */; };
-		1BEF2E781F79246F00AE94E6 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF2E771F79246F00AE94E6 /* PDFViewController.swift */; };
+		1B6E11111F7CF3E600C4069A /* InsuranceQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E11101F7CF3E600C4069A /* InsuranceQuoteViewController.swift */; };
+		1B6E11131F7CFCED00C4069A /* BinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E11121F7CFCED00C4069A /* BinderViewController.swift */; };
+		1B6E11151F7CFCF900C4069A /* COIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E11141F7CFCF900C4069A /* COIViewController.swift */; };
 		1BEF2E7C1F79293900AE94E6 /* policy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1BEF2E7B1F79293900AE94E6 /* policy.pdf */; };
 		5346F1B11F752031000E6AC5 /* ImageWorkflowProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1B01F752031000E6AC5 /* ImageWorkflowProxy.swift */; };
 		5346F1B31F7542BC000E6AC5 /* ScanCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1B21F7542BC000E6AC5 /* ScanCompleteViewController.swift */; };
@@ -146,7 +148,9 @@
 		1B5403F91F73F451007CF73B /* UploadImageProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImageProxy.swift; sourceTree = "<group>"; };
 		1B5403FD1F75459D007CF73B /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		1B6E110E1F7CE71800C4069A /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		1BEF2E771F79246F00AE94E6 /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		1B6E11101F7CF3E600C4069A /* InsuranceQuoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceQuoteViewController.swift; sourceTree = "<group>"; };
+		1B6E11121F7CFCED00C4069A /* BinderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinderViewController.swift; sourceTree = "<group>"; };
+		1B6E11141F7CFCF900C4069A /* COIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COIViewController.swift; sourceTree = "<group>"; };
 		1BEF2E7B1F79293900AE94E6 /* policy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = policy.pdf; sourceTree = "<group>"; };
 		349831C8100594A2ABFB4F99 /* Pods-SyneScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyneScanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-SyneScanner/Pods-SyneScanner.release.xcconfig"; sourceTree = "<group>"; };
 		410CDDF85111FCE66A77C52C /* Pods_SyneScannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SyneScannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -504,8 +508,10 @@
 				1B5403DB1F728842007CF73B /* RootViewController.swift */,
 				1B5403FD1F75459D007CF73B /* SplashScreenViewController.swift */,
 				5346F1B21F7542BC000E6AC5 /* ScanCompleteViewController.swift */,
-				1BEF2E771F79246F00AE94E6 /* PDFViewController.swift */,
 				5346F1E21F7A3CAD000E6AC5 /* AddCardViewController.swift */,
+				1B6E11101F7CF3E600C4069A /* InsuranceQuoteViewController.swift */,
+				1B6E11121F7CFCED00C4069A /* BinderViewController.swift */,
+				1B6E11141F7CFCF900C4069A /* COIViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -896,11 +902,11 @@
 				5346F1D61F79191E000E6AC5 /* ARSInfiniteLoader.swift in Sources */,
 				536A33951F725B4A00F019C5 /* Quadrangle.swift in Sources */,
 				5346F1DF1F79191E000E6AC5 /* ARSStatus.swift in Sources */,
-				1BEF2E781F79246F00AE94E6 /* PDFViewController.swift in Sources */,
 				5346F1DD1F79191E000E6AC5 /* ARSLineProgressTypeAliases.swift in Sources */,
 				1B5403FE1F75459D007CF73B /* SplashScreenViewController.swift in Sources */,
 				5346F1E31F7A3CAD000E6AC5 /* AddCardViewController.swift in Sources */,
 				5346F1DB1F79191E000E6AC5 /* ARSLineProgressHelpers.swift in Sources */,
+				1B6E11151F7CFCF900C4069A /* COIViewController.swift in Sources */,
 				5346F1D81F79191E000E6AC5 /* ARSLineProgressConstants.swift in Sources */,
 				536A33631F725AE500F019C5 /* AppDelegate.swift in Sources */,
 				1B5403E11F73A35F007CF73B /* SharedData.swift in Sources */,
@@ -922,9 +928,11 @@
 				5346F1B31F7542BC000E6AC5 /* ScanCompleteViewController.swift in Sources */,
 				1B5403DC1F728842007CF73B /* RootViewController.swift in Sources */,
 				536A33A41F725C9100F019C5 /* EdgeDetectionView.swift in Sources */,
+				1B6E11131F7CFCED00C4069A /* BinderViewController.swift in Sources */,
 				536A339A1F725BDD00F019C5 /* CIRectangleFeature+Extension.swift in Sources */,
 				1B6E110F1F7CE71800C4069A /* UIColor+Extension.swift in Sources */,
 				5346F1D71F79191E000E6AC5 /* ARSLineProgress.swift in Sources */,
+				1B6E11111F7CF3E600C4069A /* InsuranceQuoteViewController.swift in Sources */,
 				5346F1DA1F79191E000E6AC5 /* ARSLineProgressExtensions.swift in Sources */,
 				5346F1B51F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift in Sources */,
 				536A33A21F725C5F00F019C5 /* QuadrangleFilter.swift in Sources */,

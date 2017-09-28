@@ -90,7 +90,9 @@ class CameraViewController: UIViewController {
        // self.dismiss(animated: true, completion: nil)
     }
     @IBAction func scanningDoneTapped(_ sender: Any) {
-        
+          if SharedData.sharedInstance.arrImage.count > 0 {
+        self.performSegue(withIdentifier: "NavToCompleteScreen", sender: nil)
+        }
     }
  
     @IBAction func capture() {

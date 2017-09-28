@@ -74,6 +74,7 @@ class ScanCompleteViewController: UIViewController {
             btnComplete.alpha = 0.5
   
         }
+        collectionView.reloadData()
  
     }
     //MARK: UIButton action methods
@@ -98,12 +99,7 @@ class ScanCompleteViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "NavToPdfView"
-        {
-            let vc:PDFViewController = segue.destination as! PDFViewController
-            vc.fileName = "policy"
-            vc.navTitle = "Quote"
-        }
+        
     }
 }
 
@@ -123,6 +119,13 @@ extension ScanCompleteViewController: UICollectionViewDataSource, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reviewCell", for: indexPath) as! ImageReviewCollectionViewCell
         let model = SharedData.sharedInstance.arrImage[indexPath.row]
         cell.imageReview.image = model.image
+        if model.imageSuccesfullyUpload {
+            cell.imageUploadingStatus.image = UIImage(named: "check+right")
+        }
+        else{
+            cell.imageUploadingStatus.image = UIImage(named: "uncheck")
+ 
+        }
         return cell
     }
     
@@ -190,7 +193,7 @@ extension ScanCompleteViewController {
             
             
                 if Double((self.progressObject?.fractionCompleted)!) >= 1.0 {
-                      self.performSegue(withIdentifier: "NavToPdfView", sender: nil)
+                      self.performSegue(withIdentifier: "NavToQuoteView", sender: nil)
                     return
             }
             
