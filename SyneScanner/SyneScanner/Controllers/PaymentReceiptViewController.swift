@@ -14,6 +14,7 @@ class PaymentReceiptViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: false)
         cardHeaderArray = ["Card number", "Cardholder name", "Email Address", "Premium amount", "Transaction ID#"]
         cardDetailsArray.append("$423.00")
         cardDetailsArray.append("44732456-01")

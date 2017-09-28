@@ -33,10 +33,14 @@ class AddCardViewController: UIViewController {
         super.viewDidLoad()
         //Create back button of type custom
         self.defaultValues()
+        
         let myBackButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         myBackButton.setBackgroundImage(UIImage(named: "BackArrow"), for: .normal)
         myBackButton.addTarget(self, action: #selector(ImagePreviewController.popToRoot), for: .touchUpInside)
         myBackButton.sizeThatFits(CGSize(width: 22, height: 22))
+        let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
+        self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
+        
         self.makePaymentButton.isEnabled = true
         self.commonSetup()
         self.title  = "Add Card Details"
@@ -131,7 +135,7 @@ extension AddCardViewController: UITableViewDataSource {
             cell.cvvField.tag = indexPath.row
             cell.validField.text = "06/18"
             cell.cvvField.text = "***"
-            cell.validField.text = month?.appendingFormat(" %@", year!)
+            cell.validField.text = month?.appendingFormat("/%@", year!)
             cell.actionDelegate = self
             return cell
         } else {
