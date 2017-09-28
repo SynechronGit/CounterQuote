@@ -60,7 +60,8 @@ class CameraViewController: UIViewController {
         //Add close button to navigationBar as left Button
         let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
         self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
-        
+        lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
+
         self.imageCaptureManager?.startSession()
     }
     
@@ -72,13 +73,16 @@ class CameraViewController: UIViewController {
     // MARK: - Button actions
     
     func close() {
-        if SharedData.sharedInstance.arrImage.count > 0 {
-            let alert = UIAlertController(title: "Discard", message: "Do you want to discard \(SharedData.sharedInstance.arrImage.count) pictures?", preferredStyle: UIAlertControllerStyle.alert)
+        if SharedData.sharedInstance.arrImage.count > 0
+        {
+//            let alert = UIAlertController(title: "Discard", message: "Do you want to discard \(SharedData.sharedInstance.arrImage.count) pictures?", preferredStyle: UIAlertControllerStyle.alert)
+            
+              let alert = UIAlertController(title: "Exit", message: "Do you want to exit?", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: discardScans))
             alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: false)
         }
     }
     
@@ -86,6 +90,7 @@ class CameraViewController: UIViewController {
         
         lblImageCount.text = "0"
         SharedData.sharedInstance.clearAllData()
+        self.navigationController?.popViewController(animated: false)
         //self.galleryBtn.setImage(nil, for: .normal)
        // self.dismiss(animated: true, completion: nil)
     }
@@ -225,16 +230,16 @@ extension CameraViewController:ImageCaptureManagerProtocol
 extension CameraViewController:ImageDeleteDelegate
 {
     func updateCollectionWhenImageDeletedAt(index: Int) {
-        if SharedData.sharedInstance.arrImage.count > 0 {
-            retakeIndexNo = index
-        }
         
+        SharedData.sharedInstance.arrImage.remove(at: index)
+        lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
     }
     func updateCollectionWhenImageretakeAt(index : Int)
     {
-        SharedData.sharedInstance.arrImage.remove(at: index)
-        lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
-
+       
+        if SharedData.sharedInstance.arrImage.count > 0 {
+            retakeIndexNo = index
+        }
     }
 }
 

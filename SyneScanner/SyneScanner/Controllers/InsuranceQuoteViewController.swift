@@ -32,6 +32,10 @@ class InsuranceQuoteViewController: UIViewController {
         }
     }
 
+    func startAnimation()
+    {
+        
+    }
     //MARK: UIButton action methods
     
     @IBAction func acceptBtnTapped(_ sender: Any) {

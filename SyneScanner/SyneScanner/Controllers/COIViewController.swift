@@ -35,8 +35,15 @@ class COIViewController: UIViewController {
     //MARK: UIButton action methods
     
     @IBAction func startNewQuoteBtnTapped(_ sender: Any) {
+        SharedData.sharedInstance.arrImage.removeAll()
+        let vc = self.navigationController?.viewControllers[2]
+        self.navigationController?.popToViewController(vc!, animated: true)
     }
     @IBAction func completeBtnTapped(_ sender: Any) {
+        SharedData.sharedInstance.arrImage.removeAll()
+        
+        let vc = self.navigationController?.viewControllers[1]
+        self.navigationController?.popToViewController(vc!, animated: true)
     }
 
     /*

@@ -20,13 +20,14 @@ class SplashScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
         self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.endSplashScreenView), userInfo: nil, repeats: false)
         // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool)
     {
+        self.navigationController?.isNavigationBarHidden = true
+
         super.viewWillAppear(animated)
 
     }

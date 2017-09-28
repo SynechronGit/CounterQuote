@@ -36,14 +36,14 @@ class AddCardViewController: UIViewController {
         
         let myBackButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         myBackButton.setBackgroundImage(UIImage(named: "BackArrow"), for: .normal)
-        myBackButton.addTarget(self, action: #selector(ImagePreviewController.popToRoot), for: .touchUpInside)
+        myBackButton.addTarget(self, action: #selector(AddCardViewController.popToRoot), for: .touchUpInside)
         myBackButton.sizeThatFits(CGSize(width: 22, height: 22))
         let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
         self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
         
         self.makePaymentButton.isEnabled = true
         self.commonSetup()
-        self.title  = "Add Card Details"
+        self.title  = "Payment Method"
         tableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
     }
@@ -52,11 +52,16 @@ class AddCardViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func popToRoot()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
     func defaultValues() {
         self.cardTypeImageView.image = UIImage(named: pickerArray.first!)
         self.cardNumberLabel.text = "**** **** **** 1111"
-        self.validThruLabel.text = "06/18"
+        self.validThruLabel.text = "09/17"
+        month = "09"
+        year = "17"
         self.cardVerifiedImageView.image = UIImage(named: "VerifiedCard")
     }
     
@@ -133,9 +138,9 @@ extension AddCardViewController: UITableViewDataSource {
         if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "secureCell") as! AddCardSecureTableViewCell
             cell.cvvField.tag = indexPath.row
-            cell.validField.text = "06/18"
             cell.cvvField.text = "***"
             cell.validField.text = month?.appendingFormat("/%@", year!)
+
             cell.actionDelegate = self
             return cell
         } else {

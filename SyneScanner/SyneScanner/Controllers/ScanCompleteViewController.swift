@@ -28,7 +28,11 @@ class ScanCompleteViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.collectionView.reloadData()
+        updateProgress()
+    }
     func configureUI()
     {
         self.title = "Scan Complete"
@@ -49,7 +53,6 @@ class ScanCompleteViewController: UIViewController {
         
         let notificationName = Notification.Name("updateProgress")
         NotificationCenter.default.addObserver(self, selector: #selector(ScanCompleteViewController.updateProgress), name: notificationName, object: nil)
-        updateProgress()
 
     }
     func popToRoot()
@@ -61,18 +64,17 @@ class ScanCompleteViewController: UIViewController {
     {
         let calculateProgress = SharedData.sharedInstance.calculateCurrentProgress()
         progressBar.value =  CGFloat(calculateProgress.progressValue)
-        progressPercentageLabel.text = String(Int(progressBar.value) * 100).appending("% Complete")
+        let totalProgressPercentage = Int(calculateProgress.progressValue * 100)
+        progressPercentageLabel.text = String(format:"%d %% Complete",totalProgressPercentage)
         progressPendingLabel.text = String("\(Int(calculateProgress.uploadedImgCount)) of \(SharedData.sharedInstance.arrImage.count)")
         if progressBar.value >= 1.0
         {
             btnComplete.isEnabled = true
-            btnComplete.alpha = 1.0
-            //let buttonColor = UIColor(hex: "#D95857")
-            //btnComplete.backgroundColor = buttonColor
+            btnComplete.backgroundColor = UIColor(red: 208/255, green: 64/255, blue: 67/255, alpha: 1.0)
         }
         else {
-            btnComplete.alpha = 0.5
-  
+         //   btnComplete.isEnabled = false
+
         }
         collectionView.reloadData()
  
@@ -99,7 +101,15 @@ class ScanCompleteViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "NavToPreviewImage"
+        {
+            let indexPath:IndexPath = sender as! IndexPath
+            let vc:ImagePreviewController = segue.destination as! ImagePreviewController
+            vc.isFromScanComplete = true
+            vc.selectedIndexNo = indexPath.row
+            let cameraVc = self.navigationController?.viewControllers[2]
+            vc.deleteDelegate = cameraVc as? ImageDeleteDelegate
+        }
     }
 }
 
@@ -139,6 +149,10 @@ extension ScanCompleteViewController: UICollectionViewDataSource, UICollectionVi
         return CGSize(width: width, height: height)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        self.performSegue(withIdentifier: "NavToPreviewImage", sender: indexPath)
+    }
 }
 
 //MARK: StartWorkflowDelegate methods

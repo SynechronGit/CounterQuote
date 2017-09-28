@@ -12,12 +12,16 @@ class ImagePreviewController: UIViewController {
     // MARK: - Properties
     
     var deleteDelegate : ImageDeleteDelegate?
+    var isFromScanComplete:Bool = false
+    var selectedIndexNo = -1
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var pageControl: UIPageControl!
 
      // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
        configureUI()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -38,6 +42,14 @@ class ImagePreviewController: UIViewController {
     func configureUI()
     {
         self.title = "Preview"
+        
+        if isFromScanComplete
+        {
+            pageControl.isHidden =  true
+        }
+        
+        pageControl.numberOfPages = SharedData.sharedInstance.arrImage.count
+        
         
         //let rightBarButton = UIBarButtonItem(title: "Finish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ImagePreviewController.finishBtnTapped))
         //self.navigationItem.rightBarButtonItem = rightBarButton
@@ -78,14 +90,30 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
+        if isFromScanComplete
+        {
+            return 1
+        }
         return SharedData.sharedInstance.arrImage.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImagePreviewCollectionViewCell
-       let model = SharedData.sharedInstance.arrImage[indexPath.row]
-        cell.imagePreview.image = model.image
+        
+        var model:ImageDataModel?
+        
+        if isFromScanComplete
+        {
+            model = SharedData.sharedInstance.arrImage[selectedIndexNo]
+
+        }
+        else
+        {
+            model = SharedData.sharedInstance.arrImage[indexPath.row]
+   
+        }
+        cell.imagePreview.image = model?.image
         cell.retakeDelegate = self
         return cell
     
@@ -100,7 +128,9 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
         return CGSize(width: width, height: height)
     }
     
-   
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+    }
 }
 
 // MARK: - ImagePreviewCollectionViewCell Delegate Method
@@ -109,15 +139,36 @@ extension ImagePreviewController:ImageShareAndRetakeDelegate
 {
     func retakeImageAt(cell : UICollectionViewCell)
     {
-        let indexPath = self.collectionView.indexPath(for: cell)
-        deleteDelegate?.updateCollectionWhenImageretakeAt(index: (indexPath?.row)!)
-        self.navigationController?.popViewController(animated: true)
+        if isFromScanComplete
+        {
+
+            deleteDelegate?.updateCollectionWhenImageretakeAt(index: (selectedIndexNo))
+            let vc = self.navigationController?.viewControllers[2]
+            self.navigationController?.popToViewController(vc!, animated: true)
+        
+        }
+        else
+        {
+            let indexPath = self.collectionView.indexPath(for: cell)
+
+            deleteDelegate?.updateCollectionWhenImageretakeAt(index: (indexPath?.row)!)
+            self.navigationController?.popViewController(animated: true)
+        }
+      
 
     }
     func deleteImageAt(cell : UICollectionViewCell)
     {
-        let indexPath = self.collectionView.indexPath(for: cell)
-        deleteDelegate?.updateCollectionWhenImageDeletedAt(index: (indexPath?.row)!)
+        if isFromScanComplete
+        {
+            SharedData.sharedInstance.arrImage.remove(at: selectedIndexNo)
+        }
+        else
+        {
+            let indexPath = self.collectionView.indexPath(for: cell)
+            deleteDelegate?.updateCollectionWhenImageDeletedAt(index: (indexPath?.row)!)
+        }
+      
         self.navigationController?.popViewController(animated: true)
 
     }
