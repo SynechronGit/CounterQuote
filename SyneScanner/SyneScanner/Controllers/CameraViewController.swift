@@ -82,7 +82,8 @@ class CameraViewController: UIViewController {
     }
     
     func discardScans(action: UIAlertAction) {
-        SharedData.sharedInstance.arrImage.removeAll()
+        
+        SharedData.sharedInstance.clearAllData()
         //self.galleryBtn.setImage(nil, for: .normal)
        // self.dismiss(animated: true, completion: nil)
     }
