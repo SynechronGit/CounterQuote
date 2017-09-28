@@ -32,7 +32,7 @@
         <scene sceneID="DEw-QH-TOw">
             <objects>
                 <navigationController id="gpf-RY-wRS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Zxw-PL-fh8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Zxw-PL-fh8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.1529411765" green="0.2901960784" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -811,7 +811,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GcP-PB-SKi">
-                                                        <rect key="frame" x="87" y="64" width="200" height="120"/>
+                                                        <rect key="frame" x="87" y="40" width="200" height="120"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PED-Gz-i1u">
                                                                 <rect key="frame" x="11" y="16" width="45" height="30"/>
@@ -877,8 +877,8 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.15294117647058825" green="0.29019607843137252" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="GcP-PB-SKi" firstAttribute="centerY" secondItem="Ih6-HI-OBc" secondAttribute="centerY" id="9No-a4-03y"/>
                                                     <constraint firstItem="GcP-PB-SKi" firstAttribute="centerX" secondItem="Ih6-HI-OBc" secondAttribute="centerX" id="Fo5-an-h5a"/>
-                                                    <constraint firstAttribute="bottom" secondItem="GcP-PB-SKi" secondAttribute="bottom" constant="16" id="Qcr-Mu-7Fh"/>
                                                     <constraint firstAttribute="height" constant="200" id="jok-zK-28G"/>
                                                 </constraints>
                                             </view>
