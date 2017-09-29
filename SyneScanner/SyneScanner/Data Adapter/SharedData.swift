@@ -19,20 +19,23 @@ class SharedData: NSObject {
     private override init() {
         
     }
-    var arrImage:[ImageDataModel] = []
+    var arrImage:[ImageDataModel?] = []
     
     func updateModel(dict:[String:AnyObject],indexNo:Int)
     {
-        let model = SharedData.sharedInstance.arrImage[indexNo]
-        model.imageSuccesfullyUpload = true
-        model.fileUrl = dict["FileUrl"] as! String
-    }
+        if let model = SharedData.sharedInstance.arrImage[indexNo]
+        {
+            model.imageSuccesfullyUpload = true
+            model.fileUrl = dict["FileUrl"] as! String
+ 
+        }
+           }
     
     func calculateCurrentProgress() -> (progressValue : Float, uploadedImgCount: Int)
     {
         let totalImg:Float = Float(SharedData.sharedInstance.arrImage.count)
-        let filteredArray = SharedData.sharedInstance.arrImage.filter( { (model: ImageDataModel) -> Bool in
-            return model.imageSuccesfullyUpload == true
+        let filteredArray = SharedData.sharedInstance.arrImage.filter( { (model: ImageDataModel?) -> Bool in
+            return model!.imageSuccesfullyUpload == true
         })
         let uploadeImgCount:Float = Float(filteredArray.count)
         let progress:Float = uploadeImgCount/totalImg

@@ -164,7 +164,7 @@ class CameraViewController: UIViewController {
         if self.retakeIndexNo != -1
         {
             let model = SharedData.sharedInstance.arrImage[self.retakeIndexNo]
-            model.image = image
+            model?.image = image
             SharedData.sharedInstance.arrImage[self.retakeIndexNo] = model
             self.callUploadImageApi(indexNo: self.retakeIndexNo)
             
@@ -231,8 +231,8 @@ extension CameraViewController:ImageDeleteDelegate
 {
     func updateCollectionWhenImageDeletedAt(index: Int) {
         
-        SharedData.sharedInstance.arrImage.remove(at: index)
-        lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
+//        SharedData.sharedInstance.arrImage.remove(at: index)
+//        lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
     }
     func updateCollectionWhenImageretakeAt(index : Int)
     {
@@ -253,10 +253,10 @@ extension CameraViewController:UploadImageProxyDelegate
 
         let uploadImageProxy =  UploadImageProxy()
         uploadImageProxy.delegate = self
-        uploadImageProxy.uploadScanningImage(image: model.image!, indexNo: indexNo)
+        uploadImageProxy.uploadScanningImage(image: (model?.image!)!, indexNo: indexNo)
     }
     func imageSuccessfullyUpload(responseData:[String:AnyObject],indexNo:Int)
-    {
+    { 
         SharedData.sharedInstance.updateModel(dict: responseData, indexNo: indexNo)
         let notificationName = Notification.Name("updateProgress")
         NotificationCenter.default.post(name: notificationName, object: nil)
@@ -268,11 +268,13 @@ extension CameraViewController:UploadImageProxyDelegate
     }
     func progressResult(progress:Float,indexNo:Int)
     {
-         let model = SharedData.sharedInstance.arrImage[indexNo]
+      if   let model = SharedData.sharedInstance.arrImage[indexNo]
+      {
         model.progress = progress
         SharedData.sharedInstance.arrImage[indexNo] = model
         let notificationName = Notification.Name("updateProgress")
         NotificationCenter.default.post(name: notificationName, object: nil)
+        }
     }
 
     

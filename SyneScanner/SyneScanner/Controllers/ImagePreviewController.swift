@@ -161,7 +161,7 @@ extension ImagePreviewController:ImageShareAndRetakeDelegate
     {
         if isFromScanComplete
         {
-            SharedData.sharedInstance.arrImage.remove(at: selectedIndexNo)
+           // SharedData.sharedInstance.arrImage.remove(at: selectedIndexNo)
         }
         else
         {

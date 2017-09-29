@@ -128,8 +128,8 @@ extension ScanCompleteViewController: UICollectionViewDataSource, UICollectionVi
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reviewCell", for: indexPath) as! ImageReviewCollectionViewCell
         let model = SharedData.sharedInstance.arrImage[indexPath.row]
-        cell.imageReview.image = model.image
-        if model.imageSuccesfullyUpload {
+        cell.imageReview.image = model?.image
+        if (model?.imageSuccesfullyUpload)! {
             cell.imageUploadingStatus.image = UIImage(named: "check+right")
         }
         else{
@@ -161,7 +161,7 @@ extension ScanCompleteViewController: StartWorkflowDelegate {
     func startWorkflowApi() {
         var blobUrl = ""
         for scanItem in 0..<SharedData.sharedInstance.arrImage.count {
-            blobUrl.append(SharedData.sharedInstance.arrImage[scanItem].fileUrl)
+            blobUrl.append((SharedData.sharedInstance.arrImage[scanItem]?.fileUrl)!)
             if scanItem != SharedData.sharedInstance.arrImage.count - 1 {
                 blobUrl.append(";")
             }

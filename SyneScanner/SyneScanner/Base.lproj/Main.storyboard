@@ -32,7 +32,7 @@
         <scene sceneID="DEw-QH-TOw">
             <objects>
                 <navigationController id="gpf-RY-wRS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Zxw-PL-fh8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Zxw-PL-fh8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.1529411765" green="0.2901960784" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -195,7 +195,7 @@
                         <subviews>
                             <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dvn-de-eNQ" customClass="EdgeDetectionView" customModule="SyneScanner" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.5450980392" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HNG-Tb-F5J">
                                 <rect key="frame" x="127" y="173.5" width="120" height="120"/>
@@ -1286,6 +1286,6 @@
         <image name="uncheck" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LoE-l0-Lvj"/>
+        <segue reference="Q13-jj-gmT"/>
     </inferredMetricsTieBreakers>
 </document>
