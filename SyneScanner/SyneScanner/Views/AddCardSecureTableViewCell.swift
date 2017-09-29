@@ -1,19 +1,18 @@
 //
-//  AddCardTableViewCell.swift
+//  AddCardSecureTableViewCell.swift
 //  SyneScanner
 //
-//  Created by Kartik on 26/09/17.
+//  Created by Kartik on 28/09/17.
 //  Copyright © 2017 Kartik. All rights reserved.
 //
 
 import UIKit
 
-class AddCardTableViewCell: UITableViewCell {
-    let kLength = 4
-    @IBOutlet weak var descriptionField: UITextField!
-    @IBOutlet weak var headerLabel: UILabel!
+class AddCardSecureTableViewCell: UITableViewCell {
+    @IBOutlet weak var validField: UITextField!
+    @IBOutlet weak var cvvField: UITextField!
     
-    var actionDelegate : TextFieldActionDelegate?
+    var actionDelegate : SecureTextFieldActionDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,26 +23,25 @@ class AddCardTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
 }
 
-extension AddCardTableViewCell: UITextFieldDelegate {
+extension AddCardSecureTableViewCell: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let newLength = textField.text!.characters.count + string.characters.count - range.length
-        
-        switch textField.tag {
-        case 0:
-            return newLength <= 19
-        case 3:
-            return true
-        default:
-            return true
+        if textField.tag == 2 {
+            return newLength <= 3
         }
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        actionDelegate?.secureTextFieldTappedAt(cell: self)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.resignFirstResponder()
-        actionDelegate?.textFieldTappedAt(cell: self)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -52,6 +50,6 @@ extension AddCardTableViewCell: UITextFieldDelegate {
     }
 }
 
-protocol TextFieldActionDelegate {
-    func textFieldTappedAt(cell: AddCardTableViewCell)
+protocol SecureTextFieldActionDelegate {
+    func secureTextFieldTappedAt(cell: AddCardSecureTableViewCell)
 }
