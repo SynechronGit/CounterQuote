@@ -12,8 +12,15 @@ class PaymentReceiptViewController: UIViewController {
     var cardDetailsArray = [String]()
     var cardHeaderArray = [String]()
     
+    @IBOutlet var proceedButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        proceedButton.layer.borderWidth = 1
+        proceedButton.layer.cornerRadius = 22
+        proceedButton.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+        
         self.title = "Payment Receipt"
         self.navigationItem.setHidesBackButton(true, animated: false)
         cardHeaderArray = ["Card number", "Cardholder name", "Email Address", "Premium amount", "Transaction ID#"]
