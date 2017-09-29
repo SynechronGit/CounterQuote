@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>TCProgressBar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,17 +47,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>770BBF90EE9D3B2B885E49C7EB128ABB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7E990B1722646B34CFFA3A6474C566BC</key>
+		<key>86A81EE1B3D7A3FF948BE44B9DF9373A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95A0235A5EA1406470A7C2D62C6551C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -63,6 +68,11 @@
 			<true/>
 		</dict>
 		<key>C75795DCD415BAC6CFC10605AC098683</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E1370687B874D6E8F39F6CF3ABBEF390</key>
 		<dict>
 			<key>primary</key>
 			<true/>

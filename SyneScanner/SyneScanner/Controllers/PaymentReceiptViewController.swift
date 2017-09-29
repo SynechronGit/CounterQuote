@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class PaymentReceiptViewController: UIViewController {
     var cardDetailsArray = [String]()
@@ -34,6 +35,13 @@ class PaymentReceiptViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func proccedBtnTapped ()
+    {
+        SVProgressHUD.show()
+        SVProgressHUD.dismiss(withDelay: 2) {
+            self.performSegue(withIdentifier: "NavToBinder", sender: nil)
+        }
+    }
 
     /*
     // MARK: - Navigation

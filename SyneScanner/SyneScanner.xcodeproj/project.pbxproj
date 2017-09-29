@@ -40,7 +40,9 @@
 		1B6E11351F7D0D3100C4069A /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E11301F7D0D3100C4069A /* TPKeyboardAvoidingTableView.m */; };
 		1B6E11361F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E11321F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		1BCC637C1F7E6D7C00C87694 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */; };
-		1BEF2E7C1F79293900AE94E6 /* policy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1BEF2E7B1F79293900AE94E6 /* policy.pdf */; };
+		1BCC637F1F7E9FB300C87694 /* Binder.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1BCC637D1F7E9FB300C87694 /* Binder.pdf */; };
+		1BCC63801F7E9FB300C87694 /* Quote.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1BCC637E1F7E9FB300C87694 /* Quote.pdf */; };
+		1BCC63821F7EA1DC00C87694 /* COI.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1BCC63811F7EA1DC00C87694 /* COI.pdf */; };
 		5346F1B11F752031000E6AC5 /* ImageWorkflowProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1B01F752031000E6AC5 /* ImageWorkflowProxy.swift */; };
 		5346F1B31F7542BC000E6AC5 /* ScanCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1B21F7542BC000E6AC5 /* ScanCompleteViewController.swift */; };
 		5346F1B51F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1B41F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift */; };
@@ -148,7 +150,9 @@
 		1B6E11311F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		1B6E11321F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
-		1BEF2E7B1F79293900AE94E6 /* policy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = policy.pdf; sourceTree = "<group>"; };
+		1BCC637D1F7E9FB300C87694 /* Binder.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Binder.pdf; sourceTree = "<group>"; };
+		1BCC637E1F7E9FB300C87694 /* Quote.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Quote.pdf; sourceTree = "<group>"; };
+		1BCC63811F7EA1DC00C87694 /* COI.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = COI.pdf; sourceTree = "<group>"; };
 		349831C8100594A2ABFB4F99 /* Pods-SyneScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyneScanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-SyneScanner/Pods-SyneScanner.release.xcconfig"; sourceTree = "<group>"; };
 		410CDDF85111FCE66A77C52C /* Pods_SyneScannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SyneScannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C33F0BD7E2D6EEF64F5A57C /* Pods_SyneScannerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SyneScannerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,7 +304,9 @@
 		1BEF2E7A1F79292700AE94E6 /* PDF */ = {
 			isa = PBXGroup;
 			children = (
-				1BEF2E7B1F79293900AE94E6 /* policy.pdf */,
+				1BCC63811F7EA1DC00C87694 /* COI.pdf */,
+				1BCC637D1F7E9FB300C87694 /* Binder.pdf */,
+				1BCC637E1F7E9FB300C87694 /* Quote.pdf */,
 			);
 			path = PDF;
 			sourceTree = "<group>";
@@ -589,6 +595,8 @@
 				536A336D1F725AE500F019C5 /* LaunchScreen.storyboard in Resources */,
 				1B66F2541F7E300000FA52C0 /* Carnas Extra Bold.otf in Resources */,
 				1B66F25D1F7E300000FA52C0 /* Carnas Thin Italic.otf in Resources */,
+				1BCC637F1F7E9FB300C87694 /* Binder.pdf in Resources */,
+				1BCC63801F7E9FB300C87694 /* Quote.pdf in Resources */,
 				1B66F25C1F7E300000FA52C0 /* Carnas Regular.otf in Resources */,
 				1B66F2511F7E300000FA52C0 /* Carnas Bold Italic.otf in Resources */,
 				1B66F2531F7E300000FA52C0 /* Carnas Extra Bold Italic.otf in Resources */,
@@ -597,9 +605,9 @@
 				1B66F25E1F7E300000FA52C0 /* Carnas Thin.otf in Resources */,
 				1B66F2561F7E300000FA52C0 /* Carnas Extra Light.otf in Resources */,
 				1B66F24F1F7E300000FA52C0 /* Carnas Black Italic.otf in Resources */,
+				1BCC63821F7EA1DC00C87694 /* COI.pdf in Resources */,
 				536A336A1F725AE500F019C5 /* Assets.xcassets in Resources */,
 				1B66F2581F7E300000FA52C0 /* Carnas Light Italic.otf in Resources */,
-				1BEF2E7C1F79293900AE94E6 /* policy.pdf in Resources */,
 				1B66F2501F7E300000FA52C0 /* Carnas Black.otf in Resources */,
 				536A33681F725AE500F019C5 /* Main.storyboard in Resources */,
 				1B66F2571F7E300000FA52C0 /* Carnas Italic.otf in Resources */,
@@ -670,12 +678,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SyneScanner/Pods-SyneScanner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/TCProgressBar/TCProgressBar.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TCProgressBar.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

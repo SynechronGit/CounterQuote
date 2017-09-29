@@ -7,11 +7,12 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class BinderViewController: UIViewController {
 
     @IBOutlet var webView: UIWebView!
     @IBOutlet var proceedBtn: UIButton!
+    @IBOutlet var centerView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,8 @@ class BinderViewController: UIViewController {
         proceedBtn.layer.cornerRadius = 22
         proceedBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
 
+        centerView.layer.cornerRadius = 10
+        centerView.layer.masksToBounds = true
         loadPdfFile()
         // Do any additional setup after loading the view.
     }
@@ -32,7 +35,7 @@ class BinderViewController: UIViewController {
     
     func loadPdfFile()
     {
-        if let pdf = Bundle.main.url(forResource: "policy", withExtension: "pdf", subdirectory: nil, localization: nil)  {
+        if let pdf = Bundle.main.url(forResource: "Binder", withExtension: "pdf", subdirectory: nil, localization: nil)  {
             let req = NSURLRequest(url: pdf)
             webView.loadRequest(req as URLRequest)
         }
@@ -40,7 +43,11 @@ class BinderViewController: UIViewController {
     //MARK: UIButton action methods
     
     @IBAction func proceedBtnTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "NavToCOIVc", sender: nil)
+        SVProgressHUD.show()
+        SVProgressHUD.dismiss(withDelay: 2) {
+            self.performSegue(withIdentifier: "NavToCOIVc", sender: nil)
+        }
+
     }
     /*
     // MARK: - Navigation

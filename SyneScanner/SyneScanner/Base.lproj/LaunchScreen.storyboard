@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COUNTERQUOTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dv9-Wd-4cB">
-                                <rect key="frame" x="88.5" y="99" width="198.5" height="26"/>
+                                <rect key="frame" x="89" y="80" width="198.5" height="26"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                             <constraint firstItem="ctD-lm-NT7" firstAttribute="top" secondItem="652-rP-ZVv" secondAttribute="top" id="55f-ov-b09"/>
                             <constraint firstItem="ctD-lm-NT7" firstAttribute="leading" secondItem="652-rP-ZVv" secondAttribute="leading" id="EPi-NM-XBO"/>
                             <constraint firstItem="45l-zT-Bz4" firstAttribute="top" secondItem="ctD-lm-NT7" secondAttribute="bottom" id="ILE-vo-yZp"/>
-                            <constraint firstItem="Dv9-Wd-4cB" firstAttribute="top" secondItem="tPu-RP-tzw" secondAttribute="bottom" constant="79" id="QLb-ob-Fca"/>
+                            <constraint firstItem="Dv9-Wd-4cB" firstAttribute="top" secondItem="tPu-RP-tzw" secondAttribute="bottom" constant="60" id="QLb-ob-Fca"/>
                             <constraint firstItem="ugh-T5-Yds" firstAttribute="centerX" secondItem="652-rP-ZVv" secondAttribute="centerX" id="Xyb-6T-dzd"/>
                             <constraint firstItem="gbl-l1-CPl" firstAttribute="centerX" secondItem="652-rP-ZVv" secondAttribute="centerX" id="c9f-9p-kdA"/>
                             <constraint firstAttribute="trailing" secondItem="ctD-lm-NT7" secondAttribute="trailing" id="cuV-hs-44I"/>

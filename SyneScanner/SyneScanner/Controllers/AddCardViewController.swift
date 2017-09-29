@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class AddCardViewController: UIViewController {
     var cardHeaderArray = [String]()
@@ -73,12 +74,17 @@ class AddCardViewController: UIViewController {
             let message = "Invalid Email Address!"
             self.showAlert(message: message)
         } else {
-            let paymentReceiptVC = self.storyboard?.instantiateViewController(withIdentifier: "PaymentReceiptViewController") as! PaymentReceiptViewController
-            for item in 0...1 {
-                paymentReceiptVC.cardDetailsArray.append(cardDetailsArray[item])
+            
+            SVProgressHUD.show()
+            SVProgressHUD.dismiss(withDelay: 2) {
+                let paymentReceiptVC = self.storyboard?.instantiateViewController(withIdentifier: "PaymentReceiptViewController") as! PaymentReceiptViewController
+                for item in 0...1 {
+                    paymentReceiptVC.cardDetailsArray.append(cardDetailsArray[item])
+                }
+                paymentReceiptVC.cardDetailsArray.append(self.emailIdField.text!)
+                self.navigationController?.pushViewController(paymentReceiptVC, animated: true)
             }
-            paymentReceiptVC.cardDetailsArray.append(emailIdField.text!)
-            self.navigationController?.pushViewController(paymentReceiptVC, animated: true)
+           
         }
     }
     

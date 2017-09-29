@@ -7,23 +7,24 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class InsuranceQuoteViewController: UIViewController {
 
     @IBOutlet var webView: UIWebView!
+    @IBOutlet var centerView: UIView!
+
     @IBOutlet var cancelBtn: UIButton!
     @IBOutlet var acceptBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated: false)
-        cancelBtn.layer.borderWidth = 1
-        cancelBtn.layer.cornerRadius = 22
-        cancelBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
         acceptBtn.layer.borderWidth = 1
         acceptBtn.layer.cornerRadius = 22
         acceptBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
-        loadPdfFile()
+        
+        centerView.layer.cornerRadius = 10
+        centerView.layer.masksToBounds = true
         // Do any additional setup after loading the view.
     }
 
@@ -31,9 +32,14 @@ class InsuranceQuoteViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadPdfFile()
+
+    }
     func loadPdfFile()
     {
-        if let pdf = Bundle.main.url(forResource: "policy", withExtension: "pdf", subdirectory: nil, localization: nil)  {
+        if let pdf = Bundle.main.url(forResource: "Quote", withExtension: "pdf", subdirectory: nil, localization: nil)  {
             let req = NSURLRequest(url: pdf)
             webView.loadRequest(req as URLRequest)
         }
@@ -46,7 +52,11 @@ class InsuranceQuoteViewController: UIViewController {
     //MARK: UIButton action methods
     
     @IBAction func acceptBtnTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "navToPaymentScreen", sender: nil)
+        SVProgressHUD.show()
+        SVProgressHUD.dismiss(withDelay: 2) {
+            self.performSegue(withIdentifier: "navToPaymentScreen", sender: nil)
+        }
+
     }
     @IBAction func cancelBtnTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

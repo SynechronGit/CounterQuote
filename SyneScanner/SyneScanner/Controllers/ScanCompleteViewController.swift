@@ -8,7 +8,7 @@
 
 import UIKit
 import TCProgressBar
-
+import SVProgressHUD
 class ScanCompleteViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var progressBar: TCProgressBar!
@@ -70,10 +70,17 @@ class ScanCompleteViewController: UIViewController {
     //MARK: UIButton action methods
 
     @IBAction func scanningDoneTapped(_ sender: Any) {
-        self.showProgressLoader()
+       
+        SVProgressHUD.show(withStatus: "Loading...")
+        SVProgressHUD.dismiss(withDelay: 5) {
+        self.performSegue(withIdentifier: "NavToQuoteView", sender: nil)
+
+        }
+        //self.showProgressLoader()
         self.startWorkflowApi()
     }
     
+  
     //MARK: LineProgress methods
     
     func showProgressLoader() {
