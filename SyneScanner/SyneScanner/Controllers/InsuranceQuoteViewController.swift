@@ -11,11 +11,18 @@ import UIKit
 class InsuranceQuoteViewController: UIViewController {
 
     @IBOutlet var webView: UIWebView!
+    @IBOutlet var cancelBtn: UIButton!
+    @IBOutlet var acceptBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
-        self.title = "Quote"
+        cancelBtn.layer.borderWidth = 1
+        cancelBtn.layer.cornerRadius = 22
+        cancelBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+        acceptBtn.layer.borderWidth = 1
+        acceptBtn.layer.cornerRadius = 22
+        acceptBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
         loadPdfFile()
         // Do any additional setup after loading the view.
     }

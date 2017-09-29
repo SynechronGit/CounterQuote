@@ -16,6 +16,7 @@ class ImagePreviewController: UIViewController {
     var selectedIndexNo = -1
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var pageControl: UIPageControl!
+    @IBOutlet var lblHeader: UILabel!
 
      // MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -45,16 +46,17 @@ class ImagePreviewController: UIViewController {
         if isFromScanComplete
         {
             pageControl.isHidden =  true
+            lblHeader.isHidden = true
         }
         
         pageControl.numberOfPages = SharedData.sharedInstance.arrImage.count
         
-        
+        lblHeader.text = String(format:"You are in (1/%d) pages",pageControl.numberOfPages)
+
         //let rightBarButton = UIBarButtonItem(title: "Finish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ImagePreviewController.finishBtnTapped))
         //self.navigationItem.rightBarButtonItem = rightBarButton
         
         
-        self.navigationController?.setNavigationBarHidden(false, animated:false)
         
         collectionView.reloadData()
 
@@ -104,6 +106,15 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
         }
         cell.imagePreview.image = model?.image
         cell.retakeDelegate = self
+        
+        cell.retakeButton.layer.borderWidth = 1
+         cell.retakeButton.layer.cornerRadius = 22
+         cell.retakeButton.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+
+        cell.deleteButton.layer.borderWidth = 1
+        cell.deleteButton.layer.cornerRadius = 22
+        cell.deleteButton.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+        
         return cell
     
     }
@@ -119,6 +130,8 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+        
+        lblHeader.text = String(format:"You are in (%d/%d) pages",pageControl.currentPage + 1,pageControl.numberOfPages)
     }
 }
 

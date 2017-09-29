@@ -11,8 +11,8 @@ class ImagePreviewCollectionViewCell: UICollectionViewCell {
     var retakeDelegate : ImageShareAndRetakeDelegate?
     @IBOutlet weak var imagePreview: UIImageView!
 
-    @IBOutlet weak var shareButton: UIBarButtonItem!
-    @IBOutlet weak var retakeButton: UIBarButtonItem!
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var retakeButton: UIButton!
     @IBAction func deleteOptionTapped(_ sender: Any) {
         retakeDelegate?.deleteImageAt(cell: self)
     }

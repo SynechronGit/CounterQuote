@@ -35,27 +35,16 @@ class ScanCompleteViewController: UIViewController {
     }
     func configureUI()
     {
-        self.title = "Scan Complete"
-        
-        
-        //Create back button of type custom
-        
-        //Create back button of type custom
-        let myBackButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        myBackButton.setBackgroundImage(UIImage(named: "BackArrow"), for: .normal)
-        myBackButton.addTarget(self, action: #selector(ImagePreviewController.popToRoot), for: .touchUpInside)
-        myBackButton.sizeThatFits(CGSize(width: 22, height: 22))
-        
-        //Add back button to navigationBar as left Button
-        
-        let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
-        self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
-        
+        btnComplete.layer.borderWidth = 1
+        btnComplete.layer.cornerRadius = 22
+        btnComplete.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+
         let notificationName = Notification.Name("updateProgress")
         NotificationCenter.default.addObserver(self, selector: #selector(ScanCompleteViewController.updateProgress), name: notificationName, object: nil)
 
     }
-    func popToRoot()
+    
+ @IBAction   func popToRoot()
     {
         self.navigationController?.popViewController(animated: true)
     }
@@ -70,7 +59,6 @@ class ScanCompleteViewController: UIViewController {
         if progressBar.value >= 1.0
         {
             btnComplete.isEnabled = true
-            btnComplete.backgroundColor = UIColor(red: 208/255, green: 64/255, blue: 67/255, alpha: 1.0)
         }
         else {
          //   btnComplete.isEnabled = false
@@ -143,7 +131,7 @@ extension ScanCompleteViewController: UICollectionViewDataSource, UICollectionVi
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        let width = (collectionView.frame.size.width - 6)/4
+        let width = (collectionView.frame.size.width - 10)/3
         let height = width
         print(width)
         return CGSize(width: width, height: height)
