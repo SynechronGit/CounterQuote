@@ -56,7 +56,6 @@
 		5346F1E11F7A3B7C000E6AC5 /* AddCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1E01F7A3B7C000E6AC5 /* AddCardTableViewCell.swift */; };
 		5346F1E31F7A3CAD000E6AC5 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1E21F7A3CAD000E6AC5 /* AddCardViewController.swift */; };
 		535888751F7CECE400A6E0D0 /* PaymentReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535888741F7CECE400A6E0D0 /* PaymentReceiptViewController.swift */; };
-		535888771F7CF0D300A6E0D0 /* AddCardSecureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535888761F7CF0D300A6E0D0 /* AddCardSecureTableViewCell.swift */; };
 		536A33631F725AE500F019C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A33621F725AE500F019C5 /* AppDelegate.swift */; };
 		536A33681F725AE500F019C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536A33661F725AE500F019C5 /* Main.storyboard */; };
 		536A336A1F725AE500F019C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536A33691F725AE500F019C5 /* Assets.xcassets */; };
@@ -167,7 +166,6 @@
 		5346F1E01F7A3B7C000E6AC5 /* AddCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardTableViewCell.swift; sourceTree = "<group>"; };
 		5346F1E21F7A3CAD000E6AC5 /* AddCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
 		535888741F7CECE400A6E0D0 /* PaymentReceiptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentReceiptViewController.swift; sourceTree = "<group>"; };
-		535888761F7CF0D300A6E0D0 /* AddCardSecureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardSecureTableViewCell.swift; sourceTree = "<group>"; };
 		536A335F1F725AE500F019C5 /* SyneScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyneScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		536A33621F725AE500F019C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		536A33671F725AE500F019C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -434,7 +432,6 @@
 				1B5403DD1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift */,
 				5346F1B41F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift */,
 				5346F1E01F7A3B7C000E6AC5 /* AddCardTableViewCell.swift */,
-				535888761F7CF0D300A6E0D0 /* AddCardSecureTableViewCell.swift */,
 				53DE22521F7D07C50045E9EA /* PaymentReceiptTableViewCell.swift */,
 			);
 			path = Views;
@@ -828,7 +825,6 @@
 				5346F1D71F79191E000E6AC5 /* ARSLineProgress.swift in Sources */,
 				1B6E11111F7CF3E600C4069A /* InsuranceQuoteViewController.swift in Sources */,
 				5346F1DA1F79191E000E6AC5 /* ARSLineProgressExtensions.swift in Sources */,
-				535888771F7CF0D300A6E0D0 /* AddCardSecureTableViewCell.swift in Sources */,
 				1B6E11351F7D0D3100C4069A /* TPKeyboardAvoidingTableView.m in Sources */,
 				5346F1B51F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift in Sources */,
 				536A33A21F725C5F00F019C5 /* QuadrangleFilter.swift in Sources */,

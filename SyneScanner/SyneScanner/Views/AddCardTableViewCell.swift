@@ -11,7 +11,6 @@ import UIKit
 class AddCardTableViewCell: UITableViewCell {
     let kLength = 4
     @IBOutlet weak var descriptionField: UITextField!
-    @IBOutlet weak var headerLabel: UILabel!
     
     var actionDelegate : TextFieldActionDelegate?
     override func awakeFromNib() {
