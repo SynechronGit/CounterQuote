@@ -32,12 +32,6 @@ class AddCardViewController: UIViewController {
         makePaymentButton.layer.cornerRadius = 22
         makePaymentButton.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
         
-        let myBackButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        myBackButton.setBackgroundImage(UIImage(named: "BackArrow"), for: .normal)
-        myBackButton.addTarget(self, action: #selector(AddCardViewController.popToRoot), for: .touchUpInside)
-        myBackButton.sizeThatFits(CGSize(width: 22, height: 22))
-        let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
-        self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
         
         self.makePaymentButton.isEnabled = true
         self.commonSetup()
@@ -50,7 +44,7 @@ class AddCardViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func popToRoot()
+ @IBAction   func popToRoot()
     {
         self.navigationController?.popViewController(animated: true)
     }

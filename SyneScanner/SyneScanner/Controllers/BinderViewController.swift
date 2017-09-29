@@ -11,11 +11,16 @@ import UIKit
 class BinderViewController: UIViewController {
 
     @IBOutlet var webView: UIWebView!
+    @IBOutlet var proceedBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.title = "Binder"
+        proceedBtn.layer.borderWidth = 1
+        proceedBtn.layer.cornerRadius = 22
+        proceedBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+
         loadPdfFile()
         // Do any additional setup after loading the view.
     }

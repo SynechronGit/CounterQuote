@@ -11,10 +11,20 @@ import UIKit
 class COIViewController: UIViewController {
     
     @IBOutlet var webView: UIWebView!
+    @IBOutlet var startNewBtn: UIButton!
+    @IBOutlet var completeBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.title = "Certificate Of Insurance"
+        
+        startNewBtn.layer.borderWidth = 1
+        startNewBtn.layer.cornerRadius = 22
+        startNewBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+        completeBtn.layer.borderWidth = 1
+        completeBtn.layer.cornerRadius = 22
+        completeBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+
         loadPdfFile()
 
         // Do any additional setup after loading the view.
@@ -40,11 +50,7 @@ class COIViewController: UIViewController {
         self.navigationController?.popToViewController(vc!, animated: true)
     }
     @IBAction func completeBtnTapped(_ sender: Any) {
-        SharedData.sharedInstance.arrImage.removeAll()
-        
-        let vc = self.navigationController?.viewControllers[1]
-        self.navigationController?.popToViewController(vc!, animated: true)
-    }
+           }
 
     /*
     // MARK: - Navigation

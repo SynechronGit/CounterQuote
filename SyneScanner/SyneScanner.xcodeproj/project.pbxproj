@@ -39,6 +39,7 @@
 		1B6E11341F7D0D3100C4069A /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E112E1F7D0D3100C4069A /* TPKeyboardAvoidingScrollView.m */; };
 		1B6E11351F7D0D3100C4069A /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E11301F7D0D3100C4069A /* TPKeyboardAvoidingTableView.m */; };
 		1B6E11361F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E11321F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		1BCC637C1F7E6D7C00C87694 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */; };
 		1BEF2E7C1F79293900AE94E6 /* policy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1BEF2E7B1F79293900AE94E6 /* policy.pdf */; };
 		5346F1B11F752031000E6AC5 /* ImageWorkflowProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1B01F752031000E6AC5 /* ImageWorkflowProxy.swift */; };
 		5346F1B31F7542BC000E6AC5 /* ScanCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1B21F7542BC000E6AC5 /* ScanCompleteViewController.swift */; };
@@ -146,6 +147,7 @@
 		1B6E11301F7D0D3100C4069A /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		1B6E11311F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		1B6E11321F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		1BEF2E7B1F79293900AE94E6 /* policy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = policy.pdf; sourceTree = "<group>"; };
 		349831C8100594A2ABFB4F99 /* Pods-SyneScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyneScanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-SyneScanner/Pods-SyneScanner.release.xcconfig"; sourceTree = "<group>"; };
 		410CDDF85111FCE66A77C52C /* Pods_SyneScannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SyneScannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -450,6 +452,7 @@
 				1B6E11101F7CF3E600C4069A /* InsuranceQuoteViewController.swift */,
 				1B6E11121F7CFCED00C4069A /* BinderViewController.swift */,
 				1B6E11141F7CFCF900C4069A /* COIViewController.swift */,
+				1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -794,6 +797,7 @@
 				5346F1E31F7A3CAD000E6AC5 /* AddCardViewController.swift in Sources */,
 				5346F1DB1F79191E000E6AC5 /* ARSLineProgressHelpers.swift in Sources */,
 				1B6E11151F7CFCF900C4069A /* COIViewController.swift in Sources */,
+				1BCC637C1F7E6D7C00C87694 /* ThankYouViewController.swift in Sources */,
 				5346F1D81F79191E000E6AC5 /* ARSLineProgressConstants.swift in Sources */,
 				536A33631F725AE500F019C5 /* AppDelegate.swift in Sources */,
 				1B5403E11F73A35F007CF73B /* SharedData.swift in Sources */,
