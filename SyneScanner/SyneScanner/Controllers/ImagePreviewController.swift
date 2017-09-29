@@ -27,7 +27,6 @@ class ImagePreviewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,20 +56,10 @@ class ImagePreviewController: UIViewController {
         
         self.navigationController?.setNavigationBarHidden(false, animated:false)
         
-        //Create back button of type custom
-        let myBackButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        myBackButton.setBackgroundImage(UIImage(named: "BackArrow"), for: .normal)
-        myBackButton.addTarget(self, action: #selector(ImagePreviewController.popToRoot), for: .touchUpInside)
-        myBackButton.sizeThatFits(CGSize(width: 22, height: 22))
-        
-        //Add back button to navigationBar as left Button
-        
-        let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
-        self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
         collectionView.reloadData()
 
     }
-    func popToRoot()
+   @IBAction func popToRoot()
     {
         self.navigationController?.popViewController(animated: true)
     }

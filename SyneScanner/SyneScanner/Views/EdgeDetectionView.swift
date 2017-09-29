@@ -51,6 +51,7 @@ class EdgeDetectionView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+       
         //self.backgroundColor = UIColor.clear
     }
     
@@ -89,10 +90,12 @@ class EdgeDetectionView: UIView {
         
         // draw the lines
         context.setStrokeColor(UIColor.white.cgColor)
-        context.setLineWidth(3.0)
-        
+      //  context.setLineWidth(3.0)
+        context.setLineDash(phase: 6, lengths: [2,2])
         context.constructPath(from: quadrangleInImageInView)
         context.strokePath()
+        
+        
     }
     
     /// Show the quadrangle in the current view

@@ -15,7 +15,11 @@ class CameraViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet var edgeDetectionView: EdgeDetectionView!
     @IBOutlet var galleryBtn: UIButton!
+    @IBOutlet var doneBtn: UIButton!
+
     @IBOutlet var centerImageView: UIImageView!
+    @IBOutlet var lastCatpureImageView: UIImageView!
+
     @IBOutlet weak var galleryView: UIView!
     @IBOutlet weak var lblImageCount: UILabel!
 
@@ -37,7 +41,9 @@ class CameraViewController: UIViewController {
             debugPrint("The layer of the root view must be a subclass of AVCaptureVideoPreviewLayer")
         }
 
-        
+        lastCatpureImageView.layer.masksToBounds = false
+        lastCatpureImageView.layer.cornerRadius = 20
+        lastCatpureImageView.clipsToBounds = true
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -52,15 +58,7 @@ class CameraViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        let myBackButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        myBackButton.setBackgroundImage(UIImage(named: "Close"), for: .normal)
-        myBackButton.addTarget(self, action: #selector(self.close), for: .touchUpInside)
-        myBackButton.sizeThatFits(CGSize(width: 22, height: 22))
-        //Add close button to navigationBar as left Button
-        let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
-        self.navigationItem.leftBarButtonItem  = myCustomBackButtonItem
-        lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
+       updateTotalNoImgLbl()
 
         self.imageCaptureManager?.startSession()
     }
@@ -70,9 +68,24 @@ class CameraViewController: UIViewController {
         self.imageCaptureManager?.stopSession()
     }
     
+    func updateTotalNoImgLbl()
+    {
+        if SharedData.sharedInstance.arrImage.count > 0
+        {
+            lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
+            lblImageCount.isHidden = false
+            doneBtn.isHidden = false
+        }
+        else
+        {
+            lblImageCount.isHidden = true
+            doneBtn.isHidden = true
+
+        }
+    }
     // MARK: - Button actions
     
-    func close() {
+    @IBAction func close() {
         if SharedData.sharedInstance.arrImage.count > 0
         {
 //            let alert = UIAlertController(title: "Discard", message: "Do you want to discard \(SharedData.sharedInstance.arrImage.count) pictures?", preferredStyle: UIAlertControllerStyle.alert)
@@ -87,8 +100,7 @@ class CameraViewController: UIViewController {
     }
     
     func discardScans(action: UIAlertAction) {
-        
-        lblImageCount.text = "0"
+         updateTotalNoImgLbl()
         SharedData.sharedInstance.clearAllData()
         self.navigationController?.popViewController(animated: false)
         //self.galleryBtn.setImage(nil, for: .normal)
@@ -164,7 +176,7 @@ class CameraViewController: UIViewController {
         if self.retakeIndexNo != -1
         {
             let model = SharedData.sharedInstance.arrImage[self.retakeIndexNo]
-            model?.image = image
+            model.image = image
             SharedData.sharedInstance.arrImage[self.retakeIndexNo] = model
             self.callUploadImageApi(indexNo: self.retakeIndexNo)
             
@@ -181,7 +193,7 @@ class CameraViewController: UIViewController {
         self.centerImageView.frame = CGRect(x: self.view.frame.size.width/2 - 60 , y: self.view.frame.size.height/2 - 80, width: 120, height: 120)
         self.centerImageView.image = image
         self.imageCaptureManager?.resetProperties()
-        lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
+      updateTotalNoImgLbl()
 
         self.animateImageAfterCapturing()
 
@@ -196,6 +208,8 @@ class CameraViewController: UIViewController {
             
         },completion: { finish in
             self.centerImageView.isHidden = true
+            let model = SharedData.sharedInstance.arrImage.last
+            self.lastCatpureImageView.image = model?.image
 //            self.galleryBtn.isHidden = true
 //            UIView.animate(withDuration: 0.5, delay: 0.0,options: UIViewAnimationOptions.curveEaseOut,animations: {
 //                self.centerImageView.transform = CGAffineTransform(scaleX: 0.25, y: 0.25)
@@ -253,7 +267,7 @@ extension CameraViewController:UploadImageProxyDelegate
 
         let uploadImageProxy =  UploadImageProxy()
         uploadImageProxy.delegate = self
-        uploadImageProxy.uploadScanningImage(image: (model?.image!)!, indexNo: indexNo)
+        uploadImageProxy.uploadScanningImage(image: (model.image!), indexNo: indexNo)
     }
     func imageSuccessfullyUpload(responseData:[String:AnyObject],indexNo:Int)
     { 
@@ -268,13 +282,13 @@ extension CameraViewController:UploadImageProxyDelegate
     }
     func progressResult(progress:Float,indexNo:Int)
     {
-      if   let model = SharedData.sharedInstance.arrImage[indexNo]
-      {
+         let model = SharedData.sharedInstance.arrImage[indexNo]
+      
         model.progress = progress
         SharedData.sharedInstance.arrImage[indexNo] = model
         let notificationName = Notification.Name("updateProgress")
         NotificationCenter.default.post(name: notificationName, object: nil)
-        }
+        
     }
 
     

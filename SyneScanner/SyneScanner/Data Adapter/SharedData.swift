@@ -19,16 +19,16 @@ class SharedData: NSObject {
     private override init() {
         
     }
-    var arrImage:[ImageDataModel?] = []
+    var arrImage:[ImageDataModel] = []
     
     func updateModel(dict:[String:AnyObject],indexNo:Int)
     {
-        if let model = SharedData.sharedInstance.arrImage[indexNo]
-        {
+         let model = SharedData.sharedInstance.arrImage[indexNo]
+        
             model.imageSuccesfullyUpload = true
             model.fileUrl = dict["FileUrl"] as! String
  
-        }
+        
            }
     
     func calculateCurrentProgress() -> (progressValue : Float, uploadedImgCount: Int)
