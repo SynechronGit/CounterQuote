@@ -16,7 +16,8 @@ class InsuranceQuoteViewController: UIViewController {
 
     @IBOutlet var cancelBtn: UIButton!
     @IBOutlet var acceptBtn: UIButton!
-    
+    @IBOutlet var tableView: UITableView!
+
     var companyList = [["companyName": "Company 1", "price": "3500"],["companyName": "Company 2", "price": "3200"],["companyName": "Company 3", "price": "3000"],["companyName": "Company 4", "price": "2800"],["companyName": "Company 5", "price": "2500"]]
 
 
@@ -25,7 +26,7 @@ class InsuranceQuoteViewController: UIViewController {
         acceptBtn.layer.borderWidth = 1
         acceptBtn.layer.cornerRadius = 22
         acceptBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
-        
+        tableView.tableFooterView = UIView()
      //   centerView.layer.cornerRadius = 10
       //  centerView.layer.masksToBounds = true
         // Do any additional setup after loading the view.

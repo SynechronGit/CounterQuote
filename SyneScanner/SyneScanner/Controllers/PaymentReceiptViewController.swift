@@ -19,7 +19,7 @@ class PaymentReceiptViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.tableFooterView = UIView()
         proceedButton.layer.borderWidth = 1
         proceedButton.layer.cornerRadius = 22
         proceedButton.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor

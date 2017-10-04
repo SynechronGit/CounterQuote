@@ -34,6 +34,7 @@ class AddCardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Create back button of type custom
+        tableView.tableFooterView = UIView()
          CardIOUtilities.preload()
         self.defaultValues()
         let actualPriceStr:String = (companyDetails?["price"])!
