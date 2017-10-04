@@ -80,7 +80,6 @@ extension PaymentReceiptViewController: UITableViewDataSource,UITableViewDelegat
         let layer = CAShapeLayer()
         let pathRef = CGMutablePath()
         let bounds = cell.bounds.insetBy(dx: 20, dy: 0)
-        var addLine = false
         
         if indexPath.row == 0 && indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
             pathRef.__addRoundedRect(transform: nil, rect: bounds, cornerWidth: cornerRadius, cornerHeight: cornerRadius)
@@ -89,7 +88,6 @@ extension PaymentReceiptViewController: UITableViewDataSource,UITableViewDelegat
             pathRef.addArc(tangent1End: .init(x: bounds.minX, y: bounds.minY), tangent2End: .init(x: bounds.midX, y: bounds.minY), radius: cornerRadius)
             pathRef.addArc(tangent1End: .init(x: bounds.maxX, y: bounds.minY), tangent2End: .init(x: bounds.maxX, y: bounds.midY), radius: cornerRadius)
             pathRef.addLine(to: .init(x: bounds.maxX, y: bounds.maxY))
-            addLine = true
         } else if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
             pathRef.move(to: .init(x: bounds.minX, y: bounds.minY))
             pathRef.addArc(tangent1End: .init(x: bounds.minX, y: bounds.maxY), tangent2End: .init(x: bounds.midX, y: bounds.maxY), radius: cornerRadius)
@@ -97,19 +95,18 @@ extension PaymentReceiptViewController: UITableViewDataSource,UITableViewDelegat
             pathRef.addLine(to: .init(x: bounds.maxX, y: bounds.minY))
         } else {
             pathRef.addRect(bounds)
-            addLine = true
         }
         
         layer.path = pathRef
         layer.fillColor = UIColor(white: 1, alpha: 1).cgColor
         
-        if (addLine == true) {
-            let lineLayer = CALayer()
-            let lineHeight = 1.0 / UIScreen.main.scale
-            lineLayer.frame = CGRect(x: bounds.minX + 10, y: bounds.size.height - lineHeight, width: bounds.size.width - 10, height: lineHeight)
-            lineLayer.backgroundColor = tableView.separatorColor?.cgColor
-            layer.addSublayer(lineLayer)
-        }
+//        if (addLine == true) {
+//            let lineLayer = CALayer()
+//            let lineHeight = 1.0 / UIScreen.main.scale
+//            lineLayer.frame = CGRect(x: bounds.minX + 10, y: bounds.size.height - lineHeight, width: bounds.size.width - 10, height: lineHeight)
+//            lineLayer.backgroundColor = tableView.separatorColor?.cgColor
+//            layer.addSublayer(lineLayer)
+//        }
         
         let testView = UIView(frame: bounds)
         testView.layer.insertSublayer(layer, at: 0)

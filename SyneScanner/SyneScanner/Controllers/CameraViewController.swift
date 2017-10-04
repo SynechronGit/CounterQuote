@@ -130,11 +130,12 @@ class CameraViewController: UIViewController {
                 
                 if torchOn
                 {
-                    btnTorch.setImage(UIImage(named:"Torch-off"), for: .normal)
+                    btnTorch.setImage(UIImage(named:"Torch-on"), for: .normal)
+
 
                 }
                 else{
-                    btnTorch.setImage(UIImage(named:"Torch-on"), for: .normal)
+                    btnTorch.setImage(UIImage(named:"Torch-off"), for: .normal)
 
                 }
                 device.torchMode = torchOn ? .on : .off

@@ -30,13 +30,16 @@ class AddCardViewController: UIViewController {
     @IBOutlet weak var lblPolicyPrice: UILabel!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var makePaymentButton: UIButton!
-    
+    @IBOutlet weak var headerView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //Create back button of type custom
         tableView.tableFooterView = UIView()
          CardIOUtilities.preload()
         self.defaultValues()
+        headerView.layer.cornerRadius = 8
+
         let actualPriceStr:String = (companyDetails?["price"])!
 
         lblPolicyPrice.text = "$" + actualPriceStr + "/y"
@@ -219,7 +222,7 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
         let layer = CAShapeLayer()
         let pathRef = CGMutablePath()
         let bounds = cell.bounds.insetBy(dx: 20, dy: 0)
-        var addLine = false
+       // var addLine = false
         
         if indexPath.row == 0 && indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
             pathRef.__addRoundedRect(transform: nil, rect: bounds, cornerWidth: cornerRadius, cornerHeight: cornerRadius)
@@ -228,7 +231,7 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
             pathRef.addArc(tangent1End: .init(x: bounds.minX, y: bounds.minY), tangent2End: .init(x: bounds.midX, y: bounds.minY), radius: cornerRadius)
             pathRef.addArc(tangent1End: .init(x: bounds.maxX, y: bounds.minY), tangent2End: .init(x: bounds.maxX, y: bounds.midY), radius: cornerRadius)
             pathRef.addLine(to: .init(x: bounds.maxX, y: bounds.maxY))
-            addLine = true
+        //    addLine = true
         } else if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
             pathRef.move(to: .init(x: bounds.minX, y: bounds.minY))
             pathRef.addArc(tangent1End: .init(x: bounds.minX, y: bounds.maxY), tangent2End: .init(x: bounds.midX, y: bounds.maxY), radius: cornerRadius)
@@ -236,19 +239,19 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
             pathRef.addLine(to: .init(x: bounds.maxX, y: bounds.minY))
         } else {
             pathRef.addRect(bounds)
-            addLine = true
+          //  addLine = true
         }
         
         layer.path = pathRef
         layer.fillColor = UIColor(white: 1, alpha: 1).cgColor
         
-        if (addLine == true) {
-            let lineLayer = CALayer()
-            let lineHeight = 1.0 / UIScreen.main.scale
-            lineLayer.frame = CGRect(x: bounds.minX + 10, y: bounds.size.height - lineHeight, width: bounds.size.width - 10, height: lineHeight)
-            lineLayer.backgroundColor = tableView.separatorColor?.cgColor
-            layer.addSublayer(lineLayer)
-        }
+//        if (addLine == true) {
+//            let lineLayer = CALayer()
+//            let lineHeight = 1.0 / UIScreen.main.scale
+//            lineLayer.frame = CGRect(x: bounds.minX + 10, y: bounds.size.height - lineHeight, width: bounds.size.width - 10, height: lineHeight)
+//            lineLayer.backgroundColor = tableView.separatorColor?.cgColor
+//            layer.addSublayer(lineLayer)
+//        }
         
         let testView = UIView(frame: bounds)
         testView.layer.insertSublayer(layer, at: 0)

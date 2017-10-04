@@ -95,6 +95,8 @@ extension InsuranceQuoteViewController:UITableViewDataSource,UITableViewDelegate
         if indexPath.row == 0
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "topCell", for: indexPath )
+            let mainView:UIView = cell.viewWithTag(4)!
+            mainView.layer.cornerRadius = 8
 
             return cell
 
