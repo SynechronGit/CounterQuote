@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B31C0DE1F85315700C2EC04 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B31C0DC1F85315700C2EC04 /* HockeySDK.framework */; };
+		1B31C0DF1F85315700C2EC04 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1B31C0DD1F85315700C2EC04 /* HockeySDKResources.bundle */; };
 		1B5403DC1F728842007CF73B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403DB1F728842007CF73B /* RootViewController.swift */; };
 		1B5403DE1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403DD1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift */; };
 		1B5403E11F73A35F007CF73B /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5403E01F73A35F007CF73B /* SharedData.swift */; };
@@ -115,6 +117,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B31C0DC1F85315700C2EC04 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
+		1B31C0DD1F85315700C2EC04 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
 		1B5403DB1F728842007CF73B /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		1B5403DD1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		1B5403E01F73A35F007CF73B /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B31C0DE1F85315700C2EC04 /* HockeySDK.framework in Frameworks */,
 				E385531379DB2609BFC1A289 /* Pods_SyneScanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +243,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B31C0DB1F85315700C2EC04 /* HockeySDK-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1B31C0DC1F85315700C2EC04 /* HockeySDK.framework */,
+				1B31C0DD1F85315700C2EC04 /* HockeySDKResources.bundle */,
+			);
+			path = "HockeySDK-iOS";
+			sourceTree = "<group>";
+		};
 		1B5403DF1F73A2F2007CF73B /* Data Adapter */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +358,7 @@
 		5346F1CB1F791910000E6AC5 /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				1B31C0DB1F85315700C2EC04 /* HockeySDK-iOS */,
 				1B6E11291F7D0D2600C4069A /* TPScrollVIew */,
 				5346F1CC1F79191E000E6AC5 /* ARSInfiniteLoader.swift */,
 				5346F1CD1F79191E000E6AC5 /* ARSLineProgress.swift */,
@@ -617,6 +632,7 @@
 				1B66F24F1F7E300000FA52C0 /* Carnas Black Italic.otf in Resources */,
 				1BCC63821F7EA1DC00C87694 /* COI.pdf in Resources */,
 				536A336A1F725AE500F019C5 /* Assets.xcassets in Resources */,
+				1B31C0DF1F85315700C2EC04 /* HockeySDKResources.bundle in Resources */,
 				1B66F2581F7E300000FA52C0 /* Carnas Light Italic.otf in Resources */,
 				1B66F2501F7E300000FA52C0 /* Carnas Black.otf in Resources */,
 				536A33681F725AE500F019C5 /* Main.storyboard in Resources */,
@@ -1032,6 +1048,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SyneScanner/Third\\ Party",
 					"$(PROJECT_DIR)/SyneScanner/ThirdParty",
+					"$(PROJECT_DIR)/SyneScanner/HockeySDK-iOS",
 				);
 				INFOPLIST_FILE = SyneScanner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1062,6 +1079,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SyneScanner/Third\\ Party",
 					"$(PROJECT_DIR)/SyneScanner/ThirdParty",
+					"$(PROJECT_DIR)/SyneScanner/HockeySDK-iOS",
 				);
 				INFOPLIST_FILE = SyneScanner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

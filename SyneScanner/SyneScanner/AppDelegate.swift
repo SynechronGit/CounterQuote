@@ -9,6 +9,8 @@
 import UIKit
 import IQKeyboardManagerSwift
 import SVProgressHUD
+import HockeySDK
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        BITHockeyManager.shared().configure(withIdentifier: "f2b9242e747d4354a632f9fc955f97df")
+        BITHockeyManager.shared().start()
+        BITHockeyManager.shared().authenticator.authenticateInstallation() // This line is obsolete in the crash only builds
+
         SVProgressHUD.setRingThickness(5)
 
         SVProgressHUD.setForegroundColor(UIColor(red:52/255, green:28/255, blue:70/255, alpha:1))
