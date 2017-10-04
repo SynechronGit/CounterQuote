@@ -108,6 +108,11 @@ extension InsuranceQuoteViewController:UITableViewDataSource,UITableViewDelegate
             let lblPrice:UILabel = cell.viewWithTag(2) as! UILabel
             lblPrice.text = "$" + dict["price"]! + "/y"
 
+            let mainView:UIView = cell.viewWithTag(4)!
+            mainView.layer.cornerRadius = 8
+            mainView.layer.borderColor = UIColor(red: 223/255, green: 223/255, blue: 223/255, alpha: 1).cgColor
+            mainView.layer.borderWidth = 1
+
             return cell
 
         }
