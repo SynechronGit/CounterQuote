@@ -34,7 +34,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>TCProgressBar.xcscheme</key>
+		<key>SwiftGifOrigin.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UICircularProgressRing.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,17 +52,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>86A81EE1B3D7A3FF948BE44B9DF9373A</key>
+		<key>664451D16DCF5176FEC8E4BD71B6A0D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6FD2760E13EAC21F8B96135BA5D7EDB3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8854D25EAFC944370139C3108D429160</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>95A0235A5EA1406470A7C2D62C6551C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,7 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E1370687B874D6E8F39F6CF3ABBEF390</key>
+		<key>E2260C9577BA9E5A8AE23605D400ED69</key>
 		<dict>
 			<key>primary</key>
 			<true/>

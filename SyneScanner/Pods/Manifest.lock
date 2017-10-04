@@ -1,21 +1,27 @@
 PODS:
   - Alamofire (4.5.1)
+  - CardIO (5.4.1)
   - IQKeyboardManagerSwift (4.0.10)
   - SVProgressHUD (2.2)
-  - TCProgressBar (0.4)
+  - SwiftGifOrigin (1.6.1)
+  - UICircularProgressRing (1.7.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - CardIO
   - IQKeyboardManagerSwift (= 4.0.10)
   - SVProgressHUD
-  - TCProgressBar
+  - SwiftGifOrigin (~> 1.6.1)
+  - UICircularProgressRing
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
   SVProgressHUD: 3f37f3409ddb15f35c99315ae7dc33c474aa3256
-  TCProgressBar: 14bf8cce9d9a4dae2d82fe88b8e9c45709ebe55d
+  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
+  UICircularProgressRing: 733ba68896727d8e658c4bf9a6a1093290396e15
 
-PODFILE CHECKSUM: cbcebe0459e144bedcdbd227429ab6147af05891
+PODFILE CHECKSUM: d8e8a1797d9d8becbb3e12ad8e5349d3fd3bbda9
 
 COCOAPODS: 1.3.1

@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import TCProgressBar
+//import TCProgressBar
 import SVProgressHUD
 class ScanCompleteViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var progressBar: TCProgressBar!
+  //  @IBOutlet var progressBar: TCProgressBar!
     @IBOutlet var btnComplete: UIButton!
     @IBOutlet weak var progressPercentageLabel: UILabel!
     @IBOutlet weak var progressPendingLabel: UILabel!
@@ -51,33 +51,31 @@ class ScanCompleteViewController: UIViewController {
     
     func updateProgress()
     {
-        let calculateProgress = SharedData.sharedInstance.calculateCurrentProgress()
-        progressBar.value =  CGFloat(calculateProgress.progressValue)
-        let totalProgressPercentage = Int(calculateProgress.progressValue * 100)
-        progressPercentageLabel.text = String(format:"%d %% Complete",totalProgressPercentage)
-        progressPendingLabel.text = String("\(Int(calculateProgress.uploadedImgCount)) of \(SharedData.sharedInstance.arrImage.count)")
-        if progressBar.value >= 1.0
-        {
-            btnComplete.isEnabled = true
-        }
-        else {
-         //   btnComplete.isEnabled = false
-
-        }
-        collectionView.reloadData()
+//        let calculateProgress = SharedData.sharedInstance.calculateCurrentProgress()
+//        progressBar.value =  CGFloat(calculateProgress.progressValue)
+//        let totalProgressPercentage = Int(calculateProgress.progressValue * 100)
+//        progressPercentageLabel.text = String(format:"%d %% Complete",totalProgressPercentage)
+//        progressPendingLabel.text = String("\(Int(calculateProgress.uploadedImgCount)) of \(SharedData.sharedInstance.arrImage.count)")
+//        if progressBar.value >= 1.0
+//        {
+//            btnComplete.isEnabled = true
+//        }
+//        else {
+//         //   btnComplete.isEnabled = false
+//
+//        }
+//        collectionView.reloadData()
  
     }
     //MARK: UIButton action methods
 
     @IBAction func scanningDoneTapped(_ sender: Any) {
        
-        SVProgressHUD.show(withStatus: "Loading...")
-        SVProgressHUD.dismiss(withDelay: 5) {
-        self.performSegue(withIdentifier: "NavToQuoteView", sender: nil)
+               self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
 
-        }
+        
         //self.showProgressLoader()
-        self.startWorkflowApi()
+      //  self.startWorkflowApi()
     }
     
   

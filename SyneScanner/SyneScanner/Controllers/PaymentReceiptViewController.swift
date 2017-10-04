@@ -12,9 +12,11 @@ import SVProgressHUD
 class PaymentReceiptViewController: UIViewController {
     var cardDetailsArray = [String]()
     var cardHeaderArray = [String]()
-    
+    var companyDetails:[String:String]?
+
     @IBOutlet var proceedButton: UIButton!
-    
+    @IBOutlet var tableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,9 +26,14 @@ class PaymentReceiptViewController: UIViewController {
         
         self.title = "Payment Receipt"
         self.navigationItem.setHidesBackButton(true, animated: false)
-        cardHeaderArray = ["Card number", "Cardholder name", "Email Address", "Premium amount", "Transaction ID#"]
-        cardDetailsArray.append("$423.00")
-        cardDetailsArray.append("44732456-01")
+        cardHeaderArray = ["Insurance company","Policy number",  "Policy Start Date", "Policy End Date","Premium amount"]
+        let companyName = companyDetails?["companyName"]
+        let price = "$" + (companyDetails?["price"])! + "/y"
+        cardDetailsArray = [companyName!,"CCP9871618",  "07/01/2017", "07/01/2018",price]
+        tableView.layer.cornerRadius = 16
+
+       // cardDetailsArray.append("$423.00")
+       // cardDetailsArray.append("44732456-01")
         // Do any additional setup after loading the view.
     }
 
@@ -38,7 +45,7 @@ class PaymentReceiptViewController: UIViewController {
     @IBAction func proccedBtnTapped ()
     {
         SVProgressHUD.show()
-        SVProgressHUD.dismiss(withDelay: 2) {
+        SVProgressHUD.dismiss(withDelay: 1) {
             self.performSegue(withIdentifier: "NavToBinder", sender: nil)
         }
     }

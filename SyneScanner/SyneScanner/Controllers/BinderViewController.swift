@@ -42,12 +42,23 @@ class BinderViewController: UIViewController {
     }
     //MARK: UIButton action methods
     
-    @IBAction func proceedBtnTapped(_ sender: Any) {
+    @IBAction func proceedBtnTapped(_ sender: Any)
+    {
         SVProgressHUD.show()
-        SVProgressHUD.dismiss(withDelay: 2) {
+        SVProgressHUD.dismiss(withDelay: 1) {
             self.performSegue(withIdentifier: "NavToCOIVc", sender: nil)
         }
 
+    }
+    
+    @IBAction func shareBtnTapped()
+    {
+        if let pdf = Bundle.main.url(forResource: "Binder", withExtension: "pdf", subdirectory: nil, localization: nil)  {
+            let urlArray = [pdf]
+            let activityController = UIActivityViewController(activityItems: urlArray, applicationActivities: nil)
+            self.present(activityController, animated: true, completion: nil)
+
+        }
     }
     /*
     // MARK: - Navigation

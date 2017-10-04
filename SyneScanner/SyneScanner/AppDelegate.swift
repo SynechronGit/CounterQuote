@@ -8,7 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-
+import SVProgressHUD
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,7 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-      IQKeyboardManager.sharedManager().enable = true
+        SVProgressHUD.setRingThickness(5)
+
+        SVProgressHUD.setForegroundColor(UIColor(red:52/255, green:28/255, blue:70/255, alpha:1))
+
+        IQKeyboardManager.sharedManager().enable = true
         return true
     }
 

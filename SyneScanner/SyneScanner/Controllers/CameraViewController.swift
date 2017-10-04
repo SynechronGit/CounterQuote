@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-
+import Photos
 /// The view controller that display the camera feeds and shows the edges of the document if detected.
 class CameraViewController: UIViewController {
     
@@ -16,6 +16,7 @@ class CameraViewController: UIViewController {
     @IBOutlet var edgeDetectionView: EdgeDetectionView!
     @IBOutlet var galleryBtn: UIButton!
     @IBOutlet var doneBtn: UIButton!
+    @IBOutlet var btnTorch: UIButton!
 
     @IBOutlet var centerImageView: UIImageView!
     @IBOutlet var lastCatpureImageView: UIImageView!
@@ -74,12 +75,12 @@ class CameraViewController: UIViewController {
         {
             lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
             lblImageCount.isHidden = false
-            doneBtn.isHidden = false
+          //  doneBtn.isHidden = false
         }
         else
         {
             lblImageCount.isHidden = true
-            doneBtn.isHidden = true
+          //  doneBtn.isHidden = true
 
         }
     }
@@ -118,6 +119,31 @@ class CameraViewController: UIViewController {
         
     }
     
+    @IBAction func flashBtnClicked()
+    {
+        
+        if let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo), device.hasTorch {
+            do {
+                try device.lockForConfiguration()
+                let torchOn = !device.isTorchActive
+                try device.setTorchModeOnWithLevel(1.0)
+                
+                if torchOn
+                {
+                    btnTorch.setImage(UIImage(named:"Torch-off"), for: .normal)
+
+                }
+                else{
+                    btnTorch.setImage(UIImage(named:"Torch-on"), for: .normal)
+
+                }
+                device.torchMode = torchOn ? .on : .off
+                device.unlockForConfiguration()
+            } catch {
+                print("error")
+            }
+        }
+    }
     func startCapturing()
     {
         self.showImageCaptureLoadingView()
@@ -137,6 +163,37 @@ class CameraViewController: UIViewController {
 
     }
     
+    // MARK: - Store Image into Gallery
+    func createPhotoLibraryAlbum(name: String) {
+        var albumPlaceholder: PHObjectPlaceholder?
+        PHPhotoLibrary.shared().performChanges({
+            // Request creating an album with parameter name
+            let createAlbumRequest = PHAssetCollectionChangeRequest.creationRequestForAssetCollection(withTitle: name)
+            // Get a placeholder for the new album
+            albumPlaceholder = createAlbumRequest.placeholderForCreatedAssetCollection
+        }, completionHandler: { success, error in
+            if success {
+                guard let placeholder = albumPlaceholder else {
+                    fatalError("Album placeholder is nil")
+                }
+                
+                let fetchResult = PHAssetCollection.fetchAssetCollections(withLocalIdentifiers: [placeholder.localIdentifier], options: nil)
+                guard let album: PHAssetCollection = fetchResult.firstObject else {
+                    // FetchResult has no PHAssetCollection
+                    return
+                }
+                
+                // Saved successfully!
+                print(album.assetCollectionType)
+            }
+            else if let e = error {
+                // Save album failed with error
+            }
+            else {
+                // Save album failed with no error
+            }
+        })
+    }
     // MARK: - Image Capture Handler
     private func showImageCaptureLoadingView(){
         //TODO
@@ -193,10 +250,16 @@ class CameraViewController: UIViewController {
         self.centerImageView.frame = CGRect(x: self.view.frame.size.width/2 - 60 , y: self.view.frame.size.height/2 - 80, width: 120, height: 120)
         self.centerImageView.image = image
         self.imageCaptureManager?.resetProperties()
-      updateTotalNoImgLbl()
+       updateTotalNoImgLbl()
 
         self.animateImageAfterCapturing()
+        
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
 
+
+    }
+    func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+     
     }
     func animateImageAfterCapturing()
     {

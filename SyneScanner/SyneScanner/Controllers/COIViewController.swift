@@ -11,7 +11,6 @@ import SVProgressHUD
 class COIViewController: UIViewController {
     
     @IBOutlet var webView: UIWebView!
-    @IBOutlet var startNewBtn: UIButton!
     @IBOutlet var completeBtn: UIButton!
     @IBOutlet var centerView: UIView!
 
@@ -20,9 +19,7 @@ class COIViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.title = "Certificate Of Insurance"
         
-        startNewBtn.layer.borderWidth = 1
-        startNewBtn.layer.cornerRadius = 22
-        startNewBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+       
         completeBtn.layer.borderWidth = 1
         completeBtn.layer.cornerRadius = 22
         completeBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
@@ -55,12 +52,20 @@ class COIViewController: UIViewController {
     }
     @IBAction func completeBtnTapped(_ sender: Any) {
         SVProgressHUD.show()
-        SVProgressHUD.dismiss(withDelay: 2) {
+        SVProgressHUD.dismiss(withDelay: 1) {
             self.performSegue(withIdentifier: "NavToThankUVc", sender: nil)
         }
 
     }
-
+    @IBAction func shareBtnTapped()
+    {
+        if let pdf = Bundle.main.url(forResource: "COI", withExtension: "pdf", subdirectory: nil, localization: nil)  {
+            let urlArray = [pdf]
+            let activityController = UIActivityViewController(activityItems: urlArray, applicationActivities: nil)
+            self.present(activityController, animated: true, completion: nil)
+            
+        }
+    }
     /*
     // MARK: - Navigation
 

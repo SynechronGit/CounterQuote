@@ -7,9 +7,9 @@
 //
 
 import UIKit
-
 class ImageReviewCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageReview: UIImageView!
     @IBOutlet weak var imageUploadingStatus: UIImageView!
+
 
 }

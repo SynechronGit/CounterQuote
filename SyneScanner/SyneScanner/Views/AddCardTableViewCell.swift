@@ -11,7 +11,8 @@ import UIKit
 class AddCardTableViewCell: UITableViewCell {
     let kLength = 4
     @IBOutlet weak var descriptionField: UITextField!
-    
+    @IBOutlet weak var cardScanBtn: UIButton!
+
     var actionDelegate : TextFieldActionDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +23,11 @@ class AddCardTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func cardScanBtnTapped()
+    {
+        actionDelegate?.showCardScanVc()
     }
 }
 
@@ -39,10 +45,13 @@ extension AddCardTableViewCell: UITextFieldDelegate {
             return true
         }
     }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.resignFirstResponder()
+     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
+     {
         actionDelegate?.textFieldTappedAt(cell: self)
+
+        return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -53,4 +62,5 @@ extension AddCardTableViewCell: UITextFieldDelegate {
 
 protocol TextFieldActionDelegate {
     func textFieldTappedAt(cell: AddCardTableViewCell)
+    func showCardScanVc()
 }

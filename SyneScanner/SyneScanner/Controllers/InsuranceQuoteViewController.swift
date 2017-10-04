@@ -16,6 +16,9 @@ class InsuranceQuoteViewController: UIViewController {
 
     @IBOutlet var cancelBtn: UIButton!
     @IBOutlet var acceptBtn: UIButton!
+    
+    var companyList = [["companyName": "Company 1", "price": "3500"],["companyName": "Company 2", "price": "3200"],["companyName": "Company 3", "price": "3000"],["companyName": "Company 4", "price": "2800"],["companyName": "Company 5", "price": "2500"]]
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +26,8 @@ class InsuranceQuoteViewController: UIViewController {
         acceptBtn.layer.cornerRadius = 22
         acceptBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
         
-        centerView.layer.cornerRadius = 10
-        centerView.layer.masksToBounds = true
+     //   centerView.layer.cornerRadius = 10
+      //  centerView.layer.masksToBounds = true
         // Do any additional setup after loading the view.
     }
 
@@ -34,7 +37,7 @@ class InsuranceQuoteViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        loadPdfFile()
+      //  loadPdfFile()
 
     }
     func loadPdfFile()
@@ -53,22 +56,68 @@ class InsuranceQuoteViewController: UIViewController {
     
     @IBAction func acceptBtnTapped(_ sender: Any) {
         SVProgressHUD.show()
-        SVProgressHUD.dismiss(withDelay: 2) {
+        SVProgressHUD.dismiss(withDelay: 1) {
             self.performSegue(withIdentifier: "navToPaymentScreen", sender: nil)
         }
 
     }
     @IBAction func cancelBtnTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        let vc = self.navigationController?.viewControllers[3]
+        self.navigationController?.popToViewController(vc!, animated: true)
+    
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "NavToQuote"
+        {
+            let vc:QuotePdfViewController = segue.destination as! QuotePdfViewController
+            let indexPath:IndexPath = sender as! IndexPath
+            vc.companyDetails = companyList[indexPath.row - 1]
+        }
     }
-    */
+    
 
+}
+extension InsuranceQuoteViewController:UITableViewDataSource,UITableViewDelegate
+{
+       func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+       {
+        return companyList.count + 1
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        if indexPath.row == 0
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "topCell", for: indexPath )
+
+            return cell
+
+        }
+        else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath )
+            let dict = companyList[indexPath.row - 1]
+            let lblCompanyName:UILabel = cell.viewWithTag(1) as! UILabel
+            lblCompanyName.text = dict["companyName"]
+            
+            let lblPrice:UILabel = cell.viewWithTag(2) as! UILabel
+            lblPrice.text = "$" + dict["price"]! + "/y"
+
+            return cell
+
+        }
+           }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        if indexPath.row != 0
+        {
+            self.performSegue(withIdentifier: "NavToQuote", sender:indexPath )
+  
+        }
+    }
+    
 }

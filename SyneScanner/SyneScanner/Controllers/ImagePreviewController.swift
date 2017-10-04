@@ -7,20 +7,27 @@
 //
 
 import UIKit
-
+import UICircularProgressRing
 class ImagePreviewController: UIViewController {
     // MARK: - Properties
     
     var deleteDelegate : ImageDeleteDelegate?
     var isFromScanComplete:Bool = false
     var selectedIndexNo = -1
+     var progressValue = 0
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var lblHeader: UILabel!
+    @IBOutlet var submitBtn: UIButton!
+    var progressTimer:Timer?
 
      // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        submitBtn.layer.borderWidth = 1
+        submitBtn.layer.cornerRadius = 22
+        submitBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+
        configureUI()
         
         // Do any additional setup after loading the view.
@@ -56,18 +63,30 @@ class ImagePreviewController: UIViewController {
         //let rightBarButton = UIBarButtonItem(title: "Finish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ImagePreviewController.finishBtnTapped))
         //self.navigationItem.rightBarButtonItem = rightBarButton
         
-        
+        self.progressTimer =   Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateProgressValue), userInfo: nil, repeats: true)
+
         
         collectionView.reloadData()
 
+    }
+    func updateProgressValue()
+    {
+        progressValue = progressValue + 10
+        if progressValue >= 100 {
+            self.progressTimer?.invalidate()
+            self.progressTimer = nil
+        }
+        DispatchQueue.main.async {
+        self.collectionView.reloadData()
+        }
     }
    @IBAction func popToRoot()
     {
         self.navigationController?.popViewController(animated: true)
     }
-    func finishBtnTapped()
+  @IBAction  func finishBtnTapped()
     {
-        self.performSegue(withIdentifier: "NavToStartWorkFlow", sender: nil)
+        self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
     }
    
    }
@@ -106,15 +125,7 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
         }
         cell.imagePreview.image = model?.image
         cell.retakeDelegate = self
-        
-        cell.retakeButton.layer.borderWidth = 1
-         cell.retakeButton.layer.cornerRadius = 22
-         cell.retakeButton.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
-
-        cell.deleteButton.layer.borderWidth = 1
-        cell.deleteButton.layer.cornerRadius = 22
-        cell.deleteButton.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
-        
+        cell.progressView.value = CGFloat(progressValue)
         return cell
     
     }
