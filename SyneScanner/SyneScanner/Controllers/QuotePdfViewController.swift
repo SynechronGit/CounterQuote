@@ -8,7 +8,7 @@
 
 import UIKit
 import SVProgressHUD
-class QuotePdfViewController: UIViewController {
+class QuotePdfViewController: BaseViewController {
 
     @IBOutlet var webView: UIWebView!
     @IBOutlet var proceedBtn: UIButton!

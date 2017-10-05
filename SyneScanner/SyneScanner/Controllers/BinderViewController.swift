@@ -8,7 +8,7 @@
 
 import UIKit
 import SVProgressHUD
-class BinderViewController: UIViewController {
+class BinderViewController: BaseViewController {
 
     @IBOutlet var webView: UIWebView!
     @IBOutlet var proceedBtn: UIButton!

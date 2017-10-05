@@ -1,37 +1,40 @@
 //
-//  ThankYouViewController.swift
+//  BaseViewController.swift
 //  SyneScanner
 //
-//  Created by Markel on 29/09/17.
+//  Created by Kartik on 05/10/17.
 //  Copyright © 2017 Kartik. All rights reserved.
 //
 
 import UIKit
 
-class ThankYouViewController: BaseViewController {
-    @IBOutlet weak var btnFeedback: UIButton!
-
+class BaseViewController: UIViewController {
+    
+    @IBOutlet var bottomBtnConstraint: NSLayoutConstraint!
+    @IBOutlet var goBackBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnFeedback.layer.borderWidth = 1
-        btnFeedback.layer.cornerRadius = 22
-        btnFeedback.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            if let constraint = bottomBtnConstraint {
+            constraint.constant = constraint.constant + 20
+                if (goBackBtn != nil) {
+                    goBackBtn.layoutIfNeeded()
+                }
+            }        
+        }
+
         // Do any additional setup after loading the view.
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func feedBackBtnClicked() {
-        SharedData.sharedInstance.arrImage.removeAll()
-        
-        let vc = self.navigationController?.viewControllers[1]
-        self.navigationController?.popToViewController(vc!, animated: true)
 
-            
-        }
     /*
     // MARK: - Navigation
 

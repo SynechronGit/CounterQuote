@@ -9,7 +9,8 @@
 import UIKit
 //import TCProgressBar
 import SVProgressHUD
-class ScanCompleteViewController: UIViewController {
+
+class ScanCompleteViewController: BaseViewController {
     @IBOutlet var collectionView: UICollectionView!
   //  @IBOutlet var progressBar: TCProgressBar!
     @IBOutlet var btnComplete: UIButton!

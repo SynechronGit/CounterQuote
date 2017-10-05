@@ -10,7 +10,7 @@ import UIKit
 import UICircularProgressRing
 import SVProgressHUD
 
-class ImagePreviewController: UIViewController {
+class ImagePreviewController: BaseViewController {
     // MARK: - Properties
     
     var deleteDelegate : ImageDeleteDelegate?

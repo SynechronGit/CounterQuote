@@ -9,7 +9,7 @@
 import UIKit
 import SwiftGifOrigin
 
-class LoaderViewController: UIViewController {
+class LoaderViewController: BaseViewController {
 
     @IBOutlet var searchImageVIew: UIImageView!
 

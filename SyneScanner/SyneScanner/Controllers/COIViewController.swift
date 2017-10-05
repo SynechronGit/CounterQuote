@@ -8,7 +8,7 @@
 
 import UIKit
 import SVProgressHUD
-class COIViewController: UIViewController {
+class COIViewController: BaseViewController {
     
     @IBOutlet var webView: UIWebView!
     @IBOutlet var completeBtn: UIButton!

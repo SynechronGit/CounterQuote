@@ -594,7 +594,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomBtnConstraint" destination="MeJ-Eh-t4C" id="a0j-a7-H8j"/>
                         <outlet property="collectionView" destination="oPF-UW-6C6" id="D3j-ft-NWi"/>
+                        <outlet property="goBackBtn" destination="LcD-SE-ZLu" id="bX9-rS-AjC"/>
                         <outlet property="lblHeader" destination="7VW-nk-jE9" id="4ez-sf-4fQ"/>
                         <outlet property="pageControl" destination="lo1-P5-gKO" id="mor-uB-Lg3"/>
                         <outlet property="submitBtn" destination="Pj1-eI-fAJ" id="HBN-pD-T7b"/>
@@ -840,7 +842,6 @@
                                     <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="acceptBtnTapped:" destination="0LF-t6-SUx" eventType="touchUpInside" id="AAk-e2-Sja"/>
                                     <action selector="proceedBtnTapped:" destination="e6W-xa-aRU" eventType="touchUpInside" id="iAq-Z4-qqP"/>
                                 </connections>
                             </button>
@@ -1091,7 +1092,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-Ii-uIo">
-                                                            <rect key="frame" x="10" y="35" width="135" height="19"/>
+                                                            <rect key="frame" x="10" y="35.5" width="135" height="19"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="19"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -1169,6 +1170,7 @@
                     </view>
                     <connections>
                         <outlet property="acceptBtn" destination="Nbf-rU-XWI" id="xEi-Ai-GC1"/>
+                        <outlet property="bottomBtnConstraint" destination="paR-5g-Ehj" id="d1X-dk-FlU"/>
                         <outlet property="tableView" destination="ZZu-fS-yAP" id="Dz3-ar-Z8a"/>
                         <segue destination="XPW-oR-uiL" kind="show" identifier="NavToQuote" id="0eT-r2-6Bf"/>
                     </connections>
@@ -1549,6 +1551,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomBtnConstraint" destination="VJI-bA-XFQ" id="bNL-hb-UlF"/>
+                        <outlet property="goBackBtn" destination="zOh-Ig-FaJ" id="GTl-Md-aBp"/>
                         <outlet property="headerView" destination="h5N-zZ-Des" id="wj5-gv-lEf"/>
                         <outlet property="lblPolicyPrice" destination="5Of-k8-shq" id="UHe-q2-r08"/>
                         <outlet property="lblSaveedAmount" destination="X6B-UF-UrQ" id="4gt-gM-3ot"/>
@@ -1642,7 +1646,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o39-UH-0KX">
-                                                    <rect key="frame" x="25" y="10.5" width="270" height="15"/>
+                                                    <rect key="frame" x="25" y="9.5" width="270" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="15"/>
                                                     <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1651,7 +1655,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPS-uT-oDM">
-                                                    <rect key="frame" x="25" y="31.5" width="270" height="15"/>
+                                                    <rect key="frame" x="25" y="30.5" width="270" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="15"/>
                                                     <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1912,7 +1916,6 @@ We are now making insurance companies fight for your business. We will present y
                                     <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="acceptBtnTapped:" destination="0LF-t6-SUx" eventType="touchUpInside" id="E3d-L9-o7Z"/>
                                     <action selector="proceedBtnTapped:" destination="XPW-oR-uiL" eventType="touchUpInside" id="37F-Qg-daT"/>
                                 </connections>
                             </button>
@@ -1990,7 +1993,6 @@ We are now making insurance companies fight for your business. We will present y
                                 </state>
                                 <connections>
                                     <action selector="backBtnClicked" destination="XPW-oR-uiL" eventType="touchUpInside" id="bZW-hL-4a2"/>
-                                    <action selector="popToRoot" destination="bcB-w8-SKA" eventType="touchUpInside" id="Ywr-tU-hbf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2017,8 +2019,10 @@ We are now making insurance companies fight for your business. We will present y
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomBtnConstraint" destination="LN1-YK-EJW" id="Lfb-4L-FVQ"/>
                         <outlet property="btnShare" destination="QXt-Gh-eCc" id="9I1-qG-W6o"/>
                         <outlet property="centerView" destination="mkO-uU-xgV" id="u39-bU-7Lc"/>
+                        <outlet property="goBackBtn" destination="Hn1-SH-UCw" id="34a-ap-KMA"/>
                         <outlet property="lblCompanyName" destination="a6D-RO-pOB" id="gaO-PF-hiS"/>
                         <outlet property="proceedBtn" destination="scA-ki-lhg" id="alj-0d-okf"/>
                         <outlet property="webView" destination="GfI-7X-fT2" id="DNv-o2-OrY"/>

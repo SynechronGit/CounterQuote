@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import Photos
 /// The view controller that display the camera feeds and shows the edges of the document if detected.
-class CameraViewController: UIViewController {
+class CameraViewController: BaseViewController {
     
     // MARK: - Properties
     @IBOutlet var edgeDetectionView: EdgeDetectionView!

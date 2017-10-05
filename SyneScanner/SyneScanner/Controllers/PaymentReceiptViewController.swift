@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class PaymentReceiptViewController: UIViewController {
+class PaymentReceiptViewController: BaseViewController {
     var cardDetailsArray = [String]()
     var cardHeaderArray = [String]()
     var companyDetails:[String:String]?

@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class InsuranceQuoteViewController: UIViewController {
+class InsuranceQuoteViewController: BaseViewController {
 
     @IBOutlet var webView: UIWebView!
     @IBOutlet var centerView: UIView!

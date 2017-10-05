@@ -11,7 +11,7 @@ import UIKit
 public typealias SplashAnimatableCompletion = () -> Void
 public typealias SplashAnimatableExecution = () -> Void
 
-class SplashScreenViewController: UIViewController {
+class SplashScreenViewController: BaseViewController {
 
     @IBOutlet var imgLogo: UIImageView!
     var timer:Timer?

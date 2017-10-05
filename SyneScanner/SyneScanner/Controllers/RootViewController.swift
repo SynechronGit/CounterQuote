@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class RootViewController: BaseViewController {
 
     @IBOutlet weak var btnScanDocument: UIButton!
     // MARK: - View LifeCycle

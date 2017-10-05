@@ -8,7 +8,8 @@
 
 import UIKit
 import SVProgressHUD
-class AddCardViewController: UIViewController {
+
+class AddCardViewController: BaseViewController {
     var cardHeaderArray = [String]()
     let pickerArray = ["Mastercard", "Visa", "Discover", "American Express"]
     var pickerYearArray = [Int]()
