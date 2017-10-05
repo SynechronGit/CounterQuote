@@ -75,11 +75,14 @@ class CameraViewController: UIViewController {
         {
             lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
             lblImageCount.isHidden = false
+            let newModel = SharedData.sharedInstance.arrImage.last
+            lastCatpureImageView.image = newModel?.image!
           //  doneBtn.isHidden = false
         }
         else
         {
             lblImageCount.isHidden = true
+            lastCatpureImageView.image = nil
           //  doneBtn.isHidden = true
 
         }
@@ -309,8 +312,16 @@ extension CameraViewController:ImageDeleteDelegate
 {
     func updateCollectionWhenImageDeletedAt(index: Int) {
         
-//        SharedData.sharedInstance.arrImage.remove(at: index)
-//        lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
+        let model = SharedData.sharedInstance.arrImage[index]
+        model.isDeleted = true
+        if model.imageSuccesfullyUpload == true {
+            SharedData.sharedInstance.arrImage.remove(at: index)
+        }
+        lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
+        if index == 0 && SharedData.sharedInstance.arrImage.count == 0 {
+            lastCatpureImageView.image = nil
+        }
+        self.updateTotalNoImgLbl()
     }
     func updateCollectionWhenImageretakeAt(index : Int)
     {
@@ -335,25 +346,57 @@ extension CameraViewController:UploadImageProxyDelegate
     }
     func imageSuccessfullyUpload(responseData:[String:AnyObject],indexNo:Int)
     { 
-        SharedData.sharedInstance.updateModel(dict: responseData, indexNo: indexNo)
-        let notificationName = Notification.Name("updateProgress")
-        NotificationCenter.default.post(name: notificationName, object: nil)
-
+        let isModelValid = SharedData.sharedInstance.arrImage.indices.contains(indexNo)
+        if (isModelValid) {
+            let model = SharedData.sharedInstance.arrImage[indexNo]
+            if (model.isDeleted) {
+                NetworkManager.cancelUploadRequest(index: indexNo)
+                SharedData.sharedInstance.arrImage.remove(at: indexNo)
+                lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
+            } else {
+                SharedData.sharedInstance.updateModel(dict: responseData, indexNo: indexNo)
+                let notificationName = Notification.Name("updateProgress")
+                NotificationCenter.default.post(name: notificationName, object: nil)
+            }
+        } else {
+            lastCatpureImageView.image = nil
+        }
+        self.updateTotalNoImgLbl()
     }
     func imageFailedToUpload(errorMessage:String,indexNo:Int)
     {
-        
+        let isModelValid = SharedData.sharedInstance.arrImage.indices.contains(indexNo)
+        if (isModelValid) {
+            let model = SharedData.sharedInstance.arrImage[indexNo]
+            if (model.isDeleted) {
+                NetworkManager.cancelUploadRequest(index: indexNo)
+                SharedData.sharedInstance.arrImage.remove(at: indexNo)
+                lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
+            }
+        } else {
+            lastCatpureImageView.image = nil
+        }
+        self.updateTotalNoImgLbl()
     }
     func progressResult(progress:Float,indexNo:Int)
     {
-         let model = SharedData.sharedInstance.arrImage[indexNo]
-      
-        model.progress = progress
-        SharedData.sharedInstance.arrImage[indexNo] = model
-        let notificationName = Notification.Name("updateProgress")
-        NotificationCenter.default.post(name: notificationName, object: nil)
-        
+        let isModelValid = SharedData.sharedInstance.arrImage.indices.contains(indexNo)
+        if (isModelValid) {
+            let model = SharedData.sharedInstance.arrImage[indexNo]
+            model.progress = progress
+            if (model.isDeleted) {
+                NetworkManager.cancelUploadRequest(index: indexNo)
+                SharedData.sharedInstance.arrImage.remove(at: indexNo)
+                lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
+            } else {
+                SharedData.sharedInstance.arrImage[indexNo] = model
+                let notificationName = Notification.Name("updateProgress")
+                NotificationCenter.default.post(name: notificationName, object: nil)
+            }
+        } else {
+            lastCatpureImageView.image = nil
+        }
+        self.updateTotalNoImgLbl()
     }
-
     
 }
