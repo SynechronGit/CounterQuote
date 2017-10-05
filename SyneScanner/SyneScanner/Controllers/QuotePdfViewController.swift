@@ -13,7 +13,7 @@ class QuotePdfViewController: UIViewController {
     @IBOutlet var webView: UIWebView!
     @IBOutlet var proceedBtn: UIButton!
     @IBOutlet var centerView: UIView!
-    
+    @IBOutlet weak var btnShare: UIButton!
     @IBOutlet var lblCompanyName: UILabel!
 
     var companyDetails:[String:String]?
@@ -55,6 +55,17 @@ class QuotePdfViewController: UIViewController {
     @IBAction   func backBtnClicked()
     {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func shareBtnTapped()
+    {
+        if let pdf = Bundle.main.url(forResource: "Quote", withExtension: "pdf", subdirectory: nil, localization: nil)  {
+            let urlArray = [pdf]
+            let activityController = UIActivityViewController(activityItems: urlArray, applicationActivities: nil)
+            activityController.popoverPresentationController?.sourceView = self.btnShare
+            self.present(activityController, animated: true, completion: nil)
+            
+        }
     }
     
     // MARK: - Navigation

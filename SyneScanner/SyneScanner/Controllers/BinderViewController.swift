@@ -13,7 +13,8 @@ class BinderViewController: UIViewController {
     @IBOutlet var webView: UIWebView!
     @IBOutlet var proceedBtn: UIButton!
     @IBOutlet var centerView: UIView!
-
+    @IBOutlet weak var btnShare: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
@@ -56,6 +57,7 @@ class BinderViewController: UIViewController {
         if let pdf = Bundle.main.url(forResource: "Binder", withExtension: "pdf", subdirectory: nil, localization: nil)  {
             let urlArray = [pdf]
             let activityController = UIActivityViewController(activityItems: urlArray, applicationActivities: nil)
+            activityController.popoverPresentationController?.sourceView = self.btnShare
             self.present(activityController, animated: true, completion: nil)
 
         }
