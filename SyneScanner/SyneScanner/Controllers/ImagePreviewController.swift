@@ -176,10 +176,12 @@ extension ImagePreviewController:ImageShareAndRetakeDelegate
     {
         if isFromScanComplete
         {
-           // SharedData.sharedInstance.arrImage.remove(at: selectedIndexNo)
+            let model = SharedData.sharedInstance.arrImage[selectedIndexNo]
+            model.isDeleted = true
+            SharedData.sharedInstance.arrImage.remove(at: selectedIndexNo)
         }
         else
-        {
+        {            
             let indexPath = self.collectionView.indexPath(for: cell)
             deleteDelegate?.updateCollectionWhenImageDeletedAt(index: (indexPath?.row)!)
         }

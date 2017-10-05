@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 class NetworkManager: NSObject {
-    
+    static var uploadRequest: [Request]?
     func uploadImage(url:String,image:UIImage)
     {
         let serverUrl = BASE_URL + url
@@ -22,7 +22,7 @@ class NetworkManager: NSObject {
         { (result) in
             switch result {
             case .success(let upload, _, _):
-                
+                NetworkManager.uploadRequest?.append(upload)
                 upload.uploadProgress(closure: { (Progress) in
                     if ((Progress.fractionCompleted * 100) != 100) {
                         self.progressCallBack(progress: Float(Progress.fractionCompleted))
@@ -31,6 +31,7 @@ class NetworkManager: NSObject {
                 })
                 
                 upload.responseJSON { response in
+                    NetworkManager.uploadRequest = nil
                     //self.delegate?.showSuccessAlert()
                     print(response.request)  // original URL request
                     print(response.response) // URL response
@@ -125,5 +126,10 @@ class NetworkManager: NSObject {
     func progressCallBack(progress:Float)
     {
         
+    }
+    class func cancelUploadRequest(index: Int)
+    {
+        uploadRequest?[index].cancel()
+        uploadRequest?.remove(at: index)
     }
 }
