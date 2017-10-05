@@ -208,6 +208,7 @@ protocol ImageDeleteDelegate {
 extension ImagePreviewController: StartWorkflowDelegate {
     
     func startWorkflowApi() {
+        SVProgressHUD.show()
         var blobUrl = ""
         for scanItem in 0..<SharedData.sharedInstance.arrImage.count {
             blobUrl.append((SharedData.sharedInstance.arrImage[scanItem].fileUrl))
@@ -222,7 +223,9 @@ extension ImagePreviewController: StartWorkflowDelegate {
         
     }
     
-    func workflowSuccessfullyStarted(responseData: [String : AnyObject]) {
+    func workflowSuccessfullyStarted(responseData:String)
+    {
+        SVProgressHUD.dismiss()
         //        ARSLineProgress.hideWithCompletionBlock({ () -> Void in
         //            ARSLineProgress.showSuccess()
         //            self.performSegue(withIdentifier: "NavToPdfView", sender: nil)
@@ -231,12 +234,12 @@ extension ImagePreviewController: StartWorkflowDelegate {
     }
     
     func workflowFailedToStart(errorMessage: String) {
+        SVProgressHUD.dismiss()
         //        ARSLineProgress.hideWithCompletionBlock({ () -> Void in
         //            ARSLineProgress.showFail()
         //            self.performSegue(withIdentifier: "NavToPdfView", sender: nil)
         //
         //        })
-        self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
     }
 }
 

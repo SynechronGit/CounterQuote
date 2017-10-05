@@ -9,7 +9,7 @@
 import UIKit
 
 protocol StartWorkflowDelegate {
-    func workflowSuccessfullyStarted(responseData:[String:AnyObject])
+    func workflowSuccessfullyStarted(responseData:String)
     func workflowFailedToStart(errorMessage:String)
 }
 
@@ -22,17 +22,24 @@ class ImageWorkflowProxy: NetworkManager {
         super.callPostMethod(paramaters: parameters, url: START_WORKFLOW)
     }
     
-    override func successCallBack(response:Any)
+    override func successCallBack(response:Any, statusCode:Int)
     {
-        if    let dataArr:[[String:Any]] = response as? [[String : Any]]
-        {
-            delegate?.workflowSuccessfullyStarted(responseData: dataArr[0] as [String : AnyObject])
+       
+            delegate?.workflowSuccessfullyStarted(responseData: "Success")
             
-        }
+        
     }
-    override func failureCallBack(error:String)
+    override func failureCallBack(error:String,statusCode:Int)
     {
-        delegate?.workflowFailedToStart(errorMessage: error)
+        if statusCode ==  200
+        {
+            delegate?.workflowSuccessfullyStarted(responseData: "Success")
+
+        }
+        else{
+            delegate?.workflowFailedToStart(errorMessage: error)
+
+        }
     }
     
 }

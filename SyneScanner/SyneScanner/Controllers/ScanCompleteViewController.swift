@@ -167,7 +167,7 @@ extension ScanCompleteViewController: StartWorkflowDelegate {
         
     }
     
-    func workflowSuccessfullyStarted(responseData: [String : AnyObject]) {
+    func workflowSuccessfullyStarted(responseData: String) {
 //        ARSLineProgress.hideWithCompletionBlock({ () -> Void in
 //            ARSLineProgress.showSuccess()
 //            self.performSegue(withIdentifier: "NavToPdfView", sender: nil)

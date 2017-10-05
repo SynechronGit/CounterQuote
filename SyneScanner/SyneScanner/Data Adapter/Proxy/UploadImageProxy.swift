@@ -20,7 +20,7 @@ class UploadImageProxy: NetworkManager {
         currentIndex = indexNo
         super.uploadImage(url: UPLOAD_IMAGE, image: image)
     }
-    override func successCallBack(response:Any)
+    override func successCallBack(response:Any, statusCode:Int)
     {
     if    let dataArr:[[String:Any]] = response as? [[String : Any]]
     {
@@ -28,7 +28,7 @@ class UploadImageProxy: NetworkManager {
   
     }
     }
-    override func failureCallBack(error:String)
+    override func failureCallBack(error:String,statusCode:Int)
     {
         delegate?.imageFailedToUpload(errorMessage: error,indexNo: currentIndex!)
     }

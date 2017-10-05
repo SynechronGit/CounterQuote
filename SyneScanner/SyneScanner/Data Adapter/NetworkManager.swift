@@ -32,6 +32,8 @@ class NetworkManager: NSObject {
                 
                 upload.responseJSON { response in
                     NetworkManager.uploadRequest = nil
+                    var statusCode = response.response?.statusCode
+
                     //self.delegate?.showSuccessAlert()
                     print(response.request)  // original URL request
                     print(response.response) // URL response
@@ -41,19 +43,20 @@ class NetworkManager: NSObject {
                     //self.removeImage("frame", fileExtension: "txt")
                     if let JSON = response.result.value {
                         print("JSON: \(JSON)")
-                        self.successCallBack(response: JSON)
+                        self.successCallBack(response: JSON,statusCode: statusCode!)
                     }
                     else
                     {
-                        self.failureCallBack(error: "Json could not serialized")
+                        self.failureCallBack(error: "Json could not serialized",statusCode: -1)
 
                     }
                 }
                 
             case .failure(let encodingError):
                 //self.delegate?.showFailAlert()
+
                 print(encodingError)
-                self.failureCallBack(error: encodingError.localizedDescription)
+                self.failureCallBack(error: encodingError.localizedDescription,statusCode: -1)
             }
             
         }
@@ -64,23 +67,24 @@ class NetworkManager: NSObject {
         let serverUrl = BASE_URL + url
 
         Alamofire.request(serverUrl, method: .post, parameters: paramaters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
-            
+            var statusCode = response.response?.statusCode
+
             switch(response.result) {
             case .success(_):
                 if let data = response.result.value{
                     print(response.result.value)
-                    self.successCallBack(response: data)
+                    self.successCallBack(response: data,statusCode: statusCode!)
 
                 }
                 else{
-                    self.failureCallBack(error: "Json could not serialized")
+                    self.failureCallBack(error: "Json could not serialized",statusCode: statusCode!)
 
                 }
                 break
                 
             case .failure(_):
                 print(response.result.error)
-                self.failureCallBack(error: (response.result.error?.localizedDescription)!)
+                self.failureCallBack(error: (response.result.error?.localizedDescription)!,statusCode: statusCode!)
 
                 break
                 
@@ -93,33 +97,34 @@ class NetworkManager: NSObject {
         let serverUrl = BASE_URL + url
         Alamofire.request(serverUrl, method: .get, parameters: ["":""], encoding: URLEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
             
+            var statusCode = response.response?.statusCode
             switch(response.result) {
             case .success(_):
                 if let data = response.result.value{
                     print(response.result.value)
-                    self.successCallBack(response: data)
+                    self.successCallBack(response: data,statusCode: statusCode!)
 
                 }
                 else{
-                    self.failureCallBack(error: "Json could not serialized")
+                    self.failureCallBack(error: "Json could not serialized",statusCode: statusCode!)
    
                 }
                 break
                 
             case .failure(_):
                 print(response.result.error)
-                self.failureCallBack(error: (response.result.error?.localizedDescription)!)
+                self.failureCallBack(error: (response.result.error?.localizedDescription)!,statusCode: statusCode!)
 
                 break
                 
             }
         }
     }
-    func successCallBack(response:Any)
+    func successCallBack(response:Any, statusCode:Int)
     {
         
     }
-    func failureCallBack(error:String)
+    func failureCallBack(error:String,statusCode:Int)
     {
         
     }
