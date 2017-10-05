@@ -8,6 +8,8 @@
 
 import UIKit
 import UICircularProgressRing
+import SVProgressHUD
+
 class ImagePreviewController: UIViewController {
     // MARK: - Properties
     
@@ -86,7 +88,7 @@ class ImagePreviewController: UIViewController {
     }
   @IBAction  func finishBtnTapped()
     {
-        self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
+        startWorkflowApi()
     }
    
    }
@@ -198,5 +200,43 @@ protocol ImageDeleteDelegate {
     func updateCollectionWhenImageretakeAt(index : Int)
 
 }
+
+
+//MARK: StartWorkflowDelegate methods
+extension ImagePreviewController: StartWorkflowDelegate {
+    
+    func startWorkflowApi() {
+        var blobUrl = ""
+        for scanItem in 0..<SharedData.sharedInstance.arrImage.count {
+            blobUrl.append((SharedData.sharedInstance.arrImage[scanItem].fileUrl))
+            if scanItem != SharedData.sharedInstance.arrImage.count - 1 {
+                blobUrl.append(";")
+            }
+        }
+        let startWorkflowProxy =  ImageWorkflowProxy()
+        startWorkflowProxy.delegate = self
+        startWorkflowProxy.startWorkflowApi(blobUrl: blobUrl, corelationId: SharedData.sharedInstance.corelationId)
+        
+        
+    }
+    
+    func workflowSuccessfullyStarted(responseData: [String : AnyObject]) {
+        //        ARSLineProgress.hideWithCompletionBlock({ () -> Void in
+        //            ARSLineProgress.showSuccess()
+        //            self.performSegue(withIdentifier: "NavToPdfView", sender: nil)
+        //        })
+        self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
+    }
+    
+    func workflowFailedToStart(errorMessage: String) {
+        //        ARSLineProgress.hideWithCompletionBlock({ () -> Void in
+        //            ARSLineProgress.showFail()
+        //            self.performSegue(withIdentifier: "NavToPdfView", sender: nil)
+        //
+        //        })
+        self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
+    }
+}
+
 
 
