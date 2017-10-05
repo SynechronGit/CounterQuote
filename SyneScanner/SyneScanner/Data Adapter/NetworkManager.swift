@@ -17,7 +17,7 @@ class NetworkManager: NSObject {
         let imgData = UIImageJPEGRepresentation(image, 1.0)!
 
         Alamofire.upload(multipartFormData: { (multipartFormData) in
-            multipartFormData.append(imgData, withName: "photo_path", fileName: "doc.png", mimeType: "image/png")
+            multipartFormData.append(imgData, withName: "AcordForm", fileName: "doc.jpeg", mimeType: "image/jpeg")
         }, to:serverUrl)
         { (result) in
             switch result {

@@ -76,20 +76,8 @@
                                     <constraint firstAttribute="height" constant="193" id="m47-Gn-Dff"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COUNTERQUOTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iU5-AM-QHT">
-                                <rect key="frame" x="61.5" y="80" width="198.5" height="26"/>
-                                <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="26"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="36"/>
-                                </variation>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_overlay_splash" translatesAutoresizingMaskIntoConstraints="NO" id="jFK-Kg-ZDg">
-                                <rect key="frame" x="27" y="194" width="266" height="180"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mobile_Scan_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Lhb-ln-OqC">
-                                <rect key="frame" x="60" y="151" width="200" height="266"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CQLogo" translatesAutoresizingMaskIntoConstraints="NO" id="jFK-Kg-ZDg">
+                                <rect key="frame" x="90" y="212.5" width="140" height="143"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,17 +85,13 @@
                             <constraint firstItem="dkP-Qb-btX" firstAttribute="top" secondItem="msK-lc-S9t" secondAttribute="bottom" constant="20" id="08C-IR-ptb"/>
                             <constraint firstItem="XUB-9i-0NP" firstAttribute="top" secondItem="3Sk-hd-peB" secondAttribute="top" constant="20" id="0T4-Ta-3VF"/>
                             <constraint firstItem="msK-lc-S9t" firstAttribute="leading" secondItem="3Sk-hd-peB" secondAttribute="leading" id="9Uw-Hd-GOR"/>
-                            <constraint firstItem="iU5-AM-QHT" firstAttribute="centerX" secondItem="3Sk-hd-peB" secondAttribute="centerX" id="FqG-NS-h6G"/>
-                            <constraint firstItem="Lhb-ln-OqC" firstAttribute="centerY" secondItem="3Sk-hd-peB" secondAttribute="centerY" id="HnK-vq-8U9"/>
                             <constraint firstAttribute="trailing" secondItem="kZs-K8-Piz" secondAttribute="trailing" id="I8y-rh-jr3"/>
-                            <constraint firstItem="Lhb-ln-OqC" firstAttribute="centerX" secondItem="3Sk-hd-peB" secondAttribute="centerX" id="JaL-75-fiG"/>
                             <constraint firstItem="kZs-K8-Piz" firstAttribute="top" secondItem="3Sk-hd-peB" secondAttribute="top" id="NiY-3X-TVm"/>
                             <constraint firstItem="kZs-K8-Piz" firstAttribute="leading" secondItem="3Sk-hd-peB" secondAttribute="leading" id="WQz-ib-Vsu"/>
                             <constraint firstItem="jFK-Kg-ZDg" firstAttribute="centerY" secondItem="3Sk-hd-peB" secondAttribute="centerY" id="aMm-30-jQ3"/>
                             <constraint firstAttribute="trailing" secondItem="XUB-9i-0NP" secondAttribute="trailing" id="alt-VZ-pcP"/>
                             <constraint firstAttribute="bottom" secondItem="kZs-K8-Piz" secondAttribute="bottom" id="h3s-zL-Iik"/>
                             <constraint firstItem="jFK-Kg-ZDg" firstAttribute="centerX" secondItem="3Sk-hd-peB" secondAttribute="centerX" id="hDc-4A-243"/>
-                            <constraint firstItem="iU5-AM-QHT" firstAttribute="top" secondItem="uBi-iz-S2V" secondAttribute="bottom" constant="60" id="ua2-Yx-liQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Kjb-PN-qzk"/>
@@ -244,7 +228,7 @@
                         <subviews>
                             <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dvn-de-eNQ" customClass="EdgeDetectionView" customModule="SyneScanner" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.5450980392" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HNG-Tb-F5J">
                                 <rect key="frame" x="127" y="173.5" width="120" height="120"/>
@@ -726,7 +710,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Process" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4Q-Nk-fRQ">
-                                        <rect key="frame" x="90.5" y="4" width="108" height="16"/>
+                                        <rect key="frame" x="91" y="4" width="108" height="16"/>
                                         <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="16"/>
                                         <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1092,7 +1076,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-Ii-uIo">
-                                                            <rect key="frame" x="10" y="35.5" width="135" height="19"/>
+                                                            <rect key="frame" x="10" y="36" width="135" height="19"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="19"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -1646,7 +1630,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o39-UH-0KX">
-                                                    <rect key="frame" x="25" y="9.5" width="270" height="15"/>
+                                                    <rect key="frame" x="25" y="10" width="270" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="15"/>
                                                     <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1655,7 +1639,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPS-uT-oDM">
-                                                    <rect key="frame" x="25" y="30.5" width="270" height="15"/>
+                                                    <rect key="frame" x="25" y="31" width="270" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="15"/>
                                                     <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2037,6 +2021,7 @@ We are now making insurance companies fight for your business. We will present y
     <resources>
         <image name="Agent" width="63" height="79"/>
         <image name="Background" width="750" height="1334"/>
+        <image name="CQLogo" width="140" height="143"/>
         <image name="Capture" width="75" height="75"/>
         <image name="Card" width="402" height="457"/>
         <image name="CardDivider" width="686" height="1"/>
@@ -2051,7 +2036,6 @@ We are now making insurance companies fight for your business. We will present y
         <image name="delete" width="100" height="100"/>
         <image name="ic_close_white" width="24" height="24"/>
         <image name="left_Curve_line" width="77" height="205"/>
-        <image name="mobile_Scan_logo" width="200" height="266"/>
         <image name="mobile_scan_logo_welcome" width="202" height="268"/>
         <image name="retake" width="100" height="100"/>
         <image name="right_cureve_line" width="71" height="193"/>
