@@ -84,7 +84,7 @@ class NetworkManager: NSObject {
                 
             case .failure(_):
                 print(response.result.error)
-                self.failureCallBack(error: (response.result.error?.localizedDescription)!,statusCode: statusCode!)
+                self.failureCallBack(error: (response.result.error?.localizedDescription)!,statusCode: -1)
 
                 break
                 
@@ -113,7 +113,7 @@ class NetworkManager: NSObject {
                 
             case .failure(_):
                 print(response.result.error)
-                self.failureCallBack(error: (response.result.error?.localizedDescription)!,statusCode: statusCode!)
+                self.failureCallBack(error: (response.result.error?.localizedDescription)!,statusCode: -1)
 
                 break
                 

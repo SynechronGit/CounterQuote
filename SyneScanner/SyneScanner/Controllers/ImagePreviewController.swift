@@ -67,7 +67,7 @@ class ImagePreviewController: BaseViewController {
         //let rightBarButton = UIBarButtonItem(title: "Finish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ImagePreviewController.finishBtnTapped))
         //self.navigationItem.rightBarButtonItem = rightBarButton
         
-//        self.progressTimer =   Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateProgressValue), userInfo: nil, repeats: true)
+       self.progressTimer =   Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateProgressValue), userInfo: nil, repeats: true)
 
         let notificationName = Notification.Name("updateProgress")
 
@@ -88,10 +88,10 @@ class ImagePreviewController: BaseViewController {
           //  submitBtn.isEnabled = false
             
         }
-        DispatchQueue.main.async {
-
-        self.collectionView.reloadData()
-        }
+//        DispatchQueue.main.async {
+//
+//        self.collectionView.reloadData()
+//        }
 
     }
     func updateProgressValue()
@@ -151,7 +151,7 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
         cell.imagePreview.image = model?.image
         cell.retakeDelegate = self
         let totalProgressPercentage = (model?.progress)! * 100
-        cell.progressView.value = CGFloat(totalProgressPercentage)
+        cell.progressView.value = CGFloat(progressValue)
         return cell
     
     }
@@ -255,9 +255,11 @@ extension ImagePreviewController: StartWorkflowDelegate {
     
     func workflowFailedToStart(errorMessage: String) {
         SVProgressHUD.dismiss()
-        self.popupAlert(title: "Error", message: errorMessage, actionTitles: ["Ok"], actions:[{action1 in
-            
-            }, nil])
+//        self.popupAlert(title: "Error", message: errorMessage, actionTitles: ["Ok"], actions:[{action1 in
+//            
+//            }, nil])
+        self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
+
        
     }
 }

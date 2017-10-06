@@ -15,9 +15,9 @@ class LoaderViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Timer.scheduledTimer(timeInterval: 10,
+        Timer.scheduledTimer(timeInterval: 5,
                              target: self,
-                             selector: #selector(self.startOCR),
+                             selector: #selector(self.pushToQuoteVc),
                              userInfo: nil,
                              repeats: false)
         addSearchAnimation()
