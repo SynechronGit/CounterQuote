@@ -43,6 +43,9 @@
 		1B6E11361F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E11321F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		1B7E16EC1F83E1B0005C2165 /* Search_animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1B7E16EB1F83E1B0005C2165 /* Search_animation.gif */; };
 		1BAD97941F8763C3007289EB /* GetOCRProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD97931F8763C3007289EB /* GetOCRProxy.swift */; };
+		1BAD979B1F87AA38007289EB /* QuoteFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD979A1F87AA38007289EB /* QuoteFormViewController.swift */; };
+		1BAD979D1F87AB47007289EB /* QuoteFormData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BAD979C1F87AB47007289EB /* QuoteFormData.plist */; };
+		1BAD979F1F87B0FF007289EB /* QuoteFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD979E1F87B0FF007289EB /* QuoteFormTableViewCell.swift */; };
 		1BCC637C1F7E6D7C00C87694 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */; };
 		1BCC637F1F7E9FB300C87694 /* Binder.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1BCC637D1F7E9FB300C87694 /* Binder.pdf */; };
 		1BCC63801F7E9FB300C87694 /* Quote.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1BCC637E1F7E9FB300C87694 /* Quote.pdf */; };
@@ -160,6 +163,9 @@
 		1B6E11321F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		1B7E16EB1F83E1B0005C2165 /* Search_animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Search_animation.gif; sourceTree = "<group>"; };
 		1BAD97931F8763C3007289EB /* GetOCRProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetOCRProxy.swift; sourceTree = "<group>"; };
+		1BAD979A1F87AA38007289EB /* QuoteFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteFormViewController.swift; sourceTree = "<group>"; };
+		1BAD979C1F87AB47007289EB /* QuoteFormData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QuoteFormData.plist; sourceTree = "<group>"; };
+		1BAD979E1F87B0FF007289EB /* QuoteFormTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteFormTableViewCell.swift; sourceTree = "<group>"; };
 		1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		1BCC637D1F7E9FB300C87694 /* Binder.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Binder.pdf; sourceTree = "<group>"; };
 		1BCC637E1F7E9FB300C87694 /* Quote.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Quote.pdf; sourceTree = "<group>"; };
@@ -317,12 +323,63 @@
 			path = "Third Party/TPScrollVIew";
 			sourceTree = "<group>";
 		};
+		1BAD97951F87A706007289EB /* Camera  ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				536A33A91F725D5C00F019C5 /* CameraViewController.swift */,
+			);
+			name = "Camera  ViewController";
+			sourceTree = "<group>";
+		};
+		1BAD97961F87A719007289EB /* Welcome ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				53DCED0D1F8669C100425E8B /* BaseViewController.swift */,
+				1B5403DB1F728842007CF73B /* RootViewController.swift */,
+				1B5403FD1F75459D007CF73B /* SplashScreenViewController.swift */,
+			);
+			name = "Welcome ViewController";
+			sourceTree = "<group>";
+		};
+		1BAD97971F87A745007289EB /* Payment ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5346F1E21F7A3CAD000E6AC5 /* AddCardViewController.swift */,
+				535888741F7CECE400A6E0D0 /* PaymentReceiptViewController.swift */,
+			);
+			name = "Payment ViewController";
+			sourceTree = "<group>";
+		};
+		1BAD97981F87A9D0007289EB /* Image Rreview View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BCC63891F7EBA1000C87694 /* LoaderViewController.swift */,
+				5346F1B21F7542BC000E6AC5 /* ScanCompleteViewController.swift */,
+				536A33A71F725CEF00F019C5 /* ImagePreviewController.swift */,
+			);
+			name = "Image Rreview View Controller";
+			sourceTree = "<group>";
+		};
+		1BAD97991F87A9F3007289EB /* Quote Details ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1B6E11101F7CF3E600C4069A /* InsuranceQuoteViewController.swift */,
+				1B6E11121F7CFCED00C4069A /* BinderViewController.swift */,
+				1B6E11141F7CFCF900C4069A /* COIViewController.swift */,
+				1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */,
+				1BCC638B1F7EC5BC00C87694 /* QuotePdfViewController.swift */,
+				1BAD979A1F87AA38007289EB /* QuoteFormViewController.swift */,
+			);
+			name = "Quote Details ViewController";
+			sourceTree = "<group>";
+		};
 		1BE2859E1F7908E200314168 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				1B7E16EB1F83E1B0005C2165 /* Search_animation.gif */,
 				1B66F23E1F7E2FDE00FA52C0 /* Font */,
 				1BEF2E7A1F79292700AE94E6 /* PDF */,
+				1BAD979C1F87AB47007289EB /* QuoteFormData.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -468,6 +525,7 @@
 				5346F1B41F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift */,
 				5346F1E01F7A3B7C000E6AC5 /* AddCardTableViewCell.swift */,
 				53DE22521F7D07C50045E9EA /* PaymentReceiptTableViewCell.swift */,
+				1BAD979E1F87B0FF007289EB /* QuoteFormTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -475,20 +533,11 @@
 		536A33931F725B2800F019C5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				536A33A71F725CEF00F019C5 /* ImagePreviewController.swift */,
-				536A33A91F725D5C00F019C5 /* CameraViewController.swift */,
-				1B5403DB1F728842007CF73B /* RootViewController.swift */,
-				1B5403FD1F75459D007CF73B /* SplashScreenViewController.swift */,
-				5346F1B21F7542BC000E6AC5 /* ScanCompleteViewController.swift */,
-				5346F1E21F7A3CAD000E6AC5 /* AddCardViewController.swift */,
-				535888741F7CECE400A6E0D0 /* PaymentReceiptViewController.swift */,
-				1B6E11101F7CF3E600C4069A /* InsuranceQuoteViewController.swift */,
-				1B6E11121F7CFCED00C4069A /* BinderViewController.swift */,
-				1B6E11141F7CFCF900C4069A /* COIViewController.swift */,
-				1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */,
-				1BCC63891F7EBA1000C87694 /* LoaderViewController.swift */,
-				1BCC638B1F7EC5BC00C87694 /* QuotePdfViewController.swift */,
-				53DCED0D1F8669C100425E8B /* BaseViewController.swift */,
+				1BAD97991F87A9F3007289EB /* Quote Details ViewController */,
+				1BAD97981F87A9D0007289EB /* Image Rreview View Controller */,
+				1BAD97971F87A745007289EB /* Payment ViewController */,
+				1BAD97961F87A719007289EB /* Welcome ViewController */,
+				1BAD97951F87A706007289EB /* Camera  ViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -641,6 +690,7 @@
 				1B31C0DF1F85315700C2EC04 /* HockeySDKResources.bundle in Resources */,
 				1B66F2581F7E300000FA52C0 /* Carnas Light Italic.otf in Resources */,
 				1B66F2501F7E300000FA52C0 /* Carnas Black.otf in Resources */,
+				1BAD979D1F87AB47007289EB /* QuoteFormData.plist in Resources */,
 				536A33681F725AE500F019C5 /* Main.storyboard in Resources */,
 				1B66F2571F7E300000FA52C0 /* Carnas Italic.otf in Resources */,
 				1B66F25A1F7E300000FA52C0 /* Carnas Medium Italic.otf in Resources */,
@@ -837,6 +887,8 @@
 				1B6E11361F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				5346F1DF1F79191E000E6AC5 /* ARSStatus.swift in Sources */,
 				1BCC638A1F7EBA1000C87694 /* LoaderViewController.swift in Sources */,
+				1BAD979B1F87AA38007289EB /* QuoteFormViewController.swift in Sources */,
+				1BAD979F1F87B0FF007289EB /* QuoteFormTableViewCell.swift in Sources */,
 				5346F1DD1F79191E000E6AC5 /* ARSLineProgressTypeAliases.swift in Sources */,
 				1B5403FE1F75459D007CF73B /* SplashScreenViewController.swift in Sources */,
 				5346F1E31F7A3CAD000E6AC5 /* AddCardViewController.swift in Sources */,

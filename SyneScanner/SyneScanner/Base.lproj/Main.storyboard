@@ -1100,7 +1100,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-Ii-uIo">
-                                                            <rect key="frame" x="10" y="35.5" width="135" height="19"/>
+                                                            <rect key="frame" x="10" y="36" width="135" height="19"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="19"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -2040,6 +2040,125 @@ We are now making insurance companies fight for your business. We will present y
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBj-LI-Y7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4362" y="300"/>
+        </scene>
+        <!--Quote Form View Controller-->
+        <scene sceneID="aew-nT-2l0">
+            <objects>
+                <viewController id="Cb2-NC-yeH" customClass="QuoteFormViewController" customModule="SyneScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4LN-ZK-KsV"/>
+                        <viewControllerLayoutGuide type="bottom" id="GCw-G4-8Bk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rkb-6g-bPH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_cureve_line" translatesAutoresizingMaskIntoConstraints="NO" id="NLL-BI-eQb">
+                                <rect key="frame" x="0.0" y="116" width="71" height="193"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_Curve_line" translatesAutoresizingMaskIntoConstraints="NO" id="RIl-lX-SBO">
+                                <rect key="frame" x="243" y="293" width="77" height="205"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtv-zS-zdp">
+                                <rect key="frame" x="50" y="488" width="220" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="NaM-lV-gZV"/>
+                                    <constraint firstAttribute="height" constant="40" id="mB5-MW-SwZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="proceedBtnTapped:" destination="Cb2-NC-yeH" eventType="touchUpInside" id="Soa-f7-bnI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9S6-1L-NPE">
+                                <rect key="frame" x="20" y="40" width="174" height="25"/>
+                                <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="25"/>
+                                <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="32"/>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Agent" translatesAutoresizingMaskIntoConstraints="NO" id="2eK-SK-cvY">
+                                <rect key="frame" x="237" y="37" width="63" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="89c-2h-RI0"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurance Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWE-0U-Obe">
+                                <rect key="frame" x="20" y="70" width="136.5" height="18"/>
+                                <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="18"/>
+                                <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="24"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsW-vb-IRu">
+                                <rect key="frame" x="124.5" y="528" width="71" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8Sp-P0-tZQ"/>
+                                    <constraint firstAttribute="width" constant="71" id="nNe-wO-9rt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="18"/>
+                                <state key="normal" title="GO BACK">
+                                    <color key="titleColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backBtnClicked" destination="Cb2-NC-yeH" eventType="touchUpInside" id="dH8-c5-VxH"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E1g-HF-tHn">
+                                <rect key="frame" x="16" y="124" width="288" height="356"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cpD-KG-5ES">
+                                        <rect key="frame" x="0.0" y="28" width="288" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cpD-KG-5ES" id="Q3J-ZM-FZo">
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mtv-zS-zdp" firstAttribute="top" secondItem="E1g-HF-tHn" secondAttribute="bottom" constant="8" id="8pq-NY-Q48"/>
+                            <constraint firstItem="E1g-HF-tHn" firstAttribute="top" secondItem="2eK-SK-cvY" secondAttribute="bottom" constant="8" id="9hr-wJ-dbW"/>
+                            <constraint firstItem="E1g-HF-tHn" firstAttribute="leading" secondItem="rkb-6g-bPH" secondAttribute="leading" constant="16" id="Las-HF-hBL"/>
+                            <constraint firstItem="uWE-0U-Obe" firstAttribute="leading" secondItem="rkb-6g-bPH" secondAttribute="leading" constant="20" id="U5d-RU-PIv"/>
+                            <constraint firstItem="2eK-SK-cvY" firstAttribute="top" secondItem="4LN-ZK-KsV" secondAttribute="bottom" constant="17" id="Yhq-AK-ERH"/>
+                            <constraint firstItem="ZsW-vb-IRu" firstAttribute="centerX" secondItem="rkb-6g-bPH" secondAttribute="centerX" id="caB-zE-MSQ"/>
+                            <constraint firstAttribute="trailing" secondItem="2eK-SK-cvY" secondAttribute="trailing" constant="20" id="dGM-bX-ACd"/>
+                            <constraint firstItem="uWE-0U-Obe" firstAttribute="top" secondItem="9S6-1L-NPE" secondAttribute="bottom" constant="5" id="fRh-sW-z9d"/>
+                            <constraint firstItem="Mtv-zS-zdp" firstAttribute="centerX" secondItem="rkb-6g-bPH" secondAttribute="centerX" id="hPP-Y0-86J"/>
+                            <constraint firstAttribute="trailing" secondItem="E1g-HF-tHn" secondAttribute="trailing" constant="16" id="hgc-Pg-Vei"/>
+                            <constraint firstAttribute="trailing" secondItem="RIl-lX-SBO" secondAttribute="trailing" id="kU8-ai-4rm"/>
+                            <constraint firstItem="9S6-1L-NPE" firstAttribute="top" secondItem="4LN-ZK-KsV" secondAttribute="bottom" constant="20" id="nVh-o5-EZL"/>
+                            <constraint firstItem="NLL-BI-eQb" firstAttribute="leading" secondItem="rkb-6g-bPH" secondAttribute="leading" id="nXu-J3-Wrr"/>
+                            <constraint firstItem="NLL-BI-eQb" firstAttribute="top" secondItem="uWE-0U-Obe" secondAttribute="bottom" constant="28" id="r1R-50-g2G"/>
+                            <constraint firstItem="GCw-G4-8Bk" firstAttribute="top" secondItem="ZsW-vb-IRu" secondAttribute="bottom" id="tRV-ik-bbV"/>
+                            <constraint firstItem="GCw-G4-8Bk" firstAttribute="top" secondItem="RIl-lX-SBO" secondAttribute="bottom" constant="70" id="wkn-eR-loG"/>
+                            <constraint firstItem="ZsW-vb-IRu" firstAttribute="top" secondItem="Mtv-zS-zdp" secondAttribute="bottom" id="wzm-FN-t9C"/>
+                            <constraint firstItem="9S6-1L-NPE" firstAttribute="leading" secondItem="rkb-6g-bPH" secondAttribute="leading" constant="20" id="yAL-Zd-hey"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomBtnConstraint" destination="tRV-ik-bbV" id="seR-oP-IxK"/>
+                        <outlet property="goBackBtn" destination="ZsW-vb-IRu" id="gra-tl-5rj"/>
+                        <outlet property="lblCompanyName" destination="9S6-1L-NPE" id="GUt-K8-bbp"/>
+                        <outlet property="proceedBtn" destination="Mtv-zS-zdp" id="SBd-Wo-C9N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GUg-rI-Vdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3918.75" y="1134.5070422535211"/>
         </scene>
     </scenes>
     <resources>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>NEW BUSINESS QUOTE</string>
+		<key>noOfSection</key>
+		<integer>2</integer>
+		<key>section1</key>
+		<array>
+			<dict>
+				<key>heading</key>
+				<string>Quote #:</string>
+				<key>value</key>
+				<string>4743916-1</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Underwriter:</string>
+				<key>value</key>
+				<string>Miriam Balavender</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Underwriter Phone#:</string>
+				<key>value</key>
+				<string>(312) 258-3347</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Underwriter Email#:</string>
+				<key>value</key>
+				<string>test@mail.com</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Applicant Name:</string>
+				<key>value</key>
+				<string>ABC CONSULTING,LLC</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Mailing Address:</string>
+				<key>value</key>
+				<string>ABC CONSULTING,LLC</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Coverage Name:</string>
+				<key>value</key>
+				<string>Lead Excess</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Policy Basis:</string>
+				<key>value</key>
+				<string>Occurrence</string>
+			</dict>
+		</array>
+		<key>section2</key>
+		<array>
+			<dict>
+				<key>heading</key>
+				<string>Quote Date:</string>
+				<key>value</key>
+				<string>09/14/2017</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Producer Name:</string>
+				<key>value</key>
+				<string>Daniel Hughes</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Company Name:</string>
+				<key>value</key>
+				<string>XYZ Brockerage, LLC</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Insuring Company:</string>
+				<key>value</key>
+				<string>PQR Insurance Company</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Quote Expires:</string>
+				<key>value</key>
+				<string>10/14/2017</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Policy Period:</string>
+				<key>value</key>
+				<string>09/14/2017 To 09/14/2018</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Retro Date:</string>
+				<key>value</key>
+				<string>09/20/2008</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>LIMITS AND PREMIUM</string>
+		<key>noOfSection</key>
+		<integer>2</integer>
+		<key>section1</key>
+		<array>
+			<dict>
+				<key>heading</key>
+				<string>Per Occurrence:</string>
+				<key>value</key>
+				<string>$1,000,000</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Aggregate:</string>
+				<key>value</key>
+				<string>$2,000,000</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Excess of::</string>
+				<key>value</key>
+				<string>Underlying Insurance</string>
+			</dict>
+		</array>
+		<key>section2</key>
+		<array>
+			<dict>
+				<key>heading</key>
+				<string>Premium:</string>
+				<key>value</key>
+				<string>$2,500</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Total Premium:</string>
+				<key>value</key>
+				<string>$2,500</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Commission:</string>
+				<key>value</key>
+				<string>18%</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Min Earned Premium:</string>
+				<key>value</key>
+				<string>25%</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Premium Type:</string>
+				<key>value</key>
+				<string>Flat and Non-Auditable</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

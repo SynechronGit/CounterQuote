@@ -81,11 +81,11 @@ class ImagePreviewController: BaseViewController {
          let calculateProgress = SharedData.sharedInstance.calculateCurrentProgress()
         if calculateProgress.progressValue >= 1.0
         {
-            submitBtn.isEnabled = true
+           // submitBtn.isEnabled = true
         }
         else
         {
-            submitBtn.isEnabled = false
+          //  submitBtn.isEnabled = false
             
         }
         DispatchQueue.main.async {
