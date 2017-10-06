@@ -15,12 +15,13 @@ class LoaderViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Timer.scheduledTimer(timeInterval: 4,
-                             target: self,
-                             selector: #selector(self.pushToQuoteVc),
-                             userInfo: nil,
-                             repeats: false)
+//        Timer.scheduledTimer(timeInterval: 4,
+//                             target: self,
+//                             selector: #selector(self.pushToQuoteVc),
+//                             userInfo: nil,
+//                             repeats: false)
         addSearchAnimation()
+        startOCR()
         // Do any additional setup after loading the view.
     }
 
@@ -49,5 +50,25 @@ class LoaderViewController: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+}
+
+extension LoaderViewController:GetOCRProxyDelgate
+{
+    func startOCR()
+    {
+        let getOCRproxy =  GetOCRProxy()
+        getOCRproxy.delegate = self
+        getOCRproxy.callGetOCRApi(corelationId: SharedData.sharedInstance.corelationId)
+
+    }
+    func getOCRSuccess(responseData:[String:AnyObject])
+    {
+        pushToQuoteVc()
+    }
+    func getOCRFailed(errorMessage:String)
+    {
+        
+    }
 
 }

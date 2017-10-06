@@ -26,9 +26,7 @@ class ImagePreviewController: BaseViewController {
      // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        submitBtn.layer.borderWidth = 1
-        submitBtn.layer.cornerRadius = 22
-        submitBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+    
 
        configureUI()
         
@@ -60,14 +58,36 @@ class ImagePreviewController: BaseViewController {
         
         pageControl.numberOfPages = SharedData.sharedInstance.arrImage.count
         
+        submitBtn.layer.borderWidth = 1
+        submitBtn.layer.cornerRadius = 22
+        submitBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+        
         lblHeader.text = String(format:"You are in (1/%d) pages",pageControl.numberOfPages)
 
         //let rightBarButton = UIBarButtonItem(title: "Finish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ImagePreviewController.finishBtnTapped))
         //self.navigationItem.rightBarButtonItem = rightBarButton
         
-        self.progressTimer =   Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateProgressValue), userInfo: nil, repeats: true)
+//        self.progressTimer =   Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateProgressValue), userInfo: nil, repeats: true)
 
-        
+        let notificationName = Notification.Name("updateProgress")
+
+        NotificationCenter.default.addObserver(self, selector: #selector(ImagePreviewController.updateProgress), name: notificationName, object: nil)
+
+        collectionView.reloadData()
+
+    }
+    func updateProgress()
+    {
+         let calculateProgress = SharedData.sharedInstance.calculateCurrentProgress()
+        if calculateProgress.progressValue >= 1.0
+        {
+            submitBtn.isEnabled = true
+        }
+        else
+        {
+            submitBtn.isEnabled = false
+            
+        }
         collectionView.reloadData()
 
     }
@@ -226,20 +246,15 @@ extension ImagePreviewController: StartWorkflowDelegate {
     func workflowSuccessfullyStarted(responseData:String)
     {
         SVProgressHUD.dismiss()
-        //        ARSLineProgress.hideWithCompletionBlock({ () -> Void in
-        //            ARSLineProgress.showSuccess()
-        //            self.performSegue(withIdentifier: "NavToPdfView", sender: nil)
-        //        })
         self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
     }
     
     func workflowFailedToStart(errorMessage: String) {
         SVProgressHUD.dismiss()
-        //        ARSLineProgress.hideWithCompletionBlock({ () -> Void in
-        //            ARSLineProgress.showFail()
-        //            self.performSegue(withIdentifier: "NavToPdfView", sender: nil)
-        //
-        //        })
+        self.popupAlert(title: "Error", message: errorMessage, actionTitles: ["Ok"], actions:[{action1 in
+            
+            }, nil])
+       
     }
 }
 

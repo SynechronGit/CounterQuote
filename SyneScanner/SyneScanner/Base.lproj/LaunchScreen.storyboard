@@ -24,6 +24,28 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashBg" translatesAutoresizingMaskIntoConstraints="NO" id="ctD-lm-NT7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COUNTERQUOTE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdF-Qu-KBV">
+                                <rect key="frame" x="83.5" y="40" width="208" height="31.5"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <attributedString key="attributedText">
+                                        <fragment content="COUNTER">
+                                            <attributes>
+                                                <color key="NSColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="36" name=".AppleSystemUIFont"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="QUOTE">
+                                            <attributes>
+                                                <color key="NSColor" red="0.16862745098039217" green="0.37254901960784315" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="36" name=".AppleSystemUIFont"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </variation>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_left_line" translatesAutoresizingMaskIntoConstraints="NO" id="Rjk-65-XAf">
                                 <rect key="frame" x="0.0" y="454" width="71" height="193"/>
                                 <constraints>
@@ -46,6 +68,7 @@
                         <constraints>
                             <constraint firstItem="ctD-lm-NT7" firstAttribute="top" secondItem="652-rP-ZVv" secondAttribute="top" id="55f-ov-b09"/>
                             <constraint firstItem="45l-zT-Bz4" firstAttribute="top" secondItem="Rjk-65-XAf" secondAttribute="bottom" constant="20" id="6B8-re-4t4"/>
+                            <constraint firstItem="EdF-Qu-KBV" firstAttribute="centerX" secondItem="652-rP-ZVv" secondAttribute="centerX" id="EFY-dU-DUW"/>
                             <constraint firstItem="ctD-lm-NT7" firstAttribute="leading" secondItem="652-rP-ZVv" secondAttribute="leading" id="EPi-NM-XBO"/>
                             <constraint firstItem="45l-zT-Bz4" firstAttribute="top" secondItem="ctD-lm-NT7" secondAttribute="bottom" id="ILE-vo-yZp"/>
                             <constraint firstItem="Rjk-65-XAf" firstAttribute="leading" secondItem="652-rP-ZVv" secondAttribute="leading" id="QtU-sh-VG8"/>
@@ -53,6 +76,7 @@
                             <constraint firstAttribute="trailing" secondItem="ctD-lm-NT7" secondAttribute="trailing" id="cuV-hs-44I"/>
                             <constraint firstItem="ggw-hT-CSf" firstAttribute="top" secondItem="652-rP-ZVv" secondAttribute="top" constant="20" id="jBz-DJ-4Q3"/>
                             <constraint firstItem="ugh-T5-Yds" firstAttribute="centerY" secondItem="652-rP-ZVv" secondAttribute="centerY" id="kUt-TF-rel"/>
+                            <constraint firstItem="EdF-Qu-KBV" firstAttribute="top" secondItem="652-rP-ZVv" secondAttribute="top" constant="40" id="twE-ah-xfM"/>
                             <constraint firstAttribute="trailing" secondItem="ggw-hT-CSf" secondAttribute="trailing" id="tx5-u8-tQY"/>
                         </constraints>
                     </view>

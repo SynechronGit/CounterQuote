@@ -11,3 +11,4 @@ import Foundation
 let BASE_URL = "https://ocr-demo-api.azurewebsites.net/api/"
 let UPLOAD_IMAGE = "CommonBlob/UploadFile"
 let START_WORKFLOW = "DocumentExtractor/StartWorkflow"
+let GET_OCR = "OCR/"
