@@ -88,7 +88,10 @@ class ImagePreviewController: BaseViewController {
             submitBtn.isEnabled = false
             
         }
-        collectionView.reloadData()
+        DispatchQueue.main.async {
+
+        self.collectionView.reloadData()
+        }
 
     }
     func updateProgressValue()
@@ -147,7 +150,8 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
         }
         cell.imagePreview.image = model?.image
         cell.retakeDelegate = self
-        cell.progressView.value = CGFloat(progressValue)
+        let totalProgressPercentage = (model?.progress)! * 100
+        cell.progressView.value = CGFloat(totalProgressPercentage)
         return cell
     
     }
