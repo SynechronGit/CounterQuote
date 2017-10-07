@@ -74,7 +74,7 @@ class InsuranceQuoteViewController: BaseViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "NavToQuote"
         {
-            let vc:QuotePdfViewController = segue.destination as! QuotePdfViewController
+            let vc:QuoteFormViewController = segue.destination as! QuoteFormViewController
             let indexPath:IndexPath = sender as! IndexPath
             vc.companyDetails = companyList[indexPath.row - 1]
         }
@@ -106,7 +106,7 @@ extension InsuranceQuoteViewController:UITableViewDataSource,UITableViewDelegate
             lblCompanyName.text = dict["companyName"]
             
             let lblPrice:UILabel = cell.viewWithTag(2) as! UILabel
-            lblPrice.text = "$" + dict["price"]! + "/y"
+            lblPrice.text = "$" + " " + dict["price"]! + "/y"
 
             let mainView:UIView = cell.viewWithTag(4)!
             mainView.layer.cornerRadius = 8

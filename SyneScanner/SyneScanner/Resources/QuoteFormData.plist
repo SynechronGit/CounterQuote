@@ -5,7 +5,7 @@
 	<dict>
 		<key>title</key>
 		<string>APPLICATION DETAILS</string>
-		<key>section1</key>
+		<key>data</key>
 		<array>
 			<dict>
 				<key>heading</key>
@@ -54,7 +54,7 @@
 	<dict>
 		<key>title</key>
 		<string>PROPERTY COVERAGE LIMIT</string>
-		<key>section1</key>
+		<key>data</key>
 		<array>
 			<dict>
 				<key>heading</key>
@@ -85,7 +85,7 @@
 	<dict>
 		<key>title</key>
 		<string>GENERAL LIABILITY COVERAGE</string>
-		<key>section1</key>
+		<key>data</key>
 		<array>
 			<dict>
 				<key>heading</key>
@@ -110,7 +110,7 @@
 	<dict>
 		<key>title</key>
 		<string>EXCESS LIABLITY COVERAGE</string>
-		<key>section1</key>
+		<key>data</key>
 		<array>
 			<dict>
 				<key>heading</key>
@@ -123,7 +123,7 @@
 	<dict>
 		<key>title</key>
 		<string>PREMIUM DETAILS</string>
-		<key>section1</key>
+		<key>data</key>
 		<array>
 			<dict>
 				<key>heading</key>
@@ -154,7 +154,7 @@
 	<dict>
 		<key>title</key>
 		<string>LIMITS</string>
-		<key>section1</key>
+		<key>data</key>
 		<array>
 			<dict>
 				<key>heading</key>

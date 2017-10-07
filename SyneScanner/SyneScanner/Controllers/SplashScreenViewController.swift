@@ -18,9 +18,12 @@ class SplashScreenViewController: BaseViewController {
     var duration: Double = 2.0
     open var delay: Double = 0.5
 
+    @IBOutlet weak var topConstraintLblHeader: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.endSplashScreenView), userInfo: nil, repeats: false)
+        topConstraintLblHeader.constant = -50
+
+        self.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.endSplashScreenView), userInfo: nil, repeats: false)
         // Do any additional setup after loading the view.
     }
 
@@ -33,7 +36,8 @@ class SplashScreenViewController: BaseViewController {
     }
    override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    playSwingAnimation()
+    addLabelAnimation()
+   // playSwingAnimation()
 
     }
     
@@ -42,44 +46,24 @@ class SplashScreenViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func addLabelAnimation()
+    {
+        self.topConstraintLblHeader.constant = 60
+
+        UIView.animate(withDuration: 1.5, delay: 0.5,
+                                   usingSpringWithDamping: 0.5,
+                                   initialSpringVelocity: 0.8,
+                                   options: .curveEaseInOut, animations: {
+                                    self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
     func endSplashScreenView() {
         self.performSegue(withIdentifier: "navToIntroVc", sender: nil)
         self.timer?.invalidate()
         self.timer = nil
     }
     
-    func playSwingAnimation(_ completion: SplashAnimatableCompletion? = nil)
-    {
-        if let imageView = self.imgLogo{
-            
-            let swingForce = 0.8
-            
-            animateLayer({
-                
-                let animation = CAKeyframeAnimation(keyPath: "transform.rotation")
-                animation.values = [0, 0.3 * swingForce, -0.3 * swingForce, 0.3 * swingForce, 0]
-                animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-                animation.duration = CFTimeInterval(self.duration/2)
-                animation.isAdditive = true
-                animation.repeatCount = 2
-                animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay/3)
-                imageView.layer.add(animation, forKey: "swing")
-                
-            }, completion: {
-                self.performSegue(withIdentifier: "navToIntroVc", sender: nil)
-            })
-        }
-    }
-    func animateLayer(_ animation: SplashAnimatableExecution, completion: SplashAnimatableCompletion? = nil) {
-    
-    CATransaction.begin()
-    if let completion = completion {
-    CATransaction.setCompletionBlock { completion() }
-    }
-    animation()
-    CATransaction.commit()
-    }
-
+   
     /*
     // MARK: - Navigation
 

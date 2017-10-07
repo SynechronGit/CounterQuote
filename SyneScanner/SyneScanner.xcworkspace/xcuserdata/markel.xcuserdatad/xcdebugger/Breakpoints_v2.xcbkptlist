@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SyneScanner/Controllers/CameraViewController.swift"
-            timestampString = "528976739.751189"
+            timestampString = "529058061.293195"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "359"
-            endingLineNumber = "359"
+            startingLineNumber = "360"
+            endingLineNumber = "360"
             landmarkName = "imageSuccessfullyUpload(responseData:indexNo:)"
             landmarkType = "7">
          </BreakpointContent>

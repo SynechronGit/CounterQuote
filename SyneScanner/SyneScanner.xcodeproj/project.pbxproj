@@ -47,6 +47,7 @@
 		1BAD979D1F87AB47007289EB /* QuoteFormData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BAD979C1F87AB47007289EB /* QuoteFormData.plist */; };
 		1BAD979F1F87B0FF007289EB /* QuoteFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD979E1F87B0FF007289EB /* QuoteFormTableViewCell.swift */; };
 		1BAD97BD1F88AD64007289EB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD97BC1F88AD64007289EB /* UIButton+Extension.swift */; };
+		1BAD97C01F88CCC2007289EB /* CallusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD97BF1F88CCC2007289EB /* CallusViewController.swift */; };
 		1BCC637C1F7E6D7C00C87694 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */; };
 		1BCC637F1F7E9FB300C87694 /* Binder.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1BCC637D1F7E9FB300C87694 /* Binder.pdf */; };
 		1BCC63801F7E9FB300C87694 /* Quote.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1BCC637E1F7E9FB300C87694 /* Quote.pdf */; };
@@ -171,6 +172,7 @@
 		1BAD979C1F87AB47007289EB /* QuoteFormData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QuoteFormData.plist; sourceTree = "<group>"; };
 		1BAD979E1F87B0FF007289EB /* QuoteFormTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteFormTableViewCell.swift; sourceTree = "<group>"; };
 		1BAD97BC1F88AD64007289EB /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Extension.swift"; path = "../UIButton+Extension.swift"; sourceTree = "<group>"; };
+		1BAD97BF1F88CCC2007289EB /* CallusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallusViewController.swift; sourceTree = "<group>"; };
 		1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		1BCC637D1F7E9FB300C87694 /* Binder.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Binder.pdf; sourceTree = "<group>"; };
 		1BCC637E1F7E9FB300C87694 /* Quote.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Quote.pdf; sourceTree = "<group>"; };
@@ -383,6 +385,14 @@
 			name = "Quote Details ViewController";
 			sourceTree = "<group>";
 		};
+		1BAD97BE1F88CC93007289EB /* CallUs ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1BAD97BF1F88CCC2007289EB /* CallusViewController.swift */,
+			);
+			name = "CallUs ViewController";
+			sourceTree = "<group>";
+		};
 		1BE2859E1F7908E200314168 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +554,7 @@
 		536A33931F725B2800F019C5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1BAD97BE1F88CC93007289EB /* CallUs ViewController */,
 				1BAD97991F87A9F3007289EB /* Quote Details ViewController */,
 				1BAD97981F87A9D0007289EB /* Image Rreview View Controller */,
 				1BAD97971F87A745007289EB /* Payment ViewController */,
@@ -895,6 +906,7 @@
 				536A339C1F725BFB00F019C5 /* ImageEditManager.swift in Sources */,
 				5346F1D91F79191E000E6AC5 /* ARSLineProgressCustomization.swift in Sources */,
 				5346F1D61F79191E000E6AC5 /* ARSInfiniteLoader.swift in Sources */,
+				1BAD97C01F88CCC2007289EB /* CallusViewController.swift in Sources */,
 				536A33951F725B4A00F019C5 /* Quadrangle.swift in Sources */,
 				1B6E11361F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				5346F1DF1F79191E000E6AC5 /* ARSStatus.swift in Sources */,
