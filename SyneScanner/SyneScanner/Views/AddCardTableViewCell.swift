@@ -12,6 +12,7 @@ class AddCardTableViewCell: UITableViewCell {
     let kLength = 4
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var cardScanBtn: UIButton!
+    @IBOutlet weak var cellDividerImage: UIImageView!
 
     var actionDelegate : TextFieldActionDelegate?
     override func awakeFromNib() {
