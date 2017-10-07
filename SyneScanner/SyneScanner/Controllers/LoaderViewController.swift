@@ -68,7 +68,7 @@ extension LoaderViewController:GetOCRProxyDelgate
     }
     func getOCRFailed(errorMessage:String)
     {
-        
+        pushToQuoteVc()
     }
 
 }

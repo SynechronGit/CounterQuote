@@ -62,10 +62,7 @@ class AddCardViewController: BaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
- @IBAction   func popToRoot()
-    {
-        self.navigationController?.popViewController(animated: true)
-    }
+
     func defaultValues() {
         month = "09"
         year = "17"

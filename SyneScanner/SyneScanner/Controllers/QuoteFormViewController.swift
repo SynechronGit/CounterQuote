@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class QuoteFormViewController: BaseViewController {
 
@@ -45,6 +46,10 @@ class QuoteFormViewController: BaseViewController {
          dataArr = plist as? NSArray
     }
     @IBAction func proceedBtnTapped(_ sender: Any) {
+        SVProgressHUD.show()
+        SVProgressHUD.dismiss(withDelay: 1) {
+            self.performSegue(withIdentifier: "NavToPayment", sender: nil)
+        }
     }
     @IBAction   func backBtnClicked()
     {
@@ -130,15 +135,20 @@ class QuoteFormViewController: BaseViewController {
 //            })
 //        })    
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "NavToPayment"
+        {
+            let vc:PaymentOptionViewController = segue.destination as! PaymentOptionViewController
+            vc.companyDetails = self.companyDetails
+        }
     }
-    */
+    
 
 }
 
