@@ -33,7 +33,7 @@ class PaymentOptionViewController: UIViewController {
         addCardVC = self.storyboard?.instantiateViewController(withIdentifier: "AddCardViewController") as? AddCardViewController
         invoiceVC = self.storyboard?.instantiateViewController(withIdentifier: "InvoicePaymentViewController") as? InvoicePaymentViewController
         self.addChildViewController(addCardVC!)
-        
+        self.addCardVC?.companyDetails = self.companyDetails
         self.invoicePayScrollView.contentSize = CGSize(width: (self.invoiceVC?.view.frame.size.width)!, height: 200)
         self.cardPayScrollView.contentSize = CGSize(width: (self.addCardVC?.view.frame.size.width)!, height: 568)
         
@@ -131,7 +131,6 @@ class PaymentOptionViewController: UIViewController {
                             self.innerView.layoutIfNeeded()
                             self.invoiceVC?.view.removeFromSuperview()
                             self.cardViewHeightConstraint.constant = self.innerViewHeightConstraint.constant - self.invoiceViewHeightConstriant.constant
-                            self.addCardVC?.companyDetails = self.companyDetails
                             self.addCardVC?.view.layoutIfNeeded()
                             self.cardPayScrollView.layoutIfNeeded()
                             self.innerView.layoutIfNeeded()
