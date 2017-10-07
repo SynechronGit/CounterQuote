@@ -36,9 +36,7 @@ class ScanCompleteViewController: BaseViewController {
     }
     func configureUI()
     {
-        btnComplete.layer.borderWidth = 1
-        btnComplete.layer.cornerRadius = 22
-        btnComplete.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+       btnComplete.setBorderToButton()
 
         let notificationName = Notification.Name("updateProgress")
         NotificationCenter.default.addObserver(self, selector: #selector(ScanCompleteViewController.updateProgress), name: notificationName, object: nil)

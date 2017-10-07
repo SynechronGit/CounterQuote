@@ -20,10 +20,8 @@ class QuotePdfViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lblCompanyName.text =  companyDetails?["companyName"]
-        proceedBtn.layer.borderWidth = 1
-        proceedBtn.layer.cornerRadius = 22
-        proceedBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
-        
+       
+        proceedBtn.setBorderToButton()
         centerView.layer.cornerRadius = 10
         centerView.layer.masksToBounds = true
         loadPdfFile()

@@ -13,9 +13,8 @@ class ThankYouViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnFeedback.layer.borderWidth = 1
-        btnFeedback.layer.cornerRadius = 22
-        btnFeedback.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+      
+        btnFeedback.setBorderToButton()
         // Do any additional setup after loading the view.
     }
 

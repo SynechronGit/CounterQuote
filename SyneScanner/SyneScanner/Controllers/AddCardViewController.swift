@@ -48,11 +48,8 @@ class AddCardViewController: BaseViewController {
         let savedPrice = 4000 - actualPrice
         
         lblSaveedAmount.text = String(format:"You Saved $%d",savedPrice)
-        makePaymentButton.layer.borderWidth = 1
-        makePaymentButton.layer.cornerRadius = 22
-        makePaymentButton.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
-        
-        
+    
+        makePaymentButton.setBorderToButton()
         self.makePaymentButton.isEnabled = true
         self.commonSetup()
         self.title  = "Payment Method"

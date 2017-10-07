@@ -58,9 +58,7 @@ class ImagePreviewController: BaseViewController {
         
         pageControl.numberOfPages = SharedData.sharedInstance.arrImage.count
         
-        submitBtn.layer.borderWidth = 1
-        submitBtn.layer.cornerRadius = 22
-        submitBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+      submitBtn.setBorderToButton()
         
         lblHeader.text = String(format:"You are in (1/%d) pages",pageControl.numberOfPages)
 

@@ -23,9 +23,7 @@ class InsuranceQuoteViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        acceptBtn.layer.borderWidth = 1
-        acceptBtn.layer.cornerRadius = 22
-        acceptBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+       acceptBtn.setBorderToButton()
         tableView.tableFooterView = UIView()
      //   centerView.layer.cornerRadius = 10
       //  centerView.layer.masksToBounds = true

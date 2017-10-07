@@ -21,9 +21,8 @@ class COIViewController: BaseViewController {
         self.title = "Certificate Of Insurance"
         
        
-        completeBtn.layer.borderWidth = 1
-        completeBtn.layer.cornerRadius = 22
-        completeBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+      
+        completeBtn.setBorderToButton()
         centerView.layer.cornerRadius = 10
         centerView.layer.masksToBounds = true
 

@@ -20,10 +20,7 @@ class PaymentReceiptViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        proceedButton.layer.borderWidth = 1
-        proceedButton.layer.cornerRadius = 22
-        proceedButton.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
-        
+     proceedButton.setBorderToButton()
         self.title = "Payment Receipt"
         self.navigationItem.setHidesBackButton(true, animated: false)
         cardHeaderArray = ["Insurance company","Policy number",  "Policy Start Date", "Policy End Date","Premium amount"]

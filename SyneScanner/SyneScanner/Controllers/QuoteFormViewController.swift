@@ -11,9 +11,19 @@ import UIKit
 class QuoteFormViewController: BaseViewController {
 
     @IBOutlet weak var tableForm: UITableView!
+    @IBOutlet weak var lblCompanyName: UILabel!
+    @IBOutlet weak var proceedBtn: UIButton!
+    @IBOutlet weak var btnShare: UIButton!
+    @IBOutlet weak var btnCall: UIButton!
+    var companyDetails:[String:String]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblCompanyName.text =  companyDetails?["companyName"]
+       
+        proceedBtn.setBorderToButton()
+        btnShare.setBorderToButton()
+        btnCall.setBorderToButton()
 
         // Do any additional setup after loading the view.
     }

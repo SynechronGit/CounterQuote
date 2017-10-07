@@ -14,9 +14,7 @@ class RootViewController: BaseViewController {
     // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnScanDocument.layer.borderWidth = 1
-        btnScanDocument.layer.cornerRadius = 22
-        btnScanDocument.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+        btnScanDocument.setBorderToButton()
         // Do any additional setup after loading the view.
     }
 

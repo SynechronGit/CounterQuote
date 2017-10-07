@@ -46,6 +46,7 @@
 		1BAD979B1F87AA38007289EB /* QuoteFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD979A1F87AA38007289EB /* QuoteFormViewController.swift */; };
 		1BAD979D1F87AB47007289EB /* QuoteFormData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BAD979C1F87AB47007289EB /* QuoteFormData.plist */; };
 		1BAD979F1F87B0FF007289EB /* QuoteFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD979E1F87B0FF007289EB /* QuoteFormTableViewCell.swift */; };
+		1BAD97BD1F88AD64007289EB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD97BC1F88AD64007289EB /* UIButton+Extension.swift */; };
 		1BCC637C1F7E6D7C00C87694 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */; };
 		1BCC637F1F7E9FB300C87694 /* Binder.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1BCC637D1F7E9FB300C87694 /* Binder.pdf */; };
 		1BCC63801F7E9FB300C87694 /* Quote.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1BCC637E1F7E9FB300C87694 /* Quote.pdf */; };
@@ -166,6 +167,7 @@
 		1BAD979A1F87AA38007289EB /* QuoteFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteFormViewController.swift; sourceTree = "<group>"; };
 		1BAD979C1F87AB47007289EB /* QuoteFormData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QuoteFormData.plist; sourceTree = "<group>"; };
 		1BAD979E1F87B0FF007289EB /* QuoteFormTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteFormTableViewCell.swift; sourceTree = "<group>"; };
+		1BAD97BC1F88AD64007289EB /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Extension.swift"; path = "../UIButton+Extension.swift"; sourceTree = "<group>"; };
 		1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		1BCC637D1F7E9FB300C87694 /* Binder.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Binder.pdf; sourceTree = "<group>"; };
 		1BCC637E1F7E9FB300C87694 /* Quote.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Quote.pdf; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 		536A33961F725B6C00F019C5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1BAD97BC1F88AD64007289EB /* UIButton+Extension.swift */,
 				536A33971F725BB600F019C5 /* CALayer+Extension.swift */,
 				536A33991F725BDD00F019C5 /* CIRectangleFeature+Extension.swift */,
 				1B6E110E1F7CE71800C4069A /* UIColor+Extension.swift */,
@@ -887,6 +890,7 @@
 				1B6E11361F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				5346F1DF1F79191E000E6AC5 /* ARSStatus.swift in Sources */,
 				1BCC638A1F7EBA1000C87694 /* LoaderViewController.swift in Sources */,
+				1BAD97BD1F88AD64007289EB /* UIButton+Extension.swift in Sources */,
 				1BAD979B1F87AA38007289EB /* QuoteFormViewController.swift in Sources */,
 				1BAD979F1F87B0FF007289EB /* QuoteFormTableViewCell.swift in Sources */,
 				5346F1DD1F79191E000E6AC5 /* ARSLineProgressTypeAliases.swift in Sources */,

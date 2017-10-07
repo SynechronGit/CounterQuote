@@ -4,163 +4,175 @@
 <array>
 	<dict>
 		<key>title</key>
-		<string>NEW BUSINESS QUOTE</string>
-		<key>noOfSection</key>
-		<integer>2</integer>
+		<string>APPLICATION DETAILS</string>
 		<key>section1</key>
 		<array>
 			<dict>
 				<key>heading</key>
-				<string>Quote #:</string>
+				<string>Application Number</string>
 				<key>value</key>
 				<string>4743916-1</string>
 			</dict>
 			<dict>
 				<key>heading</key>
-				<string>Underwriter:</string>
+				<string>Insured Name</string>
 				<key>value</key>
-				<string>Miriam Balavender</string>
+				<string>Bear Burgur</string>
 			</dict>
 			<dict>
 				<key>heading</key>
-				<string>Underwriter Phone#:</string>
+				<string>Mailing Address</string>
 				<key>value</key>
-				<string>(312) 258-3347</string>
+				<string>33 Greenwich Ave New York,NY 10014</string>
 			</dict>
 			<dict>
 				<key>heading</key>
-				<string>Underwriter Email#:</string>
+				<string>Policy Effective Date</string>
 				<key>value</key>
-				<string>test@mail.com</string>
+				<string>08/23/2017</string>
 			</dict>
 			<dict>
 				<key>heading</key>
-				<string>Applicant Name:</string>
+				<string>Policy Expiration Date</string>
+				<key>value</key>
+				<string>08/22/2018</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Producer Name</string>
 				<key>value</key>
 				<string>ABC CONSULTING,LLC</string>
 			</dict>
 			<dict>
 				<key>heading</key>
-				<string>Mailing Address:</string>
+				<string>Producer Code</string>
 				<key>value</key>
-				<string>ABC CONSULTING,LLC</string>
-			</dict>
-			<dict>
-				<key>heading</key>
-				<string>Coverage Name:</string>
-				<key>value</key>
-				<string>Lead Excess</string>
-			</dict>
-			<dict>
-				<key>heading</key>
-				<string>Policy Basis:</string>
-				<key>value</key>
-				<string>Occurrence</string>
-			</dict>
-		</array>
-		<key>section2</key>
-		<array>
-			<dict>
-				<key>heading</key>
-				<string>Quote Date:</string>
-				<key>value</key>
-				<string>09/14/2017</string>
-			</dict>
-			<dict>
-				<key>heading</key>
-				<string>Producer Name:</string>
-				<key>value</key>
-				<string>Daniel Hughes</string>
-			</dict>
-			<dict>
-				<key>heading</key>
-				<string>Company Name:</string>
-				<key>value</key>
-				<string>XYZ Brockerage, LLC</string>
-			</dict>
-			<dict>
-				<key>heading</key>
-				<string>Insuring Company:</string>
-				<key>value</key>
-				<string>PQR Insurance Company</string>
-			</dict>
-			<dict>
-				<key>heading</key>
-				<string>Quote Expires:</string>
-				<key>value</key>
-				<string>10/14/2017</string>
-			</dict>
-			<dict>
-				<key>heading</key>
-				<string>Policy Period:</string>
-				<key>value</key>
-				<string>09/14/2017 To 09/14/2018</string>
-			</dict>
-			<dict>
-				<key>heading</key>
-				<string>Retro Date:</string>
-				<key>value</key>
-				<string>09/20/2008</string>
+				<string>100-202323</string>
 			</dict>
 		</array>
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>LIMITS AND PREMIUM</string>
-		<key>noOfSection</key>
-		<integer>2</integer>
+		<string>PROPERTY COVERAGE LIMIT</string>
 		<key>section1</key>
 		<array>
 			<dict>
 				<key>heading</key>
-				<string>Per Occurrence:</string>
+				<string>Builiding Coverage</string>
 				<key>value</key>
-				<string>$1,000,000</string>
+				<string>$ 250,000</string>
 			</dict>
 			<dict>
 				<key>heading</key>
-				<string>Aggregate:</string>
+				<string>Loss of Business Income</string>
 				<key>value</key>
-				<string>$2,000,000</string>
+				<string>$ 100,000</string>
 			</dict>
 			<dict>
 				<key>heading</key>
-				<string>Excess of::</string>
+				<string>Business Personal Property</string>
 				<key>value</key>
-				<string>Underlying Insurance</string>
+				<string>$ 50,000</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Deductible</string>
+				<key>value</key>
+				<string>$ 510,000</string>
 			</dict>
 		</array>
-		<key>section2</key>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>GENERAL LIABILITY COVERAGE</string>
+		<key>section1</key>
 		<array>
 			<dict>
 				<key>heading</key>
-				<string>Premium:</string>
+				<string>Personal &amp; Advertising Injury</string>
 				<key>value</key>
-				<string>$2,500</string>
+				<string>$ 350,000</string>
 			</dict>
 			<dict>
 				<key>heading</key>
-				<string>Total Premium:</string>
+				<string>Damage to Premises</string>
 				<key>value</key>
-				<string>$2,500</string>
+				<string>$ 150,000</string>
 			</dict>
 			<dict>
 				<key>heading</key>
-				<string>Commission:</string>
+				<string>Deductible</string>
 				<key>value</key>
-				<string>18%</string>
+				<string>$ 10,000</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>EXCESS LIABLITY COVERAGE</string>
+		<key>section1</key>
+		<array>
+			<dict>
+				<key>heading</key>
+				<string>Deductible</string>
+				<key>value</key>
+				<string>$ 10,000</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>PREMIUM DETAILS</string>
+		<key>section1</key>
+		<array>
+			<dict>
+				<key>heading</key>
+				<string>Property</string>
+				<key>value</key>
+				<string>$ 2500</string>
 			</dict>
 			<dict>
 				<key>heading</key>
-				<string>Min Earned Premium:</string>
+				<string>Genral Liability</string>
 				<key>value</key>
-				<string>25%</string>
+				<string>$ 2500</string>
 			</dict>
 			<dict>
 				<key>heading</key>
-				<string>Premium Type:</string>
+				<string>Excess Liability</string>
 				<key>value</key>
-				<string>Flat and Non-Auditable</string>
+				<string>$ 2500</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Auto Liability</string>
+				<key>value</key>
+				<string>$ 2500</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>LIMITS</string>
+		<key>section1</key>
+		<array>
+			<dict>
+				<key>heading</key>
+				<string>Property Coverage Premium</string>
+				<key>value</key>
+				<string>$ 1,000,000</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Genral Liability Coverage Premium</string>
+				<key>value</key>
+				<string>$ 2,000,000</string>
+			</dict>
+			<dict>
+				<key>heading</key>
+				<string>Excess Liability Coverage Premium</string>
+				<key>value</key>
+				<string>$ 2500</string>
 			</dict>
 		</array>
 	</dict>
