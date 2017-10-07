@@ -162,6 +162,7 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
         cell.descriptionField.tag = indexPath.row
         cell.descriptionField.isSecureTextEntry =  false
         cell.actionDelegate = self
+        cell.cellDividerImage.isHidden = false
         if indexPath.section == 0
         {
             switch indexPath.row {
@@ -189,8 +190,8 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
                 cell.descriptionField.text = cvv
                 cell.descriptionField.keyboardType = .numberPad
                 cell.descriptionField.isSecureTextEntry =  true
-
                 cell.cardScanBtn.isHidden = true
+                cell.cellDividerImage.isHidden = true
                 
             default:
                 cell.descriptionField.keyboardType = .default
@@ -204,7 +205,7 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
             cell.descriptionField.text = emailId
             cell.descriptionField.keyboardType = .emailAddress
             cell.cardScanBtn.isHidden = true
- 
+            cell.cellDividerImage.isHidden = true
         }
         return cell
     }

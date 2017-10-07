@@ -16,9 +16,11 @@ class QuotePdfViewController: BaseViewController {
     @IBOutlet weak var btnShare: UIButton!
     @IBOutlet var lblCompanyName: UILabel!
 
+    var payOptionsVC : PaymentOptionViewController?
     var companyDetails:[String:String]?
     override func viewDidLoad() {
         super.viewDidLoad()
+        payOptionsVC = self.storyboard?.instantiateViewController(withIdentifier: "PaymentOptionViewController") as! PaymentOptionViewController
         lblCompanyName.text =  companyDetails?["companyName"]
        
         proceedBtn.setBorderToButton()
@@ -44,10 +46,19 @@ class QuotePdfViewController: BaseViewController {
     //MARK: UIButton action methods
     
     @IBAction func proceedBtnTapped(_ sender: Any) {
-        SVProgressHUD.show()
-        SVProgressHUD.dismiss(withDelay: 1) {
-            self.performSegue(withIdentifier: "NavToPayment", sender: nil)
-        }
+//        SVProgressHUD.show()
+//        SVProgressHUD.dismiss(withDelay: 1) {
+//            self.performSegue(withIdentifier: "NavToPayment", sender: nil)
+//        }
+        UIView.animate(withDuration: 0.1,
+                       delay: 0.1,
+                       options: UIViewAnimationOptions.curveEaseIn,
+                       animations: { () -> Void in
+                        self.view.addSubview((self.payOptionsVC?.view)!)
+                        self.view.layoutIfNeeded()
+        }, completion: { (finished) -> Void in
+            self.payOptionsVC?.companyDetails = self.companyDetails
+        })
         
     }
     @IBAction   func backBtnClicked()

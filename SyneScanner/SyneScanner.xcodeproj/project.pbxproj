@@ -86,6 +86,9 @@
 		536A33A61F725CBA00F019C5 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A33A51F725CBA00F019C5 /* CameraView.swift */; };
 		536A33A81F725CEF00F019C5 /* ImagePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A33A71F725CEF00F019C5 /* ImagePreviewController.swift */; };
 		536A33AA1F725D5C00F019C5 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A33A91F725D5C00F019C5 /* CameraViewController.swift */; };
+		536DE16A1F87BD580046B229 /* AgentCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DE1691F87BD580046B229 /* AgentCallViewController.swift */; };
+		536DE16C1F87C9780046B229 /* PaymentOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DE16B1F87C9780046B229 /* PaymentOptionViewController.swift */; };
+		536DF50F1F88B1E000AB1C39 /* AgentCallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DE1631F8799500046B229 /* AgentCallTableViewCell.swift */; };
 		53DCED0E1F8669C100425E8B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DCED0D1F8669C100425E8B /* BaseViewController.swift */; };
 		53DE22531F7D07C50045E9EA /* PaymentReceiptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DE22521F7D07C50045E9EA /* PaymentReceiptTableViewCell.swift */; };
 		585DD141C79AE6F8DD27C862 /* Pods_SyneScannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 410CDDF85111FCE66A77C52C /* Pods_SyneScannerUITests.framework */; };
@@ -216,6 +219,9 @@
 		536A33A51F725CBA00F019C5 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		536A33A71F725CEF00F019C5 /* ImagePreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewController.swift; sourceTree = "<group>"; };
 		536A33A91F725D5C00F019C5 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		536DE1631F8799500046B229 /* AgentCallTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentCallTableViewCell.swift; sourceTree = "<group>"; };
+		536DE1691F87BD580046B229 /* AgentCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentCallViewController.swift; sourceTree = "<group>"; };
+		536DE16B1F87C9780046B229 /* PaymentOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentOptionViewController.swift; sourceTree = "<group>"; };
 		53DCED0D1F8669C100425E8B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		53DE22521F7D07C50045E9EA /* PaymentReceiptTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentReceiptTableViewCell.swift; sourceTree = "<group>"; };
 		B06D7EDAC7307D7F93064F68 /* Pods-SyneScannerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyneScannerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SyneScannerUITests/Pods-SyneScannerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -348,6 +354,7 @@
 			children = (
 				5346F1E21F7A3CAD000E6AC5 /* AddCardViewController.swift */,
 				535888741F7CECE400A6E0D0 /* PaymentReceiptViewController.swift */,
+				536DE16B1F87C9780046B229 /* PaymentOptionViewController.swift */,
 			);
 			name = "Payment ViewController";
 			sourceTree = "<group>";
@@ -365,6 +372,7 @@
 		1BAD97991F87A9F3007289EB /* Quote Details ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				536DE1691F87BD580046B229 /* AgentCallViewController.swift */,
 				1B6E11101F7CF3E600C4069A /* InsuranceQuoteViewController.swift */,
 				1B6E11121F7CFCED00C4069A /* BinderViewController.swift */,
 				1B6E11141F7CFCF900C4069A /* COIViewController.swift */,
@@ -528,6 +536,7 @@
 				5346F1E01F7A3B7C000E6AC5 /* AddCardTableViewCell.swift */,
 				53DE22521F7D07C50045E9EA /* PaymentReceiptTableViewCell.swift */,
 				1BAD979E1F87B0FF007289EB /* QuoteFormTableViewCell.swift */,
+				536DE1631F8799500046B229 /* AgentCallTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -907,10 +916,12 @@
 				536A33AA1F725D5C00F019C5 /* CameraViewController.swift in Sources */,
 				53DCED0E1F8669C100425E8B /* BaseViewController.swift in Sources */,
 				536A33A01F725C4600F019C5 /* PointFilter.swift in Sources */,
+				536DE16A1F87BD580046B229 /* AgentCallViewController.swift in Sources */,
 				1B6E11341F7D0D3100C4069A /* TPKeyboardAvoidingScrollView.m in Sources */,
 				535888751F7CECE400A6E0D0 /* PaymentReceiptViewController.swift in Sources */,
 				536A33981F725BB600F019C5 /* CALayer+Extension.swift in Sources */,
 				536A339E1F725C2700F019C5 /* ImageCaptureManager.swift in Sources */,
+				536DF50F1F88B1E000AB1C39 /* AgentCallTableViewCell.swift in Sources */,
 				536A33A61F725CBA00F019C5 /* CameraView.swift in Sources */,
 				536A33A81F725CEF00F019C5 /* ImagePreviewController.swift in Sources */,
 				1B5403F71F73EFC0007CF73B /* APIURL.swift in Sources */,
@@ -935,6 +946,7 @@
 				5346F1DA1F79191E000E6AC5 /* ARSLineProgressExtensions.swift in Sources */,
 				1B6E11351F7D0D3100C4069A /* TPKeyboardAvoidingTableView.m in Sources */,
 				5346F1B51F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift in Sources */,
+				536DE16C1F87C9780046B229 /* PaymentOptionViewController.swift in Sources */,
 				536A33A21F725C5F00F019C5 /* QuadrangleFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
