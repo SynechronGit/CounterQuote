@@ -85,10 +85,10 @@ class PaymentOptionViewController: UIViewController {
             innerView.layer.cornerRadius = 0
             self.cardPayScrollView.bounds = CGRect.zero
             self.addCardVC?.view.frame = CGRect(x: 0, y: UIScreen.main.bounds.height, width: self.cardPayScrollView.frame.size.width, height: UIScreen.main.bounds.height)
-//            UIView.animate(withDuration: 0.5, delay: 0,
-//                           usingSpringWithDamping: 0.5,
-//                           initialSpringVelocity: 0.8,
-//                           options: [], animations: {
+            UIView.animate(withDuration: 1.0, delay: 0,
+                           usingSpringWithDamping: 0.8,
+                           initialSpringVelocity: 0.5,
+                           options: [], animations: {
                             self.invoiceViewHeightConstriant.constant = 0
                             self.innerViewLeadingConstraint.constant = 0
                             self.innerViewTrailingConstraint.constant = 0
@@ -96,14 +96,14 @@ class PaymentOptionViewController: UIViewController {
                             self.cardViewHeightConstraint.constant = self.innerViewHeightConstraint.constant + 60
                             self.innerView.layoutIfNeeded()
                             
-//            }) { _ in
-                UIView.animate(withDuration: 1.0, delay: 0,
+            }) { _ in
+                UIView.animate(withDuration: 1.5, delay: 0,
                                usingSpringWithDamping: 0.8,
                                initialSpringVelocity: 0.5,
                                options: [], animations: {
                                 self.addCardVC?.view.frame = CGRect(x: 0, y: 0, width: self.cardPayScrollView.frame.size.width, height: UIScreen.main.bounds.height - 60)
                                 }, completion: nil)
-//            }
+            }
             self.cardPayButton.isHidden = true
             self.cardPayScrollView.addSubview((self.addCardVC?.view)!)
             isCardViewShown = true
@@ -114,24 +114,25 @@ class PaymentOptionViewController: UIViewController {
             innerView.layer.cornerRadius = 0
             self.invoicePayScrollView.bounds = CGRect.zero
             self.invoiceVC?.view.frame = CGRect(x: 0, y: -UIScreen.main.bounds.height, width: self.invoicePayScrollView.frame.size.width, height: 568)
-//            UIView.animate(withDuration: 0.5, delay: 0,
-//                           usingSpringWithDamping: 0.5,
-//                           initialSpringVelocity: 0.8,
-//                           options: [], animations: {
+            UIView.animate(withDuration: 1.0, delay: 0,
+                           usingSpringWithDamping: 0.8,
+                           initialSpringVelocity: 0.5,
+                           options: [], animations: {
                             self.cardViewHeightConstraint.constant = 0
                             self.innerViewLeadingConstraint.constant = 0
                             self.innerViewTrailingConstraint.constant = 0
-                            self.innerViewHeightConstraint.constant = UIScreen.main.bounds.height + 60
-                            self.invoiceViewHeightConstriant.constant = self.innerViewHeightConstraint.constant
+                            self.innerViewHeightConstraint.constant = UIScreen.main.bounds.height
+                            self.invoiceViewHeightConstriant.constant = self.innerViewHeightConstraint.constant + 60
+                            self.innerView.layoutIfNeeded()
                             
-//            }) { _ in
-                UIView.animate(withDuration: 1.0, delay: 0,
+            }) { _ in
+                UIView.animate(withDuration: 1.5, delay: 0,
                                usingSpringWithDamping: 0.8,
                                initialSpringVelocity: 0.5,
                                options: [], animations: {
                                 self.invoiceVC?.view.frame = CGRect(x: 0, y: 0, width: self.invoicePayScrollView.frame.size.width, height: 568)
                 }, completion: nil)
-//            }
+            }
             self.invoicePayButton.isHidden = true
             self.invoicePayScrollView.addSubview((self.invoiceVC?.view)!)
             isInvoiceViewShown = true
