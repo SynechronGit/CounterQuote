@@ -92,11 +92,9 @@ class QuoteFormViewController: BaseViewController {
     @IBAction   func callBtnClicked()
     {
         //Create the AlertController and add Its action like button in Actionsheet
-        let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: "Please select", message: "Option to select", preferredStyle: .actionSheet)
+        let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
         
-        let cancelActionButton = UIAlertAction(title: "Cancel", style: .destructive) { _ in
-        }
-        actionSheetControllerIOS8.addAction(cancelActionButton)
+    
         
         let saveActionButton = UIAlertAction(title: "Agent Call Me", style: .default)
         { _ in
@@ -109,6 +107,10 @@ class QuoteFormViewController: BaseViewController {
             self.callOnNumber()
         }
         actionSheetControllerIOS8.addAction(deleteActionButton)
+
+        let cancelActionButton = UIAlertAction(title: "Cancel", style: .destructive) { _ in
+        }
+        actionSheetControllerIOS8.addAction(cancelActionButton)
         self.present(actionSheetControllerIOS8, animated: true, completion: nil)
     }
     @IBAction func shareBtnTapped()
@@ -336,14 +338,14 @@ extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate
         testView.backgroundColor = .clear
         cell.backgroundView = testView
             
-//            cell.alpha = 0
-//            let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 20, 0)
-//            cell.layer.transform = transform
-//            
-//            UIView.animate(withDuration: 1.0) {
-//                cell.alpha = 1.0
-//                cell.layer.transform = CATransform3DIdentity
-//            }
+            cell.alpha = 0
+            let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 20, 0)
+            cell.layer.transform = transform
+            
+            UIView.animate(withDuration: 1.0) {
+                cell.alpha = 1.0
+                cell.layer.transform = CATransform3DIdentity
+            }
         }
     }
    
