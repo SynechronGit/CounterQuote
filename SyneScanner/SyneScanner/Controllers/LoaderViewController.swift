@@ -12,22 +12,27 @@ import SwiftGifOrigin
 class LoaderViewController: BaseViewController {
 
     @IBOutlet var searchImageVIew: UIImageView!
-
+    @IBOutlet var lblNote:UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        Timer.scheduledTimer(timeInterval: 5,
-                             target: self,
-                             selector: #selector(self.pushToQuoteVc),
-                             userInfo: nil,
-                             repeats: false)
-        addSearchAnimation()
-     //   startOCR()
+          //   startOCR()
         // Do any additional setup after loading the view.
+        configurUI()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        startAnimation()
+    }
+    func configurUI()
+    {
+        lblNote.alpha = 0
+        searchImageVIew.alpha = 0
     }
     func pushToQuoteVc()
     {
@@ -40,6 +45,37 @@ class LoaderViewController: BaseViewController {
 
 
         // A UIImageView with async loading
+    }
+    func startAnimation()
+    {
+        leftCurveLeading.constant = 0
+        rightaCureveTrailing.constant = 0
+
+        UIView.animate(withDuration: 1.0, delay: 0.0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.8,
+                       options: .curveEaseInOut, animations: {
+                        self.view.layoutIfNeeded()
+        }, completion: { finish in
+            
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseIn, animations: {
+                self.lblNote.alpha = 1
+                self.searchImageVIew.alpha = 1
+                
+            }, completion: { finish in
+                
+                self.addSearchAnimation()
+
+                Timer.scheduledTimer(timeInterval: 5,
+                                     target: self,
+                                     selector: #selector(self.pushToQuoteVc),
+                                     userInfo: nil,
+                                     repeats: false)
+                
+
+            })
+        })
+
     }
     /*
     // MARK: - Navigation

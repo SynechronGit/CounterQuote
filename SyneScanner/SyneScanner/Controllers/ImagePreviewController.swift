@@ -22,6 +22,7 @@ class ImagePreviewController: BaseViewController {
     @IBOutlet var lblHeader: UILabel!
     @IBOutlet var submitBtn: UIButton!
     var progressTimer:Timer?
+    @IBOutlet weak var bottomConstraintBackBtn: NSLayoutConstraint!
 
      // MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -39,6 +40,7 @@ class ImagePreviewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        startAnimation()
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,10 +48,41 @@ class ImagePreviewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func startAnimation()
+    {
+        leftCurveLeading.constant = 0
+        rightaCureveTrailing.constant = 0
+        self.bottomConstraintBackBtn.constant = 10
+        
+        UIView.animate(withDuration: 1.2, delay: 0.0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.8,
+                       options: .curveEaseInOut, animations: {
+                        self.view.layoutIfNeeded()
+        }, completion: { finish in
+            self.collectionView.layoutIfNeeded()
+            self.collectionView.reloadData()
+            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseIn, animations: {
+                self.collectionView.alpha = 1
+                self.pageControl.alpha = 1
+                self.lblHeader.alpha = 1
+
+
+            }, completion:  { finish in
+                self.progressTimer =   Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateProgressValue), userInfo: nil, repeats: true)
+
+                })
+        })
+
+    }
+    
     func configureUI()
     {
         self.title = "Preview"
-        
+        self.bottomConstraintBackBtn.constant = -80
+        self.collectionView.alpha = 0
+        self.pageControl.alpha = 0
+        self.lblHeader.alpha = 0
         if isFromScanComplete
         {
             pageControl.isHidden =  true
@@ -65,7 +98,6 @@ class ImagePreviewController: BaseViewController {
         //let rightBarButton = UIBarButtonItem(title: "Finish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ImagePreviewController.finishBtnTapped))
         //self.navigationItem.rightBarButtonItem = rightBarButton
         
-       self.progressTimer =   Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateProgressValue), userInfo: nil, repeats: true)
 
         let notificationName = Notification.Name("updateProgress")
 
@@ -158,15 +190,29 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        let width = collectionView.frame.size.width
+        let width = collectionView.frame.size.width 
         let height = collectionView.frame.size.height
         return CGSize(width: width, height: height)
     }
     
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+//        
+//        lblHeader.text = String(format:"You are in (%d/%d) pages",pageControl.currentPage + 1,pageControl.numberOfPages)
+//    }
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+        var visibleRect = CGRect()
         
+        visibleRect.origin = collectionView.contentOffset
+        visibleRect.size = collectionView.bounds.size
+        
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        
+        let visibleIndexPath: IndexPath = collectionView.indexPathForItem(at: visiblePoint)!
+        pageControl.currentPage = visibleIndexPath.row
         lblHeader.text = String(format:"You are in (%d/%d) pages",pageControl.currentPage + 1,pageControl.numberOfPages)
+        print(visibleIndexPath)
     }
 }
 

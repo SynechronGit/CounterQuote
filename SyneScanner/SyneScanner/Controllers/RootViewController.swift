@@ -11,10 +11,21 @@ import UIKit
 class RootViewController: BaseViewController {
 
     @IBOutlet weak var btnScanDocument: UIButton!
+    @IBOutlet weak var topConstraintLblHeader: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraintScanDocBtn: NSLayoutConstraint!
+
+    @IBOutlet weak var lblWelcomeNote: UILabel!
+    @IBOutlet weak var imgViewphonLogo: UIImageView!
+
     // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         btnScanDocument.setBorderToButton()
+        bottomConstraintScanDocBtn.constant = -57
+        topConstraintLblHeader.constant = -50
+        lblWelcomeNote.alpha = 0
+        imgViewphonLogo.alpha = 0
+
         // Do any additional setup after loading the view.
     }
 
@@ -29,7 +40,32 @@ class RootViewController: BaseViewController {
 
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        startAnimation()
+    }
    
+   func startAnimation()
+    {
+        leftCurveLeading.constant = 0
+        rightaCureveTrailing.constant = 0
+        self.topConstraintLblHeader.constant = 30
+        self.bottomConstraintScanDocBtn.constant = 20
+
+        UIView.animate(withDuration: 1.0, delay: 0.0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.8,
+                       options: .curveEaseInOut, animations: {
+                        self.view.layoutIfNeeded()
+        }, completion: { finish in
+            
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
+                self.lblWelcomeNote.alpha = 1.0
+                self.imgViewphonLogo.alpha = 1.0
+
+            }, completion: nil)
+            })
+    }
      // MARK: - Button actions
     @IBAction func startScanning() {
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "CameraViewController")

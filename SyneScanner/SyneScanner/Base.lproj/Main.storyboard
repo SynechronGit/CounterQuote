@@ -80,7 +80,7 @@
                                 <rect key="frame" x="90" y="213" width="140" height="143"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COUNTERQUOTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bf3-nv-PXw">
-                                <rect key="frame" x="61" y="-30" width="198.5" height="26"/>
+                                <rect key="frame" x="61.5" y="-30" width="198.5" height="26"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -216,7 +216,13 @@
                     <navigationItem key="navigationItem" id="DIK-Ni-I4D"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="bottomConstraintScanDocBtn" destination="fkw-6b-xtW" id="tcH-db-7fY"/>
                         <outlet property="btnScanDocument" destination="w9j-vO-P3J" id="Lr7-t9-zff"/>
+                        <outlet property="imgViewphonLogo" destination="eWx-Td-gBD" id="UdD-TS-hvA"/>
+                        <outlet property="lblWelcomeNote" destination="Whg-Zn-raW" id="vVi-yL-gVd"/>
+                        <outlet property="leftCurveLeading" destination="rf8-hk-mEj" id="ERh-b1-RXg"/>
+                        <outlet property="rightaCureveTrailing" destination="B1Z-3o-aGD" id="Oyj-3e-Xqp"/>
+                        <outlet property="topConstraintLblHeader" destination="sCQ-Y2-Nkh" id="Ftm-o8-N1h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -385,7 +391,7 @@
         <!--Image Preview Controller-->
         <scene sceneID="Ph1-Q9-T27">
             <objects>
-                <viewController storyboardIdentifier="ImagePreviewController" id="SAj-WX-AcZ" customClass="ImagePreviewController" customModule="SyneScanner" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImagePreviewController" automaticallyAdjustsScrollViewInsets="NO" id="SAj-WX-AcZ" customClass="ImagePreviewController" customModule="SyneScanner" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vZv-tm-3F4"/>
                         <viewControllerLayoutGuide type="bottom" id="9Dh-YM-g7Z"/>
@@ -588,10 +594,13 @@
                     </view>
                     <connections>
                         <outlet property="bottomBtnConstraint" destination="MeJ-Eh-t4C" id="a0j-a7-H8j"/>
+                        <outlet property="bottomConstraintBackBtn" destination="MeJ-Eh-t4C" id="a5r-nq-mgv"/>
                         <outlet property="collectionView" destination="oPF-UW-6C6" id="D3j-ft-NWi"/>
                         <outlet property="goBackBtn" destination="LcD-SE-ZLu" id="bX9-rS-AjC"/>
                         <outlet property="lblHeader" destination="7VW-nk-jE9" id="4ez-sf-4fQ"/>
+                        <outlet property="leftCurveLeading" destination="0GO-Kz-WH7" id="9dt-EF-7YG"/>
                         <outlet property="pageControl" destination="lo1-P5-gKO" id="mor-uB-Lg3"/>
+                        <outlet property="rightaCureveTrailing" destination="rEH-Yp-aTo" id="LAm-z8-bcJ"/>
                         <outlet property="submitBtn" destination="Pj1-eI-fAJ" id="HBN-pD-T7b"/>
                         <segue destination="FT2-cq-Nwc" kind="show" identifier="NavToLoaderVc" id="3Jw-aU-Ce1"/>
                     </connections>
@@ -719,7 +728,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Process" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4Q-Nk-fRQ">
-                                        <rect key="frame" x="90" y="4" width="108" height="16"/>
+                                        <rect key="frame" x="90.5" y="4" width="108" height="16"/>
                                         <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="16"/>
                                         <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1085,7 +1094,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-Ii-uIo">
-                                                            <rect key="frame" x="10" y="36" width="135" height="19"/>
+                                                            <rect key="frame" x="10" y="35.5" width="135" height="19"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="19"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -1164,6 +1173,9 @@
                     <connections>
                         <outlet property="acceptBtn" destination="Nbf-rU-XWI" id="xEi-Ai-GC1"/>
                         <outlet property="bottomBtnConstraint" destination="paR-5g-Ehj" id="d1X-dk-FlU"/>
+                        <outlet property="bottomConstraintBackBtn" destination="paR-5g-Ehj" id="iEE-FZ-Hli"/>
+                        <outlet property="leftCurveLeading" destination="gvF-a1-Wq8" id="gYD-nV-0tD"/>
+                        <outlet property="rightaCureveTrailing" destination="q2X-90-PV1" id="fwo-EI-qHg"/>
                         <outlet property="tableView" destination="ZZu-fS-yAP" id="Dz3-ar-Z8a"/>
                         <segue destination="Cb2-NC-yeH" kind="show" identifier="NavToQuote" id="EEz-wM-bEl"/>
                     </connections>
@@ -1321,7 +1333,7 @@
                                 <rect key="frame" x="243" y="283" width="77" height="205"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ON-gg-hVm">
-                                <rect key="frame" x="104.5" y="40" width="111.5" height="18"/>
+                                <rect key="frame" x="105" y="40" width="111.5" height="18"/>
                                 <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1385,7 +1397,7 @@
                                             </button>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtD-Vw-Gaj">
                                                 <rect key="frame" x="0.0" y="70" width="280" height="0.0"/>
-                                                <color key="backgroundColor" red="0.81568627449999997" green="0.25098039220000001" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </scrollView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1828,7 +1840,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o39-UH-0KX">
-                                                    <rect key="frame" x="25" y="9.5" width="270" height="15"/>
+                                                    <rect key="frame" x="25" y="10" width="270" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="15"/>
                                                     <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1837,7 +1849,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPS-uT-oDM">
-                                                    <rect key="frame" x="25" y="30.5" width="270" height="15"/>
+                                                    <rect key="frame" x="25" y="31" width="270" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="15"/>
                                                     <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2061,6 +2073,9 @@ We are now making insurance companies fight for your business. We will present y
                     <navigationItem key="navigationItem" id="xTY-FP-nmI"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="lblNote" destination="Y3W-wP-YkQ" id="SBX-Ce-URP"/>
+                        <outlet property="leftCurveLeading" destination="Weq-XU-ixQ" id="4Uu-ue-HNk"/>
+                        <outlet property="rightaCureveTrailing" destination="SWi-U0-8E1" id="cyG-1r-1Da"/>
                         <outlet property="searchImageVIew" destination="oyX-JE-d57" id="7vR-xA-Lpi"/>
                         <segue destination="0LF-t6-SUx" kind="show" identifier="NavToQuoteVc" id="YcN-MR-mKg"/>
                     </connections>
@@ -2238,7 +2253,7 @@ We are now making insurance companies fight for your business. We will present y
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Agent will Call You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRN-Ay-YwY">
-                                                <rect key="frame" x="61" y="20" width="179" height="18"/>
+                                                <rect key="frame" x="60.5" y="20" width="179" height="18"/>
                                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="18"/>
                                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2569,13 +2584,13 @@ We are now making insurance companies fight for your business. We will present y
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQ0-2D-NWF">
-                                                    <rect key="frame" x="25" y="11" width="37" height="15"/>
+                                                    <rect key="frame" x="25" y="10.5" width="37" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghg-nD-BZQ">
-                                                    <rect key="frame" x="25" y="34" width="37" height="15"/>
+                                                    <rect key="frame" x="25" y="33.5" width="37" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>

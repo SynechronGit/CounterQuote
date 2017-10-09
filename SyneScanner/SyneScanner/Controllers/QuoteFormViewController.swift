@@ -294,6 +294,15 @@ extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate
         testView.layer.insertSublayer(layer, at: 0)
         testView.backgroundColor = .clear
         cell.backgroundView = testView
+            
+            cell.alpha = 0
+            let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 20, 0)
+            cell.layer.transform = transform
+            
+            UIView.animate(withDuration: 1.0) {
+                cell.alpha = 1.0
+                cell.layer.transform = CATransform3DIdentity
+            }
         }
     }
    

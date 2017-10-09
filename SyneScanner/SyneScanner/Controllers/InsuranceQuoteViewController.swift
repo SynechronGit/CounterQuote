@@ -17,13 +17,16 @@ class InsuranceQuoteViewController: BaseViewController {
     @IBOutlet var cancelBtn: UIButton!
     @IBOutlet var acceptBtn: UIButton!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var bottomConstraintBackBtn: NSLayoutConstraint!
 
-    var companyList = [["companyName": "Company 1", "price": "3500"],["companyName": "Company 2", "price": "3200"],["companyName": "Company 3", "price": "3000"],["companyName": "Company 4", "price": "2800"],["companyName": "Company 5", "price": "2500"]]
+    var companyList = [["companyName": "Company 1", "price": "3500"],["companyName": "Company 2", "price": "3200"],["companyName": "Company 3", "price": "3000"],["companyName": "Company 4", "price": "2800"],["companyName": "Company 5", "price": "2500"],["companyName": "Company 6", "price": "2500"],["companyName": "Company 7", "price": "2000"],["companyName": "Company 8", "price": "2000"]]
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
        acceptBtn.setBorderToButton()
+        tableView.alpha = 0.0
+        self.bottomConstraintBackBtn.constant = -50
         tableView.tableFooterView = UIView()
      //   centerView.layer.cornerRadius = 10
       //  centerView.layer.masksToBounds = true
@@ -37,7 +40,7 @@ class InsuranceQuoteViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
       //  loadPdfFile()
-
+        startAnimation()
     }
     func loadPdfFile()
     {
@@ -49,8 +52,25 @@ class InsuranceQuoteViewController: BaseViewController {
 
     func startAnimation()
     {
+        leftCurveLeading.constant = 0
+        rightaCureveTrailing.constant = 0
+        self.bottomConstraintBackBtn.constant = 20
+        UIView.animate(withDuration: 1.2, delay: 0.0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.8,
+                       options: .curveEaseInOut, animations: {
+                        self.view.layoutIfNeeded()
+        }, completion: { finish in
+            self.tableView.layoutIfNeeded()
+            self.tableView.reloadData()
+            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseIn, animations: {
+                self.tableView.alpha = 1
+            }, completion:  { finish in
+            })
+        })
         
     }
+
     //MARK: UIButton action methods
     
     @IBAction func acceptBtnTapped(_ sender: Any) {
@@ -123,6 +143,18 @@ extension InsuranceQuoteViewController:UITableViewDataSource,UITableViewDelegate
         {
             self.performSegue(withIdentifier: "NavToQuote", sender:indexPath )
   
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+    {
+        cell.alpha = 0
+        let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 20, 0)
+        cell.layer.transform = transform
+        
+        UIView.animate(withDuration: 1.0) { 
+            cell.alpha = 1.0
+            cell.layer.transform = CATransform3DIdentity
         }
     }
     

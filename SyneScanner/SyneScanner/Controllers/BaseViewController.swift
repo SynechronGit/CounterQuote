@@ -11,6 +11,9 @@ import UIKit
 class BaseViewController: UIViewController {
     
     @IBOutlet var bottomBtnConstraint: NSLayoutConstraint!
+    @IBOutlet var leftCurveLeading: NSLayoutConstraint!
+    @IBOutlet var rightaCureveTrailing: NSLayoutConstraint!
+
     @IBOutlet var goBackBtn: UIButton!
     
     override func viewDidLoad() {
@@ -24,7 +27,7 @@ class BaseViewController: UIViewController {
                 }
             }        
         }
-
+        hideLeftnRightCureve()
         // Do any additional setup after loading the view.
     }
     
@@ -34,6 +37,29 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func hideLeftnRightCureve()
+    {
+        if leftCurveLeading != nil && rightaCureveTrailing != nil
+        {
+            leftCurveLeading.constant = -71
+            rightaCureveTrailing.constant = -77
+        }
+    }
+    
+    func startCurveAnimation()
+    {
+        
+        leftCurveLeading.constant = 0
+        rightaCureveTrailing.constant = 0
+        
+        UIView.animate(withDuration: 1.5, delay: 0.5,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.8,
+                       options: .curveEaseInOut, animations: {
+                        self.view.layoutIfNeeded()
+        }, completion: nil)
+
+    }
 
     /*
     // MARK: - Navigation
