@@ -10,8 +10,19 @@ import UIKit
 
 class ThankYouViewController: BaseViewController {
     @IBOutlet weak var btnFeedback: UIButton!
+    @IBOutlet weak var lblheader: UILabel!
+    @IBOutlet weak var lblNote: UILabel!
+    @IBOutlet weak var imgViewRightMark: UIImageView!
+    @IBOutlet weak var bottomConstraintcompleteBtn: NSLayoutConstraint!
+    @IBOutlet weak var topConstraintLblHeader: NSLayoutConstraint!
+
 
     override func viewDidLoad() {
+        self.bottomConstraintcompleteBtn.constant = -47
+        self.lblNote.alpha = 0
+        self.imgViewRightMark.alpha = 0
+        topConstraintLblHeader.constant = -50
+
         super.viewDidLoad()
       
         btnFeedback.setBorderToButton()
@@ -22,7 +33,33 @@ class ThankYouViewController: BaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        startAnimation()
+    }
     
+    func startAnimation()
+    {
+        leftCurveLeading.constant = 0
+        rightaCureveTrailing.constant = 0
+        self.bottomConstraintcompleteBtn.constant = 20
+        self.topConstraintLblHeader.constant = 30
+
+        UIView.animate(withDuration: 1.2, delay: 0.0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.8,
+                       options: .curveEaseInOut, animations: {
+                        self.view.layoutIfNeeded()
+        }, completion: { finish in
+            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseIn, animations: {
+                self.lblNote.alpha = 1
+                self.imgViewRightMark.alpha = 1
+
+            }, completion:  { finish in
+            })
+        })
+        
+    }
+
     @IBAction func feedBackBtnClicked() {
         SharedData.sharedInstance.arrImage.removeAll()
         

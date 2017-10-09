@@ -52,7 +52,7 @@ class ImagePreviewController: BaseViewController {
     {
         leftCurveLeading.constant = 0
         rightaCureveTrailing.constant = 0
-        self.bottomConstraintBackBtn.constant = 10
+        self.bottomConstraintBackBtn.constant = 0
         
         UIView.animate(withDuration: 1.2, delay: 0.0,
                        usingSpringWithDamping: 0.5,
@@ -190,7 +190,7 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        let width = collectionView.frame.size.width 
+        let width = collectionView.frame.size.width - 60
         let height = collectionView.frame.size.height
         return CGSize(width: width, height: height)
     }

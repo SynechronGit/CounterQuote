@@ -14,14 +14,15 @@ class COIViewController: BaseViewController {
     @IBOutlet var completeBtn: UIButton!
     @IBOutlet var centerView: UIView!
     @IBOutlet weak var btnShare: UIButton!
-    
+    @IBOutlet weak var bottomConstraintcompleteBtn: NSLayoutConstraint!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.title = "Certificate Of Insurance"
         
-       
-      
+       self.bottomConstraintcompleteBtn.constant = -47
+      self.centerView.alpha = 0
         completeBtn.setBorderToButton()
         centerView.layer.cornerRadius = 10
         centerView.layer.masksToBounds = true
@@ -30,11 +31,33 @@ class COIViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        startAnimation()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func startAnimation()
+    {
+        leftCurveLeading.constant = 0
+        rightaCureveTrailing.constant = 0
+        self.bottomConstraintcompleteBtn.constant = 20
+        UIView.animate(withDuration: 1.2, delay: 0.0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.8,
+                       options: .curveEaseInOut, animations: {
+                        self.view.layoutIfNeeded()
+        }, completion: { finish in
+            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseIn, animations: {
+                self.centerView.alpha = 1
+            }, completion:  { finish in
+            })
+        })
+        
+    }
+
     func loadPdfFile()
     {
         if let pdf = Bundle.main.url(forResource: "COI", withExtension: "pdf", subdirectory: nil, localization: nil)  {

@@ -17,8 +17,9 @@ class InsuranceQuoteViewController: BaseViewController {
     @IBOutlet var cancelBtn: UIButton!
     @IBOutlet var acceptBtn: UIButton!
     @IBOutlet var tableView: UITableView!
+    
     @IBOutlet weak var bottomConstraintBackBtn: NSLayoutConstraint!
-
+    var isAnimationShow = false
     var companyList = [["companyName": "Company 1", "price": "3500"],["companyName": "Company 2", "price": "3200"],["companyName": "Company 3", "price": "3000"],["companyName": "Company 4", "price": "2800"],["companyName": "Company 5", "price": "2500"],["companyName": "Company 6", "price": "2500"],["companyName": "Company 7", "price": "2000"],["companyName": "Company 8", "price": "2000"]]
 
 
@@ -52,9 +53,13 @@ class InsuranceQuoteViewController: BaseViewController {
 
     func startAnimation()
     {
+        if isAnimationShow == true {
+            return
+        }
+        isAnimationShow = true
         leftCurveLeading.constant = 0
         rightaCureveTrailing.constant = 0
-        self.bottomConstraintBackBtn.constant = 20
+        self.bottomConstraintBackBtn.constant = 0
         UIView.animate(withDuration: 1.2, delay: 0.0,
                        usingSpringWithDamping: 0.5,
                        initialSpringVelocity: 0.8,

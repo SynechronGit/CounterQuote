@@ -872,9 +872,9 @@
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                     </webView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBS-6p-JPj">
-                                        <rect key="frame" x="127" y="335" width="27" height="27"/>
+                                        <rect key="frame" x="127" y="330" width="27" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="27" id="gx6-ji-FX0"/>
+                                            <constraint firstAttribute="height" constant="32" id="gx6-ji-FX0"/>
                                             <constraint firstAttribute="width" constant="27" id="svC-uY-2ht"/>
                                         </constraints>
                                         <state key="normal" image="share_pdf"/>
@@ -917,9 +917,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraintcompleteBtn" destination="UVv-f1-WL6" id="umB-6C-PZA"/>
                         <outlet property="btnShare" destination="KBS-6p-JPj" id="TN8-hA-aLb"/>
                         <outlet property="centerView" destination="Pec-Tb-qzt" id="WSw-Yz-j8c"/>
+                        <outlet property="leftCurveLeading" destination="kXc-DO-SBB" id="QHP-Fi-zhE"/>
                         <outlet property="proceedBtn" destination="LLH-fy-Nuk" id="dU6-7K-u95"/>
+                        <outlet property="rightaCureveTrailing" destination="Nhb-Yd-GOd" id="PU8-No-5Yo"/>
                         <outlet property="webView" destination="PUw-8V-Rw7" id="5wX-ko-m5Q"/>
                         <segue destination="uLS-pg-17B" kind="show" identifier="NavToCOIVc" id="Dgz-uf-lk0"/>
                     </connections>
@@ -1094,7 +1097,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-Ii-uIo">
-                                                            <rect key="frame" x="10" y="35.5" width="135" height="19"/>
+                                                            <rect key="frame" x="10" y="36" width="135" height="19"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="19"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -1256,10 +1259,10 @@
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                     </webView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lh7-kC-szu">
-                                        <rect key="frame" x="127" y="350" width="27" height="27"/>
+                                        <rect key="frame" x="127" y="345" width="27" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="27" id="53Q-h2-a7X"/>
-                                            <constraint firstAttribute="height" constant="27" id="l6b-m3-mOZ"/>
+                                            <constraint firstAttribute="height" constant="32" id="l6b-m3-mOZ"/>
                                         </constraints>
                                         <state key="normal" image="share_pdf"/>
                                         <connections>
@@ -1303,9 +1306,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraintcompleteBtn" destination="Cmb-bn-rme" id="VOZ-g6-j32"/>
                         <outlet property="btnShare" destination="Lh7-kC-szu" id="ofw-9o-rQA"/>
                         <outlet property="centerView" destination="pIF-i5-EXw" id="AP4-5M-uQU"/>
                         <outlet property="completeBtn" destination="ReR-N3-eQO" id="Jom-Uh-W3C"/>
+                        <outlet property="leftCurveLeading" destination="AfT-y7-xxf" id="Ugt-3k-qkY"/>
+                        <outlet property="rightaCureveTrailing" destination="oBk-fs-ybg" id="KLS-KU-i4L"/>
                         <outlet property="webView" destination="kVY-fl-nRH" id="P3U-lL-hGv"/>
                         <segue destination="9ru-Yv-jhf" kind="show" identifier="NavToThankUVc" id="odz-Hk-xqn"/>
                     </connections>
@@ -1841,8 +1847,8 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o39-UH-0KX">
                                                     <rect key="frame" x="25" y="10" width="270" height="15"/>
-                                                    <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="15"/>
-                                                    <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
+                                                    <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=regular">
                                                         <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="20"/>
@@ -1850,8 +1856,8 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPS-uT-oDM">
                                                     <rect key="frame" x="25" y="31" width="270" height="15"/>
-                                                    <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="15"/>
-                                                    <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CardDivider" translatesAutoresizingMaskIntoConstraints="NO" id="mrx-hB-FfS">
@@ -1920,7 +1926,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraintProceedBtn" destination="1b9-GO-CqS" id="10B-00-tvC"/>
+                        <outlet property="imgViewSucces" destination="jD1-i0-QVc" id="Esa-fg-xDP"/>
+                        <outlet property="lblSuccess" destination="dQZ-IM-wzp" id="s3m-Ku-hhd"/>
+                        <outlet property="leftCurveLeading" destination="uP5-Jm-Rng" id="qi7-6t-AgH"/>
                         <outlet property="proceedButton" destination="RY2-M5-W3D" id="q4t-b6-wvq"/>
+                        <outlet property="rightaCureveTrailing" destination="i7n-Wk-qNh" id="avb-t8-cfv"/>
                         <outlet property="tableView" destination="kiD-1p-l7f" id="J0P-Hv-wj9"/>
                         <segue destination="e6W-xa-aRU" kind="show" identifier="NavToBinder" id="tuh-ve-fWh"/>
                     </connections>
@@ -2006,7 +2017,14 @@
                     <navigationItem key="navigationItem" id="Jqt-pI-G3C"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="bottomConstraintcompleteBtn" destination="P1E-cz-XsR" id="xeA-IO-Vmy"/>
                         <outlet property="btnFeedback" destination="DvZ-be-2bl" id="VLl-Gp-ZA4"/>
+                        <outlet property="imgViewRightMark" destination="Ir9-fI-hBm" id="zUS-0c-Vft"/>
+                        <outlet property="lblNote" destination="97T-uY-EOF" id="QMi-vE-SRy"/>
+                        <outlet property="lblheader" destination="nJO-iO-wAm" id="Fco-ib-QjP"/>
+                        <outlet property="leftCurveLeading" destination="juF-zd-TqV" id="Oho-V4-RM5"/>
+                        <outlet property="rightaCureveTrailing" destination="eW5-22-nZb" id="rbX-pl-LU0"/>
+                        <outlet property="topConstraintLblHeader" destination="m7s-gj-uh4" id="rAR-z8-LSh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M1u-e5-eHe" sceneMemberID="firstResponder"/>
@@ -2145,10 +2163,10 @@ We are now making insurance companies fight for your business. We will present y
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                     </webView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXt-Gh-eCc">
-                                        <rect key="frame" x="126" y="320" width="27" height="27"/>
+                                        <rect key="frame" x="126" y="315" width="27" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="27" id="5B0-wa-yE9"/>
-                                            <constraint firstAttribute="height" constant="27" id="sh1-sw-uDp"/>
+                                            <constraint firstAttribute="height" constant="32" id="sh1-sw-uDp"/>
                                         </constraints>
                                         <state key="normal" image="share_pdf"/>
                                         <connections>
@@ -2549,6 +2567,10 @@ We are now making insurance companies fight for your business. We will present y
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LSk-Sg-xCK">
+                                                    <rect key="frame" x="20" y="0.0" width="280" height="68"/>
+                                                    <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
                                                 <view clipsSubviews="YES" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rP4-Ty-mX4">
                                                     <rect key="frame" x="20" y="0.0" width="280" height="68"/>
                                                     <subviews>
@@ -2559,7 +2581,7 @@ We are now making insurance companies fight for your business. We will present y
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="dKW-Q4-6F7" firstAttribute="centerY" secondItem="rP4-Ty-mX4" secondAttribute="centerY" id="BdD-hO-iVK"/>
                                                         <constraint firstItem="dKW-Q4-6F7" firstAttribute="centerX" secondItem="rP4-Ty-mX4" secondAttribute="centerX" id="xZd-oU-h7r"/>
@@ -2569,9 +2591,13 @@ We are now making insurance companies fight for your business. We will present y
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="rP4-Ty-mX4" secondAttribute="bottom" id="3Mr-Wf-B2V"/>
+                                                <constraint firstItem="LSk-Sg-xCK" firstAttribute="top" secondItem="rP4-Ty-mX4" secondAttribute="top" id="4lk-8N-zUf"/>
                                                 <constraint firstAttribute="trailing" secondItem="rP4-Ty-mX4" secondAttribute="trailing" constant="20" id="E5E-ce-fF6"/>
                                                 <constraint firstItem="rP4-Ty-mX4" firstAttribute="top" secondItem="VST-UJ-gaq" secondAttribute="top" id="EmP-UT-6zK"/>
+                                                <constraint firstItem="LSk-Sg-xCK" firstAttribute="trailing" secondItem="rP4-Ty-mX4" secondAttribute="trailing" id="HIr-ab-4UB"/>
+                                                <constraint firstItem="LSk-Sg-xCK" firstAttribute="leading" secondItem="rP4-Ty-mX4" secondAttribute="leading" id="T2g-R8-i8f"/>
                                                 <constraint firstItem="rP4-Ty-mX4" firstAttribute="leading" secondItem="VST-UJ-gaq" secondAttribute="leading" constant="20" id="Ugw-5c-TKM"/>
+                                                <constraint firstItem="LSk-Sg-xCK" firstAttribute="bottom" secondItem="rP4-Ty-mX4" secondAttribute="bottom" id="Vcz-wk-PIq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2657,11 +2683,14 @@ We are now making insurance companies fight for your business. We will present y
                     </view>
                     <connections>
                         <outlet property="bottomBtnConstraint" destination="tRV-ik-bbV" id="seR-oP-IxK"/>
+                        <outlet property="bottomConstraintBackBtn" destination="tRV-ik-bbV" id="Nja-H1-CTS"/>
                         <outlet property="btnCall" destination="CQ4-d5-5qw" id="1Rw-JD-C5E"/>
                         <outlet property="btnShare" destination="Rbr-te-1E1" id="GsK-wU-BcM"/>
                         <outlet property="goBackBtn" destination="ZsW-vb-IRu" id="gra-tl-5rj"/>
                         <outlet property="lblCompanyName" destination="9S6-1L-NPE" id="GUt-K8-bbp"/>
+                        <outlet property="leftCurveLeading" destination="nXu-J3-Wrr" id="NRo-0S-nZp"/>
                         <outlet property="proceedBtn" destination="Mtv-zS-zdp" id="SBd-Wo-C9N"/>
+                        <outlet property="rightaCureveTrailing" destination="kU8-ai-4rm" id="s1D-Sj-gXK"/>
                         <outlet property="tableForm" destination="E1g-HF-tHn" id="tfQ-sG-Ig9"/>
                         <segue destination="UT7-qo-NyP" kind="show" identifier="NavToPayment" id="ZpF-WJ-z9p"/>
                     </connections>

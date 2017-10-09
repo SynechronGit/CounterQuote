@@ -16,10 +16,18 @@ class PaymentReceiptViewController: BaseViewController {
 
     @IBOutlet var proceedButton: UIButton!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var imgViewSucces: UIImageView!
+    @IBOutlet var lblSuccess: UILabel!
+    @IBOutlet weak var bottomConstraintProceedBtn: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        self.bottomConstraintProceedBtn.constant = -47
+        self.tableView.alpha = 0
+        self.imgViewSucces.alpha = 0
+        self.lblSuccess.alpha = 0
+
      proceedButton.setBorderToButton()
         self.title = "Payment Receipt"
         self.navigationItem.setHidesBackButton(true, animated: false)
@@ -32,6 +40,35 @@ class PaymentReceiptViewController: BaseViewController {
        // cardDetailsArray.append("44732456-01")
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        startAnimation()
+    }
+    func startAnimation()
+    {
+      
+        
+        leftCurveLeading.constant = 0
+        rightaCureveTrailing.constant = 0
+        self.bottomConstraintProceedBtn.constant = 20
+        UIView.animate(withDuration: 1.2, delay: 0.0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.8,
+                       options: .curveEaseInOut, animations: {
+                        self.view.layoutIfNeeded()
+        }, completion: { finish in
+            self.tableView.layoutIfNeeded()
+            self.tableView.reloadData()
+            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseIn, animations: {
+                self.tableView.alpha = 1
+                self.lblSuccess.alpha = 1
+                self.imgViewSucces.alpha = 1
+
+            }, completion:  { finish in
+            })
+        })
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

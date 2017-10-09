@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BITHockeyManager.shared().start()
         BITHockeyManager.shared().authenticator.authenticateInstallation() // This line is obsolete in the crash only builds
 
-        SVProgressHUD.setRingThickness(5)
+        SVProgressHUD.setRingThickness(2.5)
 
         SVProgressHUD.setForegroundColor(UIColor(red:52/255, green:28/255, blue:70/255, alpha:1))
 

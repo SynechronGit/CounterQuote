@@ -16,13 +16,17 @@ class QuoteFormViewController: BaseViewController {
     @IBOutlet weak var proceedBtn: UIButton!
     @IBOutlet weak var btnShare: UIButton!
     @IBOutlet weak var btnCall: UIButton!
-    
+    var isAnimationShow = false
+
     var agentCallVc:AgentCallViewController?
     var dataArr:NSArray?
     var companyDetails:[String:String]?
+    @IBOutlet weak var bottomConstraintBackBtn: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+         self.bottomConstraintBackBtn.constant = -80
+            self.tableForm.alpha = 0
         lblCompanyName.text =  companyDetails?["companyName"]
        
         proceedBtn.setBorderToButton()
@@ -37,6 +41,36 @@ class QuoteFormViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        startAnimation()
+    }
+    func startAnimation()
+    {
+        if isAnimationShow == true {
+            return
+        }
+        isAnimationShow = true
+
+        leftCurveLeading.constant = 0
+        rightaCureveTrailing.constant = 0
+        self.bottomConstraintBackBtn.constant = 0
+        UIView.animate(withDuration: 1.2, delay: 0.0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.8,
+                       options: .curveEaseInOut, animations: {
+                        self.view.layoutIfNeeded()
+        }, completion: { finish in
+            self.tableForm.layoutIfNeeded()
+            self.tableForm.reloadData()
+            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseIn, animations: {
+                self.tableForm.alpha = 1
+            }, completion:  { finish in
+            })
+        })
+        
+    }
+    
+
     func loadDataFromPlist()
     {
         let path = Bundle.main.path(forResource: "QuoteFormData", ofType: "plist")!
@@ -105,8 +139,15 @@ class QuoteFormViewController: BaseViewController {
     {
         agentCallVc = self.storyboard?.instantiateViewController(withIdentifier: "agentCallVc") as? AgentCallViewController
         agentCallVc?.delegate = self
-        self.agentCallVc?.view.frame = self.view.frame
         self.view.addSubview((agentCallVc?.view)!)
+        UIView.animate(withDuration: 0.8, delay: 0.0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.8,
+                       options: .curveEaseInOut, animations: {
+                        self.agentCallVc?.view.frame = self.view.frame
+        }, completion: { finish in
+            
+            })
 
         
 //        UIView.animate(withDuration: 1.0, delay: 0.1, usingSpringWithDamping: 0.3, initialSpringVelocity: 3.0, options: [], animations: ({
