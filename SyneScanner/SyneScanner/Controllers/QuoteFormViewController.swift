@@ -46,6 +46,10 @@ class QuoteFormViewController: BaseViewController {
     {
         self.bottomConstraintBackBtn.constant = -80
         self.tableForm.alpha = 0
+        self.tableForm.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.tableForm.layer.shadowColor = UIColor.black.cgColor
+        self.tableForm.layer.shadowOpacity = 0.10
+        self.tableForm.layer.shadowRadius = 4
         lblCompanyName.text =  companyDetails?["companyName"]
         
         proceedBtn.setBorderToButton()

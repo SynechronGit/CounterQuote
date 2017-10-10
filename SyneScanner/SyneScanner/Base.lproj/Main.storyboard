@@ -80,7 +80,7 @@
                                 <rect key="frame" x="90" y="213" width="140" height="143"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COUNTERQUOTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bf3-nv-PXw">
-                                <rect key="frame" x="61.5" y="-30" width="198.5" height="26"/>
+                                <rect key="frame" x="61" y="-30" width="198.5" height="26"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -472,7 +472,7 @@
                                                             <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
-                                                            <color key="value" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="value" red="0.28627450980000002" green="0.52941176469999995" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="value">
                                                             <real key="value" value="5"/>
@@ -484,7 +484,7 @@
                                                             <real key="value" value="100"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="innerRingColor">
-                                                            <color key="value" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="value" red="0.28627450980392155" green="0.52941176470588236" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
@@ -732,7 +732,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Process" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4Q-Nk-fRQ">
-                                        <rect key="frame" x="90" y="4" width="108" height="16"/>
+                                        <rect key="frame" x="90.5" y="4" width="108" height="16"/>
                                         <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="16"/>
                                         <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1101,9 +1101,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-Ii-uIo">
-
-                                                            <rect key="frame" x="10" y="36" width="135" height="19"/>
-
+                                                            <rect key="frame" x="10" y="35.5" width="135" height="19"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="19"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -1432,7 +1430,7 @@
                                                 <rect key="frame" x="0.0" y="180" width="320" height="388"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ap5-ao-zdz">
-                                                        <rect key="frame" x="105.5" y="50" width="109.5" height="17"/>
+                                                        <rect key="frame" x="106" y="50" width="109.5" height="17"/>
                                                         <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="17"/>
                                                         <color key="textColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -2038,9 +2036,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o39-UH-0KX">
-
-                                                    <rect key="frame" x="25" y="10" width="270" height="15"/>
-
+                                                    <rect key="frame" x="25" y="9.5" width="270" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2049,9 +2045,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPS-uT-oDM">
-
-                                                    <rect key="frame" x="25" y="31" width="270" height="15"/>
-
+                                                    <rect key="frame" x="25" y="30.5" width="270" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -2177,7 +2171,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONGRATULATIONS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJO-iO-wAm">
-                                <rect key="frame" x="42" y="46" width="236.5" height="26"/>
+                                <rect key="frame" x="42.5" y="46" width="236.5" height="26"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="26"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2250,10 +2244,10 @@
                                 <rect key="frame" x="0.0" y="80" width="71" height="193"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oyX-JE-d57">
-                                <rect key="frame" x="47.5" y="9.5" width="225" height="225"/>
+                                <rect key="frame" x="60" y="114.5" width="200" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="225" id="L8h-hA-5dH"/>
-                                    <constraint firstAttribute="width" constant="225" id="mUx-JD-FK1"/>
+                                    <constraint firstAttribute="height" constant="90" id="L8h-hA-5dH"/>
+                                    <constraint firstAttribute="width" constant="200" id="mUx-JD-FK1"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3W-wP-YkQ">
@@ -2279,7 +2273,7 @@ We are now making insurance companies fight for your business. We will present y
                             <constraint firstAttribute="trailing" secondItem="CBN-nm-95S" secondAttribute="trailing" id="SWi-U0-8E1"/>
                             <constraint firstItem="dPS-Tf-1Wi" firstAttribute="top" secondItem="CBN-nm-95S" secondAttribute="bottom" constant="80" id="Uhm-5L-1i3"/>
                             <constraint firstItem="GaL-wc-nIQ" firstAttribute="leading" secondItem="V1y-QW-R9i" secondAttribute="leading" id="Weq-XU-ixQ"/>
-                            <constraint firstItem="Y3W-wP-YkQ" firstAttribute="top" secondItem="oyX-JE-d57" secondAttribute="bottom" id="ZJo-qI-Nrv"/>
+                            <constraint firstItem="Y3W-wP-YkQ" firstAttribute="top" secondItem="oyX-JE-d57" secondAttribute="bottom" constant="30" id="ZJo-qI-Nrv"/>
                             <constraint firstItem="M2e-Ef-bkv" firstAttribute="centerX" secondItem="V1y-QW-R9i" secondAttribute="centerX" id="pAg-RX-T4h"/>
                             <constraint firstItem="Y3W-wP-YkQ" firstAttribute="centerY" secondItem="V1y-QW-R9i" secondAttribute="centerY" id="tSm-iY-NEz"/>
                         </constraints>
@@ -2467,7 +2461,7 @@ We are now making insurance companies fight for your business. We will present y
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="280"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Agent will Call You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRN-Ay-YwY">
-                                                <rect key="frame" x="60.5" y="20" width="179" height="18"/>
+                                                <rect key="frame" x="61" y="20" width="179" height="18"/>
                                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="18"/>
                                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2798,13 +2792,13 @@ We are now making insurance companies fight for your business. We will present y
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQ0-2D-NWF">
-                                                    <rect key="frame" x="25" y="10.5" width="37" height="15"/>
+                                                    <rect key="frame" x="25" y="11" width="37" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghg-nD-BZQ">
-                                                    <rect key="frame" x="25" y="33.5" width="37" height="15"/>
+                                                    <rect key="frame" x="25" y="34" width="37" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>

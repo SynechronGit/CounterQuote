@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         SVProgressHUD.setRingThickness(2.5)
 
-        SVProgressHUD.setForegroundColor(UIColor(red:52/255, green:28/255, blue:70/255, alpha:1))
+        SVProgressHUD.setForegroundColor(UIColor(red:73/255, green:135/255, blue:233/255, alpha:1))
 
         IQKeyboardManager.sharedManager().enable = true
         return true
