@@ -21,16 +21,14 @@ class AddCardViewController: BaseViewController {
     var year: String?
     var cardNumber: String?
     var cvv: String = "123"
-
     var userName = "Christopher Voglund"
     var emailId = "chris68@mail.com"
-
     var companyDetails:[String:String]?
+    var cardActionDelegate : CardTextFieldFilledDelegate?
 
     @IBOutlet weak var lblSaveedAmount: UILabel!
     @IBOutlet weak var lblPolicyPrice: UILabel!
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var makePaymentButton: UIButton!
     @IBOutlet weak var headerView: UIView!
 
     override func viewDidLoad() {
@@ -48,9 +46,7 @@ class AddCardViewController: BaseViewController {
         let savedPrice = 4000 - actualPrice
         
         lblSaveedAmount.text = String(format:"You Saved $%d",savedPrice)
-    
-        makePaymentButton.setBorderToButton()
-        self.makePaymentButton.isEnabled = true
+            
         self.commonSetup()
         self.title  = "Payment Method"
         tableView.layer.cornerRadius = 16
@@ -68,39 +64,7 @@ class AddCardViewController: BaseViewController {
         year = "17"
         cardNumber = "4111 1111 1111 1111"
     }
-    
-    @IBAction func buyTapped(_ sender: Any) {
-        var cardDetailsArray : [String] = [String]()
-        for item in 0...cardHeaderArray.count {
-            let indexPath = IndexPath(row: item, section: 0)
-            let cell : AddCardTableViewCell? = self.tableView.cellForRow(at: indexPath) as! AddCardTableViewCell?
-            if let details = cell?.descriptionField.text {
-                cardDetailsArray.append(details)
-                }
-            }
         
-        if (cardDetailsArray.contains(where: { $0 == "" })) {
-            let message = "Please fill all card details!"
-            self.showAlert(message: message)
-        }
-        else if(!isValidEmail(testStr: emailId)) {
-            let message = "Invalid Email Address!"
-            self.showAlert(message: message)
-        } else {
-            
-            SVProgressHUD.show()
-            SVProgressHUD.dismiss(withDelay: 1) {
-                let paymentReceiptVC = self.storyboard?.instantiateViewController(withIdentifier: "PaymentReceiptViewController") as! PaymentReceiptViewController
-                for item in 0...1 {
-                    paymentReceiptVC.cardDetailsArray.append(cardDetailsArray[item])
-                }
-                paymentReceiptVC.cardDetailsArray.append(self.emailId)
-                paymentReceiptVC.companyDetails = self.companyDetails
-                self.navigationController?.pushViewController(paymentReceiptVC, animated: true)
-            }
-           
-        }
-    }
     
     func showAlert(message: String) {
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
@@ -156,7 +120,11 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell") as! AddCardTableViewCell
         cell.descriptionField.placeholder = cardHeaderArray[indexPath.row]
-        cell.descriptionField.tag = indexPath.row
+        if indexPath.section == 0 {
+            cell.descriptionField.tag = indexPath.row
+        } else {
+            cell.descriptionField.tag = 4
+        }
         cell.descriptionField.isSecureTextEntry =  false
         cell.actionDelegate = self
         cell.cellDividerImage.isHidden = false
@@ -165,11 +133,6 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
             switch indexPath.row {
             case 0:
                 cell.descriptionField.rightViewMode = UITextFieldViewMode.always
-                //            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-                //            imageView.contentMode = .scaleAspectFit
-                //            let image = UIImage(named: pickerArray.first!)
-                //            imageView.image = image
-                //            cell.descriptionField.rightView = imageView
                 cell.descriptionField.text = cardNumber
                 cell.descriptionField.keyboardType = .numberPad
 
@@ -270,6 +233,35 @@ extension AddCardViewController: TextFieldActionDelegate, UIPickerViewDelegate, 
         }
     }
     
+    func textFieldsFilledFor(cell: AddCardTableViewCell) {
+        var cardDetailsArray : [String] = [String]()
+        for item in 0...cardHeaderArray.count {
+            let indexPath = IndexPath(row: item, section: 0)
+            let cell : AddCardTableViewCell? = self.tableView.cellForRow(at: indexPath) as! AddCardTableViewCell?
+            if let details = cell?.descriptionField.text {
+                cardDetailsArray.append(details)
+            }
+        }
+        
+        let indexPath = IndexPath(row: 0, section: 1)
+        let cell: AddCardTableViewCell? = self.tableView.cellForRow(at: indexPath) as! AddCardTableViewCell?
+        if let details = cell?.descriptionField.text {
+            cardDetailsArray.append(details)
+        }
+        
+        if (cardDetailsArray.contains(where: { $0 == "" })) {
+            let message = "Please fill all card details!"
+            self.showAlert(message: message)
+        }
+        else if(!isValidEmail(testStr: emailId)) {
+            let message = "Invalid Email Address!"
+            self.showAlert(message: message)
+        }
+        else {
+            cardActionDelegate?.cardDetailsFilledWith(cardDetailsArray: cardDetailsArray)
+        }
+    }
+    
     func doneSecureAction(button: UIBarButtonItem) {
         var indexPaths = [IndexPath]()
         indexPaths.append(indexPath!)
@@ -363,4 +355,8 @@ extension AddCardViewController:CardIOPaymentViewControllerDelegate
         paymentViewController?.dismiss(animated: true, completion: nil)
     }
 
+}
+
+protocol CardTextFieldFilledDelegate {
+    func cardDetailsFilledWith(cardDetailsArray: [String])
 }

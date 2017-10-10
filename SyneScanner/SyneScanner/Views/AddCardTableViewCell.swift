@@ -57,11 +57,15 @@ extension AddCardTableViewCell: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        if textField.tag == 4 {
+            actionDelegate?.textFieldsFilledFor(cell: self)
+        }
         return true
     }
 }
 
 protocol TextFieldActionDelegate {
     func textFieldTappedAt(cell: AddCardTableViewCell)
+    func textFieldsFilledFor(cell: AddCardTableViewCell)
     func showCardScanVc()
 }

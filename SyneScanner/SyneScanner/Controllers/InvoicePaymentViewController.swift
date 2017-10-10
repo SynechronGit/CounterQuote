@@ -10,10 +10,25 @@ import UIKit
 
 class InvoicePaymentViewController: BaseViewController {
 
+    @IBOutlet weak var lblSaveedAmount: UILabel!
+    @IBOutlet weak var lblPolicyPrice: UILabel!
+    @IBOutlet weak var headerView: UIView!
+    
+    var companyDetails:[String:String]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        headerView.layer.cornerRadius = 8
         // Do any additional setup after loading the view.
+        
+//        let actualPriceStr:String = (companyDetails?["price"])!
+//        
+//        lblPolicyPrice.text = "$" + actualPriceStr + "/y"
+//        let actualPrice:Int = Int(actualPriceStr)!
+//        let savedPrice = 4000 - actualPrice
+//        
+//        lblSaveedAmount.text = String(format:"You Saved $%d",savedPrice)
+
     }
 
     override func didReceiveMemoryWarning() {

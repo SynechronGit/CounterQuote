@@ -133,6 +133,7 @@ class CameraViewController: BaseViewController {
                 
                 if torchOn
                 {
+                    
                     btnTorch.setImage(UIImage(named:"Torch-on"), for: .normal)
 
 
