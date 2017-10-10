@@ -21,13 +21,13 @@ class InvoicePaymentViewController: BaseViewController {
         headerView.layer.cornerRadius = 8
         // Do any additional setup after loading the view.
         
-//        let actualPriceStr:String = (companyDetails?["price"])!
-//        
-//        lblPolicyPrice.text = "$" + actualPriceStr + "/y"
-//        let actualPrice:Int = Int(actualPriceStr)!
-//        let savedPrice = 4000 - actualPrice
-//        
-//        lblSaveedAmount.text = String(format:"You Saved $%d",savedPrice)
+        let actualPriceStr:String = (companyDetails?["price"])!
+        
+        lblPolicyPrice.text = "$" + actualPriceStr + "/y"
+        let actualPrice:Int = Int(actualPriceStr)!
+        let savedPrice = 4000 - actualPrice
+        
+        lblSaveedAmount.text = String(format:"You Saved $%d",savedPrice)
 
     }
 

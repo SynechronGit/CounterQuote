@@ -46,6 +46,7 @@ class PaymentOptionViewController: UIViewController {
         addCardVC = self.storyboard?.instantiateViewController(withIdentifier: "AddCardViewController") as? AddCardViewController
         addCardVC?.cardActionDelegate = self
         invoiceVC = self.storyboard?.instantiateViewController(withIdentifier: "InvoicePaymentViewController") as? InvoicePaymentViewController
+        invoiceVC?.companyDetails =  self.companyDetails
         self.addChildViewController(invoiceVC!)
         self.addChildViewController(addCardVC!)
         self.addCardVC?.companyDetails = self.companyDetails

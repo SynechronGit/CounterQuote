@@ -209,7 +209,7 @@ extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     {
        
-        return 68
+        return 48
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
