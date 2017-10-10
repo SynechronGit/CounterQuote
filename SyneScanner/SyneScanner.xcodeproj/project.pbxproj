@@ -42,6 +42,7 @@
 		1B6E11351F7D0D3100C4069A /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E11301F7D0D3100C4069A /* TPKeyboardAvoidingTableView.m */; };
 		1B6E11361F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E11321F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		1B7E16EC1F83E1B0005C2165 /* Search_animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1B7E16EB1F83E1B0005C2165 /* Search_animation.gif */; };
+		1B97050F1F8D1405005B0F35 /* TermsnConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B97050E1F8D1405005B0F35 /* TermsnConditionViewController.swift */; };
 		1BAD97941F8763C3007289EB /* GetOCRProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD97931F8763C3007289EB /* GetOCRProxy.swift */; };
 		1BAD979B1F87AA38007289EB /* QuoteFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD979A1F87AA38007289EB /* QuoteFormViewController.swift */; };
 		1BAD979D1F87AB47007289EB /* QuoteFormData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BAD979C1F87AB47007289EB /* QuoteFormData.plist */; };
@@ -169,6 +170,7 @@
 		1B6E11311F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		1B6E11321F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		1B7E16EB1F83E1B0005C2165 /* Search_animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Search_animation.gif; sourceTree = "<group>"; };
+		1B97050E1F8D1405005B0F35 /* TermsnConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsnConditionViewController.swift; sourceTree = "<group>"; };
 		1BAD97931F8763C3007289EB /* GetOCRProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetOCRProxy.swift; sourceTree = "<group>"; };
 		1BAD979A1F87AA38007289EB /* QuoteFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteFormViewController.swift; sourceTree = "<group>"; };
 		1BAD979C1F87AB47007289EB /* QuoteFormData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QuoteFormData.plist; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */,
 				1BCC638B1F7EC5BC00C87694 /* QuotePdfViewController.swift */,
 				1BAD979A1F87AA38007289EB /* QuoteFormViewController.swift */,
+				1B97050E1F8D1405005B0F35 /* TermsnConditionViewController.swift */,
 			);
 			name = "Quote Details ViewController";
 			sourceTree = "<group>";
@@ -946,6 +949,7 @@
 				536A33A81F725CEF00F019C5 /* ImagePreviewController.swift in Sources */,
 				1B5403F71F73EFC0007CF73B /* APIURL.swift in Sources */,
 				1B5403F51F73EFB2007CF73B /* NetworkManager.swift in Sources */,
+				1B97050F1F8D1405005B0F35 /* TermsnConditionViewController.swift in Sources */,
 				5346F1DE1F79191E000E6AC5 /* ARSProgressLoader.swift in Sources */,
 				1B5403DE1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift in Sources */,
 				1B5403EF1F73D70A007CF73B /* ImageDataModel.swift in Sources */,

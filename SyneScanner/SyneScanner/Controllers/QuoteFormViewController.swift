@@ -21,6 +21,8 @@ class QuoteFormViewController: BaseViewController {
     var isAnimationShow = false
 
     var agentCallVc:AgentCallViewController?
+    var termsnQVc:TermsnConditionViewController?
+
     var dataArr:NSArray?
     var companyDetails:[String:String]?
     @IBOutlet weak var bottomConstraintBackBtn: NSLayoutConstraint!
@@ -137,7 +139,21 @@ class QuoteFormViewController: BaseViewController {
         }
     }
     
+    @IBAction   func termsNConditionBtnTapped()
+    {
+        termsnQVc = self.storyboard?.instantiateViewController(withIdentifier: "termsnQVc") as? TermsnConditionViewController
+        termsnQVc?.delegate = self
+        self.view.addSubview((termsnQVc?.view)!)
+        UIView.animate(withDuration: 0.8, delay: 0.0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.8,
+                       options: .curveEaseInOut, animations: {
+                        self.termsnQVc?.view.frame = self.view.frame
+        }, completion: { finish in
+            
+        })
 
+    }
     func callOnNumber()
     {
         if let url = URL(string: "tel://\("+91999999999")"), UIApplication.shared.canOpenURL(url) {
@@ -292,3 +308,13 @@ extension QuoteFormViewController:AgentCallViewControllerDelegate
         agentCallVc = nil
     }
 }
+extension QuoteFormViewController:TermsnConditionViewControllerDelegate
+{
+    func dismissTnQView() {
+        
+   
+        termsnQVc?.view.removeFromSuperview()
+        termsnQVc = nil
+    }
+}
+
