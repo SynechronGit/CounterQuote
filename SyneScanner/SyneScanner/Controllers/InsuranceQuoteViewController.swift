@@ -21,9 +21,12 @@ class InsuranceQuoteViewController: BaseViewController {
     @IBOutlet var tableView: UITableView!
     
     @IBOutlet weak var bottomConstraintBackBtn: NSLayoutConstraint!
+    var indexPathArr:[IndexPath] = [IndexPath]()
     var isAnimationShow = false
-    var companyList = [["companyName": "Company 1", "price": "3500"],["companyName": "Company 2", "price": "3200"],["companyName": "Company 3", "price": "3000"],["companyName": "Company 4", "price": "2800"],["companyName": "Company 5", "price": "2500"],["companyName": "Company 6", "price": "2500"],["companyName": "Company 7", "price": "2000"],["companyName": "Company 8", "price": "2000"]]
+    var isAnimationShowTbl = false
 
+    var companyList = [["companyName": "Company 1", "price": "3500"],["companyName": "Company 2", "price": "3200"],["companyName": "Company 3", "price": "3000"],["companyName": "Company 4", "price": "2800"],["companyName": "Company 5", "price": "2500"],["companyName": "Company 6", "price": "2500"],["companyName": "Company 7", "price": "2000"],["companyName": "Company 8", "price": "2000"]]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,12 @@ class InsuranceQuoteViewController: BaseViewController {
         tableView.alpha = 0.0
         self.bottomConstraintBackBtn.constant = -50
         tableView.tableFooterView = UIView()
+        
+        for i in 0...8
+        {
+            let indexPath:IndexPath = IndexPath(item: i, section: 0)
+            indexPathArr.append(indexPath)
+        }
      //   centerView.layer.cornerRadius = 10
       //  centerView.layer.masksToBounds = true
         // Do any additional setup after loading the view.
@@ -69,11 +78,22 @@ class InsuranceQuoteViewController: BaseViewController {
                         self.view.layoutIfNeeded()
         }, completion: { finish in
             self.tableView.layoutIfNeeded()
-            self.tableView.reloadData()
-            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseIn, animations: {
-                self.tableView.alpha = 1
-            }, completion:  { finish in
-            })
+             self.tableView.alpha = 1
+            self.isAnimationShowTbl =  true
+            CATransaction.begin()
+            CATransaction.setAnimationDuration(1.5)
+            self.tableView.beginUpdates()
+            CATransaction.setCompletionBlock {
+                // Code to be executed upon completion
+            }
+            self.tableView.insertRows(at: self.indexPathArr, with: .top)
+            self.tableView.endUpdates()
+            CATransaction.commit()
+//            self.tableView.reloadData()
+//            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseIn, animations: {
+//                self.tableView.alpha = 1
+//            }, completion:  { finish in
+//            })
         })
         
     }
@@ -114,10 +134,16 @@ extension InsuranceQuoteViewController:UITableViewDataSource,UITableViewDelegate
     
        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
        {
+        if isAnimationShowTbl
+        {
         return companyList.count + 1
+        }
+        return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
+       
+
         if indexPath.row == 0
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "topCell", for: indexPath )
