@@ -168,8 +168,14 @@ class QuoteFormViewController: BaseViewController {
     
     func showCallUsView()
     {
+        let dict:NSDictionary = dataArr?.object(at: 0) as! NSDictionary
+        let arr:NSArray = dict.value(forKey: "data") as! NSArray
+        let data:NSDictionary = arr.object(at: 1) as! NSDictionary
+        
         agentCallVc = self.storyboard?.instantiateViewController(withIdentifier: "agentCallVc") as? AgentCallViewController
         agentCallVc?.delegate = self
+        agentCallVc?.nameText = (data.value(forKey: "value") as? String)!
+        agentCallVc?.phoneText = "+91999999999"
         self.view.addSubview((agentCallVc?.view)!)
         UIView.animate(withDuration: 0.8, delay: 0.0,
                        usingSpringWithDamping: 0.5,

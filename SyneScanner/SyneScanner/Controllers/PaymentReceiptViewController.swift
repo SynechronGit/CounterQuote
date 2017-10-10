@@ -27,6 +27,12 @@ class PaymentReceiptViewController: BaseViewController {
         self.tableView.alpha = 0
         self.imgViewSucces.alpha = 0
         self.lblSuccess.alpha = 0
+        
+        tableView.layer.masksToBounds = false
+        tableView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        tableView.layer.shadowColor = UIColor.black.cgColor
+        tableView.layer.shadowOpacity = 0.10
+        tableView.layer.shadowRadius = 4
 
      proceedButton.setBorderToButton()
         self.title = "Payment Receipt"

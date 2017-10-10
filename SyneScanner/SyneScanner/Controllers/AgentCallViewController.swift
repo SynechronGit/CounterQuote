@@ -11,17 +11,23 @@ protocol AgentCallViewControllerDelegate {
     func dismissCallUsView()
 }
 class AgentCallViewController: UIViewController {
+    var nameText: String = ""
+    var phoneText: String = ""
     var delegate:AgentCallViewControllerDelegate?
 
+    @IBOutlet weak var nameField: UITextField!
     @IBOutlet var callUsBtn: UIButton!
     @IBOutlet var centerView: UIView!
-
+    @IBOutlet weak var phoneField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         centerView.layer.cornerRadius = 10
         centerView.layer.masksToBounds = true
-
         callUsBtn.setBorderToButton()
+        
+        nameField.text = nameText
+        phoneField.text = phoneText
         // Do any additional setup after loading the view.
     }
 
@@ -47,4 +53,18 @@ class AgentCallViewController: UIViewController {
     */
 
 }
+
+//MARK: UITextField delegate methods
+extension AgentCallViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+
 

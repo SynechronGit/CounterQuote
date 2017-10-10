@@ -34,6 +34,7 @@ class PaymentOptionViewController: UIViewController {
     @IBOutlet var invoicePaymentButton: UIButton!
     @IBOutlet var cardPaymentButton: UIButton!
     
+    @IBOutlet weak var cardDividerView: UIImageView!
     var cardDetailsArray : [String]?
     var companyDetails:[String:String]?
     var addCardVC : AddCardViewController?
@@ -95,6 +96,7 @@ class PaymentOptionViewController: UIViewController {
     //MARK: UIButton action methods
     
     @IBAction func cardPayTapped(_ sender: Any) {
+        self.cardDividerView.isHidden = true
         self.cardPaymentButton.isHidden = false
             innerView.layer.cornerRadius = 0
             self.cardPayScrollView.bounds = CGRect.zero
@@ -108,7 +110,7 @@ class PaymentOptionViewController: UIViewController {
                             self.innerViewTrailingConstraint.constant = 0
                             self.cardPayBottomConstraint.constant = -80
                             self.innerViewHeightConstraint.constant = UIScreen.main.bounds.height
-                            self.cardViewHeightConstraint.constant = self.innerViewHeightConstraint.constant - self.backBtnView.frame.size.height - 20
+                            self.cardViewHeightConstraint.constant = self.innerViewHeightConstraint.constant - self.backBtnView.frame.size.height - 5
                             self.payBtnHeightConstraint.constant = 40
                             self.innerView.layoutIfNeeded()
                             
@@ -127,6 +129,7 @@ class PaymentOptionViewController: UIViewController {
     }
     
     @IBAction func invoicePayTapped(_ sender: Any) {
+            self.cardDividerView.isHidden = true
             self.invoicePaymentButton.isHidden = false
             innerView.layer.cornerRadius = 0
             self.invoicePayScrollView.bounds = CGRect.zero
@@ -140,7 +143,7 @@ class PaymentOptionViewController: UIViewController {
                             self.innerViewTrailingConstraint.constant = 0
                             self.invoicePayTopConstraint.constant = -60
                             self.innerViewHeightConstraint.constant = UIScreen.main.bounds.height
-                            self.invoiceViewHeightConstriant.constant = self.innerViewHeightConstraint.constant - self.backBtnView.frame.size.height - 30
+                            self.invoiceViewHeightConstriant.constant = self.innerViewHeightConstraint.constant - self.backBtnView.frame.size.height
                             self.invoiceBtnHeightConstraint.constant = 0
                             self.innerView.layoutIfNeeded()
                             
@@ -159,6 +162,7 @@ class PaymentOptionViewController: UIViewController {
     }
     
     @IBAction func popToRoot() {
+        self.cardDividerView.isHidden = false
         innerView.layer.cornerRadius = 12
         if isCardViewShown {
             invoiceViewHeightConstriant.constant = 70

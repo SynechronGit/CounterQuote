@@ -46,10 +46,15 @@ class AddCardViewController: BaseViewController {
         let savedPrice = 4000 - actualPrice
         
         lblSaveedAmount.text = String(format:"You Saved $%d",savedPrice)
-            
+        
         self.commonSetup()
         self.title  = "Payment Method"
         tableView.layer.cornerRadius = 16
+        tableView.layer.masksToBounds = false
+        tableView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        tableView.layer.shadowColor = UIColor.black.cgColor
+        tableView.layer.shadowOpacity = 0.10
+        tableView.layer.shadowRadius = 4
        // tableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
     }
