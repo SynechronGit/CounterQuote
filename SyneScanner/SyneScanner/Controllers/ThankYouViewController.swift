@@ -39,8 +39,9 @@ class ThankYouViewController: BaseViewController {
     
     func startAnimation()
     {
-        leftCurveLeading.constant = 0
-        rightaCureveTrailing.constant = 0
+        leftCurveLeading.constant = -10
+        rightaCureveTrailing.constant = -16
+
         self.bottomConstraintcompleteBtn.constant = 20
         self.topConstraintLblHeader.constant = 30
 

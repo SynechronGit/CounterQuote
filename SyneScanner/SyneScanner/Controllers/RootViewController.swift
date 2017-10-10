@@ -47,8 +47,8 @@ class RootViewController: BaseViewController {
    
    func startAnimation()
     {
-        leftCurveLeading.constant = 0
-        rightaCureveTrailing.constant = 0
+        leftCurveLeading.constant = -10
+        rightaCureveTrailing.constant = -16
         self.topConstraintLblHeader.constant = 30
         self.bottomConstraintScanDocBtn.constant = 20
 
@@ -58,7 +58,7 @@ class RootViewController: BaseViewController {
                        options: .curveEaseInOut, animations: {
                         self.view.layoutIfNeeded()
         }, completion: { finish in
-            
+          
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
                 self.lblWelcomeNote.alpha = 1.0
                 self.imgViewphonLogo.alpha = 1.0

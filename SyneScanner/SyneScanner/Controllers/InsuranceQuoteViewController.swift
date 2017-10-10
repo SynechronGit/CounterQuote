@@ -11,6 +11,8 @@ import SVProgressHUD
 
 class InsuranceQuoteViewController: BaseViewController {
 
+
+
     @IBOutlet var webView: UIWebView!
     @IBOutlet var centerView: UIView!
 
@@ -57,8 +59,8 @@ class InsuranceQuoteViewController: BaseViewController {
             return
         }
         isAnimationShow = true
-        leftCurveLeading.constant = 0
-        rightaCureveTrailing.constant = 0
+        leftCurveLeading.constant = -10
+        rightaCureveTrailing.constant = -16
         self.bottomConstraintBackBtn.constant = 0
         UIView.animate(withDuration: 1.2, delay: 0.0,
                        usingSpringWithDamping: 0.5,
@@ -109,6 +111,7 @@ class InsuranceQuoteViewController: BaseViewController {
 }
 extension InsuranceQuoteViewController:UITableViewDataSource,UITableViewDelegate
 {
+    
        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
        {
         return companyList.count + 1
@@ -150,17 +153,17 @@ extension InsuranceQuoteViewController:UITableViewDataSource,UITableViewDelegate
   
         }
     }
-    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    {
+        return CGFloat.leastNormalMagnitude
+
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
+    }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
     {
-        cell.alpha = 0
-        let transform = CATransform3DTranslate(CATransform3DIdentity, -250, 20, 0)
-        cell.layer.transform = transform
-        
-        UIView.animate(withDuration: 1.0) { 
-            cell.alpha = 1.0
-            cell.layer.transform = CATransform3DIdentity
-        }
+      
     }
     
 }

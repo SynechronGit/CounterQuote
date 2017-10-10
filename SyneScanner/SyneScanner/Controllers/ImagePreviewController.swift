@@ -50,8 +50,8 @@ class ImagePreviewController: BaseViewController {
     
     func startAnimation()
     {
-        leftCurveLeading.constant = 0
-        rightaCureveTrailing.constant = 0
+        leftCurveLeading.constant = -10
+        rightaCureveTrailing.constant = -16
         self.bottomConstraintBackBtn.constant = 0
         
         UIView.animate(withDuration: 1.2, delay: 0.0,

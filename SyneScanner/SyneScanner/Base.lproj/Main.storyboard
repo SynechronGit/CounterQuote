@@ -2430,15 +2430,16 @@ We are now making insurance companies fight for your business. We will present y
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_cureve_line" translatesAutoresizingMaskIntoConstraints="NO" id="NLL-BI-eQb">
-                                <rect key="frame" x="0.0" y="94" width="71" height="193"/>
+                                <rect key="frame" x="0.0" y="95" width="71" height="193"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_Curve_line" translatesAutoresizingMaskIntoConstraints="NO" id="RIl-lX-SBO">
                                 <rect key="frame" x="243" y="293" width="77" height="205"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtv-zS-zdp">
-                                <rect key="frame" x="112" y="488" width="96" height="40"/>
+                                <rect key="frame" x="50" y="488" width="220" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="Uy1-DP-sz1"/>
                                     <constraint firstAttribute="height" constant="40" id="mB5-MW-SwZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
@@ -2449,45 +2450,17 @@ We are now making insurance companies fight for your business. We will present y
                                     <action selector="proceedBtnTapped:" destination="Cb2-NC-yeH" eventType="touchUpInside" id="3kV-hY-p3S"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQ4-d5-5qw">
-                                <rect key="frame" x="219" y="488" width="96" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="CALL">
-                                    <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="callBtnClicked" destination="Cb2-NC-yeH" eventType="touchUpInside" id="d5d-nz-px6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbr-te-1E1">
-                                <rect key="frame" x="6" y="488" width="96" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="SHARE">
-                                    <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="shareBtnTapped" destination="Cb2-NC-yeH" eventType="touchUpInside" id="XpW-oA-gZC"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9S6-1L-NPE">
-                                <rect key="frame" x="20" y="20" width="174" height="25"/>
-                                <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="25"/>
+                                <rect key="frame" x="50" y="20" width="176" height="23"/>
+                                <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="23"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="32"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Agent" translatesAutoresizingMaskIntoConstraints="NO" id="2eK-SK-cvY">
-                                <rect key="frame" x="237" y="17" width="63" height="79"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="79" id="89c-2h-RI0"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generated New Business Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWE-0U-Obe">
-                                <rect key="frame" x="20" y="50" width="221" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Business Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWE-0U-Obe">
+                                <rect key="frame" x="20" y="51" width="144" height="16"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="16"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2510,70 +2483,11 @@ We are now making insurance companies fight for your business. We will present y
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E1g-HF-tHn">
-                                <rect key="frame" x="0.0" y="104" width="320" height="376"/>
+                                <rect key="frame" x="0.0" y="164.5" width="320" height="315.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="headerCell" rowHeight="68" id="vQS-SY-vwg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SectionHeaderCell" rowHeight="68" id="3eZ-6a-AAx" customClass="QuoteFromSectionHeaderTableViewCell" customModule="SyneScanner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="68"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vQS-SY-vwg" id="ZJz-13-ehq">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view clipsSubviews="YES" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZD-5f-F22">
-                                                    <rect key="frame" x="20" y="0.0" width="280" height="67.5"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SavedCard" translatesAutoresizingMaskIntoConstraints="NO" id="CYw-de-8mx">
-                                                            <rect key="frame" x="0.0" y="0.0" width="280" height="67.5"/>
-                                                        </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="T25-rC-wGW">
-                                                            <rect key="frame" x="5" y="13" width="134" height="42"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 3000/y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQg-bU-E6n">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="134" height="24"/>
-                                                                    <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="24"/>
-                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                    <variation key="heightClass=regular-widthClass=regular">
-                                                                        <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="28"/>
-                                                                    </variation>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You saved $ 1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvV-iy-ht0">
-                                                                    <rect key="frame" x="0.0" y="24" width="134" height="18"/>
-                                                                    <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="18"/>
-                                                                    <color key="textColor" red="0.63137254899999995" green="0.60392156860000001" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                    <variation key="heightClass=regular-widthClass=regular">
-                                                                        <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="22"/>
-                                                                    </variation>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstItem="CYw-de-8mx" firstAttribute="leading" secondItem="gZD-5f-F22" secondAttribute="leading" id="1nU-kJ-v4s"/>
-                                                        <constraint firstItem="T25-rC-wGW" firstAttribute="centerY" secondItem="gZD-5f-F22" secondAttribute="centerY" id="99q-af-PaV"/>
-                                                        <constraint firstItem="CYw-de-8mx" firstAttribute="top" secondItem="gZD-5f-F22" secondAttribute="top" id="Oz1-cd-Mdq"/>
-                                                        <constraint firstItem="CYw-de-8mx" firstAttribute="centerY" secondItem="gZD-5f-F22" secondAttribute="centerY" id="Tcy-pA-9yt"/>
-                                                        <constraint firstAttribute="bottom" secondItem="CYw-de-8mx" secondAttribute="bottom" id="ac0-5s-0Pu"/>
-                                                        <constraint firstAttribute="trailing" secondItem="CYw-de-8mx" secondAttribute="trailing" id="gnY-uf-7nD"/>
-                                                        <constraint firstItem="T25-rC-wGW" firstAttribute="leading" secondItem="gZD-5f-F22" secondAttribute="leading" constant="5" id="mqt-k2-dMS"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="gZD-5f-F22" firstAttribute="leading" secondItem="ZJz-13-ehq" secondAttribute="leading" constant="20" id="8L1-lI-Knr"/>
-                                                <constraint firstItem="gZD-5f-F22" firstAttribute="top" secondItem="ZJz-13-ehq" secondAttribute="top" id="VnQ-fc-mnO"/>
-                                                <constraint firstAttribute="bottom" secondItem="gZD-5f-F22" secondAttribute="bottom" id="Zvn-Sr-5An"/>
-                                                <constraint firstAttribute="trailing" secondItem="gZD-5f-F22" secondAttribute="trailing" constant="20" id="nDD-YS-4ga"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SectionHeaderCell" rowHeight="68" id="3eZ-6a-AAx">
-                                        <rect key="frame" x="0.0" y="96" width="320" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3eZ-6a-AAx" id="VST-UJ-gaq">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
@@ -2587,8 +2501,8 @@ We are now making insurance companies fight for your business. We will present y
                                                     <rect key="frame" x="20" y="0.0" width="280" height="68"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKW-Q4-6F7">
-                                                            <rect key="frame" x="118" y="25.5" width="44" height="18"/>
-                                                            <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="18"/>
+                                                            <rect key="frame" x="121" y="26.5" width="39" height="16"/>
+                                                            <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="16"/>
                                                             <color key="textColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -2613,9 +2527,12 @@ We are now making insurance companies fight for your business. We will present y
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="headerLabel" destination="dKW-Q4-6F7" id="HdK-4w-EJf"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="formCell" rowHeight="59" id="cpD-KG-5ES" customClass="QuoteFormTableViewCell" customModule="SyneScanner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="164" width="320" height="59"/>
+                                        <rect key="frame" x="0.0" y="96" width="320" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cpD-KG-5ES" id="Q3J-ZM-FZo">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
@@ -2661,49 +2578,124 @@ We are now making insurance companies fight for your business. We will present y
                                     <outlet property="delegate" destination="Cb2-NC-yeH" id="NQO-ut-ipA"/>
                                 </connections>
                             </tableView>
+                            <view clipsSubviews="YES" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8E4-cg-9I1">
+                                <rect key="frame" x="20" y="87" width="280" height="67.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SavedCard" translatesAutoresizingMaskIntoConstraints="NO" id="7R4-Tm-a02">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="67.5"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="f5v-pG-sfW">
+                                        <rect key="frame" x="5" y="10.5" width="134" height="47"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 3000/y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPI-e7-krm">
+                                                <rect key="frame" x="0.0" y="0.0" width="134" height="24"/>
+                                                <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="24"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="28"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You saved $ 1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AO-d6-c3m">
+                                                <rect key="frame" x="0.0" y="29" width="134" height="18"/>
+                                                <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="18"/>
+                                                <color key="textColor" red="0.63137254899999995" green="0.60392156860000001" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="22"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="7R4-Tm-a02" secondAttribute="bottom" id="27x-AC-tj0"/>
+                                    <constraint firstAttribute="trailing" secondItem="7R4-Tm-a02" secondAttribute="trailing" id="A8f-og-Swg"/>
+                                    <constraint firstAttribute="height" constant="67.5" id="AWZ-TC-jIf"/>
+                                    <constraint firstItem="f5v-pG-sfW" firstAttribute="leading" secondItem="8E4-cg-9I1" secondAttribute="leading" constant="5" id="Ecw-4x-xp0"/>
+                                    <constraint firstItem="f5v-pG-sfW" firstAttribute="centerY" secondItem="8E4-cg-9I1" secondAttribute="centerY" id="f5q-Ef-On1"/>
+                                    <constraint firstItem="7R4-Tm-a02" firstAttribute="centerY" secondItem="8E4-cg-9I1" secondAttribute="centerY" id="kJ3-0J-usa"/>
+                                    <constraint firstItem="7R4-Tm-a02" firstAttribute="top" secondItem="8E4-cg-9I1" secondAttribute="top" id="kWI-0K-8fm"/>
+                                    <constraint firstItem="7R4-Tm-a02" firstAttribute="leading" secondItem="8E4-cg-9I1" secondAttribute="leading" id="qlZ-Ne-mpL"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgW-Ff-eJd">
+                                <rect key="frame" x="273" y="15.5" width="27" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="c6y-av-hVJ"/>
+                                    <constraint firstAttribute="height" constant="32" id="mgB-IV-Ol9"/>
+                                </constraints>
+                                <state key="normal" image="share_pdf"/>
+                                <connections>
+                                    <action selector="shareBtnTapped" destination="XPW-oR-uiL" eventType="touchUpInside" id="nGb-LP-N9h"/>
+                                    <action selector="shareBtnTapped:" destination="Cb2-NC-yeH" eventType="touchUpInside" id="gHt-jn-v1X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ufm-AR-CEN">
+                                <rect key="frame" x="236" y="15.5" width="27" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="3TV-0F-Zoy"/>
+                                    <constraint firstAttribute="width" constant="27" id="LWx-qI-W3Y"/>
+                                </constraints>
+                                <state key="normal" image="share_pdf"/>
+                                <connections>
+                                    <action selector="callBtnClicked" destination="Cb2-NC-yeH" eventType="touchUpInside" id="pA6-4q-jpJ"/>
+                                    <action selector="shareBtnTapped" destination="XPW-oR-uiL" eventType="touchUpInside" id="oqA-ba-dEF"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="AlQ-VK-IkZ">
+                                <rect key="frame" x="20" y="21.5" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="FwU-hR-Qzx"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="K5w-5p-NEa"/>
+                                    <constraint firstAttribute="width" constant="20" id="egY-E9-wvx"/>
+                                    <constraint firstAttribute="height" constant="20" id="h1U-Fd-HKv"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jgW-Ff-eJd" secondAttribute="trailing" constant="20" id="606-8E-M7q"/>
+                            <constraint firstItem="Ufm-AR-CEN" firstAttribute="leading" secondItem="9S6-1L-NPE" secondAttribute="trailing" constant="10" id="6UI-lR-3lx"/>
                             <constraint firstItem="Mtv-zS-zdp" firstAttribute="top" secondItem="E1g-HF-tHn" secondAttribute="bottom" constant="8" id="8pq-NY-Q48"/>
-                            <constraint firstItem="E1g-HF-tHn" firstAttribute="top" secondItem="2eK-SK-cvY" secondAttribute="bottom" constant="8" id="9hr-wJ-dbW"/>
-                            <constraint firstItem="Rbr-te-1E1" firstAttribute="height" secondItem="Mtv-zS-zdp" secondAttribute="height" id="DeY-lM-nws"/>
+                            <constraint firstItem="AlQ-VK-IkZ" firstAttribute="leading" secondItem="rkb-6g-bPH" secondAttribute="leading" constant="20" id="F8z-36-Iig"/>
+                            <constraint firstItem="Ufm-AR-CEN" firstAttribute="centerY" secondItem="9S6-1L-NPE" secondAttribute="centerY" id="HSX-HV-xYX"/>
                             <constraint firstItem="E1g-HF-tHn" firstAttribute="leading" secondItem="rkb-6g-bPH" secondAttribute="leading" id="Las-HF-hBL"/>
+                            <constraint firstItem="9S6-1L-NPE" firstAttribute="leading" secondItem="AlQ-VK-IkZ" secondAttribute="trailing" constant="10" id="MEN-RQ-X7E"/>
+                            <constraint firstItem="jgW-Ff-eJd" firstAttribute="leading" secondItem="Ufm-AR-CEN" secondAttribute="trailing" constant="10" id="SZs-bN-UgN"/>
                             <constraint firstItem="uWE-0U-Obe" firstAttribute="leading" secondItem="rkb-6g-bPH" secondAttribute="leading" constant="20" id="U5d-RU-PIv"/>
-                            <constraint firstItem="2eK-SK-cvY" firstAttribute="top" secondItem="4LN-ZK-KsV" secondAttribute="bottom" constant="17" id="Yhq-AK-ERH"/>
-                            <constraint firstItem="CQ4-d5-5qw" firstAttribute="width" secondItem="Mtv-zS-zdp" secondAttribute="width" id="a3b-pq-UU9"/>
-                            <constraint firstItem="Rbr-te-1E1" firstAttribute="centerX" secondItem="rkb-6g-bPH" secondAttribute="centerX" multiplier="1:3" id="aWw-vJ-VUz"/>
                             <constraint firstItem="ZsW-vb-IRu" firstAttribute="centerX" secondItem="rkb-6g-bPH" secondAttribute="centerX" id="caB-zE-MSQ"/>
-                            <constraint firstItem="CQ4-d5-5qw" firstAttribute="height" secondItem="Mtv-zS-zdp" secondAttribute="height" id="cci-uP-ENy"/>
-                            <constraint firstAttribute="trailing" secondItem="2eK-SK-cvY" secondAttribute="trailing" constant="20" id="dGM-bX-ACd"/>
-                            <constraint firstItem="uWE-0U-Obe" firstAttribute="top" secondItem="9S6-1L-NPE" secondAttribute="bottom" constant="5" id="fRh-sW-z9d"/>
+                            <constraint firstItem="AlQ-VK-IkZ" firstAttribute="centerY" secondItem="9S6-1L-NPE" secondAttribute="centerY" id="eaS-at-JA0"/>
+                            <constraint firstItem="uWE-0U-Obe" firstAttribute="top" secondItem="9S6-1L-NPE" secondAttribute="bottom" constant="8" id="fRh-sW-z9d"/>
+                            <constraint firstAttribute="trailing" secondItem="8E4-cg-9I1" secondAttribute="trailing" constant="20" id="g9j-uR-0K5"/>
                             <constraint firstItem="Mtv-zS-zdp" firstAttribute="centerX" secondItem="rkb-6g-bPH" secondAttribute="centerX" multiplier="3:3" id="hPP-Y0-86J"/>
                             <constraint firstAttribute="trailing" secondItem="E1g-HF-tHn" secondAttribute="trailing" id="hgc-Pg-Vei"/>
+                            <constraint firstItem="jgW-Ff-eJd" firstAttribute="top" secondItem="Ufm-AR-CEN" secondAttribute="top" id="hiJ-Du-kea"/>
+                            <constraint firstItem="8E4-cg-9I1" firstAttribute="top" secondItem="uWE-0U-Obe" secondAttribute="bottom" constant="20" id="iyl-5h-KDJ"/>
                             <constraint firstAttribute="trailing" secondItem="RIl-lX-SBO" secondAttribute="trailing" id="kU8-ai-4rm"/>
-                            <constraint firstItem="CQ4-d5-5qw" firstAttribute="centerX" secondItem="rkb-6g-bPH" secondAttribute="centerX" multiplier="5:3" id="kkF-az-n7u"/>
+                            <constraint firstItem="8E4-cg-9I1" firstAttribute="leading" secondItem="rkb-6g-bPH" secondAttribute="leading" constant="20" id="mVD-tA-mdM"/>
                             <constraint firstItem="9S6-1L-NPE" firstAttribute="top" secondItem="4LN-ZK-KsV" secondAttribute="bottom" constant="20" id="nVh-o5-EZL"/>
                             <constraint firstItem="NLL-BI-eQb" firstAttribute="leading" secondItem="rkb-6g-bPH" secondAttribute="leading" id="nXu-J3-Wrr"/>
-                            <constraint firstItem="Rbr-te-1E1" firstAttribute="width" secondItem="Mtv-zS-zdp" secondAttribute="width" id="nxj-ze-TZs"/>
-                            <constraint firstItem="Mtv-zS-zdp" firstAttribute="width" secondItem="rkb-6g-bPH" secondAttribute="width" multiplier="0.3" id="qG8-8e-87Q"/>
                             <constraint firstItem="NLL-BI-eQb" firstAttribute="top" secondItem="uWE-0U-Obe" secondAttribute="bottom" constant="28" id="r1R-50-g2G"/>
                             <constraint firstItem="GCw-G4-8Bk" firstAttribute="top" secondItem="ZsW-vb-IRu" secondAttribute="bottom" id="tRV-ik-bbV"/>
                             <constraint firstItem="GCw-G4-8Bk" firstAttribute="top" secondItem="RIl-lX-SBO" secondAttribute="bottom" constant="70" id="wkn-eR-loG"/>
                             <constraint firstItem="ZsW-vb-IRu" firstAttribute="top" secondItem="Mtv-zS-zdp" secondAttribute="bottom" id="wzm-FN-t9C"/>
-                            <constraint firstItem="9S6-1L-NPE" firstAttribute="leading" secondItem="rkb-6g-bPH" secondAttribute="leading" constant="20" id="yAL-Zd-hey"/>
-                            <constraint firstItem="Rbr-te-1E1" firstAttribute="top" secondItem="Mtv-zS-zdp" secondAttribute="top" id="zNn-NA-AfW"/>
-                            <constraint firstItem="CQ4-d5-5qw" firstAttribute="top" secondItem="Mtv-zS-zdp" secondAttribute="top" id="zVV-OM-rNz"/>
+                            <constraint firstItem="E1g-HF-tHn" firstAttribute="top" secondItem="8E4-cg-9I1" secondAttribute="bottom" constant="10" id="z3p-BC-qM0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomBtnConstraint" destination="tRV-ik-bbV" id="seR-oP-IxK"/>
                         <outlet property="bottomConstraintBackBtn" destination="tRV-ik-bbV" id="Nja-H1-CTS"/>
-                        <outlet property="btnCall" destination="CQ4-d5-5qw" id="1Rw-JD-C5E"/>
-                        <outlet property="btnShare" destination="Rbr-te-1E1" id="GsK-wU-BcM"/>
                         <outlet property="goBackBtn" destination="ZsW-vb-IRu" id="gra-tl-5rj"/>
+                        <outlet property="lblActilaPrice" destination="cPI-e7-krm" id="kwT-Dy-Utn"/>
                         <outlet property="lblCompanyName" destination="9S6-1L-NPE" id="GUt-K8-bbp"/>
+                        <outlet property="lblSavedaAmount" destination="1AO-d6-c3m" id="f2F-iZ-GiJ"/>
                         <outlet property="leftCurveLeading" destination="nXu-J3-Wrr" id="NRo-0S-nZp"/>
                         <outlet property="proceedBtn" destination="Mtv-zS-zdp" id="SBd-Wo-C9N"/>
                         <outlet property="rightaCureveTrailing" destination="kU8-ai-4rm" id="s1D-Sj-gXK"/>
                         <outlet property="tableForm" destination="E1g-HF-tHn" id="tfQ-sG-Ig9"/>
+                        <outlet property="viewAmount" destination="8E4-cg-9I1" id="wG2-EA-sUg"/>
                         <segue destination="UT7-qo-NyP" kind="show" identifier="NavToPayment" id="ZpF-WJ-z9p"/>
                     </connections>
                 </viewController>

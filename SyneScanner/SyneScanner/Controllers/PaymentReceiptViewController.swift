@@ -47,8 +47,9 @@ class PaymentReceiptViewController: BaseViewController {
     {
       
         
-        leftCurveLeading.constant = 0
-        rightaCureveTrailing.constant = 0
+        leftCurveLeading.constant = -10
+        rightaCureveTrailing.constant = -16
+
         self.bottomConstraintProceedBtn.constant = 20
         UIView.animate(withDuration: 1.2, delay: 0.0,
                        usingSpringWithDamping: 0.5,

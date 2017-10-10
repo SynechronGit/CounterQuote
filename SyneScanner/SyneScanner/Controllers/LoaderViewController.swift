@@ -48,8 +48,8 @@ class LoaderViewController: BaseViewController {
     }
     func startAnimation()
     {
-        leftCurveLeading.constant = 0
-        rightaCureveTrailing.constant = 0
+        leftCurveLeading.constant = -10
+        rightaCureveTrailing.constant = -16
 
         UIView.animate(withDuration: 1.0, delay: 0.0,
                        usingSpringWithDamping: 0.5,
