@@ -13,21 +13,19 @@ import HockeySDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    // MARK: - Properties
     var window: UIWindow?
 
-
+    // MARK: - Application LifeCycle
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        BITHockeyManager.shared().configure(withIdentifier: "f2b9242e747d4354a632f9fc955f97df")
-        BITHockeyManager.shared().start()
-        BITHockeyManager.shared().authenticator.authenticateInstallation() // This line is obsolete in the crash only builds
+        // HockeyApp initialization
+        self.initializeHockeyApp()
 
-        SVProgressHUD.setRingThickness(2.5)
+        // Progress HUD initialization
+        self.initializeProgressHUD()
 
-        SVProgressHUD.setForegroundColor(UIColor(red:73/255, green:135/255, blue:233/255, alpha:1))
-
+        // Keyboard with next,previous and done buttons initailized
         IQKeyboardManager.sharedManager().enable = true
         return true
     }
@@ -56,13 +54,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //MARK: Initial setup methods
     
-    func setCustomNavigationBar() {
-        let navBackImage:UIImage! = UIImage(named: "BackArrow")
-        UIBarButtonItem.appearance().setBackButtonBackgroundImage(navBackImage, for: .normal, barMetrics: .default)
-        //UINavigationBar.appearance().
-        //self.navigationController.navigationBar.titleTextAttributes = titleDict
-
-
+    func initializeHockeyApp() {
+        BITHockeyManager.shared().configure(withIdentifier: "f2b9242e747d4354a632f9fc955f97df")
+        BITHockeyManager.shared().start()
+        BITHockeyManager.shared().authenticator.authenticateInstallation() // This line is obsolete in the crash only builds
+    }
+    
+    func initializeProgressHUD() {
+        SVProgressHUD.setRingThickness(2.5)
+        SVProgressHUD.setForegroundColor(UIColor(red:73/255, green:135/255, blue:233/255, alpha:1))
     }
 
 

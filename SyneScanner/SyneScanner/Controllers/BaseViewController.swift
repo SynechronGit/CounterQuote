@@ -8,17 +8,20 @@
 
 import UIKit
 
+/**
+ * BaseViewController with common initialization code
+ */
 class BaseViewController: UIViewController {
-    
+    // MARK: - Properties
     @IBOutlet var bottomBtnConstraint: NSLayoutConstraint!
     @IBOutlet var leftCurveLeading: NSLayoutConstraint!
     @IBOutlet var rightaCureveTrailing: NSLayoutConstraint!
-
     @IBOutlet var goBackBtn: UIButton!
     
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // For iPad code to move the buttons aligned to the bottom of the screen to move up by a constant value
         if UIDevice.current.userInterfaceIdiom == .pad {
             if let constraint = bottomBtnConstraint {
             constraint.constant = constraint.constant + 20
@@ -37,8 +40,10 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func hideLeftnRightCureve()
-    {
+    // MARK: - Animation methods
+    
+    // Method to hide left and right curves for animation purposes
+    func hideLeftnRightCureve() {
         if leftCurveLeading != nil && rightaCureveTrailing != nil
         {
             leftCurveLeading.constant = -71
@@ -46,9 +51,8 @@ class BaseViewController: UIViewController {
         }
     }
     
-    func startCurveAnimation()
-    {
-        
+    // Animation start for left and right curves in each screen
+    func startCurveAnimation() {
         leftCurveLeading.constant = 0
         rightaCureveTrailing.constant = 0
         
@@ -72,6 +76,7 @@ class BaseViewController: UIViewController {
     */
 
 }
+// MARK: - Extension - Popup Alert
 extension UIViewController {
     func popupAlert(title: String?, message: String?, actionTitles:[String?], actions:[((UIAlertAction) -> Void)?]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

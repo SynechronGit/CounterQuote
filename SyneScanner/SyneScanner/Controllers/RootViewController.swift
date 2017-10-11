@@ -10,10 +10,10 @@ import UIKit
 import DKImagePickerController
 class RootViewController: BaseViewController {
 
+    // MARK: - Properties
     @IBOutlet weak var btnScanDocument: UIButton!
     @IBOutlet weak var topConstraintLblHeader: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraintScanDocBtn: NSLayoutConstraint!
-
     @IBOutlet weak var lblWelcomeNote: UILabel!
     @IBOutlet weak var imgViewphonLogo: UIImageView!
     let pickerController = DKImagePickerController()
@@ -29,11 +29,9 @@ class RootViewController: BaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func viewWillAppear(_ animated: Bool)
-    {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
-
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -41,8 +39,8 @@ class RootViewController: BaseViewController {
         startAnimation()
     }
    
-   func startAnimation()
-    {
+    // MARK: - Animation methods
+   func startAnimation() {
         leftCurveLeading.constant = -10
         rightaCureveTrailing.constant = -16
         self.topConstraintLblHeader.constant = 30
@@ -63,6 +61,7 @@ class RootViewController: BaseViewController {
             })
     }
     
+    // MARK: - ConfigureUI
     func configureUI()
     {
         pickerController.sourceType = .photo
@@ -77,34 +76,28 @@ class RootViewController: BaseViewController {
         }
 
     }
-     // MARK: - Button actions
+    // MARK: - Button Actions
     @IBAction func startScanning() {
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "CameraViewController")
-        //let navigationController = UINavigationController(rootViewController: viewController!)
         self.navigationController?.pushViewController(viewController!, animated: true)
     }
+    
     @IBAction func uploadBtnClicked() {
         self.present(pickerController, animated: true) {}
 
     }
     
-    
     //MARK: - Upload Image
-    func uploadImage(imgArray:[DKAsset])
-    {
-        for asset in imgArray
-        {
-            
+    func uploadImage(imgArray:[DKAsset]) {
+        for asset in imgArray {
             asset.fetchOriginalImageWithCompleteBlock({ (image, info) in
                 let model = ImageDataModel()
                 model.image = image
                 model.imageSuccesfullyUpload = true
                 SharedData.sharedInstance.arrImage.append(model)
                // self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
-
             })
         }
-        
         let imageReviewViewController:ImagePreviewController = self.storyboard?.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
 
         self.navigationController?.pushViewController(imageReviewViewController, animated: true)

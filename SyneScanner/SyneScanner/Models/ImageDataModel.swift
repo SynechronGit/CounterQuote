@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Data model with properties of each scanned image
 class ImageDataModel: NSObject {
 
     var image:UIImage?

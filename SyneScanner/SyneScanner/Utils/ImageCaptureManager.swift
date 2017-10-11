@@ -94,8 +94,7 @@ class ImageCaptureManager: NSObject {
     }
     
     // Resets the camera properties
-    func resetProperties()
-    {
+    func resetProperties() {
         isCapturing = false
         didNotifyFullConfidence = false
         self.timer?.invalidate()
@@ -128,8 +127,7 @@ class ImageCaptureManager: NSObject {
         }
     }
     
-    func resetLocalProperties()
-    {
+    func resetLocalProperties() {
         isCapturing = false
         didNotifyFullConfidence = false
         self.timer?.invalidate()

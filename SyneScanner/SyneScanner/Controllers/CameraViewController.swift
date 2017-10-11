@@ -17,34 +17,18 @@ class CameraViewController: BaseViewController {
     @IBOutlet var galleryBtn: UIButton!
     @IBOutlet var doneBtn: UIButton!
     @IBOutlet var btnTorch: UIButton!
-
     @IBOutlet var centerImageView: UIImageView!
     @IBOutlet var lastCatpureImageView: UIImageView!
-
     @IBOutlet weak var galleryView: UIView!
     @IBOutlet weak var lblImageCount: UILabel!
-
     /// the image capture manager
   fileprivate   var imageCaptureManager: ImageCaptureManager?
-    
     var retakeIndexNo = -1
-    // MARK: - View LifeCycle
     
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let captureVideoPreviewLayer = self.view.layer as? AVCaptureVideoPreviewLayer {
-            self.imageCaptureManager = ImageCaptureManager(layer: captureVideoPreviewLayer,
-                                                           edgeDetectionView:self.edgeDetectionView)
-            self.imageCaptureManager?.delegate = self
-        }
-        else {
-            debugPrint("The layer of the root view must be a subclass of AVCaptureVideoPreviewLayer")
-        }
-
-        lastCatpureImageView.layer.masksToBounds = false
-        lastCatpureImageView.layer.cornerRadius = 20
-        lastCatpureImageView.clipsToBounds = true
+        self.configureCameraCapture()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -59,8 +43,7 @@ class CameraViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       updateTotalNoImgLbl()
-
+        updateTotalNoImgLbl()
         self.imageCaptureManager?.startSession()
     }
     
@@ -69,29 +52,38 @@ class CameraViewController: BaseViewController {
         self.imageCaptureManager?.stopSession()
     }
     
-    func updateTotalNoImgLbl()
-    {
-        if SharedData.sharedInstance.arrImage.count > 0
-        {
+    // Initialization Methods
+    func configureCameraCapture() {
+        if let captureVideoPreviewLayer = self.view.layer as? AVCaptureVideoPreviewLayer {
+            self.imageCaptureManager = ImageCaptureManager(layer: captureVideoPreviewLayer,
+                                                           edgeDetectionView:self.edgeDetectionView)
+            self.imageCaptureManager?.delegate = self
+        }
+        else {
+            debugPrint("The layer of the root view must be a subclass of AVCaptureVideoPreviewLayer")
+        }
+        
+        lastCatpureImageView.layer.masksToBounds = false
+        lastCatpureImageView.layer.cornerRadius = 20
+        lastCatpureImageView.clipsToBounds = true
+    }
+    
+    func updateTotalNoImgLbl() {
+        if SharedData.sharedInstance.arrImage.count > 0 {
             lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
             lblImageCount.isHidden = false
             let newModel = SharedData.sharedInstance.arrImage.last
             lastCatpureImageView.image = newModel?.image!
-        }
-        else
-        {
+        } else {
             lblImageCount.isHidden = true
             lastCatpureImageView.image = nil
-
         }
     }
-    // MARK: - Button actions
     
+    // MARK: - Button actions
     @IBAction func close() {
-        if SharedData.sharedInstance.arrImage.count > 0
-        {
-            
-              let alert = UIAlertController(title: "Exit", message: "Do you want to exit?", preferredStyle: UIAlertControllerStyle.alert)
+        if SharedData.sharedInstance.arrImage.count > 0 {
+            let alert = UIAlertController(title: "Exit", message: "Do you want to exit?", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: discardScans))
             alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -100,11 +92,14 @@ class CameraViewController: BaseViewController {
         }
     }
     
+    // Discard all scanned images
     func discardScans(action: UIAlertAction) {
          updateTotalNoImgLbl()
         SharedData.sharedInstance.clearAllData()
         self.navigationController?.popViewController(animated: false)
     }
+    
+    // Perform segue if scans complete and move to review screen
     @IBAction func scanningDoneTapped(_ sender: Any) {
           if SharedData.sharedInstance.arrImage.count > 0 {
         self.performSegue(withIdentifier: "NavToCompleteScreen", sender: nil)
@@ -114,28 +109,19 @@ class CameraViewController: BaseViewController {
     @IBAction func capture() {
         self.imageCaptureManager?.isCapturManually = true
         startCapturing()
-        
     }
     
-    @IBAction func flashBtnClicked()
-    {
-        
+    @IBAction func flashBtnClicked() {
         if let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo), device.hasTorch {
             do {
                 try device.lockForConfiguration()
                 let torchOn = !device.isTorchActive
                 try device.setTorchModeOnWithLevel(1.0)
                 
-                if torchOn
-                {
-                    
+                if torchOn {
                     btnTorch.setImage(UIImage(named:"Torch-on"), for: .normal)
-
-
-                }
-                else{
+                } else {
                     btnTorch.setImage(UIImage(named:"Torch-off"), for: .normal)
-
                 }
                 device.torchMode = torchOn ? .on : .off
                 device.unlockForConfiguration()
@@ -144,6 +130,19 @@ class CameraViewController: BaseViewController {
             }
         }
     }
+    
+    // Opens the image preview screen with all scanned images that can either be deleted or retook
+    @IBAction func finishScanningTapped(_ sender: Any) {
+        guard SharedData.sharedInstance.arrImage.count > 0 else {
+            return
+        }
+        let viewController:ImagePreviewController = self.storyboard?.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
+        viewController.deleteDelegate = self
+        self.navigationController?.pushViewController(viewController, animated: true)
+
+    }
+    
+    //MARK :- Capture start
     func startCapturing()
     {
         self.showImageCaptureLoadingView()
@@ -151,16 +150,6 @@ class CameraViewController: BaseViewController {
             self?.hideImageCaptureLoadingView()
             self?.previewImage(with: imageData, detectedQuadrangle: detectedQuadrangle)
         })
-    }
-    @IBAction func finishScanningTapped(_ sender: Any) {
-        guard SharedData.sharedInstance.arrImage.count > 0 else {
-            //TODO: display error
-            return
-        }
-        let viewController:ImagePreviewController = self.storyboard?.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
-        viewController.deleteDelegate = self
-        self.navigationController?.pushViewController(viewController, animated: true)
-
     }
     
     // MARK: - Store Image into Gallery
@@ -182,7 +171,6 @@ class CameraViewController: BaseViewController {
                     // FetchResult has no PHAssetCollection
                     return
                 }
-                
                 // Saved successfully!
                 print(album.assetCollectionType)
             }
@@ -195,134 +183,100 @@ class CameraViewController: BaseViewController {
         })
     }
     // MARK: - Image Capture Handler
-    private func showImageCaptureLoadingView(){
+    private func showImageCaptureLoadingView() {
         //TODO
         self.view.isUserInteractionEnabled = false
     }
     
-    private func hideImageCaptureLoadingView(){
+    private func hideImageCaptureLoadingView() {
         //TODO
         self.view.isUserInteractionEnabled = true
     }
     
+    // Crop detected image
     private func previewImage(with imageData: Data?,
                               detectedQuadrangle: Quadrangle?) {
         guard let imageData = imageData else {
-            //TODO: display error
             return
         }
-        if (self.imageCaptureManager?.isCapturManually)!
-        {
+        if (self.imageCaptureManager?.isCapturManually)! {
             self.store_uploadImage(image: UIImage(data:imageData)!)
-
-        }
-       else  if let detectedQuadrangle = detectedQuadrangle {
+        } else if let detectedQuadrangle = detectedQuadrangle {
             //  show the cropped image
-            
             ImageEditManager.cut(quadrangle: detectedQuadrangle, outOfImageWith: imageData, completion: { (image) in
                 self.store_uploadImage(image: image!)
-                
-              //  self.previewCapturedImage()
             })
         }
     }
     
-    func store_uploadImage(image:UIImage)
-    {
-        //self.galleryBtn.setImage(image, for: .normal)
-        if self.retakeIndexNo != -1
-        {
+    // Store captured images locally in iPhone Gallery and also upload images to OCR server
+    func store_uploadImage(image:UIImage) {
+        if self.retakeIndexNo != -1 {
             let model = SharedData.sharedInstance.arrImage[self.retakeIndexNo]
             model.image = image
             SharedData.sharedInstance.arrImage[self.retakeIndexNo] = model
             self.callUploadImageApi(indexNo: self.retakeIndexNo)
-            
         }
-        else{
+        else {
             let model = ImageDataModel()
             model.image = image
             SharedData.sharedInstance.arrImage.append(model)
             self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
-            
         }
         self.retakeIndexNo = -1
         self.centerImageView.isHidden = false
         self.centerImageView.frame = CGRect(x: self.view.frame.size.width/2 - 60 , y: self.view.frame.size.height/2 - 80, width: 120, height: 120)
         self.centerImageView.image = image
         self.imageCaptureManager?.resetProperties()
-       updateTotalNoImgLbl()
-
+        updateTotalNoImgLbl()
         self.animateImageAfterCapturing()
-        
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-
-
     }
+    
     func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
      
     }
-    func animateImageAfterCapturing()
-    {
-        
+    
+    // Aniamtion of image to gallery icon after capturing
+    func animateImageAfterCapturing() {
         UIView.animate(withDuration: 0.8, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
-            //Frame Option 1:
             self.centerImageView.frame =  CGRect(x: self.galleryView.frame.origin.x + self.galleryBtn.frame.origin.x, y: self.galleryView.frame.origin.y + self.galleryBtn.frame.origin.y, width: self.galleryBtn.frame.size.width, height: self.galleryBtn.frame.size.height)
-            
-         
-            
         },completion: { finish in
             self.centerImageView.isHidden = true
             let model = SharedData.sharedInstance.arrImage.last
             self.lastCatpureImageView.image = model?.image
-//            self.galleryBtn.isHidden = true
-//            UIView.animate(withDuration: 0.5, delay: 0.0,options: UIViewAnimationOptions.curveEaseOut,animations: {
-//                self.centerImageView.transform = CGAffineTransform(scaleX: 0.25, y: 0.25)
-//                
-//                
-//            },completion: { finish in
-//                self.centerImageView.image = nil
-//                self.centerImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
-//                self.galleryBtn.isHidden = false
-//            }
-//            )
         })
-        
     }
     
-    
- 
 }
 
 // MARK: - Auto Image Capture Handler
-
-extension CameraViewController:ImageCaptureManagerProtocol
-{
-    func didGainFullDetectionConfidence()
-    {
+extension CameraViewController:ImageCaptureManagerProtocol {
+    // Capture image automatically if detection confidence is full
+    func didGainFullDetectionConfidence() {
         self.imageCaptureManager?.isCapturManually =  false
-
         startCapturing()
     }
 }
 
+//MARK: - ImageDeleteDelegate methods
 extension CameraViewController:ImageDeleteDelegate
 {
+    // Update model when image deleted
     func updateCollectionWhenImageDeletedAt(index: Int) {
-        
         let model = SharedData.sharedInstance.arrImage[index]
         model.isDeleted = true
         if model.imageSuccesfullyUpload == true {
             SharedData.sharedInstance.arrImage.remove(at: index)
         }
-
         if index == 0 && SharedData.sharedInstance.arrImage.count == 0 {
             lastCatpureImageView.image = nil
         }
         self.updateTotalNoImgLbl()
     }
-    func updateCollectionWhenImageretakeAt(index : Int)
-    {
-       
+    
+    // Update model when image is retook
+    func updateCollectionWhenImageretakeAt(index : Int) {
         if SharedData.sharedInstance.arrImage.count > 0 {
             retakeIndexNo = index
         }
@@ -330,22 +284,20 @@ extension CameraViewController:ImageDeleteDelegate
 }
 
 
-
-extension CameraViewController:UploadImageProxyDelegate
-{
-    func callUploadImageApi(indexNo:Int)
-    {
+//MARK: - UploadImageProxyDelegate methods
+extension CameraViewController:UploadImageProxyDelegate {
+    func callUploadImageApi(indexNo:Int) {
         let model = SharedData.sharedInstance.arrImage[indexNo]
-
         let uploadImageProxy =  UploadImageProxy()
         uploadImageProxy.delegate = self
         uploadImageProxy.uploadScanningImage(image: (model.image!), indexNo: indexNo)
     }
-    func imageSuccessfullyUpload(responseData:[String:AnyObject],indexNo:Int)
-    { 
+    
+    func imageSuccessfullyUpload(responseData:[String:AnyObject],indexNo:Int) {
         let isModelValid = SharedData.sharedInstance.arrImage.indices.contains(indexNo)
         if (isModelValid) {
             let model = SharedData.sharedInstance.arrImage[indexNo]
+            // Check if image is deleted during uploading process
             if (model.isDeleted) {
                 NetworkManager.cancelUploadRequest(index: indexNo)
                 SharedData.sharedInstance.arrImage.remove(at: indexNo)
@@ -360,11 +312,12 @@ extension CameraViewController:UploadImageProxyDelegate
         }
         self.updateTotalNoImgLbl()
     }
-    func imageFailedToUpload(errorMessage:String,indexNo:Int)
-    {
+    
+    func imageFailedToUpload(errorMessage:String,indexNo:Int) {
         let isModelValid = SharedData.sharedInstance.arrImage.indices.contains(indexNo)
         if (isModelValid) {
             let model = SharedData.sharedInstance.arrImage[indexNo]
+            // Check if image is deleted during deleteing process
             if (model.isDeleted) {
                 NetworkManager.cancelUploadRequest(index: indexNo)
                 SharedData.sharedInstance.arrImage.remove(at: indexNo)
@@ -375,12 +328,13 @@ extension CameraViewController:UploadImageProxyDelegate
         }
         self.updateTotalNoImgLbl()
     }
-    func progressResult(progress:Float,indexNo:Int)
-    {
+    
+    func progressResult(progress:Float,indexNo:Int) {
         let isModelValid = SharedData.sharedInstance.arrImage.indices.contains(indexNo)
         if (isModelValid) {
             let model = SharedData.sharedInstance.arrImage[indexNo]
             model.progress = progress
+            // Check if image is deleted during uploading process
             if (model.isDeleted) {
                 NetworkManager.cancelUploadRequest(index: indexNo)
                 SharedData.sharedInstance.arrImage.remove(at: indexNo)

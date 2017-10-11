@@ -13,12 +13,14 @@ public typealias SplashAnimatableExecution = () -> Void
 
 class SplashScreenViewController: BaseViewController {
 
+    // MARK: - Properties
     @IBOutlet var imgLogo: UIImageView!
     var timer:Timer?
     var duration: Double = 2.0
     open var delay: Double = 0.5
-
     @IBOutlet weak var topConstraintLblHeader: NSLayoutConstraint!
+    
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         topConstraintLblHeader.constant = -50
@@ -27,18 +29,14 @@ class SplashScreenViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func viewWillAppear(_ animated: Bool)
-    {
+    override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
-
         super.viewWillAppear(animated)
-
     }
+    
    override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     addLabelAnimation()
-   // playSwingAnimation()
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,8 +44,8 @@ class SplashScreenViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func addLabelAnimation()
-    {
+    // MARK: - Label Animation
+    func addLabelAnimation() {
         self.topConstraintLblHeader.constant = 60
 
         UIView.animate(withDuration: 1.5, delay: 0.5,
@@ -57,6 +55,8 @@ class SplashScreenViewController: BaseViewController {
                                     self.view.layoutIfNeeded()
         }, completion: nil)
     }
+    
+    // MARK: - Perform Segue
     func endSplashScreenView() {
         self.performSegue(withIdentifier: "navToIntroVc", sender: nil)
         self.timer?.invalidate()

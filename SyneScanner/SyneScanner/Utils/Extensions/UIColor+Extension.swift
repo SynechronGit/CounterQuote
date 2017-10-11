@@ -7,7 +7,10 @@
 //
 
 import UIKit
-
+/**
+ * UIColor with hex value
+ */
+ 
 extension UIColor {
     convenience init(hex: String) {
         let scanner = Scanner(string: hex)
