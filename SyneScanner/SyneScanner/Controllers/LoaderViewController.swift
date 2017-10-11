@@ -55,23 +55,35 @@ class LoaderViewController: BaseViewController {
                        usingSpringWithDamping: 0.5,
                        initialSpringVelocity: 0.8,
                        options: .curveEaseInOut, animations: {
-                        self.addSearchAnimation()
                         self.view.layoutIfNeeded()
         }, completion: { finish in
-            UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseIn, animations: {
-                self.lblNote.alpha = 1
-                self.searchImageVIew.alpha = 1
+            
+            
+            UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseIn, animations: {
+               
+                self.addSearchAnimation()
+              
                 
             }, completion: { finish in
                 
                 
 
-                Timer.scheduledTimer(timeInterval: 5,
-                                     target: self,
-                                     selector: #selector(self.pushToQuoteVc),
-                                     userInfo: nil,
-                                     repeats: false)
-                
+                UIView.animate(withDuration: 0.5, delay: 1.0, options: .curveEaseIn, animations: {
+                    self.lblNote.alpha = 1
+                    self.searchImageVIew.alpha = 1
+                    
+                }, completion: { finish in
+                    
+                    
+                    
+                    Timer.scheduledTimer(timeInterval: 5,
+                                         target: self,
+                                         selector: #selector(self.pushToQuoteVc),
+                                         userInfo: nil,
+                                         repeats: false)
+                    
+                    
+                })
 
             })
         })

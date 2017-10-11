@@ -73,17 +73,16 @@ class CameraViewController: BaseViewController {
     {
         if SharedData.sharedInstance.arrImage.count > 0
         {
+            let count = SharedData.sharedInstance.arrImage.count
             lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
             lblImageCount.isHidden = false
             let newModel = SharedData.sharedInstance.arrImage.last
             lastCatpureImageView.image = newModel?.image!
-          //  doneBtn.isHidden = false
         }
         else
         {
             lblImageCount.isHidden = true
             lastCatpureImageView.image = nil
-          //  doneBtn.isHidden = true
 
         }
     }
@@ -92,7 +91,6 @@ class CameraViewController: BaseViewController {
     @IBAction func close() {
         if SharedData.sharedInstance.arrImage.count > 0
         {
-//            let alert = UIAlertController(title: "Discard", message: "Do you want to discard \(SharedData.sharedInstance.arrImage.count) pictures?", preferredStyle: UIAlertControllerStyle.alert)
             
               let alert = UIAlertController(title: "Exit", message: "Do you want to exit?", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: discardScans))
@@ -107,8 +105,6 @@ class CameraViewController: BaseViewController {
          updateTotalNoImgLbl()
         SharedData.sharedInstance.clearAllData()
         self.navigationController?.popViewController(animated: false)
-        //self.galleryBtn.setImage(nil, for: .normal)
-       // self.dismiss(animated: true, completion: nil)
     }
     @IBAction func scanningDoneTapped(_ sender: Any) {
           if SharedData.sharedInstance.arrImage.count > 0 {
@@ -218,21 +214,21 @@ class CameraViewController: BaseViewController {
         }
         if (self.imageCaptureManager?.isCapturManually)!
         {
-            self.storeNuploadImage(image: UIImage(data:imageData)!)
+            self.store_uploadImage(image: UIImage(data:imageData)!)
 
         }
        else  if let detectedQuadrangle = detectedQuadrangle {
             //  show the cropped image
             
             ImageEditManager.cut(quadrangle: detectedQuadrangle, outOfImageWith: imageData, completion: { (image) in
-                self.storeNuploadImage(image: image!)
+                self.store_uploadImage(image: image!)
                 
               //  self.previewCapturedImage()
             })
         }
     }
     
-    func storeNuploadImage(image:UIImage)
+    func store_uploadImage(image:UIImage)
     {
         //self.galleryBtn.setImage(image, for: .normal)
         if self.retakeIndexNo != -1
@@ -319,7 +315,7 @@ extension CameraViewController:ImageDeleteDelegate
         if model.imageSuccesfullyUpload == true {
             SharedData.sharedInstance.arrImage.remove(at: index)
         }
-        lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
+
         if index == 0 && SharedData.sharedInstance.arrImage.count == 0 {
             lastCatpureImageView.image = nil
         }

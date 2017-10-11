@@ -57,18 +57,7 @@
 		1BCC638C1F7EC5BC00C87694 /* QuotePdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC638B1F7EC5BC00C87694 /* QuotePdfViewController.swift */; };
 		1BDFD5741F8CC9B20036B0FC /* QuoteFromSectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDFD5731F8CC9B20036B0FC /* QuoteFromSectionHeaderTableViewCell.swift */; };
 		5346F1B11F752031000E6AC5 /* ImageWorkflowProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1B01F752031000E6AC5 /* ImageWorkflowProxy.swift */; };
-		5346F1B31F7542BC000E6AC5 /* ScanCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1B21F7542BC000E6AC5 /* ScanCompleteViewController.swift */; };
 		5346F1B51F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1B41F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift */; };
-		5346F1D61F79191E000E6AC5 /* ARSInfiniteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1CC1F79191E000E6AC5 /* ARSInfiniteLoader.swift */; };
-		5346F1D71F79191E000E6AC5 /* ARSLineProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1CD1F79191E000E6AC5 /* ARSLineProgress.swift */; };
-		5346F1D81F79191E000E6AC5 /* ARSLineProgressConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1CE1F79191E000E6AC5 /* ARSLineProgressConstants.swift */; };
-		5346F1D91F79191E000E6AC5 /* ARSLineProgressCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1CF1F79191E000E6AC5 /* ARSLineProgressCustomization.swift */; };
-		5346F1DA1F79191E000E6AC5 /* ARSLineProgressExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1D01F79191E000E6AC5 /* ARSLineProgressExtensions.swift */; };
-		5346F1DB1F79191E000E6AC5 /* ARSLineProgressHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1D11F79191E000E6AC5 /* ARSLineProgressHelpers.swift */; };
-		5346F1DC1F79191E000E6AC5 /* ARSLineProgressProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1D21F79191E000E6AC5 /* ARSLineProgressProtocols.swift */; };
-		5346F1DD1F79191E000E6AC5 /* ARSLineProgressTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1D31F79191E000E6AC5 /* ARSLineProgressTypeAliases.swift */; };
-		5346F1DE1F79191E000E6AC5 /* ARSProgressLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1D41F79191E000E6AC5 /* ARSProgressLoader.swift */; };
-		5346F1DF1F79191E000E6AC5 /* ARSStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1D51F79191E000E6AC5 /* ARSStatus.swift */; };
 		5346F1E11F7A3B7C000E6AC5 /* AddCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1E01F7A3B7C000E6AC5 /* AddCardTableViewCell.swift */; };
 		5346F1E31F7A3CAD000E6AC5 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346F1E21F7A3CAD000E6AC5 /* AddCardViewController.swift */; };
 		535888751F7CECE400A6E0D0 /* PaymentReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535888741F7CECE400A6E0D0 /* PaymentReceiptViewController.swift */; };
@@ -188,18 +177,7 @@
 		410CDDF85111FCE66A77C52C /* Pods_SyneScannerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SyneScannerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C33F0BD7E2D6EEF64F5A57C /* Pods_SyneScannerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SyneScannerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5346F1B01F752031000E6AC5 /* ImageWorkflowProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageWorkflowProxy.swift; sourceTree = "<group>"; };
-		5346F1B21F7542BC000E6AC5 /* ScanCompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCompleteViewController.swift; sourceTree = "<group>"; };
 		5346F1B41F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageReviewCollectionViewCell.swift; sourceTree = "<group>"; };
-		5346F1CC1F79191E000E6AC5 /* ARSInfiniteLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARSInfiniteLoader.swift; path = "Third Party/ARSInfiniteLoader.swift"; sourceTree = "<group>"; };
-		5346F1CD1F79191E000E6AC5 /* ARSLineProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARSLineProgress.swift; path = "Third Party/ARSLineProgress.swift"; sourceTree = "<group>"; };
-		5346F1CE1F79191E000E6AC5 /* ARSLineProgressConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARSLineProgressConstants.swift; path = "Third Party/ARSLineProgressConstants.swift"; sourceTree = "<group>"; };
-		5346F1CF1F79191E000E6AC5 /* ARSLineProgressCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARSLineProgressCustomization.swift; path = "Third Party/ARSLineProgressCustomization.swift"; sourceTree = "<group>"; };
-		5346F1D01F79191E000E6AC5 /* ARSLineProgressExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARSLineProgressExtensions.swift; path = "Third Party/ARSLineProgressExtensions.swift"; sourceTree = "<group>"; };
-		5346F1D11F79191E000E6AC5 /* ARSLineProgressHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARSLineProgressHelpers.swift; path = "Third Party/ARSLineProgressHelpers.swift"; sourceTree = "<group>"; };
-		5346F1D21F79191E000E6AC5 /* ARSLineProgressProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARSLineProgressProtocols.swift; path = "Third Party/ARSLineProgressProtocols.swift"; sourceTree = "<group>"; };
-		5346F1D31F79191E000E6AC5 /* ARSLineProgressTypeAliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARSLineProgressTypeAliases.swift; path = "Third Party/ARSLineProgressTypeAliases.swift"; sourceTree = "<group>"; };
-		5346F1D41F79191E000E6AC5 /* ARSProgressLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARSProgressLoader.swift; path = "Third Party/ARSProgressLoader.swift"; sourceTree = "<group>"; };
-		5346F1D51F79191E000E6AC5 /* ARSStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARSStatus.swift; path = "Third Party/ARSStatus.swift"; sourceTree = "<group>"; };
 		5346F1E01F7A3B7C000E6AC5 /* AddCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardTableViewCell.swift; sourceTree = "<group>"; };
 		5346F1E21F7A3CAD000E6AC5 /* AddCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
 		535888741F7CECE400A6E0D0 /* PaymentReceiptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentReceiptViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +247,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B17C7CE1F8DFF530040D470 /* UiTableview Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1B5403DD1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift */,
+				5346F1B41F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift */,
+				5346F1E01F7A3B7C000E6AC5 /* AddCardTableViewCell.swift */,
+				53DE22521F7D07C50045E9EA /* PaymentReceiptTableViewCell.swift */,
+				1BAD979E1F87B0FF007289EB /* QuoteFormTableViewCell.swift */,
+				536DE1631F8799500046B229 /* AgentCallTableViewCell.swift */,
+				1BDFD5731F8CC9B20036B0FC /* QuoteFromSectionHeaderTableViewCell.swift */,
+			);
+			name = "UiTableview Cell";
+			sourceTree = "<group>";
+		};
+		1B17C7CF1F8DFF690040D470 /* Camera View */ = {
+			isa = PBXGroup;
+			children = (
+				536A33A31F725C9100F019C5 /* EdgeDetectionView.swift */,
+				536A33A51F725CBA00F019C5 /* CameraView.swift */,
+			);
+			name = "Camera View";
+			sourceTree = "<group>";
+		};
 		1B31C0DB1F85315700C2EC04 /* HockeySDK-iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,7 +373,6 @@
 			isa = PBXGroup;
 			children = (
 				1BCC63891F7EBA1000C87694 /* LoaderViewController.swift */,
-				5346F1B21F7542BC000E6AC5 /* ScanCompleteViewController.swift */,
 				536A33A71F725CEF00F019C5 /* ImagePreviewController.swift */,
 			);
 			name = "Image Rreview View Controller";
@@ -450,16 +450,6 @@
 			children = (
 				1B31C0DB1F85315700C2EC04 /* HockeySDK-iOS */,
 				1B6E11291F7D0D2600C4069A /* TPScrollVIew */,
-				5346F1CC1F79191E000E6AC5 /* ARSInfiniteLoader.swift */,
-				5346F1CD1F79191E000E6AC5 /* ARSLineProgress.swift */,
-				5346F1CE1F79191E000E6AC5 /* ARSLineProgressConstants.swift */,
-				5346F1CF1F79191E000E6AC5 /* ARSLineProgressCustomization.swift */,
-				5346F1D01F79191E000E6AC5 /* ARSLineProgressExtensions.swift */,
-				5346F1D11F79191E000E6AC5 /* ARSLineProgressHelpers.swift */,
-				5346F1D21F79191E000E6AC5 /* ARSLineProgressProtocols.swift */,
-				5346F1D31F79191E000E6AC5 /* ARSLineProgressTypeAliases.swift */,
-				5346F1D41F79191E000E6AC5 /* ARSProgressLoader.swift */,
-				5346F1D51F79191E000E6AC5 /* ARSStatus.swift */,
 			);
 			name = "Third Party";
 			sourceTree = "<group>";
@@ -547,15 +537,8 @@
 		536A33921F725B2200F019C5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				536A33A31F725C9100F019C5 /* EdgeDetectionView.swift */,
-				536A33A51F725CBA00F019C5 /* CameraView.swift */,
-				1B5403DD1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift */,
-				5346F1B41F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift */,
-				5346F1E01F7A3B7C000E6AC5 /* AddCardTableViewCell.swift */,
-				53DE22521F7D07C50045E9EA /* PaymentReceiptTableViewCell.swift */,
-				1BAD979E1F87B0FF007289EB /* QuoteFormTableViewCell.swift */,
-				536DE1631F8799500046B229 /* AgentCallTableViewCell.swift */,
-				1BDFD5731F8CC9B20036B0FC /* QuoteFromSectionHeaderTableViewCell.swift */,
+				1B17C7CF1F8DFF690040D470 /* Camera View */,
+				1B17C7CE1F8DFF530040D470 /* UiTableview Cell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -791,6 +774,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SyneScanner/Pods-SyneScanner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DKImagePickerController/DKImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
@@ -799,6 +783,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
@@ -913,27 +898,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				536A339C1F725BFB00F019C5 /* ImageEditManager.swift in Sources */,
-				5346F1D91F79191E000E6AC5 /* ARSLineProgressCustomization.swift in Sources */,
-				5346F1D61F79191E000E6AC5 /* ARSInfiniteLoader.swift in Sources */,
 				1BAD97C01F88CCC2007289EB /* CallusViewController.swift in Sources */,
 				536A33951F725B4A00F019C5 /* Quadrangle.swift in Sources */,
 				1B6E11361F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
-				5346F1DF1F79191E000E6AC5 /* ARSStatus.swift in Sources */,
 				1BCC638A1F7EBA1000C87694 /* LoaderViewController.swift in Sources */,
 				1BAD97BD1F88AD64007289EB /* UIButton+Extension.swift in Sources */,
 				1BAD979B1F87AA38007289EB /* QuoteFormViewController.swift in Sources */,
 				1BAD979F1F87B0FF007289EB /* QuoteFormTableViewCell.swift in Sources */,
-				5346F1DD1F79191E000E6AC5 /* ARSLineProgressTypeAliases.swift in Sources */,
 				1B5403FE1F75459D007CF73B /* SplashScreenViewController.swift in Sources */,
 				5346F1E31F7A3CAD000E6AC5 /* AddCardViewController.swift in Sources */,
-				5346F1DB1F79191E000E6AC5 /* ARSLineProgressHelpers.swift in Sources */,
 				1B6E11151F7CFCF900C4069A /* COIViewController.swift in Sources */,
 				1BCC637C1F7E6D7C00C87694 /* ThankYouViewController.swift in Sources */,
-				5346F1D81F79191E000E6AC5 /* ARSLineProgressConstants.swift in Sources */,
 				1BCC638C1F7EC5BC00C87694 /* QuotePdfViewController.swift in Sources */,
 				536A33631F725AE500F019C5 /* AppDelegate.swift in Sources */,
 				1B5403E11F73A35F007CF73B /* SharedData.swift in Sources */,
-				5346F1DC1F79191E000E6AC5 /* ARSLineProgressProtocols.swift in Sources */,
 				536A33AA1F725D5C00F019C5 /* CameraViewController.swift in Sources */,
 				53DCED0E1F8669C100425E8B /* BaseViewController.swift in Sources */,
 				536A33A01F725C4600F019C5 /* PointFilter.swift in Sources */,
@@ -950,14 +928,12 @@
 				1B5403F71F73EFC0007CF73B /* APIURL.swift in Sources */,
 				1B5403F51F73EFB2007CF73B /* NetworkManager.swift in Sources */,
 				1B97050F1F8D1405005B0F35 /* TermsnConditionViewController.swift in Sources */,
-				5346F1DE1F79191E000E6AC5 /* ARSProgressLoader.swift in Sources */,
 				1B5403DE1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift in Sources */,
 				1B5403EF1F73D70A007CF73B /* ImageDataModel.swift in Sources */,
 				1B5403FA1F73F451007CF73B /* UploadImageProxy.swift in Sources */,
 				5346F1B11F752031000E6AC5 /* ImageWorkflowProxy.swift in Sources */,
 				5346F1E11F7A3B7C000E6AC5 /* AddCardTableViewCell.swift in Sources */,
 				53DE22531F7D07C50045E9EA /* PaymentReceiptTableViewCell.swift in Sources */,
-				5346F1B31F7542BC000E6AC5 /* ScanCompleteViewController.swift in Sources */,
 				1B5403DC1F728842007CF73B /* RootViewController.swift in Sources */,
 				536A33A41F725C9100F019C5 /* EdgeDetectionView.swift in Sources */,
 				1B6E11131F7CFCED00C4069A /* BinderViewController.swift in Sources */,
@@ -965,9 +941,7 @@
 				1B6E11331F7D0D3100C4069A /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				1BAD97941F8763C3007289EB /* GetOCRProxy.swift in Sources */,
 				1B6E110F1F7CE71800C4069A /* UIColor+Extension.swift in Sources */,
-				5346F1D71F79191E000E6AC5 /* ARSLineProgress.swift in Sources */,
 				1B6E11111F7CF3E600C4069A /* InsuranceQuoteViewController.swift in Sources */,
-				5346F1DA1F79191E000E6AC5 /* ARSLineProgressExtensions.swift in Sources */,
 				1B6E11351F7D0D3100C4069A /* TPKeyboardAvoidingTableView.m in Sources */,
 				5346F1B51F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift in Sources */,
 				536DE16C1F87C9780046B229 /* PaymentOptionViewController.swift in Sources */,

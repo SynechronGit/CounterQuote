@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DKImagePickerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,22 +57,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>664451D16DCF5176FEC8E4BD71B6A0D0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6FD2760E13EAC21F8B96135BA5D7EDB3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8854D25EAFC944370139C3108D429160</key>
+		<key>7976FBC45B85B56E4C675D6EB2AD28C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A21304773443BA2C17DB4000E0AE733F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A85101B2D8F83CBBC40FE5CD5A830086</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B5BDE7A89F738C989F619535E4C215AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E2260C9577BA9E5A8AE23605D400ED69</key>
+		<key>E062E1D1D941CCDB7D4C7C994B82A63C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

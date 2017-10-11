@@ -25,7 +25,7 @@ class InsuranceQuoteViewController: BaseViewController {
     var isAnimationShow = false
     var isAnimationShowTbl = false
 
-    var companyList = [["companyName": "Company 1", "price": "3500"],["companyName": "Company 2", "price": "3200"],["companyName": "Company 3", "price": "3000"],["companyName": "Company 4", "price": "2800"],["companyName": "Company 5", "price": "2500"],["companyName": "Company 6", "price": "2500"],["companyName": "Company 7", "price": "2000"],["companyName": "Company 8", "price": "2000"]]
+    var companyList = [["companyName": "Company 1", "price": "3500","imgName": "comp1"],["companyName": "Company 2", "price": "3200","imgName": "comp2"],["companyName": "Company 3", "price": "3000","imgName": "comp3"],["companyName": "Company 4", "price": "2800","imgName": "comp4"],["companyName": "Company 5", "price": "2500","imgName": "comp1"],["companyName": "Company 6", "price": "2500","imgName": "comp2"],["companyName": "Company 7", "price": "2000","imgName": "comp3"],["companyName": "Company 8", "price": "2000","imgName": "comp4"]]
     
 
     override func viewDidLoad() {
@@ -167,6 +167,8 @@ extension InsuranceQuoteViewController:UITableViewDataSource,UITableViewDelegate
             mainView.layer.borderColor = UIColor(red: 223/255, green: 223/255, blue: 223/255, alpha: 1).cgColor
             mainView.layer.borderWidth = 1
 
+            let imgLogoView:UIImageView = cell.viewWithTag(8) as! UIImageView
+            imgLogoView.image = UIImage(named: dict["imgName"]!)
             return cell
 
         }

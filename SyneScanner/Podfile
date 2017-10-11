@@ -8,6 +8,7 @@ target 'SyneScanner' do
     pod 'Alamofire', '~> 4.5'
     pod 'IQKeyboardManagerSwift', '4.0.10'
     pod 'SVProgressHUD'
+    pod 'DKImagePickerController', '3.6.0'
     pod 'UICircularProgressRing'
     pod 'CardIO'
 pod 'SwiftGifOrigin', '~> 1.6.1'

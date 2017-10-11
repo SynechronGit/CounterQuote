@@ -14,7 +14,6 @@ class ImagePreviewController: BaseViewController {
     // MARK: - Properties
     
     var deleteDelegate : ImageDeleteDelegate?
-    var isFromScanComplete:Bool = false
     var selectedIndexNo = -1
      var progressValue = 0
     @IBOutlet var collectionView: UICollectionView!
@@ -83,11 +82,6 @@ class ImagePreviewController: BaseViewController {
         self.collectionView.alpha = 0
         self.pageControl.alpha = 0
         self.lblHeader.alpha = 0
-        if isFromScanComplete
-        {
-            pageControl.isHidden =  true
-            lblHeader.isHidden = true
-        }
         
         pageControl.numberOfPages = SharedData.sharedInstance.arrImage.count
         
@@ -155,10 +149,7 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        if isFromScanComplete
-        {
-            return 1
-        }
+        
         return SharedData.sharedInstance.arrImage.count
     }
     
@@ -167,17 +158,7 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImagePreviewCollectionViewCell
         
         var model:ImageDataModel?
-        
-        if isFromScanComplete
-        {
-            model = SharedData.sharedInstance.arrImage[selectedIndexNo]
-
-        }
-        else
-        {
-            model = SharedData.sharedInstance.arrImage[indexPath.row]
-   
-        }
+        model = SharedData.sharedInstance.arrImage[indexPath.row]
         cell.imagePreview.image = model?.image
         cell.retakeDelegate = self
         let totalProgressPercentage = (model?.progress)! * 100
@@ -222,41 +203,28 @@ extension ImagePreviewController:ImageShareAndRetakeDelegate
 {
     func retakeImageAt(cell : UICollectionViewCell)
     {
-        if isFromScanComplete
-        {
-
-            deleteDelegate?.updateCollectionWhenImageretakeAt(index: (selectedIndexNo))
-            let vc = self.navigationController?.viewControllers[2]
-            self.navigationController?.popToViewController(vc!, animated: true)
+        guard deleteDelegate != nil else {
+            return
+        }
         
-        }
-        else
-        {
-            let indexPath = self.collectionView.indexPath(for: cell)
-
-            deleteDelegate?.updateCollectionWhenImageretakeAt(index: (indexPath?.row)!)
-            self.navigationController?.popViewController(animated: true)
-        }
+        let indexPath = self.collectionView.indexPath(for: cell)
+        deleteDelegate?.updateCollectionWhenImageretakeAt(index: (indexPath?.row)!)
+        self.navigationController?.popViewController(animated: true)
+        
       
 
     }
     func deleteImageAt(cell : UICollectionViewCell)
     {
-        if isFromScanComplete
-        {
-            let model = SharedData.sharedInstance.arrImage[selectedIndexNo]
-            model.isDeleted = true
-            SharedData.sharedInstance.arrImage.remove(at: selectedIndexNo)
+        guard deleteDelegate != nil else {
+            return
         }
-        else
-        {            
-            let indexPath = self.collectionView.indexPath(for: cell)
-            deleteDelegate?.updateCollectionWhenImageDeletedAt(index: (indexPath?.row)!)
-        }
-      
+        let indexPath = self.collectionView.indexPath(for: cell)
+        deleteDelegate?.updateCollectionWhenImageDeletedAt(index: (indexPath?.row)!)
         self.navigationController?.popViewController(animated: true)
 
     }
+    
     func updateColelctionWhenImageDeletedAt(cell : UICollectionViewCell)
     {
     }
@@ -300,10 +268,7 @@ extension ImagePreviewController: StartWorkflowDelegate {
     }
     
     func workflowFailedToStart(errorMessage: String) {
-     //   SVProgressHUD.dismiss()
-//        self.popupAlert(title: "Error", message: errorMessage, actionTitles: ["Ok"], actions:[{action1 in
-//            
-//            }, nil])
+
         self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
 
        

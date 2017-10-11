@@ -16,6 +16,8 @@ class QuoteFormViewController: BaseViewController {
     @IBOutlet weak var proceedBtn: UIButton!
     @IBOutlet weak var lblActilaPrice: UILabel!
     @IBOutlet weak var lblSavedaAmount: UILabel!
+    @IBOutlet weak var imgCompanyLogo: UIImageView!
+
     @IBOutlet weak var viewAmount: UIView!
 
     var isAnimationShow = false
@@ -44,6 +46,8 @@ class QuoteFormViewController: BaseViewController {
     
     func configureUI()
     {
+        imgCompanyLogo.image = UIImage(named: (companyDetails?["imgName"])!)
+
         self.bottomConstraintBackBtn.constant = -80
         self.tableForm.alpha = 0
         self.tableForm.layer.shadowOffset = CGSize(width: 0, height: 0)

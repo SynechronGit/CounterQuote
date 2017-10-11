@@ -9,6 +9,8 @@
 import UIKit
 
 class ThankYouViewController: BaseViewController {
+    
+    // MARK: - Properties
     @IBOutlet weak var btnFeedback: UIButton!
     @IBOutlet weak var lblheader: UILabel!
     @IBOutlet weak var lblNote: UILabel!
@@ -37,6 +39,10 @@ class ThankYouViewController: BaseViewController {
         startAnimation()
     }
     
+    func configureUI()
+    {
+        
+    }
     func startAnimation()
     {
         leftCurveLeading.constant = -10
