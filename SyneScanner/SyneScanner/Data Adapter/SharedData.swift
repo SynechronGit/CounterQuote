@@ -13,26 +13,27 @@ import Alamofire
  */
 
 class SharedData: NSObject {
+    //MARK: - Properties
     public static let sharedInstance :SharedData = SharedData()
     var corelationId = UUID().uuidString
     
+    var arrImage:[ImageDataModel] = []
+    
+    //MARK: - Initialization methods
     private override init() {
         
     }
-    var arrImage:[ImageDataModel] = []
     
-    func updateModel(dict:[String:AnyObject],indexNo:Int)
-    {
+    //MARK: - Update model
+    func updateModel(dict:[String:AnyObject],indexNo:Int) {
          let model = SharedData.sharedInstance.arrImage[indexNo]
         
             model.imageSuccesfullyUpload = true
             model.fileUrl = dict["FileUrl"] as! String
- 
-        
-           }
+    }
     
-    func calculateCurrentProgress() -> (progressValue : Float, uploadedImgCount: Int)
-    {
+    //MARK: - Calculate image upload progress
+    func calculateCurrentProgress() -> (progressValue : Float, uploadedImgCount: Int) {
         let totalImg:Float = Float(SharedData.sharedInstance.arrImage.count)
         let filteredArray = SharedData.sharedInstance.arrImage.filter( { (model: ImageDataModel?) -> Bool in
             return model!.imageSuccesfullyUpload == true
@@ -42,16 +43,15 @@ class SharedData: NSObject {
         print("Progressss  %f,%f,%f",uploadeImgCount,totalImg,progress)
         return (progress,Int(uploadeImgCount))
         
-        
     }
-    func clearAllData()
-    {
+    
+    //MARK: - Clear data methods
+    func clearAllData() {
         Alamofire.SessionManager.default.session.getTasksWithCompletionHandler { (sessionDataTask, uploadData, downloadData) in
             sessionDataTask.forEach { $0.cancel() }
             uploadData.forEach { $0.cancel() }
             downloadData.forEach { $0.cancel() }
         }
         SharedData.sharedInstance.arrImage.removeAll()
-
     }
 }

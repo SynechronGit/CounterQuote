@@ -8,8 +8,7 @@
 
 import UIKit
 class ImageReviewCollectionViewCell: UICollectionViewCell {
+    // MARK: - Properties
     @IBOutlet weak var imageReview: UIImageView!
     @IBOutlet weak var imageUploadingStatus: UIImageView!
-
-
 }

@@ -9,12 +9,15 @@
 import UIKit
 
 class AddCardTableViewCell: UITableViewCell {
+    // MARK: - Properties
     let kLength = 4
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var cardScanBtn: UIButton!
     @IBOutlet weak var cellDividerImage: UIImageView!
 
     var actionDelegate : TextFieldActionDelegate?
+    
+    // MARK: - TableView cell initial methods
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,12 +29,13 @@ class AddCardTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func cardScanBtnTapped()
-    {
+    // MARK: - Button actions
+    @IBAction func cardScanBtnTapped() {
         actionDelegate?.showCardScanVc()
     }
 }
 
+// MARK: - UITextField delegate methods
 extension AddCardTableViewCell: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -46,12 +50,12 @@ extension AddCardTableViewCell: UITextFieldDelegate {
             return true
         }
     }
-     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
-     {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         actionDelegate?.textFieldTappedAt(cell: self)
-
         return true
     }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
     }
     
@@ -64,6 +68,7 @@ extension AddCardTableViewCell: UITextFieldDelegate {
     }
 }
 
+// MARK: - TextFieldActionDelegate protocol
 protocol TextFieldActionDelegate {
     func textFieldTappedAt(cell: AddCardTableViewCell)
     func textFieldsFilledFor(cell: AddCardTableViewCell)

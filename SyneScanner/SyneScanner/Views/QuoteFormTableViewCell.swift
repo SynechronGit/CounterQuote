@@ -9,11 +9,13 @@
 import UIKit
 
 class QuoteFormTableViewCell: UITableViewCell {
+    // MARK: - Properties
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var cellDividerImage: UIImageView!
     @IBOutlet weak var imgLogo: UIImageView!
 
+    // MARK: - TableView cell initial methods
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,7 +23,6 @@ class QuoteFormTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 

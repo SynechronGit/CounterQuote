@@ -10,12 +10,14 @@ import UIKit
 import UICircularProgressRing
 
 class ImagePreviewCollectionViewCell: UICollectionViewCell {
+    // MARK: - Properties
     var retakeDelegate : ImageShareAndRetakeDelegate?
     @IBOutlet weak var imagePreview: UIImageView!
     @IBOutlet weak var progressView: UICircularProgressRingView!
-
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var retakeButton: UIButton!
+    
+    // MARK: - Button actions
     @IBAction func deleteOptionTapped(_ sender: Any) {
         retakeDelegate?.deleteImageAt(cell: self)
     }
@@ -26,6 +28,7 @@ class ImagePreviewCollectionViewCell: UICollectionViewCell {
     
 }
 
+// MARK: - ImageShareAndRetakeDelegate protocol
 protocol ImageShareAndRetakeDelegate {
     func retakeImageAt(cell : UICollectionViewCell)
     func deleteImageAt(cell : UICollectionViewCell)

@@ -11,7 +11,6 @@ import SVProgressHUD
 
 class AddCardViewController: BaseViewController {
     // MARK: - Properties
-
     var cardHeaderArray = [String]()
     let pickerArray = ["Mastercard", "Visa", "Discover", "American Express"]
     var pickerYearArray = [Int]()
@@ -26,7 +25,6 @@ class AddCardViewController: BaseViewController {
     var userName = "Christopher Voglund"
     var emailId = "chris68@mail.com"
     var companyDetails:[String:String]?
-    var cardActionDelegate : CardTextFieldFilledDelegate?
 
     @IBOutlet weak var lblSaveedAmount: UILabel!
     @IBOutlet weak var lblPolicyPrice: UILabel!
@@ -66,20 +64,12 @@ class AddCardViewController: BaseViewController {
 
     }
     
-    
     func defaultValues() {
         month = "09"
         year = "17"
         cardNumber = "4111 1111 1111 1111"
     }
-        
     
-    func showAlert(message: String) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-
     func commonSetup() {
         cardHeaderArray = ["Card Number", "Card Holder name", "Expiry date", "CVV"]
         // population years
@@ -102,6 +92,13 @@ class AddCardViewController: BaseViewController {
         pickerMonthArray = months
     }
     
+    //MARK: - Show Alert for Validations
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func isValidEmail(testStr:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
@@ -113,18 +110,16 @@ class AddCardViewController: BaseViewController {
 //MARK: UITableViewDataSource delegate methods
 extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 1
-        {
+        if section == 1 {
             return 1
-
         }
-        
         return cardHeaderArray.count
     }
-    func numberOfSections(in tableView: UITableView) -> Int
-    {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell") as! AddCardTableViewCell
         cell.descriptionField.placeholder = cardHeaderArray[indexPath.row]
@@ -178,18 +173,18 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
         return cell
     }
   
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
-    {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return CGFloat.leastNormalMagnitude
     }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.setBorderTocell(indexPath: indexPath, tableView: tableView)
-
     }
 }
 
-//MARK: RightArrow action delegate methods
+//MARK: TableViewCell textfield delegate methods
 extension AddCardViewController: TextFieldActionDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    // Textfield tap to show picker view for year and month of card expiry date
     func textFieldTappedAt(cell: AddCardTableViewCell) {
         indexPath = self.tableView.indexPath(for: cell)
         if indexPath?.row == 2 && indexPath?.section == 0 {
@@ -202,6 +197,7 @@ extension AddCardViewController: TextFieldActionDelegate, UIPickerViewDelegate, 
         }
     }
     
+    // Update card details array after all textfields are filled and returned
     func textFieldsFilledFor(cell: AddCardTableViewCell) {
         var cardDetailsArray : [String] = [String]()
         for item in 0...cardHeaderArray.count {
@@ -227,16 +223,17 @@ extension AddCardViewController: TextFieldActionDelegate, UIPickerViewDelegate, 
             self.showAlert(message: message)
         }
         else {
-            cardActionDelegate?.cardDetailsFilledWith(cardDetailsArray: cardDetailsArray)
         }
     }
     
+    // Reload all tableview cells with textfield values
     func doneSecureAction(button: UIBarButtonItem) {
         var indexPaths = [IndexPath]()
         indexPaths.append(indexPath!)
         self.tableView.reloadRows(at: indexPaths, with: .top)
     }
     
+    //MARK: - UIPickerView data source methods
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
@@ -272,6 +269,7 @@ extension AddCardViewController: TextFieldActionDelegate, UIPickerViewDelegate, 
         }
     }
     
+    //MARK: - UIPickerView delegate methods
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component {
         case 0:
@@ -289,16 +287,18 @@ extension AddCardViewController: TextFieldActionDelegate, UIPickerViewDelegate, 
             break
         }
     }
-    func showCardScanVc()
-    {
+    
+    //MARK: - CardIOPayment card scan method
+    func showCardScanVc() {
         let cardIOVC = CardIOPaymentViewController(paymentDelegate: self)
         cardIOVC?.modalPresentationStyle = .formSheet
         present(cardIOVC!, animated: true, completion: nil)
     }
 }
 
-extension AddCardViewController:CardIOPaymentViewControllerDelegate
-{
+//MARK: - CardIOPaymentViewControllerDelegate methods
+extension AddCardViewController:CardIOPaymentViewControllerDelegate {
+    
     func userDidCancel(_ paymentViewController: CardIOPaymentViewController!) {
         paymentViewController?.dismiss(animated: true, completion: nil)
     }
@@ -307,25 +307,17 @@ extension AddCardViewController:CardIOPaymentViewControllerDelegate
         if let info = cardInfo {
             let str = NSString(format: "Received card info.\n Number: %@\n expiry: %02lu/%lu\n cvv: %@.", info.redactedCardNumber, info.expiryMonth, info.expiryYear, info.cvv)
             print(str)
-            
             cardNumber = info.redactedCardNumber
             month = String(format:"%d",info.expiryMonth)
             year = String(format:"%d",info.expiryYear)
             cvv = info.cvv
-            if let name = info.cardholderName
-            {
+            if let name = info.cardholderName {
                 userName = name
-
             }
-            
             tableView.reloadData()
-            
         }
         paymentViewController?.dismiss(animated: true, completion: nil)
     }
 
 }
 
-protocol CardTextFieldFilledDelegate {
-    func cardDetailsFilledWith(cardDetailsArray: [String])
-}

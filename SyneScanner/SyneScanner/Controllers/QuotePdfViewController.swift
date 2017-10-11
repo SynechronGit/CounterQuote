@@ -10,14 +10,12 @@ import UIKit
 import SVProgressHUD
 
 class QuotePdfViewController: BaseViewController {
-
     // MARK: - Properties
     @IBOutlet var webView: UIWebView!
     @IBOutlet var proceedBtn: UIButton!
     @IBOutlet var centerView: UIView!
     @IBOutlet weak var btnShare: UIButton!
     @IBOutlet var lblCompanyName: UILabel!
-    
     var companyDetails:[String:String]?
     
     // MARK: - View LifeCycle Methods
@@ -33,55 +31,48 @@ class QuotePdfViewController: BaseViewController {
     }
     
     // MARK: - Configure UI
-    func configureUI()
-    {
+    func configureUI() {
         lblCompanyName.text =  companyDetails?["companyName"]
         
         proceedBtn.setBorderToButton()
         centerView.layer.cornerRadius = 10
         centerView.layer.masksToBounds = true
         loadPdfFile()
-
     }
-    func loadPdfFile()
-    {
+    
+    func loadPdfFile() {
         if let pdf = Bundle.main.url(forResource: "Quote", withExtension: "pdf", subdirectory: nil, localization: nil)  {
             let req = NSURLRequest(url: pdf)
             webView.loadRequest(req as URLRequest)
         }
     }
-    //MARK: UIButton action methods
     
+    //MARK: UIButton action methods
     @IBAction func proceedBtnTapped(_ sender: Any) {
         SVProgressHUD.show()
         SVProgressHUD.dismiss(withDelay: 1) {
             self.performSegue(withIdentifier: "NavToPayment", sender: nil)
         }
-        
     }
-    @IBAction   func backBtnClicked()
-    {
+    @IBAction func backBtnClicked() {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func shareBtnTapped()
-    {
+    // Share Quote form with popover view presented
+    @IBAction func shareBtnTapped() {
         if let pdf = Bundle.main.url(forResource: "Quote", withExtension: "pdf", subdirectory: nil, localization: nil)  {
             let urlArray = [pdf]
             let activityController = UIActivityViewController(activityItems: urlArray, applicationActivities: nil)
             activityController.popoverPresentationController?.sourceView = self.btnShare
             self.present(activityController, animated: true, completion: nil)
-            
         }
     }
     
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
         if segue.identifier == "NavToPayment"
         {
             let vc:AddCardViewController = segue.destination as! AddCardViewController

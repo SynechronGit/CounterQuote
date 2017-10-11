@@ -10,7 +10,6 @@ import UIKit
 import SVProgressHUD
 
 class QuoteFormViewController: BaseViewController {
-
     // MARK: - Properties
     @IBOutlet weak var tableForm: UITableView!
     @IBOutlet weak var lblCompanyName: UILabel!
@@ -18,15 +17,12 @@ class QuoteFormViewController: BaseViewController {
     @IBOutlet weak var lblActilaPrice: UILabel!
     @IBOutlet weak var lblSavedaAmount: UILabel!
     @IBOutlet weak var imgCompanyLogo: UIImageView!
-
     @IBOutlet weak var viewAmount: UIView!
     @IBOutlet weak var bottomConstraintBackBtn: NSLayoutConstraint!
 
     var isAnimationShow = false
-
     var agentCallVc:AgentCallViewController?
     var termsnQVc:TermsnConditionViewController?
-
     var dataArr:NSArray?
     var companyDetails:[String:String]?
 
@@ -34,7 +30,7 @@ class QuoteFormViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-                // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,8 +43,7 @@ class QuoteFormViewController: BaseViewController {
     }
     
     // MARK: - Configure UI
-    func configureUI()
-    {
+    func configureUI() {
         imgCompanyLogo.image = UIImage(named: (companyDetails?["imgName"])!)
 
         self.bottomConstraintBackBtn.constant = -80
@@ -67,8 +62,17 @@ class QuoteFormViewController: BaseViewController {
         lblSavedaAmount.text = String(format:"You Saved $ %d",savedPrice)
         viewAmount.layer.cornerRadius = 8
     }
-    func startAnimation()
-    {
+    
+    func loadDataFromPlist() {
+        let path = Bundle.main.path(forResource: "QuoteFormData", ofType: "plist")!
+        let url = URL(fileURLWithPath: path)
+        let data = try! Data(contentsOf: url)
+        let plist = try! PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil)
+        dataArr = plist as? NSArray
+    }
+    
+    //MARK: - Start animation
+    func startAnimation() {
         if isAnimationShow == true {
             return
         }
@@ -93,35 +97,24 @@ class QuoteFormViewController: BaseViewController {
         
     }
     
-
-    func loadDataFromPlist()
-    {
-        let path = Bundle.main.path(forResource: "QuoteFormData", ofType: "plist")!
-        let url = URL(fileURLWithPath: path)
-        let data = try! Data(contentsOf: url)
-        let plist = try! PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil)
-         dataArr = plist as? NSArray
-    }
     
     //MARK: UIButton action methods
-    
     @IBAction func proceedBtnTapped(_ sender: Any) {
         SVProgressHUD.show()
         SVProgressHUD.dismiss(withDelay: 1) {
             self.performSegue(withIdentifier: "NavToPayment", sender: nil)
         }
     }
-    @IBAction   func backBtnClicked()
-    {
+    
+    @IBAction   func backBtnClicked() {
         self.navigationController?.popViewController(animated: true)
     }
-    @IBAction   func callBtnClicked()
-    {
-        //Create the AlertController and add Its action like button in Actionsheet
-        let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
-        
     
-        
+    @IBAction   func callBtnClicked() {
+        // Create the AlertController and add its action like button in Actionsheet
+        // Added 2 buttons for call and 1 cancel button
+        let actionSheetControllerIOS8: UIAlertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+
         let saveActionButton = UIAlertAction(title: "Agent Call Me", style: .default)
         { _ in
             self.showCallUsView()
@@ -139,8 +132,9 @@ class QuoteFormViewController: BaseViewController {
         actionSheetControllerIOS8.addAction(cancelActionButton)
         self.present(actionSheetControllerIOS8, animated: true, completion: nil)
     }
-    @IBAction func shareBtnTapped(_ sender: Any)
-    {
+    
+    // Share Quote form with popover view presented
+    @IBAction func shareBtnTapped(_ sender: Any) {
         if let pdf = Bundle.main.url(forResource: "Quote", withExtension: "pdf", subdirectory: nil, localization: nil)  {
             let urlArray = [pdf]
             let btn:UIButton = sender as! UIButton
@@ -151,8 +145,8 @@ class QuoteFormViewController: BaseViewController {
         }
     }
     
-    @IBAction   func termsNConditionBtnTapped()
-    {
+    // Show terms and conditions on a custom alert screen
+    @IBAction func termsNConditionBtnTapped() {
         termsnQVc = self.storyboard?.instantiateViewController(withIdentifier: "termsnQVc") as? TermsnConditionViewController
         termsnQVc?.delegate = self
         self.view.addSubview((termsnQVc?.view)!)
@@ -164,12 +158,11 @@ class QuoteFormViewController: BaseViewController {
         }, completion: { finish in
             
         })
-
     }
     
-    //MARK: Call Us View
-    func callOnNumber()
-    {
+    //MARK: - Agent call methods
+    //Call on an agent number
+    func callOnNumber() {
         if let url = URL(string: "tel://\("+91999999999")"), UIApplication.shared.canOpenURL(url) {
             if #available(iOS 10, *) {
                 UIApplication.shared.open(url)
@@ -177,11 +170,10 @@ class QuoteFormViewController: BaseViewController {
                 UIApplication.shared.openURL(url)
             }
         }
-
     }
     
-    func showCallUsView()
-    {
+    //Call us view with fileds name and phone to be added
+    func showCallUsView() {
         let dict:NSDictionary = dataArr?.object(at: 0) as! NSDictionary
         let arr:NSArray = dict.value(forKey: "data") as! NSArray
         let data:NSDictionary = arr.object(at: 1) as! NSDictionary
@@ -199,13 +191,9 @@ class QuoteFormViewController: BaseViewController {
         }, completion: { finish in
             
             })
-
-        
- 
     }
     
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
@@ -220,41 +208,33 @@ class QuoteFormViewController: BaseViewController {
 
 }
 
-extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate
-{
-    func numberOfSections(in tableView: UITableView) -> Int
-    {
+//MARK: - UItableView datasource and delegate methods
+extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return (dataArr?.count)!
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      
         let dict:NSDictionary = dataArr?.object(at: section ) as! NSDictionary
         let arr:NSArray = dict.value(forKey: "data") as! NSArray
         return arr.count
     }
 
-   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
-    {
-      
+   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell:QuoteFromSectionHeaderTableViewCell = tableView.dequeueReusableCell(withIdentifier: "SectionHeaderCell")! as! QuoteFromSectionHeaderTableViewCell
         let dict:NSDictionary = dataArr?.object(at: section ) as! NSDictionary
         cell.headerLabel.text = dict.value(forKey: "title") as? String
-     
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
-    {
-       
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 48
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
             return 68
-     
     }
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-  {
- 
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:QuoteFormTableViewCell = tableView.dequeueReusableCell(withIdentifier: "formCell", for: indexPath ) as! QuoteFormTableViewCell
         let dict:NSDictionary = dataArr?.object(at: indexPath.section) as! NSDictionary
         let arr:NSArray = dict.value(forKey: "data") as! NSArray
@@ -272,12 +252,15 @@ extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate
         return cell
     
    }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
           cell.setBorderTocell(indexPath: indexPath, tableView: tableView)
     }
    
 
 }
+
+//MARK: - AgentCallViewControllerDelegate delegate methods
 extension QuoteFormViewController:AgentCallViewControllerDelegate
 {
     func dismissCallUsView() {
@@ -285,6 +268,8 @@ extension QuoteFormViewController:AgentCallViewControllerDelegate
         agentCallVc = nil
     }
 }
+
+//MARK: - TermsnConditionViewControllerDelegate delegate methods
 extension QuoteFormViewController:TermsnConditionViewControllerDelegate
 {
     func dismissTnQView() {

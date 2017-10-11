@@ -9,7 +9,6 @@
 import UIKit
 
 class ThankYouViewController: BaseViewController {
-    
     // MARK: - Properties
     @IBOutlet weak var btnFeedback: UIButton!
     @IBOutlet weak var lblheader: UILabel!
@@ -18,9 +17,7 @@ class ThankYouViewController: BaseViewController {
     @IBOutlet weak var bottomConstraintcompleteBtn: NSLayoutConstraint!
     @IBOutlet weak var topConstraintLblHeader: NSLayoutConstraint!
 
-
     // MARK: - View LifeCycle Methods
-
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -31,22 +28,22 @@ class ThankYouViewController: BaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         startAnimation()
     }
     
     // MARK: - Configure UI
-    func configureUI()
-    {
+    func configureUI() {
         self.bottomConstraintcompleteBtn.constant = -47
         self.lblNote.alpha = 0
         self.imgViewRightMark.alpha = 0
         topConstraintLblHeader.constant = -50
         btnFeedback.setBorderToButton()
-
     }
-    func startAnimation()
-    {
+    
+    // MARK: - Start animation
+    func startAnimation() {
         leftCurveLeading.constant = -10
         rightaCureveTrailing.constant = -16
 

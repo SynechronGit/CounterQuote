@@ -7,6 +7,9 @@
 //
 
 import Foundation
+/**
+ * Global constants
+ */
 
 let BASE_URL = "https://ocr-demo-api.azurewebsites.net/api/"
 let UPLOAD_IMAGE = "CommonBlob/UploadFile"

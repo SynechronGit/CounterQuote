@@ -9,7 +9,6 @@
 import UIKit
 import SVProgressHUD
 class BinderViewController: BaseViewController {
-
     // MARK: - Properties
     @IBOutlet var webView: UIWebView!
     @IBOutlet var proceedBtn: UIButton!
@@ -18,13 +17,12 @@ class BinderViewController: BaseViewController {
     @IBOutlet weak var bottomConstraintcompleteBtn: NSLayoutConstraint!
 
     // MARK: - View LifeCycle Methods
-
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-     
         // Do any additional setup after loading the view.
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         startAnimation()
     }
@@ -35,19 +33,25 @@ class BinderViewController: BaseViewController {
     }
     
     // MARK: - Configure UI
-    func configureUI()
-    {
+    func configureUI() {
         self.bottomConstraintcompleteBtn.constant = -47
         self.centerView.alpha = 0
-        
         proceedBtn.setBorderToButton()
         
         centerView.layer.cornerRadius = 10
         centerView.layer.masksToBounds = true
         loadPdfFile()
     }
-    func startAnimation()
-    {
+    
+    func loadPdfFile() {
+        if let pdf = Bundle.main.url(forResource: "Binder", withExtension: "pdf", subdirectory: nil, localization: nil)  {
+            let req = NSURLRequest(url: pdf)
+            webView.loadRequest(req as URLRequest)
+        }
+    }
+    
+    //MARK: - Start animation
+    func startAnimation() {
         leftCurveLeading.constant = -10
         rightaCureveTrailing.constant = -16
         self.bottomConstraintcompleteBtn.constant = 20
@@ -65,32 +69,22 @@ class BinderViewController: BaseViewController {
         
     }
 
-    func loadPdfFile()
-    {
-        if let pdf = Bundle.main.url(forResource: "Binder", withExtension: "pdf", subdirectory: nil, localization: nil)  {
-            let req = NSURLRequest(url: pdf)
-            webView.loadRequest(req as URLRequest)
-        }
-    }
-    //MARK: UIButton action methods
     
-    @IBAction func proceedBtnTapped(_ sender: Any)
-    {
+    //MARK: UIButton action methods
+    @IBAction func proceedBtnTapped(_ sender: Any) {
         SVProgressHUD.show()
         SVProgressHUD.dismiss(withDelay: 1) {
             self.performSegue(withIdentifier: "NavToCOIVc", sender: nil)
         }
-
     }
     
-    @IBAction func shareBtnTapped()
-    {
+    // Share Quote form with popover view presented
+    @IBAction func shareBtnTapped() {
         if let pdf = Bundle.main.url(forResource: "Binder", withExtension: "pdf", subdirectory: nil, localization: nil)  {
             let urlArray = [pdf]
             let activityController = UIActivityViewController(activityItems: urlArray, applicationActivities: nil)
             activityController.popoverPresentationController?.sourceView = self.btnShare
             self.present(activityController, animated: true, completion: nil)
-
         }
     }
     /*

@@ -10,7 +10,6 @@ import UIKit
 import SVProgressHUD
 
 class PaymentOptionViewController: UIViewController {
-    
     // MARK: - Properties
     @IBOutlet weak var innerView: UIView!
     @IBOutlet var cardPayButton: UIButton!
@@ -37,7 +36,6 @@ class PaymentOptionViewController: UIViewController {
     @IBOutlet var cardPaymentButton: UIButton!
     
     @IBOutlet weak var cardDividerView: UIImageView!
-    var cardDetailsArray : [String]?
     var companyDetails:[String:String]?
     var addCardVC : AddCardViewController?
     var invoiceVC : InvoicePaymentViewController?
@@ -47,8 +45,26 @@ class PaymentOptionViewController: UIViewController {
     // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureUI()
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        innerView.layer.cornerRadius = 12
+        innerView.layer.borderWidth = 1
+        innerView.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: - Initialization methods
+    func configureUI() {
         addCardVC = self.storyboard?.instantiateViewController(withIdentifier: "AddCardViewController") as? AddCardViewController
-        addCardVC?.cardActionDelegate = self
         invoiceVC = self.storyboard?.instantiateViewController(withIdentifier: "InvoicePaymentViewController") as? InvoicePaymentViewController
         invoiceVC?.companyDetails =  self.companyDetails
         self.addChildViewController(invoiceVC!)
@@ -56,6 +72,11 @@ class PaymentOptionViewController: UIViewController {
         self.addCardVC?.companyDetails = self.companyDetails
         self.invoicePayScrollView.contentSize = CGSize(width: (self.invoiceVC?.view.frame.size.width)!, height: UIScreen.main.bounds.height)
         self.cardPayScrollView.contentSize = CGSize(width: (self.addCardVC?.view.frame.size.width)!, height: UIScreen.main.bounds.height)
+        
+        self.initialSetup()
+    }
+    
+    func initialSetup() {
         self.payBtnHeightConstraint.constant = 0
         self.invoiceBtnHeightConstraint.constant = 0
         
@@ -72,20 +93,6 @@ class PaymentOptionViewController: UIViewController {
         invoiceViewHeightConstriant.constant = 70
         cardViewHeightConstraint.constant = 70
         innerView.layoutIfNeeded()
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        innerView.layer.cornerRadius = 12
-        innerView.layer.borderWidth = 1
-        innerView.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Navigation
@@ -97,13 +104,14 @@ class PaymentOptionViewController: UIViewController {
     }
     
     //MARK: UIButton action methods
-    
     @IBAction func cardPayTapped(_ sender: Any) {
         self.cardDividerView.isHidden = true
         self.cardPaymentButton.isHidden = false
             innerView.layer.cornerRadius = 0
             self.cardPayScrollView.bounds = CGRect.zero
             self.addCardVC?.view.frame = CGRect(x: 0, y: UIScreen.main.bounds.height, width: self.cardPayScrollView.frame.size.width, height: UIScreen.main.bounds.height)
+        
+        // Animate up-down on AddCardViewController view added as subview
             UIView.animate(withDuration: 1.0, delay: 0,
                            usingSpringWithDamping: 0.8,
                            initialSpringVelocity: 0.5,
@@ -128,7 +136,6 @@ class PaymentOptionViewController: UIViewController {
             self.cardPayButton.isHidden = true
             self.cardPayScrollView.addSubview((self.addCardVC?.view)!)
             isCardViewShown = true
-//        }
     }
     
     @IBAction func invoicePayTapped(_ sender: Any) {
@@ -137,6 +144,8 @@ class PaymentOptionViewController: UIViewController {
             innerView.layer.cornerRadius = 0
             self.invoicePayScrollView.bounds = CGRect.zero
             self.invoiceVC?.view.frame = CGRect(x: 0, y: -UIScreen.main.bounds.height, width: self.invoicePayScrollView.frame.size.width, height: UIScreen.main.bounds.height)
+        
+        // Animate up-down on InvoicePaymentViewController view added as subview
             UIView.animate(withDuration: 1.0, delay: 0,
                            usingSpringWithDamping: 0.8,
                            initialSpringVelocity: 0.5,
@@ -161,7 +170,6 @@ class PaymentOptionViewController: UIViewController {
             self.invoicePayButton.isHidden = true
             self.invoicePayScrollView.addSubview((self.invoiceVC?.view)!)
             isInvoiceViewShown = true
-//        }
     }
     
     @IBAction func popToRoot() {
@@ -169,6 +177,8 @@ class PaymentOptionViewController: UIViewController {
         innerView.layer.cornerRadius = 12
         if isCardViewShown {
             invoiceViewHeightConstriant.constant = 70
+            
+            // Animate up-down on AddCardViewController when removed from superview
             UIView.animate(withDuration: 1.0, delay: 0.1,
                            usingSpringWithDamping: 0.5,
                            initialSpringVelocity: 0.8,
@@ -197,6 +207,8 @@ class PaymentOptionViewController: UIViewController {
             isCardViewShown = false
 
         } else if isInvoiceViewShown {
+            
+            // Animate up-down on InvoicePaymentViewController when removed from superview
             UIView.animate(withDuration: 1.0, delay: 0.1,
                            usingSpringWithDamping: 0.5,
                            initialSpringVelocity: 0.8,
@@ -224,6 +236,7 @@ class PaymentOptionViewController: UIViewController {
             isInvoiceViewShown = false
 
         } else {
+            // Pop view controller if no button is selected
             self.navigationController?.popViewController(animated: true)
         }
     }
@@ -232,11 +245,6 @@ class PaymentOptionViewController: UIViewController {
         SVProgressHUD.show()
         SVProgressHUD.dismiss(withDelay: 1) {
             let paymentReceiptVC = self.storyboard?.instantiateViewController(withIdentifier: "PaymentReceiptViewController") as! PaymentReceiptViewController
-            for _ in 0...1 {
-                paymentReceiptVC.cardDetailsArray.append("4111 1111 1111 1111")
-                paymentReceiptVC.cardDetailsArray.append("Christopher Voglund")
-            }
-            paymentReceiptVC.cardDetailsArray.append("chris68@mail.com")
             paymentReceiptVC.companyDetails = self.companyDetails
             self.navigationController?.pushViewController(paymentReceiptVC, animated: true)
         }
@@ -246,12 +254,6 @@ class PaymentOptionViewController: UIViewController {
         SVProgressHUD.show()
         SVProgressHUD.dismiss(withDelay: 1) {
             let paymentReceiptVC = self.storyboard?.instantiateViewController(withIdentifier: "PaymentReceiptViewController") as! PaymentReceiptViewController
-            if let cardDetails = self.cardDetailsArray {
-                for item in 0...1 {
-                    paymentReceiptVC.cardDetailsArray.append(cardDetails[item])
-                }
-                paymentReceiptVC.cardDetailsArray.append(cardDetails.last!)
-            }
             paymentReceiptVC.companyDetails = self.companyDetails
             self.navigationController?.pushViewController(paymentReceiptVC, animated: true)
         }
@@ -259,8 +261,3 @@ class PaymentOptionViewController: UIViewController {
 
 }
 
-extension PaymentOptionViewController: CardTextFieldFilledDelegate {
-    func cardDetailsFilledWith(cardDetailsArray: [String]) {
-        self.cardDetailsArray = cardDetailsArray
-    }
-}

@@ -9,10 +9,12 @@
 import UIKit
 
 class PaymentReceiptTableViewCell: UITableViewCell {
+    // MARK: - Properties
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var cellDividerImage: UIImageView!
     
+    // MARK: - TableView cell initial methods
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

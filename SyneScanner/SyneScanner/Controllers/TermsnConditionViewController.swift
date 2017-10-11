@@ -11,7 +11,6 @@ protocol TermsnConditionViewControllerDelegate {
     func dismissTnQView()
 }
 class TermsnConditionViewController: UIViewController {
-
     // MARK: - Properties
     var delegate:TermsnConditionViewControllerDelegate?
     
@@ -20,8 +19,8 @@ class TermsnConditionViewController: UIViewController {
     
     // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
-    super.viewDidLoad()
-    configureUI()
+        super.viewDidLoad()
+        configureUI()
         // Do any additional setup after loading the view.
     }
 
@@ -30,13 +29,10 @@ class TermsnConditionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func configureUI()
-    {
+    func configureUI() {
         centerView.layer.cornerRadius = 10
         centerView.layer.masksToBounds = true
-        
         acceptBtn.setBorderToButton()
-
     }
     
     //MARK: UIButton action methods

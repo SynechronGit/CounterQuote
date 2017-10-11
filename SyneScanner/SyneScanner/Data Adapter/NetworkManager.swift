@@ -9,10 +9,17 @@
 import UIKit
 import Alamofire
 
+/**
+ * Alamofire RESTful services manager
+ */
+
 class NetworkManager: NSObject {
+    //MARK: - Properties
     static var uploadRequest: [Request]?
-    func uploadImage(url:String,image:UIImage)
-    {
+    
+    //MARK: - Network Manager methods
+    // Image uploading method
+    func uploadImage(url:String,image:UIImage) {
         let serverUrl = BASE_URL + url
         let imgData = UIImageJPEGRepresentation(image, 1.0)!
 
@@ -39,7 +46,6 @@ class NetworkManager: NSObject {
                     else
                     {
                         self.failureCallBack(error: "Json could not serialized")
-
                     }
                 }
                 
@@ -48,7 +54,6 @@ class NetworkManager: NSObject {
                 print(encodingError)
                 self.failureCallBack(error: encodingError.localizedDescription)
             }
-            
         }
     }
     
@@ -104,18 +109,23 @@ class NetworkManager: NSObject {
             }
         }
     }
-    func successCallBack(response:Any)
-    {
+    
+    // Server success callback method
+    func successCallBack(response:Any) {
         
     }
-    func failureCallBack(error:String)
-    {
+    
+    // Server failure callback method
+    func failureCallBack(error:String) {
         
     }
-    func progressCallBack(progress:Float)
-    {
+    
+    // Server progress callback method
+    func progressCallBack(progress:Float) {
         
     }
+    
+    //MARK: - Cancel Upload method
     class func cancelUploadRequest(index: Int)
     {
         uploadRequest?[index].cancel()

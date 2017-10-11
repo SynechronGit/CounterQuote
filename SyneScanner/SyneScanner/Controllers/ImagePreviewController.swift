@@ -12,10 +12,9 @@ import SVProgressHUD
 
 class ImagePreviewController: BaseViewController {
     // MARK: - Properties
-    
     var deleteDelegate : ImageDeleteDelegate?
     var selectedIndexNo = -1
-     var progressValue = 0
+    var progressValue = 0
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var lblHeader: UILabel!
@@ -26,10 +25,7 @@ class ImagePreviewController: BaseViewController {
      // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-
        configureUI()
-        
         // Do any additional setup after loading the view.
     }
     
@@ -47,14 +43,13 @@ class ImagePreviewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Configure UI
-    
+    // MARK: - Start Animation
     func startAnimation()
     {
         leftCurveLeading.constant = -10
         rightaCureveTrailing.constant = -16
         self.bottomConstraintBackBtn.constant = 0
-        
+        // Animate collection view cells
         UIView.animate(withDuration: 1.2, delay: 0.0,
                        usingSpringWithDamping: 0.5,
                        initialSpringVelocity: 0.8,
@@ -67,18 +62,13 @@ class ImagePreviewController: BaseViewController {
                 self.collectionView.alpha = 1
                 self.pageControl.alpha = 1
                 self.lblHeader.alpha = 1
-
-
             }, completion:  { finish in
                 self.progressTimer =   Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateProgressValue), userInfo: nil, repeats: true)
-
-                })
+            })
         })
-
     }
     
-    
-    
+    // MARK: - Configure UI
     func configureUI()
     {
         self.bottomConstraintBackBtn.constant = -80
@@ -93,6 +83,7 @@ class ImagePreviewController: BaseViewController {
         lblHeader.text = String(format:"You are in (1/%d) pages",pageControl.numberOfPages)
 
 
+
         let notificationName = Notification.Name("updateProgress")
 
         NotificationCenter.default.addObserver(self, selector: #selector(ImagePreviewController.updateProgress), name: notificationName, object: nil)
@@ -100,26 +91,22 @@ class ImagePreviewController: BaseViewController {
         collectionView.reloadData()
 
     }
-    func updateProgress()
-    {
+    
+    // MARK: - Progress methods
+    func updateProgress() {
          let calculateProgress = SharedData.sharedInstance.calculateCurrentProgress()
-        if calculateProgress.progressValue >= 1.0
-        {
+        if calculateProgress.progressValue >= 1.0 {
            // submitBtn.isEnabled = true
-        }
-        else
-        {
+        } else {
           //  submitBtn.isEnabled = false
-            
         }
-//        DispatchQueue.main.async {
-//
-//        self.collectionView.reloadData()
-//        }
-
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
-    func updateProgressValue()
-    {
+    
+    //Update progress value of collection view for each cell
+    func updateProgressValue() {
         progressValue = progressValue + 10
         if progressValue >= 100 {
             self.progressTimer?.invalidate()
@@ -131,50 +118,40 @@ class ImagePreviewController: BaseViewController {
     }
     
     //MARK: UIButton action methods
-
-   @IBAction func popToRoot()
-    {
+    @IBAction func popToRoot() {
         self.navigationController?.popViewController(animated: true)
     }
-  @IBAction  func finishBtnTapped()
-    {
+    
+    @IBAction  func finishBtnTapped() {
         startWorkflowApi()
     }
    
-   }
+}
 
 
  // MARK: - UICollection View DataSource and Delegate Method
-extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate
-{
+extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
-    {
-        
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return SharedData.sharedInstance.arrImage.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
-    {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImagePreviewCollectionViewCell
-        
         var model:ImageDataModel?
         model = SharedData.sharedInstance.arrImage[indexPath.row]
         cell.imagePreview.image = model?.image
         cell.retakeDelegate = self
-      //  let totalProgressPercentage = (model?.progress)! * 100
         cell.progressView.value = CGFloat(progressValue)
         return cell
-    
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize
-    {
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.size.width - 60
         let height = collectionView.frame.size.height
         return CGSize(width: width, height: height)
@@ -184,69 +161,64 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         var visibleRect = CGRect()
-        
         visibleRect.origin = collectionView.contentOffset
         visibleRect.size = collectionView.bounds.size
-        
         let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
-        
         let visibleIndexPath: IndexPath = collectionView.indexPathForItem(at: visiblePoint)!
         pageControl.currentPage = visibleIndexPath.row
         lblHeader.text = String(format:"You are in (%d/%d) pages",pageControl.currentPage + 1,pageControl.numberOfPages)
         print(visibleIndexPath)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.layer.masksToBounds = false
+        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOpacity = 0.10
+        cell.layer.shadowRadius = 4
+    }
 }
 
 // MARK: - ImagePreviewCollectionViewCell Delegate Method
 
-extension ImagePreviewController:ImageShareAndRetakeDelegate
-{
-    func retakeImageAt(cell : UICollectionViewCell)
-    {
+extension ImagePreviewController:ImageShareAndRetakeDelegate {
+    
+    func retakeImageAt(cell : UICollectionViewCell) {
         guard deleteDelegate != nil else {
             return
         }
-        
         let indexPath = self.collectionView.indexPath(for: cell)
         deleteDelegate?.updateCollectionWhenImageretakeAt(index: (indexPath?.row)!)
         self.navigationController?.popViewController(animated: true)
-        
-      
-
     }
-    func deleteImageAt(cell : UICollectionViewCell)
-    {
+    
+    func deleteImageAt(cell : UICollectionViewCell) {
         guard deleteDelegate != nil else {
             return
         }
         let indexPath = self.collectionView.indexPath(for: cell)
         deleteDelegate?.updateCollectionWhenImageDeletedAt(index: (indexPath?.row)!)
         self.navigationController?.popViewController(animated: true)
-
     }
     
-    func updateColelctionWhenImageDeletedAt(cell : UICollectionViewCell)
-    {
+    func updateColelctionWhenImageDeletedAt(cell : UICollectionViewCell) {
     }
-    
     
 }
 
-
+//MARK: - ImageDeleteDelegate Protocol
 protocol ImageDeleteDelegate {
     func updateCollectionWhenImageDeletedAt(index : Int)
     func updateCollectionWhenImageretakeAt(index : Int)
 
 }
 
-
 //MARK: StartWorkflowDelegate methods
 extension ImagePreviewController: StartWorkflowDelegate {
-    
+    //Start Workflow service method after each image is successfully uploaded
     func startWorkflowApi() {
        // SVProgressHUD.show()
         self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
-
 //        var blobUrl = ""
 //        for scanItem in 0..<SharedData.sharedInstance.arrImage.count {
 //            blobUrl.append((SharedData.sharedInstance.arrImage[scanItem].fileUrl))
@@ -257,21 +229,15 @@ extension ImagePreviewController: StartWorkflowDelegate {
 //        let startWorkflowProxy =  ImageWorkflowProxy()
 //        startWorkflowProxy.delegate = self
 //        startWorkflowProxy.startWorkflowApi(blobUrl: blobUrl, corelationId: SharedData.sharedInstance.corelationId)
-        
-        
     }
     
-    func workflowSuccessfullyStarted(responseData:String)
-    {
+    func workflowSuccessfullyStarted(responseData:String) {
        // SVProgressHUD.dismiss()
         self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
     }
     
     func workflowFailedToStart(errorMessage: String) {
-
         self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
-
-       
     }
 }
 

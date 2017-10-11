@@ -49,47 +49,31 @@ class LoaderViewController: BaseViewController {
                        options: .curveEaseInOut, animations: {
                         self.view.layoutIfNeeded()
         }, completion: { finish in
-            
-            
+            // Search animation start
             UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseIn, animations: {
-                
                 self.addSearchAnimation()
-                
-                
             }, completion: { finish in
-                
-                
-                
+                // Text View animation start
                 UIView.animate(withDuration: 0.5, delay: 1.0, options: .curveEaseIn, animations: {
                     self.lblNote.alpha = 1
                     self.searchImageVIew.alpha = 1
-                    
                 }, completion: { finish in
-                    
-                    
-                    
+                    // Perform segue after interval
                     Timer.scheduledTimer(timeInterval: 5,
                                          target: self,
                                          selector: #selector(self.pushToQuoteVc),
                                          userInfo: nil,
                                          repeats: false)
-                    
-                    
                 })
-                
             })
         })
-        
     }
 
-    func addSearchAnimation()
-    {
+    func addSearchAnimation() {
         searchImageVIew.loadGif(name: "Search_animation")
-        
     }
     
-    func pushToQuoteVc()
-    {
+    func pushToQuoteVc() {
         self.performSegue(withIdentifier: "NavToQuoteVc", sender: nil)
     }
     
@@ -106,22 +90,21 @@ class LoaderViewController: BaseViewController {
 
 }
 
+//MARK: - GetOCRProxyDelgate methods
 extension LoaderViewController:GetOCRProxyDelgate
 {
-    func startOCR()
-    {
+    // Start OCR service
+    func startOCR() {
         let getOCRproxy =  GetOCRProxy()
         getOCRproxy.delegate = self
         getOCRproxy.callGetOCRApi(corelationId: SharedData.sharedInstance.corelationId)
-
     }
-    func getOCRSuccess(responseData:[String:AnyObject])
-    {
+    
+    func getOCRSuccess(responseData:[String:AnyObject]) {
         pushToQuoteVc()
     }
-    func getOCRFailed(errorMessage:String)
-    {
+    
+    func getOCRFailed(errorMessage:String) {
         pushToQuoteVc()
     }
-
 }
