@@ -43,11 +43,11 @@ class NetworkManager: NSObject {
                     //self.removeImage("frame", fileExtension: "txt")
                     if let JSON = response.result.value {
                         print("JSON: \(JSON)")
-                        self.successCallBack(response: JSON,statusCode: statusCode!)
+                        self.successCallBack(response: JSON)
                     }
                     else
                     {
-                        self.failureCallBack(error: "Json could not serialized",statusCode: -1)
+                        self.failureCallBack(error: "Json could not serialized")
 
                     }
                 }
@@ -56,7 +56,7 @@ class NetworkManager: NSObject {
                 //self.delegate?.showFailAlert()
 
                 print(encodingError)
-                self.failureCallBack(error: encodingError.localizedDescription,statusCode: -1)
+                self.failureCallBack(error: encodingError.localizedDescription)
             }
             
         }
@@ -73,18 +73,18 @@ class NetworkManager: NSObject {
             case .success(_):
                 if let data = response.result.value{
                     print(response.result.value)
-                    self.successCallBack(response: data,statusCode: statusCode!)
+                    self.successCallBack(response: data)
 
                 }
                 else{
-                    self.failureCallBack(error: "Json could not serialized",statusCode: statusCode!)
+                    self.failureCallBack(error: "Json could not serialized")
 
                 }
                 break
                 
             case .failure(_):
                 print(response.result.error)
-                self.failureCallBack(error: (response.result.error?.localizedDescription)!,statusCode: -1)
+                self.failureCallBack(error: (response.result.error?.localizedDescription)!)
 
                 break
                 
@@ -102,29 +102,29 @@ class NetworkManager: NSObject {
             case .success(_):
                 if let data = response.result.value{
                     print(response.result.value)
-                    self.successCallBack(response: data,statusCode: statusCode!)
+                    self.successCallBack(response: data)
 
                 }
                 else{
-                    self.failureCallBack(error: "Json could not serialized",statusCode: statusCode!)
+                    self.failureCallBack(error: "Json could not serialized")
    
                 }
                 break
                 
             case .failure(_):
                 print(response.result.error)
-                self.failureCallBack(error: (response.result.error?.localizedDescription)!,statusCode: -1)
+                self.failureCallBack(error: (response.result.error?.localizedDescription)!)
 
                 break
                 
             }
         }
     }
-    func successCallBack(response:Any, statusCode:Int)
+    func successCallBack(response:Any)
     {
         
     }
-    func failureCallBack(error:String,statusCode:Int)
+    func failureCallBack(error:String)
     {
         
     }

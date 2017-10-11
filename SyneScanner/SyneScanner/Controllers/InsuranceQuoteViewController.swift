@@ -12,11 +12,7 @@ import SVProgressHUD
 class InsuranceQuoteViewController: BaseViewController {
 
 
-
-    @IBOutlet var webView: UIWebView!
-    @IBOutlet var centerView: UIView!
-
-    @IBOutlet var cancelBtn: UIButton!
+    // MARK: - Properties
     @IBOutlet var acceptBtn: UIButton!
     @IBOutlet var tableView: UITableView!
     
@@ -27,10 +23,25 @@ class InsuranceQuoteViewController: BaseViewController {
 
     var companyList = [["companyName": "Company 1", "price": "3500","imgName": "comp1"],["companyName": "Company 2", "price": "3200","imgName": "comp2"],["companyName": "Company 3", "price": "3000","imgName": "comp3"],["companyName": "Company 4", "price": "2800","imgName": "comp4"],["companyName": "Company 5", "price": "2500","imgName": "comp1"],["companyName": "Company 6", "price": "2500","imgName": "comp2"],["companyName": "Company 7", "price": "2000","imgName": "comp3"],["companyName": "Company 8", "price": "2000","imgName": "comp4"]]
     
-
+    // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-       acceptBtn.setBorderToButton()
+        configureUI()
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        startAnimation()
+    }
+    // MARK: - Configure UI
+    func configureUI()
+    {
+        acceptBtn.setBorderToButton()
         tableView.alpha = 0.0
         self.bottomConstraintBackBtn.constant = -50
         tableView.tableFooterView = UIView()
@@ -40,28 +51,9 @@ class InsuranceQuoteViewController: BaseViewController {
             let indexPath:IndexPath = IndexPath(item: i, section: 0)
             indexPathArr.append(indexPath)
         }
-     //   centerView.layer.cornerRadius = 10
-      //  centerView.layer.masksToBounds = true
-        // Do any additional setup after loading the view.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-      //  loadPdfFile()
-        startAnimation()
-    }
-    func loadPdfFile()
-    {
-        if let pdf = Bundle.main.url(forResource: "Quote", withExtension: "pdf", subdirectory: nil, localization: nil)  {
-            let req = NSURLRequest(url: pdf)
-            webView.loadRequest(req as URLRequest)
-        }
-    }
-
+  
     func startAnimation()
     {
         if isAnimationShow == true {
@@ -89,11 +81,6 @@ class InsuranceQuoteViewController: BaseViewController {
             self.tableView.insertRows(at: self.indexPathArr, with: .top)
             self.tableView.endUpdates()
             CATransaction.commit()
-//            self.tableView.reloadData()
-//            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseIn, animations: {
-//                self.tableView.alpha = 1
-//            }, completion:  { finish in
-//            })
         })
         
     }
@@ -191,37 +178,9 @@ extension InsuranceQuoteViewController:UITableViewDataSource,UITableViewDelegate
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
     {
-        cell.layer.masksToBounds = false
-        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-        cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOpacity = 0.10
-        cell.layer.shadowRadius = 4
+       cell.addShadowToCell()
 
     }
         
-//        //1. Setup the CATransform3D structure
-//        var rotation: CATransform3D
-//        rotation = CATransform3DMakeRotation( CGFloat((90.0 * .pi)/180), 0.0, 0.7, 0.4)
-//        rotation.m34 = (1.0 / (-600))
-//        
-//        
-//        //2. Define the initial state (Before the animation)
-//        cell.layer.shadowColor = UIColor.black.cgColor
-//        cell.layer.shadowOffset = CGSize(width: 10, height: 10)
-//        cell.alpha = 0;
-//        
-//        cell.layer.transform = rotation;
-//        cell.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
-//        
-//        
-//        
-//        //3. Define the final state (After the animation) and commit the animation
-//        UIView.beginAnimations("rotation", context: nil)
-//        UIView.setAnimationDuration(3.0)
-//        cell.layer.transform = CATransform3DIdentity;
-//        cell.alpha = 1;
-//        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-//        UIView.commitAnimations()
-//    }
     
 }

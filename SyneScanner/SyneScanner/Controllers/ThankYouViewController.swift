@@ -19,15 +19,11 @@ class ThankYouViewController: BaseViewController {
     @IBOutlet weak var topConstraintLblHeader: NSLayoutConstraint!
 
 
-    override func viewDidLoad() {
-        self.bottomConstraintcompleteBtn.constant = -47
-        self.lblNote.alpha = 0
-        self.imgViewRightMark.alpha = 0
-        topConstraintLblHeader.constant = -50
+    // MARK: - View LifeCycle Methods
 
+    override func viewDidLoad() {
         super.viewDidLoad()
-      
-        btnFeedback.setBorderToButton()
+        configureUI()
         // Do any additional setup after loading the view.
     }
 
@@ -39,9 +35,15 @@ class ThankYouViewController: BaseViewController {
         startAnimation()
     }
     
+    // MARK: - Configure UI
     func configureUI()
     {
-        
+        self.bottomConstraintcompleteBtn.constant = -47
+        self.lblNote.alpha = 0
+        self.imgViewRightMark.alpha = 0
+        topConstraintLblHeader.constant = -50
+        btnFeedback.setBorderToButton()
+
     }
     func startAnimation()
     {
@@ -67,9 +69,11 @@ class ThankYouViewController: BaseViewController {
         
     }
 
+    //MARK: UIButton action methods
+    
     @IBAction func feedBackBtnClicked() {
-        SharedData.sharedInstance.arrImage.removeAll()
         
+        SharedData.sharedInstance.arrImage.removeAll()
         let vc = self.navigationController?.viewControllers[1]
         self.navigationController?.popToViewController(vc!, animated: true)
 

@@ -11,6 +11,7 @@ import SVProgressHUD
 
 class QuoteFormViewController: BaseViewController {
 
+    // MARK: - Properties
     @IBOutlet weak var tableForm: UITableView!
     @IBOutlet weak var lblCompanyName: UILabel!
     @IBOutlet weak var proceedBtn: UIButton!
@@ -19,6 +20,7 @@ class QuoteFormViewController: BaseViewController {
     @IBOutlet weak var imgCompanyLogo: UIImageView!
 
     @IBOutlet weak var viewAmount: UIView!
+    @IBOutlet weak var bottomConstraintBackBtn: NSLayoutConstraint!
 
     var isAnimationShow = false
 
@@ -27,8 +29,8 @@ class QuoteFormViewController: BaseViewController {
 
     var dataArr:NSArray?
     var companyDetails:[String:String]?
-    @IBOutlet weak var bottomConstraintBackBtn: NSLayoutConstraint!
 
+    // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -44,16 +46,14 @@ class QuoteFormViewController: BaseViewController {
         startAnimation()
     }
     
+    // MARK: - Configure UI
     func configureUI()
     {
         imgCompanyLogo.image = UIImage(named: (companyDetails?["imgName"])!)
 
         self.bottomConstraintBackBtn.constant = -80
         self.tableForm.alpha = 0
-        self.tableForm.layer.shadowOffset = CGSize(width: 0, height: 0)
-        self.tableForm.layer.shadowColor = UIColor.black.cgColor
-        self.tableForm.layer.shadowOpacity = 0.10
-        self.tableForm.layer.shadowRadius = 4
+       self.tableForm.addShadow()
         lblCompanyName.text =  companyDetails?["companyName"]
         
         proceedBtn.setBorderToButton()
@@ -101,6 +101,9 @@ class QuoteFormViewController: BaseViewController {
         let plist = try! PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil)
          dataArr = plist as? NSArray
     }
+    
+    //MARK: UIButton action methods
+    
     @IBAction func proceedBtnTapped(_ sender: Any) {
         SVProgressHUD.show()
         SVProgressHUD.dismiss(withDelay: 1) {
@@ -162,6 +165,8 @@ class QuoteFormViewController: BaseViewController {
         })
 
     }
+    
+    //MARK: Call Us View
     func callOnNumber()
     {
         if let url = URL(string: "tel://\("+91999999999")"), UIApplication.shared.canOpenURL(url) {
@@ -267,50 +272,7 @@ extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate
     
    }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-       
-        let cornerRadius: CGFloat = 12
-        cell.backgroundColor = .clear
-        
-        let layer = CAShapeLayer()
-        let pathRef = CGMutablePath()
-        let bounds = cell.bounds.insetBy(dx: 20, dy: 0)
-        // var addLine = false
-        
-        if indexPath.row == 0 && indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
-            pathRef.__addRoundedRect(transform: nil, rect: bounds, cornerWidth: cornerRadius, cornerHeight: cornerRadius)
-        } else if indexPath.row == 0 {
-            pathRef.move(to: .init(x: bounds.minX, y: bounds.maxY))
-            pathRef.addArc(tangent1End: .init(x: bounds.minX, y: bounds.minY), tangent2End: .init(x: bounds.midX, y: bounds.minY), radius: cornerRadius)
-            pathRef.addArc(tangent1End: .init(x: bounds.maxX, y: bounds.minY), tangent2End: .init(x: bounds.maxX, y: bounds.midY), radius: cornerRadius)
-            pathRef.addLine(to: .init(x: bounds.maxX, y: bounds.maxY))
-            //    addLine = true
-        } else if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
-            pathRef.move(to: .init(x: bounds.minX, y: bounds.minY))
-            pathRef.addArc(tangent1End: .init(x: bounds.minX, y: bounds.maxY), tangent2End: .init(x: bounds.midX, y: bounds.maxY), radius: cornerRadius)
-            pathRef.addArc(tangent1End: .init(x: bounds.maxX, y: bounds.maxY), tangent2End: .init(x: bounds.maxX, y: bounds.midY), radius: cornerRadius)
-            pathRef.addLine(to: .init(x: bounds.maxX, y: bounds.minY))
-        } else {
-            pathRef.addRect(bounds)
-            //  addLine = true
-        }
-        
-        layer.path = pathRef
-        layer.fillColor = UIColor(white: 1, alpha: 1).cgColor
-        
-        //        if (addLine == true) {
-        //            let lineLayer = CALayer()
-        //            let lineHeight = 1.0 / UIScreen.main.scale
-        //            lineLayer.frame = CGRect(x: bounds.minX + 10, y: bounds.size.height - lineHeight, width: bounds.size.width - 10, height: lineHeight)
-        //            lineLayer.backgroundColor = tableView.separatorColor?.cgColor
-        //            layer.addSublayer(lineLayer)
-        //        }
-        
-        let testView = UIView(frame: bounds)
-        testView.layer.insertSublayer(layer, at: 0)
-        testView.backgroundColor = .clear
-        cell.backgroundView = testView
-          
-        
+          cell.setBorderTocell(indexPath: indexPath, tableView: tableView)
     }
    
 

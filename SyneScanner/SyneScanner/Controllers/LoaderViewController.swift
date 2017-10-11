@@ -11,11 +11,13 @@ import SwiftGifOrigin
 
 class LoaderViewController: BaseViewController {
 
+     // MARK: - Properties
     @IBOutlet var searchImageVIew: UIImageView!
     @IBOutlet var lblNote:UILabel!
+    
+    // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-          //   startOCR()
         // Do any additional setup after loading the view.
         configurUI()
     }
@@ -29,28 +31,18 @@ class LoaderViewController: BaseViewController {
         super.viewDidAppear(animated)
         startAnimation()
     }
+    
+    // MARK: - Configure UI
     func configurUI()
     {
         lblNote.alpha = 0
         searchImageVIew.alpha = 0
     }
-    func pushToQuoteVc()
-    {
-        self.performSegue(withIdentifier: "NavToQuoteVc", sender: nil)
-    }
-    
-    func addSearchAnimation()
-    {
-        searchImageVIew.loadGif(name: "Search_animation")
-
-
-        // A UIImageView with async loading
-    }
     func startAnimation()
     {
         leftCurveLeading.constant = -10
         rightaCureveTrailing.constant = -16
-
+        
         UIView.animate(withDuration: 1.0, delay: 0.0,
                        usingSpringWithDamping: 0.5,
                        initialSpringVelocity: 0.8,
@@ -60,14 +52,14 @@ class LoaderViewController: BaseViewController {
             
             
             UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseIn, animations: {
-               
+                
                 self.addSearchAnimation()
-              
+                
                 
             }, completion: { finish in
                 
                 
-
+                
                 UIView.animate(withDuration: 0.5, delay: 1.0, options: .curveEaseIn, animations: {
                     self.lblNote.alpha = 1
                     self.searchImageVIew.alpha = 1
@@ -84,12 +76,25 @@ class LoaderViewController: BaseViewController {
                     
                     
                 })
-
+                
             })
         })
-
+        
     }
-    /*
+
+    func addSearchAnimation()
+    {
+        searchImageVIew.loadGif(name: "Search_animation")
+        
+    }
+    
+    func pushToQuoteVc()
+    {
+        self.performSegue(withIdentifier: "NavToQuoteVc", sender: nil)
+    }
+    
+   
+      /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

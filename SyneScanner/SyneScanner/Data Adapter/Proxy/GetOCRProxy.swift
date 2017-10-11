@@ -22,7 +22,7 @@ class GetOCRProxy: NetworkManager {
         super.callGetMethod(url: url)
     }
     
-    override func successCallBack(response:Any, statusCode:Int)
+    override func successCallBack(response:Any)
     {
         if    let dataArr:[[String:Any]] = response as? [[String : Any]]
         {
@@ -30,11 +30,11 @@ class GetOCRProxy: NetworkManager {
             
         }
         else{
-            delegate?.getOCRFailed(errorMessage: "Something went wrong")
+            delegate?.getOCRFailed(errorMessage: "Something went wrong.")
  
         }
     }
-    override func failureCallBack(error:String,statusCode:Int)
+    override func failureCallBack(error:String)
     {
         delegate?.getOCRFailed(errorMessage: error)
 

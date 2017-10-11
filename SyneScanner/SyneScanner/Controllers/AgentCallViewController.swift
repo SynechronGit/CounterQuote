@@ -11,6 +11,8 @@ protocol AgentCallViewControllerDelegate {
     func dismissCallUsView()
 }
 class AgentCallViewController: UIViewController {
+    
+    // MARK: - Properties
     var nameText: String = ""
     var phoneText: String = ""
     var delegate:AgentCallViewControllerDelegate?
@@ -20,14 +22,10 @@ class AgentCallViewController: UIViewController {
     @IBOutlet var centerView: UIView!
     @IBOutlet weak var phoneField: UITextField!
     
+    // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        centerView.layer.cornerRadius = 10
-        centerView.layer.masksToBounds = true
-        callUsBtn.setBorderToButton()
-        
-        nameField.text = nameText
-        phoneField.text = phoneText
+       configureUI()
         // Do any additional setup after loading the view.
     }
 
@@ -36,6 +34,19 @@ class AgentCallViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Configure UI
+    func configureUI()
+    {
+        centerView.layer.cornerRadius = 10
+        centerView.layer.masksToBounds = true
+        callUsBtn.setBorderToButton()
+        
+        nameField.text = nameText
+        phoneField.text = phoneText
+
+    }
+    
+    //MARK: UIButton action methods
     @IBAction func callUsBtnClicked(_ sender: Any) {
         delegate?.dismissCallUsView()
     }

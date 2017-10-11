@@ -10,14 +10,27 @@ import UIKit
 
 class InvoicePaymentViewController: BaseViewController {
 
+    // MARK: - Properties
     @IBOutlet weak var lblSaveedAmount: UILabel!
     @IBOutlet weak var lblPolicyPrice: UILabel!
     @IBOutlet weak var headerView: UIView!
     
     var companyDetails:[String:String]?
     
+    // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Configure UI
+    func configureUI()
+    {
         headerView.layer.cornerRadius = 8
         // Do any additional setup after loading the view.
         
@@ -30,13 +43,6 @@ class InvoicePaymentViewController: BaseViewController {
         lblSaveedAmount.text = String(format:"You Saved $%d",savedPrice)
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
     /*
     // MARK: - Navigation
 

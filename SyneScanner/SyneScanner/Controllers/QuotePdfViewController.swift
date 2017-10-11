@@ -11,6 +11,7 @@ import SVProgressHUD
 
 class QuotePdfViewController: BaseViewController {
 
+    // MARK: - Properties
     @IBOutlet var webView: UIWebView!
     @IBOutlet var proceedBtn: UIButton!
     @IBOutlet var centerView: UIView!
@@ -18,15 +19,11 @@ class QuotePdfViewController: BaseViewController {
     @IBOutlet var lblCompanyName: UILabel!
     
     var companyDetails:[String:String]?
+    
+    // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()        
-        lblCompanyName.text =  companyDetails?["companyName"]
-       
-        proceedBtn.setBorderToButton()
-        centerView.layer.cornerRadius = 10
-        centerView.layer.masksToBounds = true
-        loadPdfFile()
-
+        configureUI()
         // Do any additional setup after loading the view.
     }
 
@@ -35,6 +32,17 @@ class QuotePdfViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Configure UI
+    func configureUI()
+    {
+        lblCompanyName.text =  companyDetails?["companyName"]
+        
+        proceedBtn.setBorderToButton()
+        centerView.layer.cornerRadius = 10
+        centerView.layer.masksToBounds = true
+        loadPdfFile()
+
+    }
     func loadPdfFile()
     {
         if let pdf = Bundle.main.url(forResource: "Quote", withExtension: "pdf", subdirectory: nil, localization: nil)  {

@@ -10,6 +10,8 @@ import UIKit
 import SVProgressHUD
 
 class PaymentReceiptViewController: BaseViewController {
+    
+     // MARK: - Properties
     var cardDetailsArray = [String]()
     var cardHeaderArray = [String]()
     var companyDetails:[String:String]?
@@ -20,34 +22,36 @@ class PaymentReceiptViewController: BaseViewController {
     @IBOutlet var lblSuccess: UILabel!
     @IBOutlet weak var bottomConstraintProceedBtn: NSLayoutConstraint!
 
+    // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.tableFooterView = UIView()
+       configurUI()
+        // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        startAnimation()
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+   // MARK: - Configure UI
+    func configurUI()
+    {
         self.bottomConstraintProceedBtn.constant = -47
         self.tableView.alpha = 0
         self.imgViewSucces.alpha = 0
         self.lblSuccess.alpha = 0
         
-        tableView.layer.masksToBounds = false
-        tableView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        tableView.layer.shadowColor = UIColor.black.cgColor
-        tableView.layer.shadowOpacity = 0.10
-        tableView.layer.shadowRadius = 4
-
-     proceedButton.setBorderToButton()
-        self.title = "Payment Receipt"
-        self.navigationItem.setHidesBackButton(true, animated: false)
+        tableView.tableFooterView = UIView()
+        
+        tableView.addShadow()
+        proceedButton.setBorderToButton()
         cardHeaderArray = ["Insurance company","Policy number",  "Policy Start Date", "Policy End Date","Premium amount"]
         let companyName = companyDetails?["companyName"]
         let price = "$" + (companyDetails?["price"])! + "/y"
         cardDetailsArray = [companyName!,"CCP9871618",  "07/01/2017", "07/01/2018",price]
-
-       // cardDetailsArray.append("$423.00")
-       // cardDetailsArray.append("44732456-01")
-        // Do any additional setup after loading the view.
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        startAnimation()
     }
     func startAnimation()
     {
@@ -77,11 +81,7 @@ class PaymentReceiptViewController: BaseViewController {
     }
     
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+    //MARK: UIButton action methods
     @IBAction func proccedBtnTapped ()
     {
         SVProgressHUD.show()
@@ -120,44 +120,8 @@ extension PaymentReceiptViewController: UITableViewDataSource,UITableViewDelegat
         return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let cornerRadius: CGFloat = 12
-        cell.backgroundColor = .clear
-        
-        let layer = CAShapeLayer()
-        let pathRef = CGMutablePath()
-        let bounds = cell.bounds.insetBy(dx: 20, dy: 0)
-        
-        if indexPath.row == 0 && indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
-            pathRef.__addRoundedRect(transform: nil, rect: bounds, cornerWidth: cornerRadius, cornerHeight: cornerRadius)
-        } else if indexPath.row == 0 {
-            pathRef.move(to: .init(x: bounds.minX, y: bounds.maxY))
-            pathRef.addArc(tangent1End: .init(x: bounds.minX, y: bounds.minY), tangent2End: .init(x: bounds.midX, y: bounds.minY), radius: cornerRadius)
-            pathRef.addArc(tangent1End: .init(x: bounds.maxX, y: bounds.minY), tangent2End: .init(x: bounds.maxX, y: bounds.midY), radius: cornerRadius)
-            pathRef.addLine(to: .init(x: bounds.maxX, y: bounds.maxY))
-        } else if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
-            pathRef.move(to: .init(x: bounds.minX, y: bounds.minY))
-            pathRef.addArc(tangent1End: .init(x: bounds.minX, y: bounds.maxY), tangent2End: .init(x: bounds.midX, y: bounds.maxY), radius: cornerRadius)
-            pathRef.addArc(tangent1End: .init(x: bounds.maxX, y: bounds.maxY), tangent2End: .init(x: bounds.maxX, y: bounds.midY), radius: cornerRadius)
-            pathRef.addLine(to: .init(x: bounds.maxX, y: bounds.minY))
-        } else {
-            pathRef.addRect(bounds)
-        }
-        
-        layer.path = pathRef
-        layer.fillColor = UIColor(white: 1, alpha: 1).cgColor
-        
-//        if (addLine == true) {
-//            let lineLayer = CALayer()
-//            let lineHeight = 1.0 / UIScreen.main.scale
-//            lineLayer.frame = CGRect(x: bounds.minX + 10, y: bounds.size.height - lineHeight, width: bounds.size.width - 10, height: lineHeight)
-//            lineLayer.backgroundColor = tableView.separatorColor?.cgColor
-//            layer.addSublayer(lineLayer)
-//        }
-        
-        let testView = UIView(frame: bounds)
-        testView.layer.insertSublayer(layer, at: 0)
-        testView.backgroundColor = .clear
-        cell.backgroundView = testView
+        cell.setBorderTocell(indexPath: indexPath, tableView: tableView)
+
     }
 
 }

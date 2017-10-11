@@ -10,6 +10,8 @@ import UIKit
 import SVProgressHUD
 
 class PaymentOptionViewController: UIViewController {
+    
+    // MARK: - Properties
     @IBOutlet weak var innerView: UIView!
     @IBOutlet var cardPayButton: UIButton!
     @IBOutlet var invoicePayButton: UIButton!
@@ -42,6 +44,7 @@ class PaymentOptionViewController: UIViewController {
     var isCardViewShown = false
     var isInvoiceViewShown = false
     
+    // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         addCardVC = self.storyboard?.instantiateViewController(withIdentifier: "AddCardViewController") as? AddCardViewController

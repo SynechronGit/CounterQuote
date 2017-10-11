@@ -47,6 +47,8 @@ class ImagePreviewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Configure UI
+    
     func startAnimation()
     {
         leftCurveLeading.constant = -10
@@ -75,9 +77,10 @@ class ImagePreviewController: BaseViewController {
 
     }
     
+    
+    
     func configureUI()
     {
-        self.title = "Preview"
         self.bottomConstraintBackBtn.constant = -80
         self.collectionView.alpha = 0
         self.pageControl.alpha = 0
@@ -89,9 +92,6 @@ class ImagePreviewController: BaseViewController {
         
         lblHeader.text = String(format:"You are in (1/%d) pages",pageControl.numberOfPages)
 
-        //let rightBarButton = UIBarButtonItem(title: "Finish", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ImagePreviewController.finishBtnTapped))
-        //self.navigationItem.rightBarButtonItem = rightBarButton
-        
 
         let notificationName = Notification.Name("updateProgress")
 
@@ -129,6 +129,9 @@ class ImagePreviewController: BaseViewController {
         self.collectionView.reloadData()
         }
     }
+    
+    //MARK: UIButton action methods
+
    @IBAction func popToRoot()
     {
         self.navigationController?.popViewController(animated: true)
@@ -139,6 +142,7 @@ class ImagePreviewController: BaseViewController {
     }
    
    }
+
 
  // MARK: - UICollection View DataSource and Delegate Method
 extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate
@@ -161,7 +165,7 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
         model = SharedData.sharedInstance.arrImage[indexPath.row]
         cell.imagePreview.image = model?.image
         cell.retakeDelegate = self
-        let totalProgressPercentage = (model?.progress)! * 100
+      //  let totalProgressPercentage = (model?.progress)! * 100
         cell.progressView.value = CGFloat(progressValue)
         return cell
     
@@ -176,11 +180,7 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
         return CGSize(width: width, height: height)
     }
     
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
-//        
-//        lblHeader.text = String(format:"You are in (%d/%d) pages",pageControl.currentPage + 1,pageControl.numberOfPages)
-//    }
+
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         var visibleRect = CGRect()

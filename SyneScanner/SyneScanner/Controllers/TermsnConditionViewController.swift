@@ -12,18 +12,16 @@ protocol TermsnConditionViewControllerDelegate {
 }
 class TermsnConditionViewController: UIViewController {
 
+    // MARK: - Properties
     var delegate:TermsnConditionViewControllerDelegate?
     
     @IBOutlet var acceptBtn: UIButton!
     @IBOutlet var centerView: UIView!
+    
+    // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        centerView.layer.cornerRadius = 10
-        centerView.layer.masksToBounds = true
-        
-        acceptBtn.setBorderToButton()
-
+    super.viewDidLoad()
+    configureUI()
         // Do any additional setup after loading the view.
     }
 
@@ -31,6 +29,17 @@ class TermsnConditionViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func configureUI()
+    {
+        centerView.layer.cornerRadius = 10
+        centerView.layer.masksToBounds = true
+        
+        acceptBtn.setBorderToButton()
+
+    }
+    
+    //MARK: UIButton action methods
     @IBAction func acceptBtnClicked(_ sender: Any) {
         delegate?.dismissTnQView()
     }

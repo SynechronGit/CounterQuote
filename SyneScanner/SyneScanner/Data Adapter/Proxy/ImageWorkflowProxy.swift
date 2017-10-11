@@ -22,24 +22,19 @@ class ImageWorkflowProxy: NetworkManager {
         super.callPostMethod(paramaters: parameters, url: START_WORKFLOW)
     }
     
-    override func successCallBack(response:Any, statusCode:Int)
+    override func successCallBack(response:Any)
     {
        
             delegate?.workflowSuccessfullyStarted(responseData: "Success")
             
         
     }
-    override func failureCallBack(error:String,statusCode:Int)
+    override func failureCallBack(error:String)
     {
-        if statusCode ==  200
-        {
-            delegate?.workflowSuccessfullyStarted(responseData: "Success")
-
-        }
-        else{
+        
             delegate?.workflowFailedToStart(errorMessage: error)
 
-        }
+        
     }
     
 }

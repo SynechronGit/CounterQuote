@@ -10,24 +10,19 @@ import UIKit
 import SVProgressHUD
 class BinderViewController: BaseViewController {
 
+    // MARK: - Properties
     @IBOutlet var webView: UIWebView!
     @IBOutlet var proceedBtn: UIButton!
     @IBOutlet var centerView: UIView!
     @IBOutlet weak var btnShare: UIButton!
     @IBOutlet weak var bottomConstraintcompleteBtn: NSLayoutConstraint!
 
+    // MARK: - View LifeCycle Methods
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated: false)
-        self.title = "Binder"
-        self.bottomConstraintcompleteBtn.constant = -47
-        self.centerView.alpha = 0
-
-        proceedBtn.setBorderToButton()
-
-        centerView.layer.cornerRadius = 10
-        centerView.layer.masksToBounds = true
-        loadPdfFile()
+        configureUI()
+     
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -37,6 +32,19 @@ class BinderViewController: BaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Configure UI
+    func configureUI()
+    {
+        self.bottomConstraintcompleteBtn.constant = -47
+        self.centerView.alpha = 0
+        
+        proceedBtn.setBorderToButton()
+        
+        centerView.layer.cornerRadius = 10
+        centerView.layer.masksToBounds = true
+        loadPdfFile()
     }
     func startAnimation()
     {
