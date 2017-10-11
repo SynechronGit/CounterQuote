@@ -174,7 +174,7 @@ class CameraViewController: BaseViewController {
                 // Saved successfully!
                 print(album.assetCollectionType)
             }
-            else if let e = error {
+            else if error != nil {
                 // Save album failed with error
             }
             else {

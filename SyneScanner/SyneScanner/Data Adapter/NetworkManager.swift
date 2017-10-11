@@ -32,15 +32,6 @@ class NetworkManager: NSObject {
                 
                 upload.responseJSON { response in
                     NetworkManager.uploadRequest = nil
-                    var statusCode = response.response?.statusCode
-
-                    //self.delegate?.showSuccessAlert()
-                    print(response.request)  // original URL request
-                    print(response.response) // URL response
-                    print(response.data)     // server data
-                    print(response.result)   // result of response serialization
-                    //                        self.showSuccesAlert()
-                    //self.removeImage("frame", fileExtension: "txt")
                     if let JSON = response.result.value {
                         print("JSON: \(JSON)")
                         self.successCallBack(response: JSON)
@@ -53,7 +44,6 @@ class NetworkManager: NSObject {
                 }
                 
             case .failure(let encodingError):
-                //self.delegate?.showFailAlert()
 
                 print(encodingError)
                 self.failureCallBack(error: encodingError.localizedDescription)
@@ -67,12 +57,10 @@ class NetworkManager: NSObject {
         let serverUrl = BASE_URL + url
 
         Alamofire.request(serverUrl, method: .post, parameters: paramaters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
-            var statusCode = response.response?.statusCode
 
             switch(response.result) {
             case .success(_):
                 if let data = response.result.value{
-                    print(response.result.value)
                     self.successCallBack(response: data)
 
                 }
@@ -83,7 +71,6 @@ class NetworkManager: NSObject {
                 break
                 
             case .failure(_):
-                print(response.result.error)
                 self.failureCallBack(error: (response.result.error?.localizedDescription)!)
 
                 break
@@ -97,11 +84,9 @@ class NetworkManager: NSObject {
         let serverUrl = BASE_URL + url
         Alamofire.request(serverUrl, method: .get, parameters: ["":""], encoding: URLEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
             
-            var statusCode = response.response?.statusCode
             switch(response.result) {
             case .success(_):
                 if let data = response.result.value{
-                    print(response.result.value)
                     self.successCallBack(response: data)
 
                 }
@@ -112,7 +97,6 @@ class NetworkManager: NSObject {
                 break
                 
             case .failure(_):
-                print(response.result.error)
                 self.failureCallBack(error: (response.result.error?.localizedDescription)!)
 
                 break

@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SyneScanner/Data Adapter/NetworkManager.swift"
-            timestampString = "528909738.679038"
+            timestampString = "529411140.518232"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "uploadImage(url:image:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,9 +62,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "355"
-            endingLineNumber = "355"
-            landmarkName = "imageSuccessfullyUpload(responseData:indexNo:)"
-            landmarkType = "7">
+            endingLineNumber = "355">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

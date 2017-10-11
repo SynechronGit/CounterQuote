@@ -422,13 +422,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_cureve_line" translatesAutoresizingMaskIntoConstraints="NO" id="Ivz-4V-fSj">
-                                <rect key="frame" x="0.0" y="81" width="71" height="193"/>
+                                <rect key="frame" x="0.0" y="101" width="71" height="193"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_Curve_line" translatesAutoresizingMaskIntoConstraints="NO" id="RLD-fd-wcL">
                                 <rect key="frame" x="243" y="273" width="77" height="205"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oPF-UW-6C6">
-                                <rect key="frame" x="0.0" y="116" width="320" height="312"/>
+                                <rect key="frame" x="0.0" y="136" width="320" height="292"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Dyf-VA-DoA">
                                     <size key="itemSize" width="371" height="358"/>
@@ -438,7 +438,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" reuseIdentifier="cell" id="SOn-YS-Q1g" customClass="ImagePreviewCollectionViewCell" customModule="SyneScanner" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-23" width="371" height="358"/>
+                                        <rect key="frame" x="0.0" y="-33" width="371" height="358"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="371" height="358"/>
@@ -554,7 +554,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qv-BS-4Hk">
-                                <rect key="frame" x="20" y="20" width="78.5" height="25"/>
+                                <rect key="frame" x="20" y="40" width="78.5" height="25"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="25"/>
                                 <color key="textColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -563,7 +563,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are in (1/10) pages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7VW-nk-jE9">
-                                <rect key="frame" x="20" y="50" width="162" height="16"/>
+                                <rect key="frame" x="20" y="70" width="162" height="16"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="16"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1022,7 +1022,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="87" id="CrG-YV-zdL">
-                                        <rect key="frame" x="0.0" y="56" width="284" height="87"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="284" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CrG-YV-zdL" id="7T8-M8-qX4">
                                             <rect key="frame" x="0.0" y="0.0" width="284" height="87"/>
@@ -1039,7 +1039,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nel-AU-zh2">
-                                                            <rect key="frame" x="40" y="11.5" width="131" height="21"/>
+                                                            <rect key="frame" x="40" y="13" width="128" height="18"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="18"/>
                                                             <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1048,7 +1048,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeb-al-Rmi">
-                                                            <rect key="frame" x="40" y="33.5" width="131" height="21"/>
+                                                            <rect key="frame" x="40" y="35" width="128" height="18"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="18"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -1057,7 +1057,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$3000/y" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gu-b1-D1G">
-                                                            <rect key="frame" x="204.5" y="22.5" width="65.5" height="21"/>
+                                                            <rect key="frame" x="201.5" y="24" width="68.5" height="18"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="18"/>
                                                             <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1096,7 +1096,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="topCell" rowHeight="87" id="pxp-pw-iBM">
-                                        <rect key="frame" x="0.0" y="143" width="284" height="87"/>
+                                        <rect key="frame" x="0.0" y="142.5" width="284" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pxp-pw-iBM" id="sgN-8z-Mb7">
                                             <rect key="frame" x="0.0" y="0.0" width="284" height="87"/>
@@ -1109,7 +1109,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="280" height="65"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzi-RZ-9jJ">
-                                                            <rect key="frame" x="10" y="9" width="80.5" height="28"/>
+                                                            <rect key="frame" x="10" y="11" width="79" height="24"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="24"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -1118,7 +1118,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-Ii-uIo">
-                                                            <rect key="frame" x="10" y="33.5" width="138" height="22.5"/>
+                                                            <rect key="frame" x="10" y="35.5" width="135" height="19"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="19"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -1127,7 +1127,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$4000/y" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MH-6c-WAS">
-                                                            <rect key="frame" x="190.5" y="20" width="79.5" height="26"/>
+                                                            <rect key="frame" x="186.5" y="22" width="83.5" height="22"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="22"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -1777,14 +1777,14 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cardCell" id="2Za-DN-cul" customClass="AddCardTableViewCell" customModule="SyneScanner" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="56" width="320" height="50"/>
+                                                        <rect key="frame" x="0.0" y="55.5" width="320" height="50"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Za-DN-cul" id="JGr-VZ-xET">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lgg-bN-iQo">
-                                                                    <rect key="frame" x="33" y="16.5" width="224" height="18"/>
+                                                                    <rect key="frame" x="33" y="18" width="224" height="15"/>
                                                                     <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="15"/>
                                                                     <textInputTraits key="textInputTraits"/>
@@ -2190,7 +2190,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONGRATULATIONS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJO-iO-wAm">
-                                <rect key="frame" x="42" y="46" width="236.5" height="26"/>
+                                <rect key="frame" x="42.5" y="46" width="236.5" height="26"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="26"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2310,152 +2310,6 @@ We are now making insurance companies fight for your business. We will present y
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gK8-kd-vJM" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1032.8" y="1071.8140929535234"/>
-        </scene>
-        <!--Quote Pdf View Controller-->
-        <scene sceneID="PqQ-Vv-McN">
-            <objects>
-                <viewController id="XPW-oR-uiL" customClass="QuotePdfViewController" customModule="SyneScanner" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sk1-AY-KlW"/>
-                        <viewControllerLayoutGuide type="bottom" id="hDO-Rw-IXR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DjP-Ft-kwW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_cureve_line" translatesAutoresizingMaskIntoConstraints="NO" id="ir4-Ge-vZB">
-                                <rect key="frame" x="0.0" y="116" width="71" height="193"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_Curve_line" translatesAutoresizingMaskIntoConstraints="NO" id="1RJ-8k-Fsn">
-                                <rect key="frame" x="243" y="293" width="77" height="205"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scA-ki-lhg">
-                                <rect key="frame" x="50" y="488" width="220" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="dJq-x9-mjW"/>
-                                    <constraint firstAttribute="width" constant="220" id="jNG-mA-F6A"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="NEXT">
-                                    <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="proceedBtnTapped:" destination="XPW-oR-uiL" eventType="touchUpInside" id="37F-Qg-daT"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6D-RO-pOB">
-                                <rect key="frame" x="20" y="40" width="174" height="25"/>
-                                <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="25"/>
-                                <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="32"/>
-                                </variation>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Agent" translatesAutoresizingMaskIntoConstraints="NO" id="kT9-zH-e9D">
-                                <rect key="frame" x="237" y="37" width="63" height="79"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="79" id="WAj-Kn-Ffr"/>
-                                </constraints>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkO-uU-xgV">
-                                <rect key="frame" x="20" y="116" width="280" height="352"/>
-                                <subviews>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Card" translatesAutoresizingMaskIntoConstraints="NO" id="7it-rC-Htz">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="352"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </imageView>
-                                    <webView contentMode="scaleToFill" scalesPageToFit="YES" paginationMode="topToBottom" translatesAutoresizingMaskIntoConstraints="NO" id="GfI-7X-fT2">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="312"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
-                                    </webView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXt-Gh-eCc">
-                                        <rect key="frame" x="126" y="315" width="27" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="27" id="5B0-wa-yE9"/>
-                                            <constraint firstAttribute="height" constant="32" id="sh1-sw-uDp"/>
-                                        </constraints>
-                                        <state key="normal" image="share_pdf"/>
-                                        <connections>
-                                            <action selector="shareBtnTapped" destination="XPW-oR-uiL" eventType="touchUpInside" id="CfP-xJ-kGU"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="QXt-Gh-eCc" firstAttribute="centerX" secondItem="mkO-uU-xgV" secondAttribute="centerX" id="4Id-Hc-oc1"/>
-                                    <constraint firstAttribute="trailing" secondItem="7it-rC-Htz" secondAttribute="trailing" id="MQE-77-b29"/>
-                                    <constraint firstAttribute="trailing" secondItem="GfI-7X-fT2" secondAttribute="trailing" id="Qht-kd-veT"/>
-                                    <constraint firstItem="7it-rC-Htz" firstAttribute="top" secondItem="mkO-uU-xgV" secondAttribute="top" id="RjV-NF-XD4"/>
-                                    <constraint firstAttribute="bottom" secondItem="GfI-7X-fT2" secondAttribute="bottom" constant="40" id="d6p-48-loD"/>
-                                    <constraint firstItem="7it-rC-Htz" firstAttribute="leading" secondItem="mkO-uU-xgV" secondAttribute="leading" id="fEt-oK-luK"/>
-                                    <constraint firstAttribute="bottom" secondItem="QXt-Gh-eCc" secondAttribute="bottom" constant="5" id="ft7-sZ-aqn"/>
-                                    <constraint firstItem="GfI-7X-fT2" firstAttribute="top" secondItem="mkO-uU-xgV" secondAttribute="top" id="i9M-7D-SNn"/>
-                                    <constraint firstAttribute="bottom" secondItem="7it-rC-Htz" secondAttribute="bottom" id="jCn-kv-z8Z"/>
-                                    <constraint firstItem="GfI-7X-fT2" firstAttribute="leading" secondItem="mkO-uU-xgV" secondAttribute="leading" id="raA-Gz-cQw"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurance Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruk-iz-ltc">
-                                <rect key="frame" x="20" y="70" width="136.5" height="18"/>
-                                <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="18"/>
-                                <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="24"/>
-                                </variation>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hn1-SH-UCw">
-                                <rect key="frame" x="125" y="528" width="71" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ByW-v3-QsE"/>
-                                    <constraint firstAttribute="width" constant="71" id="Qe5-hb-NG7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="18"/>
-                                <state key="normal" title="GO BACK">
-                                    <color key="titleColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="backBtnClicked" destination="XPW-oR-uiL" eventType="touchUpInside" id="bZW-hL-4a2"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="a6D-RO-pOB" firstAttribute="top" secondItem="sk1-AY-KlW" secondAttribute="bottom" constant="20" id="FOy-48-SLJ"/>
-                            <constraint firstItem="mkO-uU-xgV" firstAttribute="leading" secondItem="DjP-Ft-kwW" secondAttribute="leading" constant="20" id="GvQ-2Z-rAx"/>
-                            <constraint firstItem="scA-ki-lhg" firstAttribute="top" secondItem="mkO-uU-xgV" secondAttribute="bottom" constant="20" id="Km4-hO-SRA"/>
-                            <constraint firstItem="hDO-Rw-IXR" firstAttribute="top" secondItem="Hn1-SH-UCw" secondAttribute="bottom" id="LN1-YK-EJW"/>
-                            <constraint firstItem="mkO-uU-xgV" firstAttribute="top" secondItem="kT9-zH-e9D" secondAttribute="bottom" id="RPN-uu-3Kd"/>
-                            <constraint firstItem="ruk-iz-ltc" firstAttribute="top" secondItem="a6D-RO-pOB" secondAttribute="bottom" constant="5" id="V5F-BQ-TXN"/>
-                            <constraint firstAttribute="trailing" secondItem="mkO-uU-xgV" secondAttribute="trailing" constant="20" id="YW9-78-Z0v"/>
-                            <constraint firstItem="Hn1-SH-UCw" firstAttribute="top" secondItem="scA-ki-lhg" secondAttribute="bottom" id="fc7-Ok-2dB"/>
-                            <constraint firstItem="hDO-Rw-IXR" firstAttribute="top" secondItem="1RJ-8k-Fsn" secondAttribute="bottom" constant="70" id="i5S-0z-Z6L"/>
-                            <constraint firstItem="ruk-iz-ltc" firstAttribute="leading" secondItem="DjP-Ft-kwW" secondAttribute="leading" constant="20" id="kEi-kS-sC0"/>
-                            <constraint firstAttribute="trailing" secondItem="1RJ-8k-Fsn" secondAttribute="trailing" id="nQh-iR-8wr"/>
-                            <constraint firstItem="Hn1-SH-UCw" firstAttribute="centerX" secondItem="DjP-Ft-kwW" secondAttribute="centerX" id="o0j-tM-8i7"/>
-                            <constraint firstItem="scA-ki-lhg" firstAttribute="centerX" secondItem="DjP-Ft-kwW" secondAttribute="centerX" id="phI-75-zlQ"/>
-                            <constraint firstItem="ir4-Ge-vZB" firstAttribute="top" secondItem="mkO-uU-xgV" secondAttribute="top" id="w2T-mp-faU"/>
-                            <constraint firstItem="ir4-Ge-vZB" firstAttribute="leading" secondItem="DjP-Ft-kwW" secondAttribute="leading" id="wo5-ac-7hH"/>
-                            <constraint firstItem="kT9-zH-e9D" firstAttribute="top" secondItem="sk1-AY-KlW" secondAttribute="bottom" constant="17" id="wqD-1r-4OR"/>
-                            <constraint firstItem="a6D-RO-pOB" firstAttribute="leading" secondItem="DjP-Ft-kwW" secondAttribute="leading" constant="20" id="wxN-kH-r0u"/>
-                            <constraint firstAttribute="trailing" secondItem="kT9-zH-e9D" secondAttribute="trailing" constant="20" id="y3m-ax-i0R"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="bottomBtnConstraint" destination="LN1-YK-EJW" id="Lfb-4L-FVQ"/>
-                        <outlet property="btnShare" destination="QXt-Gh-eCc" id="9I1-qG-W6o"/>
-                        <outlet property="centerView" destination="mkO-uU-xgV" id="u39-bU-7Lc"/>
-                        <outlet property="goBackBtn" destination="Hn1-SH-UCw" id="34a-ap-KMA"/>
-                        <outlet property="lblCompanyName" destination="a6D-RO-pOB" id="gaO-PF-hiS"/>
-                        <outlet property="proceedBtn" destination="scA-ki-lhg" id="alj-0d-okf"/>
-                        <outlet property="webView" destination="GfI-7X-fT2" id="DNv-o2-OrY"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JBj-LI-Y7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4549" y="300"/>
         </scene>
         <!--Agent Call View Controller-->
         <scene sceneID="5Wg-6Y-7cy">
@@ -2911,7 +2765,6 @@ We are now making insurance companies fight for your business. We will present y
                                 </constraints>
                                 <state key="normal" image="share_pdf"/>
                                 <connections>
-                                    <action selector="shareBtnTapped" destination="XPW-oR-uiL" eventType="touchUpInside" id="oqA-ba-dEF"/>
                                     <action selector="shareBtnTapped:" destination="Cb2-NC-yeH" eventType="touchUpInside" id="8bU-o9-uuM"/>
                                 </connections>
                             </button>
@@ -3122,7 +2975,7 @@ We are now making insurance companies fight for your business. We will present y
         <image name="call_us" width="32" height="32"/>
         <image name="camera_icon" width="58" height="46"/>
         <image name="comp1" width="40" height="37"/>
-        <image name="congrats" width="350" height="350"/>
+        <image name="congrats" width="250" height="250"/>
         <image name="delete" width="100" height="100"/>
         <image name="ic_close_white" width="24" height="24"/>
         <image name="icon-check" width="38" height="32"/>
@@ -3130,12 +2983,12 @@ We are now making insurance companies fight for your business. We will present y
         <image name="mobile_scan_logo_welcome" width="202" height="268"/>
         <image name="retake" width="100" height="100"/>
         <image name="right_cureve_line" width="71" height="193"/>
-        <image name="share_pdf" width="2029" height="2055"/>
+        <image name="share_pdf" width="58" height="70"/>
         <image name="splashBg" width="414" height="736"/>
         <image name="splash_left_line" width="119" height="290"/>
         <image name="splash_right_line" width="94" height="239"/>
         <image name="star" width="79" height="76"/>
-        <image name="sussful_policy" width="350" height="350"/>
+        <image name="sussful_policy" width="250" height="250"/>
         <image name="uncheck" width="40" height="40"/>
     </resources>
 </document>
