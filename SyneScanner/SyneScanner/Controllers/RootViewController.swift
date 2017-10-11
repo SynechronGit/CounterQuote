@@ -12,6 +12,8 @@ class RootViewController: BaseViewController {
 
     // MARK: - Properties
     @IBOutlet weak var btnScanDocument: UIButton!
+    @IBOutlet weak var btngallery: UIButton!
+
     @IBOutlet weak var topConstraintLblHeader: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraintScanDocBtn: NSLayoutConstraint!
     @IBOutlet weak var lblWelcomeNote: UILabel!
@@ -44,7 +46,7 @@ class RootViewController: BaseViewController {
         leftCurveLeading.constant = -10
         rightaCureveTrailing.constant = -16
         self.topConstraintLblHeader.constant = 30
-        self.bottomConstraintScanDocBtn.constant = 0
+        self.bottomConstraintScanDocBtn.constant = 20
 
         UIView.animate(withDuration: 1.0, delay: 0.0,
                        usingSpringWithDamping: 0.5,
@@ -66,6 +68,8 @@ class RootViewController: BaseViewController {
     {
         pickerController.sourceType = .photo
         btnScanDocument.setBorderToButton()
+        btngallery.setBorderToButton()
+
         bottomConstraintScanDocBtn.constant = -80
         topConstraintLblHeader.constant = -50
         lblWelcomeNote.alpha = 0
@@ -89,18 +93,25 @@ class RootViewController: BaseViewController {
     
     //MARK: - Upload Image
     func uploadImage(imgArray:[DKAsset]) {
-        for asset in imgArray {
-            asset.fetchOriginalImageWithCompleteBlock({ (image, info) in
-                let model = ImageDataModel()
-                model.image = image
-                model.imageSuccesfullyUpload = true
-                SharedData.sharedInstance.arrImage.append(model)
-               // self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
-            })
-        }
-        let imageReviewViewController:ImagePreviewController = self.storyboard?.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
+              if imgArray.count > 0
+        {
+            
+            for asset in imgArray {
+                asset.fetchOriginalImageWithCompleteBlock({ (image, info) in
+                    let model = ImageDataModel()
+                    model.image = image
+                    model.imageSuccesfullyUpload = true
+                    SharedData.sharedInstance.arrImage.append(model)
+                    // self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
+                })
+            }
 
-        self.navigationController?.pushViewController(imageReviewViewController, animated: true)
+            let imageReviewViewController:ImagePreviewController = self.storyboard?.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
+            
+            self.navigationController?.pushViewController(imageReviewViewController, animated: true)
+            
+        }
+      
     }
   
     /*

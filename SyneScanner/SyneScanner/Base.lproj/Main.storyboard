@@ -147,12 +147,12 @@
                                 <rect key="frame" x="0.0" y="80" width="71" height="193"/>
                             </imageView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9j-vO-P3J">
-                                <rect key="frame" x="50" y="481" width="220" height="37"/>
+                                <rect key="frame" x="10" y="512" width="140" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="byW-8R-fwj"/>
+                                    <constraint firstAttribute="width" constant="140" id="byW-8R-fwj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="SCAN DOCUMENT">
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="SCAN">
                                     <color key="titleColor" red="0.20784313725490194" green="0.10980392156862745" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -194,14 +194,10 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3f-90-jhR">
-                                <rect key="frame" x="110.5" y="518" width="100" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="lIf-rO-xWx"/>
-                                    <constraint firstAttribute="width" constant="100" id="yfw-2V-OXe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="18"/>
+                                <rect key="frame" x="170" y="512" width="140" height="36"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                 <state key="normal" title="UPLOAD">
-                                    <color key="titleColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="cancelBtnTapped:" destination="0LF-t6-SUx" eventType="touchUpInside" id="aI0-Pq-jev"/>
@@ -211,30 +207,33 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Y3f-90-jhR" firstAttribute="width" secondItem="w9j-vO-P3J" secondAttribute="width" id="5zd-ko-98s"/>
                             <constraint firstAttribute="trailing" secondItem="NBf-xv-MYU" secondAttribute="trailing" id="B1Z-3o-aGD"/>
-                            <constraint firstItem="Y3f-90-jhR" firstAttribute="top" secondItem="w9j-vO-P3J" secondAttribute="bottom" id="Gte-0b-aqi"/>
-                            <constraint firstItem="w9j-vO-P3J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HUW-hQ-p35"/>
+                            <constraint firstItem="Y3f-90-jhR" firstAttribute="height" secondItem="w9j-vO-P3J" secondAttribute="height" id="EPt-or-zZZ"/>
+                            <constraint firstItem="w9j-vO-P3J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1:2" id="HUW-hQ-p35"/>
                             <constraint firstItem="eWx-Td-gBD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Iic-pX-eAS"/>
+                            <constraint firstItem="Y3f-90-jhR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="3:2" id="LkA-6x-9rJ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NBf-xv-MYU" secondAttribute="bottom" constant="80" id="RDR-mD-5fa"/>
                             <constraint firstItem="Whg-Zn-raW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="efM-SJ-Bmj"/>
                             <constraint firstItem="mes-kM-4oi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="f5g-1X-sUO"/>
                             <constraint firstItem="Epo-ei-cvw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gDh-2O-rOf"/>
+                            <constraint firstItem="Y3f-90-jhR" firstAttribute="bottom" secondItem="w9j-vO-P3J" secondAttribute="bottom" id="hhz-IP-LsF"/>
                             <constraint firstItem="Whg-Zn-raW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="kcG-pS-mak"/>
                             <constraint firstItem="eWx-Td-gBD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pO6-By-jB0"/>
-                            <constraint firstItem="Y3f-90-jhR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rXo-6A-JVb"/>
                             <constraint firstItem="mes-kM-4oi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rf8-hk-mEj"/>
                             <constraint firstItem="iT2-5c-tG0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rgT-dK-lyS"/>
                             <constraint firstItem="iT2-5c-tG0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="sCQ-Y2-Nkh"/>
                             <constraint firstItem="Whg-Zn-raW" firstAttribute="top" secondItem="iT2-5c-tG0" secondAttribute="bottom" constant="10" id="saO-eH-Tki"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Y3f-90-jhR" secondAttribute="bottom" constant="10" id="vAK-X4-kEm"/>
                             <constraint firstItem="Epo-ei-cvw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w8n-Wa-agn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="w9j-vO-P3J" secondAttribute="bottom" constant="20" id="xHI-Ci-izk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DIK-Ni-I4D"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="bottomConstraintScanDocBtn" destination="vAK-X4-kEm" id="C25-CA-ode"/>
+                        <outlet property="bottomConstraintScanDocBtn" destination="xHI-Ci-izk" id="oDi-Es-Wfo"/>
                         <outlet property="btnScanDocument" destination="w9j-vO-P3J" id="Lr7-t9-zff"/>
+                        <outlet property="btngallery" destination="Y3f-90-jhR" id="5qQ-LY-12Z"/>
                         <outlet property="imgViewphonLogo" destination="eWx-Td-gBD" id="UdD-TS-hvA"/>
                         <outlet property="lblWelcomeNote" destination="Whg-Zn-raW" id="vVi-yL-gVd"/>
                         <outlet property="leftCurveLeading" destination="rf8-hk-mEj" id="ERh-b1-RXg"/>
