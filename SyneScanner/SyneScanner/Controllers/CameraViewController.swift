@@ -73,7 +73,6 @@ class CameraViewController: BaseViewController {
     {
         if SharedData.sharedInstance.arrImage.count > 0
         {
-            let count = SharedData.sharedInstance.arrImage.count
             lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
             lblImageCount.isHidden = false
             let newModel = SharedData.sharedInstance.arrImage.last

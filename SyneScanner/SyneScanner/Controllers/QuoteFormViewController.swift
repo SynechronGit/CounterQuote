@@ -53,7 +53,8 @@ class QuoteFormViewController: BaseViewController {
 
         self.bottomConstraintBackBtn.constant = -80
         self.tableForm.alpha = 0
-       self.tableForm.addShadow()
+        self.tableForm.layer.masksToBounds = true
+
         lblCompanyName.text =  companyDetails?["companyName"]
         
         proceedBtn.setBorderToButton()
