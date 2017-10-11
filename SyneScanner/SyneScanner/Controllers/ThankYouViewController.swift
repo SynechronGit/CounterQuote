@@ -24,15 +24,20 @@ class ThankYouViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         startAnimation()
     }
     
+    /**
+     * Method that will configure UI initializations
+     */
     // MARK: - Configure UI
     func configureUI() {
         self.bottomConstraintcompleteBtn.constant = -47
@@ -42,6 +47,9 @@ class ThankYouViewController: BaseViewController {
         btnFeedback.setBorderToButton()
     }
     
+    /**
+     * Method that will start view animations
+     */
     // MARK: - Start animation
     func startAnimation() {
         leftCurveLeading.constant = -10
@@ -67,7 +75,6 @@ class ThankYouViewController: BaseViewController {
     }
 
     //MARK: UIButton action methods
-    
     @IBAction func feedBackBtnClicked() {
         
         SharedData.sharedInstance.arrImage.removeAll()

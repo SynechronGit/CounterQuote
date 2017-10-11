@@ -29,6 +29,9 @@ class TermsnConditionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+     * Method that will configure UI intializations
+     */
     func configureUI() {
         centerView.layer.cornerRadius = 10
         centerView.layer.masksToBounds = true

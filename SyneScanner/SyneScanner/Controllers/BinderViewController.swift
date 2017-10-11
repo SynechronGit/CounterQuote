@@ -23,15 +23,20 @@ class BinderViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         startAnimation()
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+     * Method that will configure UI initializations
+     */
     // MARK: - Configure UI
     func configureUI() {
         self.bottomConstraintcompleteBtn.constant = -47
@@ -43,6 +48,9 @@ class BinderViewController: BaseViewController {
         loadPdfFile()
     }
     
+    /**
+     * Method that will load the PDF file
+     */
     func loadPdfFile() {
         if let pdf = Bundle.main.url(forResource: "Binder", withExtension: "pdf", subdirectory: nil, localization: nil)  {
             let req = NSURLRequest(url: pdf)
@@ -50,6 +58,9 @@ class BinderViewController: BaseViewController {
         }
     }
     
+    /**
+     * Method that will start view animations
+     */
     //MARK: - Start animation
     func startAnimation() {
         leftCurveLeading.constant = -10

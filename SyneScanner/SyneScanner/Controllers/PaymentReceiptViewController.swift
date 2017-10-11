@@ -28,15 +28,20 @@ class PaymentReceiptViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         startAnimation()
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+   
+    /**
+     * Method that will configure UI intializations
+     */
    // MARK: - Configure UI
     func configurUI() {
         self.bottomConstraintProceedBtn.constant = -47
@@ -54,6 +59,10 @@ class PaymentReceiptViewController: BaseViewController {
         cardDetailsArray = [companyName!,"CCP9871618",  "07/01/2017", "07/01/2018",price]
     }
     
+    
+    /**
+     * Method that will start view animations
+     */
     func startAnimation() {
         leftCurveLeading.constant = -10
         rightaCureveTrailing.constant = -16
@@ -103,6 +112,7 @@ extension PaymentReceiptViewController: UITableViewDataSource,UITableViewDelegat
         return cardDetailsArray.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "receiptCell") as! PaymentReceiptTableViewCell
         cell.headerLabel.text = cardHeaderArray[indexPath.row]
@@ -114,6 +124,7 @@ extension PaymentReceiptViewController: UITableViewDataSource,UITableViewDelegat
         }
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.setBorderTocell(indexPath: indexPath, tableView: tableView)

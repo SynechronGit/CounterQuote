@@ -29,23 +29,28 @@ class ImagePreviewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         startAnimation()
     }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+     * Method that will start view animations
+     */
     // MARK: - Start Animation
-    func startAnimation()
-    {
+    func startAnimation() {
         leftCurveLeading.constant = -10
         rightaCureveTrailing.constant = -16
         self.bottomConstraintBackBtn.constant = 0
@@ -68,30 +73,28 @@ class ImagePreviewController: BaseViewController {
         })
     }
     
+    /**
+     * Method that will configure UI intializations
+     */
     // MARK: - Configure UI
-    func configureUI()
-    {
+    func configureUI() {
         self.bottomConstraintBackBtn.constant = -80
         self.collectionView.alpha = 0
         self.pageControl.alpha = 0
         self.lblHeader.alpha = 0
         
         pageControl.numberOfPages = SharedData.sharedInstance.arrImage.count
-        
-      submitBtn.setBorderToButton()
-        
+        submitBtn.setBorderToButton()
         lblHeader.text = String(format:"You are in (1/%d) pages",pageControl.numberOfPages)
-
-
-
         let notificationName = Notification.Name("updateProgress")
-
         NotificationCenter.default.addObserver(self, selector: #selector(ImagePreviewController.updateProgress), name: notificationName, object: nil)
 
         collectionView.reloadData()
-
     }
     
+    /**
+     * Method that will update the progress of uploading of images
+     */
     // MARK: - Progress methods
     func updateProgress() {
          let calculateProgress = SharedData.sharedInstance.calculateCurrentProgress()
@@ -122,6 +125,7 @@ class ImagePreviewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
     @IBAction  func finishBtnTapped() {
         startWorkflowApi()
     }
@@ -131,6 +135,8 @@ class ImagePreviewController: BaseViewController {
 
  // MARK: - UICollection View DataSource and Delegate Method
 extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+    
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -138,6 +144,7 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return SharedData.sharedInstance.arrImage.count
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImagePreviewCollectionViewCell
@@ -148,6 +155,7 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
         cell.progressView.value = CGFloat(progressValue)
         return cell
     }
+    
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -170,6 +178,7 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
         print(visibleIndexPath)
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         cell.layer.masksToBounds = false
         cell.layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -180,7 +189,6 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
 }
 
 // MARK: - ImagePreviewCollectionViewCell Delegate Method
-
 extension ImagePreviewController:ImageShareAndRetakeDelegate {
     
     func retakeImageAt(cell : UICollectionViewCell) {
@@ -192,6 +200,7 @@ extension ImagePreviewController:ImageShareAndRetakeDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
     func deleteImageAt(cell : UICollectionViewCell) {
         guard deleteDelegate != nil else {
             return
@@ -200,6 +209,7 @@ extension ImagePreviewController:ImageShareAndRetakeDelegate {
         deleteDelegate?.updateCollectionWhenImageDeletedAt(index: (indexPath?.row)!)
         self.navigationController?.popViewController(animated: true)
     }
+    
     
     func updateColelctionWhenImageDeletedAt(cell : UICollectionViewCell) {
     }
@@ -215,6 +225,7 @@ protocol ImageDeleteDelegate {
 
 //MARK: StartWorkflowDelegate methods
 extension ImagePreviewController: StartWorkflowDelegate {
+    
     //Start Workflow service method after each image is successfully uploaded
     func startWorkflowApi() {
        // SVProgressHUD.show()
@@ -231,10 +242,12 @@ extension ImagePreviewController: StartWorkflowDelegate {
 //        startWorkflowProxy.startWorkflowApi(blobUrl: blobUrl, corelationId: SharedData.sharedInstance.corelationId)
     }
     
+    
     func workflowSuccessfullyStarted(responseData:String) {
        // SVProgressHUD.dismiss()
         self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
     }
+    
     
     func workflowFailedToStart(errorMessage: String) {
         self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)

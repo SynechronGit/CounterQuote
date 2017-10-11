@@ -22,7 +22,7 @@ class CameraViewController: BaseViewController {
     @IBOutlet weak var galleryView: UIView!
     @IBOutlet weak var lblImageCount: UILabel!
     /// the image capture manager
-  fileprivate   var imageCaptureManager: ImageCaptureManager?
+    fileprivate var imageCaptureManager: ImageCaptureManager?
     var retakeIndexNo = -1
     
     // MARK: - View LifeCycle
@@ -30,6 +30,7 @@ class CameraViewController: BaseViewController {
         super.viewDidLoad()
         self.configureCameraCapture()
     }
+    
     
     override var prefersStatusBarHidden: Bool {
         return false
@@ -41,17 +42,22 @@ class CameraViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateTotalNoImgLbl()
         self.imageCaptureManager?.startSession()
     }
     
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.imageCaptureManager?.stopSession()
     }
     
+    /**
+     * Method that will initialize the camera for capturing with the AVCaptureVideoPreviewLayer instance
+     */
     // Initialization Methods
     func configureCameraCapture() {
         if let captureVideoPreviewLayer = self.view.layer as? AVCaptureVideoPreviewLayer {
@@ -68,6 +74,9 @@ class CameraViewController: BaseViewController {
         lastCatpureImageView.clipsToBounds = true
     }
     
+    /**
+     * Method that will update the model consisting of image and its properties
+     */
     func updateTotalNoImgLbl() {
         if SharedData.sharedInstance.arrImage.count > 0 {
             lblImageCount.text = String(format:"%d",SharedData.sharedInstance.arrImage.count)
@@ -106,11 +115,13 @@ class CameraViewController: BaseViewController {
         }
     }
  
+    // Performs the capturing of images manually on camera button click
     @IBAction func capture() {
         self.imageCaptureManager?.isCapturManually = true
         startCapturing()
     }
     
+    // Performs toggle of flash button on the camera screen
     @IBAction func flashBtnClicked() {
         if let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo), device.hasTorch {
             do {
@@ -152,7 +163,10 @@ class CameraViewController: BaseViewController {
         })
     }
     
-    // MARK: - Store Image into Gallery
+    /**
+     * Method that will store the image into the Apple device gallery creating an album of itself
+     */
+    // MARK: - Store Image
     func createPhotoLibraryAlbum(name: String) {
         var albumPlaceholder: PHObjectPlaceholder?
         PHPhotoLibrary.shared().performChanges({
@@ -182,11 +196,13 @@ class CameraViewController: BaseViewController {
             }
         })
     }
+    
     // MARK: - Image Capture Handler
     private func showImageCaptureLoadingView() {
         //TODO
         self.view.isUserInteractionEnabled = false
     }
+    
     
     private func hideImageCaptureLoadingView() {
         //TODO
@@ -286,6 +302,7 @@ extension CameraViewController:ImageDeleteDelegate
 
 //MARK: - UploadImageProxyDelegate methods
 extension CameraViewController:UploadImageProxyDelegate {
+    // Upload image Api calling function
     func callUploadImageApi(indexNo:Int) {
         let model = SharedData.sharedInstance.arrImage[indexNo]
         let uploadImageProxy =  UploadImageProxy()
@@ -293,6 +310,7 @@ extension CameraViewController:UploadImageProxyDelegate {
         uploadImageProxy.uploadScanningImage(image: (model.image!), indexNo: indexNo)
     }
     
+    //MARK: - Image upload response calls
     func imageSuccessfullyUpload(responseData:[String:AnyObject],indexNo:Int) {
         let isModelValid = SharedData.sharedInstance.arrImage.indices.contains(indexNo)
         if (isModelValid) {

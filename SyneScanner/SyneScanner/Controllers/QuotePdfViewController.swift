@@ -25,11 +25,15 @@ class QuotePdfViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+     * Method that will configure UI intializations
+     */
     // MARK: - Configure UI
     func configureUI() {
         lblCompanyName.text =  companyDetails?["companyName"]
@@ -40,6 +44,9 @@ class QuotePdfViewController: BaseViewController {
         loadPdfFile()
     }
     
+    /**
+     * Method that will load the PDF file
+     */
     func loadPdfFile() {
         if let pdf = Bundle.main.url(forResource: "Quote", withExtension: "pdf", subdirectory: nil, localization: nil)  {
             let req = NSURLRequest(url: pdf)
@@ -54,6 +61,8 @@ class QuotePdfViewController: BaseViewController {
             self.performSegue(withIdentifier: "NavToPayment", sender: nil)
         }
     }
+    
+    
     @IBAction func backBtnClicked() {
         self.navigationController?.popViewController(animated: true)
     }

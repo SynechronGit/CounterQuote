@@ -19,7 +19,6 @@ extension CIRectangleFeature {
                           bottomRight: self.bottomRight,
                           bottomLeft: self.bottomLeft)
     }
-    
 }
 
 /**
@@ -33,6 +32,7 @@ extension Array where Element: CIRectangleFeature {
         guard self.count > 0 else {
             return nil
         }
+        
         var halfPerimiterValue:CGFloat = 0
         var biggestRectangle: CIRectangleFeature?
         
@@ -51,8 +51,6 @@ extension Array where Element: CIRectangleFeature {
                 biggestRectangle = rect
             }
         }
-        
         return biggestRectangle
     }
-    
 }

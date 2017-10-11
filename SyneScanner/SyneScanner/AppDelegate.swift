@@ -53,12 +53,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     //MARK: Initial setup methods
-    
     func initializeHockeyApp() {
         BITHockeyManager.shared().configure(withIdentifier: "f2b9242e747d4354a632f9fc955f97df")
         BITHockeyManager.shared().start()
         BITHockeyManager.shared().authenticator.authenticateInstallation() // This line is obsolete in the crash only builds
     }
+    
     
     func initializeProgressHUD() {
         SVProgressHUD.setRingThickness(2.5)

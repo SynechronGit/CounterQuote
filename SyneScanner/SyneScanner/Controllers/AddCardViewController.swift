@@ -38,19 +38,21 @@ class AddCardViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    /**
+     * Method that will configure UI intializations
+     */
     // MARK: - Configure UI
-    func configureUI()
-    {
+    func configureUI() {
         CardIOUtilities.preload()
         
         self.defaultValues()
         headerView.layer.cornerRadius = 8
-        
         let actualPriceStr:String = (companyDetails?["price"])!
         lblPolicyPrice.text = "$" + actualPriceStr + "/y"
         let actualPrice:Int = Int(actualPriceStr)!
@@ -61,15 +63,20 @@ class AddCardViewController: BaseViewController {
         tableView.tableFooterView = UIView()
         
         self.commonSetup()
-
     }
     
+    /**
+     * Method that will set default values of card
+     */
     func defaultValues() {
         month = "09"
         year = "17"
         cardNumber = "4111 1111 1111 1111"
     }
     
+    /**
+     * Method that will set up the number of months and years of a card expiry date along with the card details required from the user
+     */
     func commonSetup() {
         cardHeaderArray = ["Card Number", "Card Holder name", "Expiry date", "CVV"]
         // population years
@@ -99,6 +106,7 @@ class AddCardViewController: BaseViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    
     func isValidEmail(testStr:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
@@ -116,9 +124,11 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
         return cardHeaderArray.count
     }
     
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell") as! AddCardTableViewCell
@@ -162,7 +172,6 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
                 
                 break
             }
- 
         }
         else{
             cell.descriptionField.text = emailId
@@ -173,14 +182,17 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
         return cell
     }
   
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return CGFloat.leastNormalMagnitude
     }
+    
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.setBorderTocell(indexPath: indexPath, tableView: tableView)
     }
 }
+
 
 //MARK: TableViewCell textfield delegate methods
 extension AddCardViewController: TextFieldActionDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -238,6 +250,7 @@ extension AddCardViewController: TextFieldActionDelegate, UIPickerViewDelegate, 
         return 2
     }
     
+    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let myView = UIView(frame: CGRect(x: 0, y: 0, width: pickerView.frame.size.width, height: 44))
         let myLabel = UILabel(frame: CGRect(x: myView.frame.size.width/4 + 10, y: 0, width: pickerView.bounds.width - 100, height: myView.bounds.height))
@@ -257,6 +270,7 @@ extension AddCardViewController: TextFieldActionDelegate, UIPickerViewDelegate, 
         myView.addSubview(myLabel)
         return myView
     }
+    
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component {

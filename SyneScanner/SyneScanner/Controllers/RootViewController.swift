@@ -27,20 +27,27 @@ class RootViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
     }
 
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         startAnimation()
     }
    
+    /**
+     * Method that will start view animations
+     */
     // MARK: - Animation methods
    func startAnimation() {
         leftCurveLeading.constant = -10
@@ -63,6 +70,9 @@ class RootViewController: BaseViewController {
             })
     }
     
+    /**
+     * Method that will configure UI initializations
+     */
     // MARK: - ConfigureUI
     func configureUI()
     {
@@ -80,22 +90,23 @@ class RootViewController: BaseViewController {
         }
 
     }
+    
     // MARK: - Button Actions
     @IBAction func startScanning() {
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: "CameraViewController")
         self.navigationController?.pushViewController(viewController!, animated: true)
     }
     
+    
     @IBAction func uploadBtnClicked() {
         self.present(pickerController, animated: true) {}
-
     }
+    
     
     //MARK: - Upload Image
     func uploadImage(imgArray:[DKAsset]) {
               if imgArray.count > 0
         {
-            
             for asset in imgArray {
                 asset.fetchOriginalImageWithCompleteBlock({ (image, info) in
                     let model = ImageDataModel()
@@ -105,11 +116,8 @@ class RootViewController: BaseViewController {
                     // self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
                 })
             }
-
             let imageReviewViewController:ImagePreviewController = self.storyboard?.instantiateViewController(withIdentifier: "ImagePreviewController") as! ImagePreviewController
-            
             self.navigationController?.pushViewController(imageReviewViewController, animated: true)
-            
         }
       
     }

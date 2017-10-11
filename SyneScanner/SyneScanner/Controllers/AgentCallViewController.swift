@@ -7,9 +7,16 @@
 //
 
 import UIKit
+
+//MARK: - AgentCallViewControllerDelegate protocol
 protocol AgentCallViewControllerDelegate {
+    /**
+     * Method that will dismiss the Call us alert view
+     */
     func dismissCallUsView()
 }
+
+
 class AgentCallViewController: UIViewController {
     // MARK: - Properties
     var nameText: String = ""
@@ -28,11 +35,15 @@ class AgentCallViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+     * Method that will configure UI with initializations
+     */
     // MARK: - Configure UI
     func configureUI() {
         centerView.layer.cornerRadius = 10
@@ -47,6 +58,8 @@ class AgentCallViewController: UIViewController {
     @IBAction func callUsBtnClicked(_ sender: Any) {
         delegate?.dismissCallUsView()
     }
+    
+    
     @IBAction func closeBtnClicked(_ sender: Any) {
         delegate?.dismissCallUsView()
     }

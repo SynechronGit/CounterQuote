@@ -11,16 +11,12 @@ import UIKit
 
 extension UITableView
 {
-    func addShadow()
-        
-    {
-        
+    func addShadow() {
         self.layer.cornerRadius = 16
         self.layer.masksToBounds = false
         self.layer.shadowOffset = CGSize(width: 0, height: 0)
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.10
-        self.layer.shadowRadius = 4
-     
+        self.layer.shadowRadius = 4     
     }
 }

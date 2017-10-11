@@ -18,28 +18,34 @@ class LoaderViewController: BaseViewController {
     // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         configurUI()
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         startAnimation()
     }
     
+    /**
+     * Method that will configure UI intializations
+     */
     // MARK: - Configure UI
-    func configurUI()
-    {
+    func configurUI() {
         lblNote.alpha = 0
         searchImageVIew.alpha = 0
     }
-    func startAnimation()
-    {
+    
+    /**
+     * Method that will start view animations
+     */
+    func startAnimation() {
         leftCurveLeading.constant = -10
         rightaCureveTrailing.constant = -16
         
@@ -72,6 +78,7 @@ class LoaderViewController: BaseViewController {
     func addSearchAnimation() {
         searchImageVIew.loadGif(name: "Search_animation")
     }
+    
     
     func pushToQuoteVc() {
         self.performSegue(withIdentifier: "NavToQuoteVc", sender: nil)

@@ -220,15 +220,15 @@ extension ImageCaptureManager: AVCaptureVideoDataOutputSampleBufferDelegate {
             }
         }
         else { didNotifyFullConfidence = false
-                self.timer?.invalidate()
-                self.timer = nil
-                DispatchQueue.main.async { [weak self] in
-                    
+            self.timer?.invalidate()
+            self.timer = nil
+            DispatchQueue.main.async { [weak self] in
+                
                 self?.videoOutputImageSize = videoOutputImage.extent.size
                 self?.detectedQuadrangle = nil
                 self?.setEdgeDetectionView(self?.edgeDetectionView, hidden: true)
-                }
             }
+        }
     }
     
     // Fuction that sets and animates the view with detected edges
@@ -238,13 +238,13 @@ extension ImageCaptureManager: AVCaptureVideoDataOutputSampleBufferDelegate {
             
             self.timer =   Timer.scheduledTimer(timeInterval: 2.2, target: self, selector: #selector(self.callDelegateAutoCapture), userInfo: nil, repeats: false)
             
-            }
-            UIView.animate(withDuration: 0.2, delay: 0, options: .beginFromCurrentState, animations: {
-                    edgeDetectionView?.alpha = hidden ? 0 : 0.4
-                }, completion:
-                { (finished: Bool) in
-        
-                })
+        }
+        UIView.animate(withDuration: 0.2, delay: 0, options: .beginFromCurrentState, animations: {
+            edgeDetectionView?.alpha = hidden ? 0 : 0.4
+        }, completion:
+            { (finished: Bool) in
+                
+        })
     }
     // Calls the delegate's required method
     func callDelegateAutoCapture() {

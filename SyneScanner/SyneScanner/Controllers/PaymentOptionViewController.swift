@@ -34,8 +34,8 @@ class PaymentOptionViewController: UIViewController {
     @IBOutlet weak var invoiceView: UIView!
     @IBOutlet var invoicePaymentButton: UIButton!
     @IBOutlet var cardPaymentButton: UIButton!
-    
     @IBOutlet weak var cardDividerView: UIImageView!
+   
     var companyDetails:[String:String]?
     var addCardVC : AddCardViewController?
     var invoiceVC : InvoicePaymentViewController?
@@ -48,6 +48,7 @@ class PaymentOptionViewController: UIViewController {
         self.configureUI()
         // Do any additional setup after loading the view.
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -62,6 +63,11 @@ class PaymentOptionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+     * Method that will be called when view is about to appear to initialize values.
+     * @param Void
+     * @return Void
+     */
     //MARK: - Initialization methods
     func configureUI() {
         addCardVC = self.storyboard?.instantiateViewController(withIdentifier: "AddCardViewController") as? AddCardViewController
@@ -76,6 +82,11 @@ class PaymentOptionViewController: UIViewController {
         self.initialSetup()
     }
     
+    /**
+     * Method for initial setup of button properties
+     * @param Void
+     * @return Void
+     */
     func initialSetup() {
         self.payBtnHeightConstraint.constant = 0
         self.invoiceBtnHeightConstraint.constant = 0
@@ -171,6 +182,7 @@ class PaymentOptionViewController: UIViewController {
             self.invoicePayScrollView.addSubview((self.invoiceVC?.view)!)
             isInvoiceViewShown = true
     }
+    
     
     @IBAction func popToRoot() {
         self.cardDividerView.isHidden = false

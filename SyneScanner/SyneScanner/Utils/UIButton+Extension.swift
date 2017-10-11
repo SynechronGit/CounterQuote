@@ -9,6 +9,9 @@
 import UIKit
 
 extension UIButton {
+    /**
+     * Method that will add border style to buttons
+     */
     func setBorderToButton() {
         self.layer.borderWidth = 1
         self.layer.cornerRadius = 22

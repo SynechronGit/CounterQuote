@@ -27,15 +27,20 @@ class InsuranceQuoteViewController: BaseViewController {
         configureUI()
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         startAnimation()
     }
     
+    /**
+     * Method that will configure UI with initializations
+     */
     // MARK: - Configure UI
     func configureUI() {
         acceptBtn.setBorderToButton()
@@ -50,6 +55,9 @@ class InsuranceQuoteViewController: BaseViewController {
         }
     }
   
+    /**
+     * Method that will start view animations
+     */
     //MARK: - Start animation
     func startAnimation() {
         if isAnimationShow == true {
@@ -89,6 +97,7 @@ class InsuranceQuoteViewController: BaseViewController {
         }
     }
     
+    
     @IBAction func cancelBtnTapped(_ sender: Any) {
         let vc = self.navigationController?.viewControllers[3]
         self.navigationController?.popToViewController(vc!, animated: true)
@@ -108,6 +117,7 @@ class InsuranceQuoteViewController: BaseViewController {
 
 }
 
+//MARK: - UITableview datasource and delegate methods
 extension InsuranceQuoteViewController:UITableViewDataSource,UITableViewDelegate {
        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isAnimationShowTbl

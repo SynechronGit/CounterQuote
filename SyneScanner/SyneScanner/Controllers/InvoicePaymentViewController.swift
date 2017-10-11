@@ -22,11 +22,15 @@ class InvoicePaymentViewController: BaseViewController {
         configureUI()
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+     * Method that will configure UI intializations
+     */
     // MARK: - Configure UI
     func configureUI() {
         headerView.layer.cornerRadius = 8

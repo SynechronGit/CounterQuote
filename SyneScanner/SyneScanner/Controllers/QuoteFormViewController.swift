@@ -33,15 +33,20 @@ class QuoteFormViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         startAnimation()
     }
     
+    /**
+     * Method that will configure UI initializations
+     */
     // MARK: - Configure UI
     func configureUI() {
         imgCompanyLogo.image = UIImage(named: (companyDetails?["imgName"])!)
@@ -63,6 +68,9 @@ class QuoteFormViewController: BaseViewController {
         viewAmount.layer.cornerRadius = 8
     }
     
+    /**
+     * Method that will load the plist containing the quote properties
+     */
     func loadDataFromPlist() {
         let path = Bundle.main.path(forResource: "QuoteFormData", ofType: "plist")!
         let url = URL(fileURLWithPath: path)
@@ -71,6 +79,9 @@ class QuoteFormViewController: BaseViewController {
         dataArr = plist as? NSArray
     }
     
+    /**
+     * Method that will start view animations
+     */
     //MARK: - Start animation
     func startAnimation() {
         if isAnimationShow == true {
@@ -106,9 +117,11 @@ class QuoteFormViewController: BaseViewController {
         }
     }
     
+    
     @IBAction   func backBtnClicked() {
         self.navigationController?.popViewController(animated: true)
     }
+    
     
     @IBAction   func callBtnClicked() {
         // Create the AlertController and add its action like button in Actionsheet
@@ -150,6 +163,7 @@ class QuoteFormViewController: BaseViewController {
         termsnQVc = self.storyboard?.instantiateViewController(withIdentifier: "termsnQVc") as? TermsnConditionViewController
         termsnQVc?.delegate = self
         self.view.addSubview((termsnQVc?.view)!)
+        
         UIView.animate(withDuration: 0.8, delay: 0.0,
                        usingSpringWithDamping: 0.5,
                        initialSpringVelocity: 0.8,
@@ -183,6 +197,7 @@ class QuoteFormViewController: BaseViewController {
         agentCallVc?.nameText = (data.value(forKey: "value") as? String)!
         agentCallVc?.phoneText = "+91999999999"
         self.view.addSubview((agentCallVc?.view)!)
+        
         UIView.animate(withDuration: 0.8, delay: 0.0,
                        usingSpringWithDamping: 0.5,
                        initialSpringVelocity: 0.8,
@@ -241,6 +256,7 @@ extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate {
         let data:NSDictionary = arr.object(at: indexPath.row) as! NSDictionary
         cell.headerLabel.text =  data.value(forKey: "heading") as? String
         cell.descriptionLabel.text =  data.value(forKey: "value") as? String
+        
         if indexPath.row == arr.count - 1
         {
             cell.cellDividerImage.isHidden =  true
@@ -249,6 +265,7 @@ extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate {
             cell.cellDividerImage.isHidden =  false
 
         }
+        
         return cell
     
    }
@@ -257,7 +274,6 @@ extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate {
           cell.setBorderTocell(indexPath: indexPath, tableView: tableView)
     }
    
-
 }
 
 //MARK: - AgentCallViewControllerDelegate delegate methods
@@ -273,8 +289,6 @@ extension QuoteFormViewController:AgentCallViewControllerDelegate
 extension QuoteFormViewController:TermsnConditionViewControllerDelegate
 {
     func dismissTnQView() {
-        
-   
         termsnQVc?.view.removeFromSuperview()
         termsnQVc = nil
     }

@@ -41,7 +41,6 @@ class BaseViewController: UIViewController {
     }
     
     // MARK: - Animation methods
-    
     // Method to hide left and right curves for animation purposes
     func hideLeftnRightCureve() {
         if leftCurveLeading != nil && rightaCureveTrailing != nil
@@ -76,6 +75,8 @@ class BaseViewController: UIViewController {
     */
 
 }
+
+
 // MARK: - Extension - Popup Alert
 extension UIViewController {
     func popupAlert(title: String?, message: String?, actionTitles:[String?], actions:[((UIAlertAction) -> Void)?]) {

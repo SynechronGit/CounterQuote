@@ -10,9 +10,7 @@ import UIKit
 
 extension UITableViewCell
 {
-    func setBorderTocell(indexPath:IndexPath,tableView:UITableView)
-        
-    {
+    func setBorderTocell(indexPath:IndexPath,tableView:UITableView) {
         let cornerRadius: CGFloat = 12
         self.backgroundColor = .clear
         
@@ -48,8 +46,11 @@ extension UITableViewCell
         self.backgroundView = testView
 
     }
-    func addShadowToCell()
-    {
+    
+    /**
+     * Method that will add shadow effects to UITableView cells
+     */
+    func addShadowToCell() {
         self.layer.masksToBounds = false
         self.layer.shadowOffset = CGSize(width: 0, height: 0)
         self.layer.shadowColor = UIColor.black.cgColor
