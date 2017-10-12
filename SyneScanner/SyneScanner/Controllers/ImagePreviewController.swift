@@ -82,9 +82,12 @@ class ImagePreviewController: BaseViewController {
         self.collectionView.alpha = 0
         self.pageControl.alpha = 0
         self.lblHeader.alpha = 0
-        
+        self.submitBtn.isEnabled = false
         pageControl.numberOfPages = SharedData.sharedInstance.arrImage.count
         submitBtn.setBorderToButton()
+        submitBtn.layer.borderColor = UIColor.lightGray.cgColor
+        submitBtn.setTitleColor(UIColor.lightGray, for: .normal)
+        
         lblHeader.text = String(format:"You are in (1/%d) pages",pageControl.numberOfPages)
         let notificationName = Notification.Name("updateProgress")
         NotificationCenter.default.addObserver(self, selector: #selector(ImagePreviewController.updateProgress), name: notificationName, object: nil)
@@ -112,6 +115,9 @@ class ImagePreviewController: BaseViewController {
     func updateProgressValue() {
         progressValue = progressValue + 10
         if progressValue >= 100 {
+            self.submitBtn.isEnabled = true
+            submitBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+            submitBtn.setTitleColor(UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1), for: .normal)
             self.progressTimer?.invalidate()
             self.progressTimer = nil
         }

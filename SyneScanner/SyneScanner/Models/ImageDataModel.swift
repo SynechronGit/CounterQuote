@@ -16,4 +16,6 @@ class ImageDataModel: NSObject {
     var fileUrl = ""
     var imageSuccesfullyUpload = false
     var isDeleted = false
+    var isUploadingInProgress = false
+
 }

@@ -230,12 +230,14 @@ class CameraViewController: BaseViewController {
         if self.retakeIndexNo != -1 {
             let model = SharedData.sharedInstance.arrImage[self.retakeIndexNo]
             model.image = image
+            model.isUploadingInProgress =  true
             SharedData.sharedInstance.arrImage[self.retakeIndexNo] = model
             self.callUploadImageApi(indexNo: self.retakeIndexNo)
         }
         else {
             let model = ImageDataModel()
             model.image = image
+            model.isUploadingInProgress =  true
             SharedData.sharedInstance.arrImage.append(model)
             self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
         }
@@ -282,7 +284,7 @@ extension CameraViewController:ImageDeleteDelegate
     func updateCollectionWhenImageDeletedAt(index: Int) {
         let model = SharedData.sharedInstance.arrImage[index]
         model.isDeleted = true
-        if model.imageSuccesfullyUpload == true {
+        if model.imageSuccesfullyUpload == true || model.isUploadingInProgress == false {
             SharedData.sharedInstance.arrImage.remove(at: index)
         }
         if index == 0 && SharedData.sharedInstance.arrImage.count == 0 {
@@ -335,6 +337,7 @@ extension CameraViewController:UploadImageProxyDelegate {
         let isModelValid = SharedData.sharedInstance.arrImage.indices.contains(indexNo)
         if (isModelValid) {
             let model = SharedData.sharedInstance.arrImage[indexNo]
+             model.isUploadingInProgress =  false
             // Check if image is deleted during deleteing process
             if (model.isDeleted) {
                 NetworkManager.cancelUploadRequest(index: indexNo)
