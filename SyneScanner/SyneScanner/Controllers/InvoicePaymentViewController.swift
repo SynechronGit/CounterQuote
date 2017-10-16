@@ -14,6 +14,9 @@ class InvoicePaymentViewController: BaseViewController {
     @IBOutlet weak var lblSaveedAmount: UILabel!
     @IBOutlet weak var lblPolicyPrice: UILabel!
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var lblInvoicePay: UILabel!
+    @IBOutlet weak var descriptionView: UIView!
+    
     var companyDetails:[String:String]?
     
     // MARK: - View LifeCycle Methods
@@ -33,6 +36,11 @@ class InvoicePaymentViewController: BaseViewController {
      */
     // MARK: - Configure UI
     func configureUI() {
+        descriptionView.layer.borderWidth = 1
+        
+        descriptionView.layer.cornerRadius = 16
+        
+        
         headerView.layer.cornerRadius = 8
         // Do any additional setup after loading the view.
         let actualPriceStr:String = (companyDetails?["price"])!
@@ -41,6 +49,7 @@ class InvoicePaymentViewController: BaseViewController {
         let savedPrice = 4000 - actualPrice
         
         lblSaveedAmount.text = String(format:"You Saved $%d",savedPrice)
+        lblInvoicePay.text = "Send me an invoice for the amount \(lblPolicyPrice.text!)"
 
     }
     /*

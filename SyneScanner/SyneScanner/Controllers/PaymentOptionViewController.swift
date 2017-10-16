@@ -17,23 +17,19 @@ class PaymentOptionViewController: UIViewController {
     @IBOutlet weak var cardPayScrollView: UIScrollView!
     @IBOutlet weak var invoicePayScrollView: UIScrollView!
     @IBOutlet weak var backBtnView: UIView!
+    @IBOutlet weak var proceedButton: UIButton!
     
     @IBOutlet weak var innerViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var innerViewTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var innerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var cardViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var invoiceViewHeightConstriant: NSLayoutConstraint!
-    @IBOutlet weak var invoiceBtnHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var payBtnHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var cardPayBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var invoicePayTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var backButtonViewHeightConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var cardPayBtnView: UIView!
-    @IBOutlet weak var invoicePayBtnView: UIView!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var invoiceView: UIView!
-    @IBOutlet var invoicePaymentButton: UIButton!
-    @IBOutlet var cardPaymentButton: UIButton!
     @IBOutlet weak var cardDividerView: UIImageView!
    
     var companyDetails:[String:String]?
@@ -78,7 +74,7 @@ class PaymentOptionViewController: UIViewController {
         self.addCardVC?.companyDetails = self.companyDetails
         self.invoicePayScrollView.contentSize = CGSize(width: (self.invoiceVC?.view.frame.size.width)!, height: UIScreen.main.bounds.height)
         self.cardPayScrollView.contentSize = CGSize(width: (self.addCardVC?.view.frame.size.width)!, height: UIScreen.main.bounds.height)
-        
+        self.proceedButton.isHidden = true
         self.initialSetup()
     }
     
@@ -88,13 +84,10 @@ class PaymentOptionViewController: UIViewController {
      * @return Void
      */
     func initialSetup() {
-        self.payBtnHeightConstraint.constant = 0
-        self.invoiceBtnHeightConstraint.constant = 0
+        self.backButtonViewHeightConstraint.constant = 40
         
-        cardPaymentButton.setBorderToButton()
-        self.cardPaymentButton.isEnabled = true
-        invoicePaymentButton.setBorderToButton()
-        self.invoicePaymentButton.isEnabled = true
+        proceedButton.setBorderToButton()
+        self.proceedButton.isEnabled = true
         
         isCardViewShown = false
         isInvoiceViewShown = false
@@ -116,8 +109,9 @@ class PaymentOptionViewController: UIViewController {
     
     //MARK: UIButton action methods
     @IBAction func cardPayTapped(_ sender: Any) {
-        self.cardDividerView.isHidden = true
-        self.cardPaymentButton.isHidden = false
+            self.cardDividerView.isHidden = true
+            self.proceedButton.isHidden = false
+            self.proceedButton.setTitle("MAKE PAYMENT", for: .normal)
             innerView.layer.cornerRadius = 0
             self.cardPayScrollView.bounds = CGRect.zero
             self.addCardVC?.view.frame = CGRect(x: 0, y: UIScreen.main.bounds.height, width: self.cardPayScrollView.frame.size.width, height: UIScreen.main.bounds.height)
@@ -133,7 +127,7 @@ class PaymentOptionViewController: UIViewController {
                             self.cardPayBottomConstraint.constant = -80
                             self.innerViewHeightConstraint.constant = UIScreen.main.bounds.height
                             self.cardViewHeightConstraint.constant = self.innerViewHeightConstraint.constant - self.backBtnView.frame.size.height - 5
-                            self.payBtnHeightConstraint.constant = 40
+                            self.backButtonViewHeightConstraint.constant = 80
                             self.innerView.layoutIfNeeded()
                             
             }) { _ in
@@ -151,7 +145,8 @@ class PaymentOptionViewController: UIViewController {
     
     @IBAction func invoicePayTapped(_ sender: Any) {
             self.cardDividerView.isHidden = true
-            self.invoicePaymentButton.isHidden = false
+            self.proceedButton.isHidden = false
+            self.proceedButton.setTitle("I ACCEPT", for: .normal)
             innerView.layer.cornerRadius = 0
             self.invoicePayScrollView.bounds = CGRect.zero
             self.invoiceVC?.view.frame = CGRect(x: 0, y: -UIScreen.main.bounds.height, width: self.invoicePayScrollView.frame.size.width, height: UIScreen.main.bounds.height)
@@ -166,8 +161,8 @@ class PaymentOptionViewController: UIViewController {
                             self.innerViewTrailingConstraint.constant = 0
                             self.invoicePayTopConstraint.constant = -60
                             self.innerViewHeightConstraint.constant = UIScreen.main.bounds.height
-                            self.invoiceViewHeightConstriant.constant = self.innerViewHeightConstraint.constant - self.backBtnView.frame.size.height
-                            self.invoiceBtnHeightConstraint.constant = 0
+                            self.invoiceViewHeightConstriant.constant = self.innerViewHeightConstraint.constant - self.backBtnView.frame.size.height - 50
+                            self.backButtonViewHeightConstraint.constant = 80
                             self.innerView.layoutIfNeeded()
                             
             }) { _ in
@@ -186,6 +181,7 @@ class PaymentOptionViewController: UIViewController {
     
     @IBAction func popToRoot() {
         self.cardDividerView.isHidden = false
+        self.proceedButton.isHidden = true
         innerView.layer.cornerRadius = 12
         if isCardViewShown {
             invoiceViewHeightConstriant.constant = 70
@@ -202,7 +198,7 @@ class PaymentOptionViewController: UIViewController {
                                usingSpringWithDamping: 0.8,
                                initialSpringVelocity: 0.5,
                                options: [], animations: {
-                                self.payBtnHeightConstraint.constant = 0
+                                self.backButtonViewHeightConstraint.constant = 40
                                 self.cardPayBottomConstraint.constant = 10
                                 self.cardViewHeightConstraint.constant = 70
                                 self.invoiceViewHeightConstriant.constant = 70
@@ -212,7 +208,6 @@ class PaymentOptionViewController: UIViewController {
                                 self.innerView.layoutIfNeeded()
                 }, completion: nil)
             }
-            self.cardPaymentButton.isHidden = true
             self.cardPayButton.isHidden = false
             self.addCardVC?.view.removeFromSuperview()
             self.invoiceVC?.view.removeFromSuperview()
@@ -231,7 +226,7 @@ class PaymentOptionViewController: UIViewController {
                                usingSpringWithDamping: 0.8,
                                initialSpringVelocity: 0.5,
                                options: [], animations: {
-                                self.invoiceBtnHeightConstraint.constant = 0
+                                self.backButtonViewHeightConstraint.constant = 40
                                 self.invoicePayTopConstraint.constant = 0
                                 self.invoiceViewHeightConstriant.constant = 70
                                 self.cardViewHeightConstraint.constant = 70
@@ -241,7 +236,6 @@ class PaymentOptionViewController: UIViewController {
                                 self.innerView.layoutIfNeeded()
                 }, completion: nil)
             }
-            self.invoicePaymentButton.isHidden = true
             self.invoicePayButton.isHidden = false
             self.invoiceVC?.view.removeFromSuperview()
             self.addCardVC?.view.removeFromSuperview()
@@ -252,6 +246,15 @@ class PaymentOptionViewController: UIViewController {
             self.navigationController?.popViewController(animated: true)
         }
     }
+    
+    @IBAction func proceedBtnTapped(_ sender: Any) {
+        if isCardViewShown {
+            self.cardBuyTapped(sender)
+        } else {
+            self.invoiceBuyTapped(sender)
+        }
+    }
+    
     
     @IBAction func invoiceBuyTapped(_ sender: Any) {
         SVProgressHUD.show()

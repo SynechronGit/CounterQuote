@@ -19,11 +19,13 @@ class InsuranceQuoteViewController: BaseViewController {
     var isAnimationShow = false
     var isAnimationShowTbl = false
 
-    var companyList = [["companyName": "Company 1", "price": "3500","imgName": "comp1"],["companyName": "Company 2", "price": "3200","imgName": "comp2"],["companyName": "Company 3", "price": "3000","imgName": "comp3"],["companyName": "Company 4", "price": "2800","imgName": "comp4"],["companyName": "Company 5", "price": "2500","imgName": "comp1"],["companyName": "Company 6", "price": "2500","imgName": "comp2"],["companyName": "Company 7", "price": "2000","imgName": "comp3"],["companyName": "Company 8", "price": "2000","imgName": "comp4"]]
+    var companyList = [[String:String]]()
     
     // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(InsuranceQuoteViewController.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
+        defaultsChanged()
         configureUI()
     }
 
@@ -38,6 +40,15 @@ class InsuranceQuoteViewController: BaseViewController {
         startAnimation()
     }
     
+    
+    func defaultsChanged() {
+        if UserDefaults.standard.bool(forKey: "carriers_preference") {
+            companyList = [["companyName": "Company 1", "price": "3500","imgName": "comp1"],["companyName": "Company 2", "price": "3200","imgName": "comp2"],["companyName": "Company 3", "price": "3000","imgName": "comp3"],["companyName": "Company 4", "price": "2800","imgName": "comp4"],["companyName": "Company 5", "price": "2500","imgName": "comp1"],["companyName": "Company 6", "price": "2500","imgName": "comp2"],["companyName": "Company 7", "price": "2000","imgName": "comp3"],["companyName": "Company 8", "price": "2000","imgName": "comp4"]]
+        } else {
+            companyList = [["companyName": "Company 1", "price": "3500","imgName": "comp1"]]
+        }
+    }
+    
     /**
      * Method that will configure UI with initializations
      */
@@ -48,7 +59,7 @@ class InsuranceQuoteViewController: BaseViewController {
         self.bottomConstraintBackBtn.constant = -50
         tableView.tableFooterView = UIView()
         
-        for i in 0...8
+        for i in 0...companyList.count
         {
             let indexPath:IndexPath = IndexPath(item: i, section: 0)
             indexPathArr.append(indexPath)
@@ -112,6 +123,7 @@ class InsuranceQuoteViewController: BaseViewController {
             let vc:QuoteFormViewController = segue.destination as! QuoteFormViewController
             let indexPath:IndexPath = sender as! IndexPath
             vc.companyDetails = companyList[indexPath.row - 1]
+            
         }
     }
 
@@ -122,9 +134,16 @@ extension InsuranceQuoteViewController:UITableViewDataSource,UITableViewDelegate
        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isAnimationShowTbl
         {
-        return companyList.count + 1
+            return companyList.count + 1
         }
         return 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if companyList.count == 1 && indexPath.row == 1 {
+            return 160
+        }
+        return 87
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -135,23 +154,41 @@ extension InsuranceQuoteViewController:UITableViewDataSource,UITableViewDelegate
             mainView.layer.cornerRadius = 8
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath )
-            let dict = companyList[indexPath.row - 1]
-            let lblCompanyName:UILabel = cell.viewWithTag(1) as! UILabel
-            lblCompanyName.text = dict["companyName"]
-            
-            let lblPrice:UILabel = cell.viewWithTag(2) as! UILabel
-            lblPrice.text = "$" + " " + dict["price"]! + "/y"
-
-            let mainView:UIView = cell.viewWithTag(4)!
-            mainView.layer.cornerRadius = 8
-            mainView.layer.borderColor = UIColor(red: 223/255, green: 223/255, blue: 223/255, alpha: 1).cgColor
-            mainView.layer.borderWidth = 1
-
-            let imgLogoView:UIImageView = cell.viewWithTag(8) as! UIImageView
-            imgLogoView.image = UIImage(named: dict["imgName"]!)
-            return cell
-
+            if companyList.count == 1 && indexPath.row == 1 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "bestQuoteCell", for: indexPath ) as! BestQuoteOfferedTableViewCell
+                let dict = companyList[indexPath.row - 1]
+                cell.lblCompanyName.text = dict["companyName"]
+                cell.lblQuoteAmount.text = "$" + " " + dict["price"]! + "/y"
+                
+                let actualPriceStr:String = (dict["price"])!
+                let actualPrice:Int = Int(actualPriceStr)!
+                let savedPrice = 4000 - actualPrice
+                cell.lblYouSaveAmount.text = String(format:"You Save $ %d",savedPrice)
+                
+                cell.layer.cornerRadius = 8
+                cell.layer.borderColor = UIColor(red: 223/255, green: 223/255, blue: 223/255, alpha: 1).cgColor
+                cell.layer.borderWidth = 1
+                
+                cell.imgCompanyLogo.image = UIImage(named: dict["imgName"]!)
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath )
+                let dict = companyList[indexPath.row - 1]
+                let lblCompanyName:UILabel = cell.viewWithTag(1) as! UILabel
+                lblCompanyName.text = dict["companyName"]
+                
+                let lblPrice:UILabel = cell.viewWithTag(2) as! UILabel
+                lblPrice.text = "$" + " " + dict["price"]! + "/y"
+                
+                let mainView:UIView = cell.viewWithTag(4)!
+                mainView.layer.cornerRadius = 8
+                mainView.layer.borderColor = UIColor(red: 223/255, green: 223/255, blue: 223/255, alpha: 1).cgColor
+                mainView.layer.borderWidth = 1
+                
+                let imgLogoView:UIImageView = cell.viewWithTag(8) as! UIImageView
+                imgLogoView.image = UIImage(named: dict["imgName"]!)
+                return cell
+            }
         }
     }
     

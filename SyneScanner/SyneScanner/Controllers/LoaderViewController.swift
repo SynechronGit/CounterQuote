@@ -18,6 +18,8 @@ class LoaderViewController: BaseViewController {
     // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(LoaderViewController.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
+        defaultsChanged()
         configurUI()
     }
 
@@ -31,6 +33,14 @@ class LoaderViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         startAnimation()
+    }
+    
+    func defaultsChanged() {
+        if UserDefaults.standard.bool(forKey: "carriers_preference") {
+            lblNote.text = "We are collecting more than 287 offers for you. We are now making insurance companies fight for your business. We will present you their offers in a bit."
+        } else {
+            lblNote.text = "Working to get a more competetive quote for you."
+        }
     }
     
     /**

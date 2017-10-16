@@ -21,9 +21,9 @@ class AddCardViewController: BaseViewController {
     var month: String?
     var year: String?
     var cardNumber: String?
-    var cvv: String = "123"
-    var userName = "Christopher Voglund"
-    var emailId = "chris68@mail.com"
+    var cvv: String?
+    var userName: String?
+    var emailId: String?
     var companyDetails:[String:String]?
 
     @IBOutlet weak var lblSaveedAmount: UILabel!
@@ -35,6 +35,8 @@ class AddCardViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        NotificationCenter.default.addObserver(self, selector: #selector(AddCardViewController.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
+        defaultsChanged()
         // Do any additional setup after loading the view.
     }
 
@@ -51,7 +53,6 @@ class AddCardViewController: BaseViewController {
     func configureUI() {
         CardIOUtilities.preload()
         
-        self.defaultValues()
         headerView.layer.cornerRadius = 8
         let actualPriceStr:String = (companyDetails?["price"])!
         lblPolicyPrice.text = "$" + actualPriceStr + "/y"
@@ -69,9 +70,12 @@ class AddCardViewController: BaseViewController {
      * Method that will set default values of card
      */
     func defaultValues() {
+        cvv = "123"
         month = "09"
         year = "17"
         cardNumber = "4111 1111 1111 1111"
+        userName = "Christopher Voglund"
+        emailId = "chris68@mail.com"
     }
     
     /**
@@ -97,6 +101,19 @@ class AddCardViewController: BaseViewController {
             month += 1
         }
         pickerMonthArray = months
+    }
+    
+     func defaultsChanged() {
+        if UserDefaults.standard.bool(forKey: "demo_preference") {
+            self.defaultValues()
+        } else {
+            month = ""
+            year = ""
+            cardNumber = ""
+            userName = ""
+            emailId = ""
+            cvv = ""
+        }
     }
     
     //MARK: - Show Alert for Validations
@@ -132,7 +149,13 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell") as! AddCardTableViewCell
-        cell.descriptionField.placeholder = cardHeaderArray[indexPath.row]
+        var headerString = cardHeaderArray[indexPath.row]
+        headerString.append("*")
+        let font:UIFont? = cell.descriptionField.font
+        let fontSuper:UIFont? = UIFont(name: (font?.fontName)!, size:12)
+        let attString:NSMutableAttributedString = NSMutableAttributedString(string: headerString, attributes: [NSFontAttributeName:font!])
+        attString.setAttributes([NSFontAttributeName:fontSuper!,NSBaselineOffsetAttributeName:10], range: NSRange(location:attString.length - 1,length:1))
+        cell.descriptionField.attributedPlaceholder = attString
         if indexPath.section == 0 {
             cell.descriptionField.tag = indexPath.row
         } else {
@@ -156,7 +179,12 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
                 cell.descriptionField.text = userName
                 
             case 2:
-                cell.descriptionField.text = month?.appendingFormat("/%@", year!)
+                if month == "" && year == "" {
+                    cell.descriptionField.text = month?.appendingFormat("%@", year!)
+                } else {
+                    cell.descriptionField.text = month?.appendingFormat("/%@", year!)
+                }
+                
                 cell.cardScanBtn.isHidden = true
                 
             case 3:
@@ -230,7 +258,7 @@ extension AddCardViewController: TextFieldActionDelegate, UIPickerViewDelegate, 
             let message = "Please fill all card details!"
             self.showAlert(message: message)
         }
-        else if(!isValidEmail(testStr: emailId)) {
+        else if(!isValidEmail(testStr: emailId!)) {
             let message = "Invalid Email Address!"
             self.showAlert(message: message)
         }

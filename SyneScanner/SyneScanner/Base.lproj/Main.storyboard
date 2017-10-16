@@ -1166,6 +1166,109 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bestQuoteCell" rowHeight="170" id="55n-41-EX6" customClass="BestQuoteOfferedTableViewCell" customModule="SyneScanner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="229.5" width="284" height="170"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="55n-41-EX6" id="mRh-fM-WGJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="284" height="170"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comp1" translatesAutoresizingMaskIntoConstraints="NO" id="emm-5U-dH8">
+                                                    <rect key="frame" x="25" y="17.5" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="FWi-GN-8qz"/>
+                                                        <constraint firstAttribute="height" constant="20" id="FcJ-Of-Pbu"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XPM-Ji-Anv">
+                                                    <rect key="frame" x="55" y="12" width="135.5" height="33"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ete-tb-38U">
+                                                            <rect key="frame" x="0.0" y="0.0" width="135.5" height="18"/>
+                                                            <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="18"/>
+                                                            <color key="textColor" red="0.26666666666666666" green="0.18823529411764706" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="21"/>
+                                                            </variation>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurance companies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcU-Eh-hHV">
+                                                            <rect key="frame" x="0.0" y="18" width="135.5" height="15"/>
+                                                            <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="15"/>
+                                                            <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=regular">
+                                                                <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="21"/>
+                                                            </variation>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="iqL-Db-iNy">
+                                                    <rect key="frame" x="25" y="56" width="234" height="1"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="uvx-vV-T6r"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best-fitted policy for your need" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aA-3a-cfb">
+                                                    <rect key="frame" x="25" y="67" width="198" height="15"/>
+                                                    <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="15"/>
+                                                    <color key="textColor" red="0.25490196078431371" green="0.30980392156862746" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="21"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Quote Offer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptx-fR-1RV">
+                                                    <rect key="frame" x="25" y="94" width="100" height="14"/>
+                                                    <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="14"/>
+                                                    <color key="textColor" red="0.6588235294117647" green="0.6588235294117647" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$3000/y" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df4-cE-Nhu">
+                                                    <rect key="frame" x="25" y="113" width="68.5" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="18"/>
+                                                    <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="21"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You save " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqV-2c-qed">
+                                                    <rect key="frame" x="25" y="132" width="55" height="14"/>
+                                                    <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="14"/>
+                                                    <color key="textColor" red="0.6588235294117647" green="0.6588235294117647" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="18"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="emm-5U-dH8" firstAttribute="leading" secondItem="mRh-fM-WGJ" secondAttribute="leading" constant="25" id="1Av-Rp-Bnx"/>
+                                                <constraint firstItem="iqL-Db-iNy" firstAttribute="top" secondItem="emm-5U-dH8" secondAttribute="bottom" constant="18.5" id="5z9-2D-b1P"/>
+                                                <constraint firstItem="emm-5U-dH8" firstAttribute="top" secondItem="mRh-fM-WGJ" secondAttribute="top" constant="17.5" id="AbM-pT-Bcb"/>
+                                                <constraint firstAttribute="trailing" secondItem="iqL-Db-iNy" secondAttribute="trailing" constant="25" id="ENN-gs-iOj"/>
+                                                <constraint firstItem="ptx-fR-1RV" firstAttribute="top" secondItem="2aA-3a-cfb" secondAttribute="bottom" constant="12" id="GOU-il-LHf"/>
+                                                <constraint firstItem="ptx-fR-1RV" firstAttribute="leading" secondItem="2aA-3a-cfb" secondAttribute="leading" id="H5X-hF-oy0"/>
+                                                <constraint firstItem="iqL-Db-iNy" firstAttribute="leading" secondItem="emm-5U-dH8" secondAttribute="leading" id="Jpx-zC-rWH"/>
+                                                <constraint firstItem="2aA-3a-cfb" firstAttribute="leading" secondItem="mRh-fM-WGJ" secondAttribute="leading" constant="25" id="MXy-Io-SX6"/>
+                                                <constraint firstItem="XPM-Ji-Anv" firstAttribute="leading" secondItem="emm-5U-dH8" secondAttribute="trailing" constant="10" id="OTG-Hj-Pqq"/>
+                                                <constraint firstItem="EqV-2c-qed" firstAttribute="top" secondItem="Df4-cE-Nhu" secondAttribute="bottom" constant="1" id="Sjg-KK-qIX"/>
+                                                <constraint firstItem="Df4-cE-Nhu" firstAttribute="top" secondItem="ptx-fR-1RV" secondAttribute="bottom" constant="5" id="awo-99-CCY"/>
+                                                <constraint firstItem="Df4-cE-Nhu" firstAttribute="leading" secondItem="ptx-fR-1RV" secondAttribute="leading" id="f77-eo-SFW"/>
+                                                <constraint firstItem="EqV-2c-qed" firstAttribute="leading" secondItem="Df4-cE-Nhu" secondAttribute="leading" id="jAI-cW-G4M"/>
+                                                <constraint firstItem="XPM-Ji-Anv" firstAttribute="centerY" secondItem="emm-5U-dH8" secondAttribute="centerY" id="pw9-e1-egN"/>
+                                                <constraint firstItem="2aA-3a-cfb" firstAttribute="top" secondItem="iqL-Db-iNy" secondAttribute="bottom" constant="10" id="rdz-vA-3Zc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="imgCompanyLogo" destination="emm-5U-dH8" id="dJa-pM-atA"/>
+                                            <outlet property="lblCompanyName" destination="ete-tb-38U" id="Q03-1g-nrg"/>
+                                            <outlet property="lblQuoteAmount" destination="Df4-cE-Nhu" id="O84-zX-jKn"/>
+                                            <outlet property="lblYouSaveAmount" destination="EqV-2c-qed" id="yU9-x0-i3l"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="0LF-t6-SUx" id="EYP-vF-h6y"/>
@@ -1445,17 +1548,31 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4HV-Ar-BZv">
                                                 <rect key="frame" x="0.0" y="180" width="320" height="388"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ap5-ao-zdz">
-                                                        <rect key="frame" x="105.5" y="50" width="109.5" height="17"/>
-                                                        <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="17"/>
-                                                        <color key="textColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2S-DI-q2N">
+                                                        <rect key="frame" x="25" y="0.0" width="270" height="87"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ap5-ao-zdz">
+                                                                <rect key="frame" x="10" y="43.5" width="250" height="0.0"/>
+                                                                <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="17"/>
+                                                                <color key="textColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="87" id="2Ut-BL-bMf"/>
+                                                            <constraint firstItem="Ap5-ao-zdz" firstAttribute="leading" secondItem="h2S-DI-q2N" secondAttribute="leading" constant="10" id="JHp-PJ-EfN"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Ap5-ao-zdz" secondAttribute="trailing" constant="10" id="JxH-GF-GCb"/>
+                                                            <constraint firstItem="Ap5-ao-zdz" firstAttribute="centerX" secondItem="h2S-DI-q2N" secondAttribute="centerX" id="YID-9y-GUa"/>
+                                                            <constraint firstItem="Ap5-ao-zdz" firstAttribute="centerY" secondItem="h2S-DI-q2N" secondAttribute="centerY" id="uCo-Ti-a0l"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="Ap5-ao-zdz" firstAttribute="top" secondItem="4HV-Ar-BZv" secondAttribute="top" constant="50" id="pxx-vY-Krz"/>
-                                                    <constraint firstItem="Ap5-ao-zdz" firstAttribute="centerX" secondItem="4HV-Ar-BZv" secondAttribute="centerX" id="qvE-Bj-Naj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="h2S-DI-q2N" secondAttribute="trailing" constant="25" id="MUG-ap-wWZ"/>
+                                                    <constraint firstItem="h2S-DI-q2N" firstAttribute="top" secondItem="4HV-Ar-BZv" secondAttribute="top" id="UlG-x5-Bkj"/>
+                                                    <constraint firstItem="h2S-DI-q2N" firstAttribute="leading" secondItem="4HV-Ar-BZv" secondAttribute="leading" constant="25" id="xdo-Li-oMZ"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -1495,7 +1612,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="descriptionView" destination="h2S-DI-q2N" id="CT3-fp-1HU"/>
                         <outlet property="headerView" destination="eVS-kh-icP" id="8mt-Mp-9aU"/>
+                        <outlet property="lblInvoicePay" destination="Ap5-ao-zdz" id="EP1-FY-Psl"/>
                         <outlet property="lblPolicyPrice" destination="D06-ei-DgP" id="wXo-Om-fCM"/>
                         <outlet property="lblSaveedAmount" destination="sM1-NR-3je" id="ecA-Qi-xzr"/>
                     </connections>
@@ -1532,32 +1651,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Asp-cr-y3d">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="70"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7V0-eR-FGo">
-                                                <rect key="frame" x="30" y="90" width="220" height="0.0"/>
-                                                <subviews>
-                                                    <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVC-ax-EEM">
-                                                        <rect key="frame" x="0.0" y="0.0" width="220" height="0.0"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="220" id="cCy-l8-pKG"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
-                                                        <state key="normal" title="MAKE PAYMENT">
-                                                            <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="invoiceBuyTapped:" destination="UT7-qo-NyP" eventType="touchUpInside" id="qPG-U1-NhY"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstItem="yVC-ax-EEM" firstAttribute="centerX" secondItem="7V0-eR-FGo" secondAttribute="centerX" id="KBX-WL-oA1"/>
-                                                    <constraint firstItem="yVC-ax-EEM" firstAttribute="top" secondItem="7V0-eR-FGo" secondAttribute="top" id="aOh-iA-8o7"/>
-                                                    <constraint firstAttribute="height" id="ade-Z4-iZB"/>
-                                                    <constraint firstAttribute="bottom" secondItem="yVC-ax-EEM" secondAttribute="bottom" id="so2-cM-raK"/>
-                                                </constraints>
-                                            </view>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8z-cq-sNH">
                                                 <rect key="frame" x="30" y="20" width="220" height="40"/>
                                                 <constraints>
@@ -1580,14 +1673,11 @@
                                         <constraints>
                                             <constraint firstItem="j8z-cq-sNH" firstAttribute="centerX" secondItem="Asp-cr-y3d" secondAttribute="centerX" id="2X8-Dr-Zfp"/>
                                             <constraint firstItem="CtD-Vw-Gaj" firstAttribute="leading" secondItem="Asp-cr-y3d" secondAttribute="leading" id="3gG-eS-5bh"/>
-                                            <constraint firstItem="7V0-eR-FGo" firstAttribute="top" secondItem="CtD-Vw-Gaj" secondAttribute="bottom" constant="20" id="5Bd-jM-KiO"/>
                                             <constraint firstItem="CtD-Vw-Gaj" firstAttribute="top" secondItem="j8z-cq-sNH" secondAttribute="bottom" constant="10" id="Ip6-ui-JJB"/>
                                             <constraint firstAttribute="height" constant="70" id="WzV-TJ-u8q"/>
                                             <constraint firstAttribute="bottom" secondItem="CtD-Vw-Gaj" secondAttribute="bottom" id="Yk7-0e-hT3"/>
                                             <constraint firstAttribute="trailing" secondItem="CtD-Vw-Gaj" secondAttribute="trailing" id="a8N-k8-qFF"/>
-                                            <constraint firstItem="7V0-eR-FGo" firstAttribute="trailing" secondItem="j8z-cq-sNH" secondAttribute="trailing" id="c0D-dy-PTd"/>
                                             <constraint firstItem="j8z-cq-sNH" firstAttribute="top" secondItem="Asp-cr-y3d" secondAttribute="top" constant="20" id="nOS-Mm-9in"/>
-                                            <constraint firstItem="7V0-eR-FGo" firstAttribute="leading" secondItem="j8z-cq-sNH" secondAttribute="leading" id="z6l-lK-VUv"/>
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CardDivider" translatesAutoresizingMaskIntoConstraints="NO" id="FMW-Be-pb4">
@@ -1617,45 +1707,16 @@
                                                     <action selector="cardPayTapped:" destination="UT7-qo-NyP" eventType="touchUpInside" id="n4f-V2-uGs"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6M-Ce-fQI">
-                                                <rect key="frame" x="30" y="50" width="220" height="0.0"/>
-                                                <subviews>
-                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXj-Jc-UC4">
-                                                        <rect key="frame" x="0.0" y="0.0" width="220" height="0.0"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="220" id="bMf-3y-z6G"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
-                                                        <state key="normal" title="MAKE PAYMENT">
-                                                            <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="cardBuyTapped:" destination="UT7-qo-NyP" eventType="touchUpInside" id="WZd-dF-Rq6"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="lXj-Jc-UC4" secondAttribute="bottom" id="07P-th-VeM"/>
-                                                    <constraint firstItem="lXj-Jc-UC4" firstAttribute="top" secondItem="y6M-Ce-fQI" secondAttribute="top" id="8Xx-xz-ANV"/>
-                                                    <constraint firstItem="lXj-Jc-UC4" firstAttribute="centerX" secondItem="y6M-Ce-fQI" secondAttribute="centerX" id="9ZY-RD-ULl"/>
-                                                    <constraint firstAttribute="height" id="hhS-6v-fcf"/>
-                                                </constraints>
-                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="OZO-DS-SWI" firstAttribute="leading" secondItem="dBY-51-87y" secondAttribute="leading" id="1d9-l9-a3z"/>
                                             <constraint firstItem="Ah2-CR-oTN" firstAttribute="centerX" secondItem="dBY-51-87y" secondAttribute="centerX" id="4LI-po-nqU"/>
-                                            <constraint firstItem="y6M-Ce-fQI" firstAttribute="trailing" secondItem="Ah2-CR-oTN" secondAttribute="trailing" id="5HC-Wm-tlz"/>
-                                            <constraint firstItem="y6M-Ce-fQI" firstAttribute="top" secondItem="Ah2-CR-oTN" secondAttribute="bottom" id="6Dz-NK-gQq"/>
                                             <constraint firstItem="Ah2-CR-oTN" firstAttribute="top" secondItem="OZO-DS-SWI" secondAttribute="bottom" constant="10" id="Ckt-M0-jCU"/>
                                             <constraint firstItem="OZO-DS-SWI" firstAttribute="top" secondItem="dBY-51-87y" secondAttribute="top" id="Een-ZH-DZc"/>
                                             <constraint firstAttribute="trailing" secondItem="OZO-DS-SWI" secondAttribute="trailing" id="Fry-Dz-0lM"/>
                                             <constraint firstAttribute="height" constant="70" id="Z1N-5a-NLb"/>
                                             <constraint firstAttribute="bottom" secondItem="Ah2-CR-oTN" secondAttribute="bottom" constant="20" id="Z69-R4-Zoo"/>
-                                            <constraint firstItem="y6M-Ce-fQI" firstAttribute="leading" secondItem="Ah2-CR-oTN" secondAttribute="leading" id="cJt-9d-RZc"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1674,10 +1735,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E46-yJ-6VF">
-                                <rect key="frame" x="0.0" y="508" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="488" width="320" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieU-Cx-Drq">
-                                        <rect key="frame" x="125" y="10" width="71" height="40"/>
+                                        <rect key="frame" x="125" y="40" width="71" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="71" id="4UZ-BK-8Nc"/>
                                             <constraint firstAttribute="height" constant="40" id="E1q-aF-zLh"/>
@@ -1690,12 +1751,32 @@
                                             <action selector="popToRoot" destination="UT7-qo-NyP" eventType="touchUpInside" id="SNs-Ng-ZHN"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfe-Cd-Qtg">
+                                        <rect key="frame" x="50" y="0.0" width="220" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="1zF-tr-8lw"/>
+                                            <constraint firstAttribute="width" constant="220" id="mZF-Q7-OUH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <state key="normal" title="PROCEED">
+                                            <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="proceedBtnTapped:" destination="UT7-qo-NyP" eventType="touchUpInside" id="Klf-wc-hDo"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ieU-Cx-Drq" secondAttribute="bottom" id="E6I-g9-Zlx"/>
                                     <constraint firstItem="ieU-Cx-Drq" firstAttribute="centerX" secondItem="E46-yJ-6VF" secondAttribute="centerX" id="VpV-DT-X3C"/>
-                                    <constraint firstItem="ieU-Cx-Drq" firstAttribute="centerY" secondItem="E46-yJ-6VF" secondAttribute="centerY" id="eGJ-dr-gOU"/>
-                                    <constraint firstAttribute="height" constant="60" id="iFo-YH-Dfw"/>
+                                    <constraint firstItem="Qfe-Cd-Qtg" firstAttribute="centerX" secondItem="E46-yJ-6VF" secondAttribute="centerX" id="YHq-eE-btM"/>
+                                    <constraint firstItem="ieU-Cx-Drq" firstAttribute="top" secondItem="Qfe-Cd-Qtg" secondAttribute="bottom" id="ZFT-7e-tKy"/>
+                                    <constraint firstAttribute="height" constant="80" id="iFo-YH-Dfw"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1720,27 +1801,23 @@
                     </view>
                     <connections>
                         <outlet property="backBtnView" destination="E46-yJ-6VF" id="bB0-LE-njl"/>
+                        <outlet property="backButtonViewHeightConstraint" destination="iFo-YH-Dfw" id="d8Y-Rw-swp"/>
                         <outlet property="cardDividerView" destination="FMW-Be-pb4" id="S8Q-2F-qaf"/>
                         <outlet property="cardPayBottomConstraint" destination="Ckt-M0-jCU" id="Owc-xv-ZsU"/>
-                        <outlet property="cardPayBtnView" destination="y6M-Ce-fQI" id="vbF-VG-lLh"/>
                         <outlet property="cardPayButton" destination="Ah2-CR-oTN" id="tYS-VI-vab"/>
                         <outlet property="cardPayScrollView" destination="OZO-DS-SWI" id="c1w-sN-ZbW"/>
-                        <outlet property="cardPaymentButton" destination="lXj-Jc-UC4" id="sas-MW-wAO"/>
                         <outlet property="cardView" destination="dBY-51-87y" id="MfG-rY-Zaj"/>
                         <outlet property="cardViewHeightConstraint" destination="Z1N-5a-NLb" id="mWh-lB-eco"/>
                         <outlet property="innerView" destination="lR8-bU-N3J" id="7Qk-fc-VJF"/>
                         <outlet property="innerViewHeightConstraint" destination="aKT-A9-kq6" id="WOv-2C-7XA"/>
                         <outlet property="innerViewLeadingConstraint" destination="y5C-xv-8RK" id="RW8-pg-JDR"/>
                         <outlet property="innerViewTrailingConstraint" destination="fzR-XC-Uag" id="dop-c1-xBk"/>
-                        <outlet property="invoiceBtnHeightConstraint" destination="ade-Z4-iZB" id="o5P-KR-tzZ"/>
-                        <outlet property="invoicePayBtnView" destination="7V0-eR-FGo" id="qh4-js-nKk"/>
                         <outlet property="invoicePayButton" destination="j8z-cq-sNH" id="BNC-3w-koH"/>
                         <outlet property="invoicePayScrollView" destination="CtD-Vw-Gaj" id="TIG-xh-6gn"/>
                         <outlet property="invoicePayTopConstraint" destination="Ip6-ui-JJB" id="wbt-ix-4oq"/>
-                        <outlet property="invoicePaymentButton" destination="yVC-ax-EEM" id="SOH-T4-TMu"/>
                         <outlet property="invoiceView" destination="Asp-cr-y3d" id="O0t-Ca-rNs"/>
                         <outlet property="invoiceViewHeightConstriant" destination="WzV-TJ-u8q" id="17Y-KN-7YA"/>
-                        <outlet property="payBtnHeightConstraint" destination="hhS-6v-fcf" id="pTH-Bi-USi"/>
+                        <outlet property="proceedButton" destination="Qfe-Cd-Qtg" id="pPP-nY-jcl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Piw-G5-OUS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2054,7 +2131,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o39-UH-0KX">
-                                                    <rect key="frame" x="35" y="10.5" width="250" height="15"/>
+                                                    <rect key="frame" x="35" y="9.5" width="250" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2063,7 +2140,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPS-uT-oDM">
-                                                    <rect key="frame" x="35" y="31.5" width="250" height="15"/>
+                                                    <rect key="frame" x="35" y="30.5" width="250" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -2333,7 +2410,7 @@ We are now making insurance companies fight for your business. We will present y
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="280"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Agent will Call You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRN-Ay-YwY">
-                                                <rect key="frame" x="61.5" y="20" width="179" height="18"/>
+                                                <rect key="frame" x="60.5" y="20" width="179" height="18"/>
                                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="18"/>
                                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2527,7 +2604,7 @@ We are now making insurance companies fight for your business. We will present y
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9S6-1L-NPE">
-                                <rect key="frame" x="50" y="20" width="178" height="23"/>
+                                <rect key="frame" x="50" y="20" width="180" height="23"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="23"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2664,13 +2741,13 @@ We are now making insurance companies fight for your business. We will present y
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQ0-2D-NWF">
-                                                    <rect key="frame" x="35" y="11.5" width="37" height="15"/>
+                                                    <rect key="frame" x="35" y="10.5" width="37" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghg-nD-BZQ">
-                                                    <rect key="frame" x="35" y="34.5" width="37" height="15"/>
+                                                    <rect key="frame" x="35" y="33.5" width="37" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -2746,7 +2823,7 @@ We are now making insurance companies fight for your business. We will present y
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgW-Ff-eJd">
-                                <rect key="frame" x="275" y="39" width="25" height="25"/>
+                                <rect key="frame" x="275" y="42.5" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="c6y-av-hVJ"/>
                                     <constraint firstAttribute="height" constant="25" id="mgB-IV-Ol9"/>
@@ -2757,10 +2834,10 @@ We are now making insurance companies fight for your business. We will present y
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ufm-AR-CEN">
-                                <rect key="frame" x="238" y="35" width="27" height="32"/>
+                                <rect key="frame" x="240" y="42" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="3TV-0F-Zoy"/>
-                                    <constraint firstAttribute="width" constant="27" id="LWx-qI-W3Y"/>
+                                    <constraint firstAttribute="height" constant="25" id="3TV-0F-Zoy"/>
+                                    <constraint firstAttribute="width" constant="25" id="LWx-qI-W3Y"/>
                                 </constraints>
                                 <state key="normal" image="share_pdf"/>
                                 <connections>
@@ -2966,6 +3043,7 @@ We are now making insurance companies fight for your business. We will present y
         <image name="Card" width="402" height="457"/>
         <image name="CardDivider" width="686" height="1"/>
         <image name="Done" width="53" height="39"/>
+        <image name="Line" width="325" height="1"/>
         <image name="SavedCard" width="561" height="127"/>
         <image name="Torch-off" width="24" height="24"/>
         <image name="bgOverlayPad" width="416" height="280"/>
