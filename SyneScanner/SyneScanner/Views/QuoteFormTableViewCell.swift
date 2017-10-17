@@ -19,6 +19,7 @@ class QuoteFormTableViewCell: UITableViewCell {
     
     // MARK: - TableView cell initial methods
     override func awakeFromNib() {
+        descriptionField.delegate = self
         super.awakeFromNib()
         // Initialization code
     }
@@ -34,19 +35,6 @@ class QuoteFormTableViewCell: UITableViewCell {
 // MARK: - UITextField delegate methods
 extension QuoteFormTableViewCell: UITextFieldDelegate {
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let newLength = textField.text!.characters.count + string.characters.count - range.length
-        
-        switch textField.tag {
-        case 0:
-            return newLength <= 19
-        case 3:
-            return true
-        default:
-            return true
-        }
-    }
-    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         quoteDelegate?.textFieldTappedAt(cell: self)
         return true
@@ -57,6 +45,7 @@ extension QuoteFormTableViewCell: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        quoteDelegate?.textFieldReturnedFor(cell: self)
         return true
     }
 }
@@ -64,4 +53,5 @@ extension QuoteFormTableViewCell: UITextFieldDelegate {
 // MARK: - TextFieldActionDelegate protocol
 protocol QuoteTextFieldDelegate {
     func textFieldTappedAt(cell: QuoteFormTableViewCell)
+    func textFieldReturnedFor(cell: QuoteFormTableViewCell)
 }

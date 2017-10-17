@@ -290,24 +290,24 @@ extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate {
         let fontSuper:UIFont? = UIFont(name: (font?.fontName)!, size:10)
         let attString:NSMutableAttributedString = NSMutableAttributedString(string: headerText!, attributes: [NSFontAttributeName:font!])
         attString.setAttributes([NSFontAttributeName:fontSuper!,NSBaselineOffsetAttributeName:10], range: NSRange(location:attString.length - 1,length:1))
+        cell.headerLabel.attributedText = attString
+        
+        if UserDefaults.standard.bool(forKey: "demo_preference") {
+            cell.descriptionField.text =  data.value(forKey: "value") as? String
+        } else {
+            cell.descriptionField.placeholder =  data.value(forKey: "heading") as? String
+        }
+        
         quoteType = data.value(forKey: "type") as? String
-        if quoteType == QuoteFormFieldType.TYPE_STRING.rawValue {
-            cell.descriptionField.keyboardType = .asciiCapable
+        if quoteType == QuoteFormFieldType.TYPE_CURRENCY.rawValue {
+            cell.descriptionField.keyboardType = .numbersAndPunctuation
         } else if quoteType == QuoteFormFieldType.TYPE_NUMBER.rawValue {
             cell.descriptionField.keyboardType = .numberPad
         } else if quoteType == QuoteFormFieldType.TYPE_DATE.rawValue {
             cell.descriptionField.keyboardType = .numbersAndPunctuation
             cell.descriptionField.text = dateString
         } else {
-            cell.descriptionField.keyboardType = .numbersAndPunctuation
-            cell.descriptionField.addTarget(self, action: #selector(QuoteFormViewController.myTextFieldDidChange), for: .editingChanged)
-        }
-        
-        cell.headerLabel.attributedText = attString
-        if UserDefaults.standard.bool(forKey: "demo_preference") {
-            cell.descriptionField.text =  data.value(forKey: "value") as? String
-        } else {
-            cell.descriptionField.placeholder =  data.value(forKey: "heading") as? String
+            cell.descriptionField.keyboardType = .asciiCapable
         }
         
         if indexPath.row == arr.count - 1
@@ -383,6 +383,18 @@ extension QuoteFormViewController: QuoteTextFieldDelegate {
             picker.datePickerMode = .date
             cell.descriptionField.inputView = picker
             picker.addTarget(self, action: #selector(QuoteFormViewController.dateChanged), for: .valueChanged)
+        }
+        
+    }
+    
+    func textFieldReturnedFor(cell: QuoteFormTableViewCell) {
+        if quoteType == QuoteFormFieldType.TYPE_CURRENCY.rawValue {
+            if let amountString = cell.descriptionField.text?.currencyInputFormatting() {
+                cell.descriptionField.text = amountString
+                var indexPaths = [IndexPath]()
+                indexPaths.append(indexPath!)                
+                self.tableForm.reloadRows(at: indexPaths, with: .top)
+            }
         }
     }
 }
