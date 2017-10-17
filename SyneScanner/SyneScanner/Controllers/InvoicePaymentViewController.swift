@@ -37,9 +37,12 @@ class InvoicePaymentViewController: BaseViewController {
     // MARK: - Configure UI
     func configureUI() {
         descriptionView.layer.borderWidth = 1
-        
+        descriptionView.layer.borderColor = UIColor.clear.cgColor
         descriptionView.layer.cornerRadius = 16
-        
+        descriptionView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        descriptionView.layer.shadowColor = UIColor.black.cgColor
+        descriptionView.layer.shadowOpacity = 0.10
+        descriptionView.layer.shadowRadius = 4
         
         headerView.layer.cornerRadius = 8
         // Do any additional setup after loading the view.

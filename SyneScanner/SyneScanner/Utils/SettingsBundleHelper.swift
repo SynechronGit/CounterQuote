@@ -15,10 +15,6 @@ class SettingsBundleHelper: NSObject {
         static let ProducerCodeKey = "producer_preference"
     }
     
-    class func checkAndExecuteSettings() {
-        
-    }
-    
     class func setVersionAndBuildNumber() {
         UserDefaults.standard.set(true, forKey: "demo_preference")
         UserDefaults.standard.set(true, forKey: "carriers_preference")

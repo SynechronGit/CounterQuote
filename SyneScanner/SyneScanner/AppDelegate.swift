@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Keyboard with next,previous and done buttons initailized
         IQKeyboardManager.sharedManager().enable = true
+                
+        registerSettingsBundle()
+        self.setDefaultsFromSettingsBundle()
         return true
     }
 
@@ -64,7 +67,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SVProgressHUD.setRingThickness(2.5)
         SVProgressHUD.setForegroundColor(UIColor(red:73/255, green:135/255, blue:233/255, alpha:1))
     }
-
+    
+    //MARK: - Settings Bundle methods
+    func registerSettingsBundle() {
+        let appDefaults = [String:AnyObject]()
+        UserDefaults.standard.register(defaults: appDefaults)
+    }
+    
+    
+    func setDefaultsFromSettingsBundle() {
+        //Read PreferenceSpecifiers from Root.plist in Settings.Bundle
+        if let settingsURL = Bundle.main.url(forResource: "Root", withExtension: "plist", subdirectory: "Settings.bundle"),
+            let settingsPlist = NSDictionary(contentsOf: settingsURL),
+            let preferences = settingsPlist["PreferenceSpecifiers"] as? [NSDictionary] {
+            
+            for prefSpecification in preferences {
+                
+                if let key = prefSpecification["Key"] as? String, let value = prefSpecification["DefaultValue"] {
+                    
+                    //If key doesn't exists in userDefaults then register it, else keep original value
+                    if UserDefaults.standard.value(forKey: key) == nil {
+                        UserDefaults.standard.set(value, forKey: key)
+                        NSLog("registerDefaultsFromSettingsBundle: Set following to UserDefaults - (key: \(key), value: \(value), type: \(type(of: value)))")
+                    }
+                }
+            }
+        } else {
+            NSLog("registerDefaultsFromSettingsBundle: Could not find Settings.bundle")
+        }
+    }
 
 }
 

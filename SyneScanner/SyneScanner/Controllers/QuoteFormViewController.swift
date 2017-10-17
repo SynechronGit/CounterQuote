@@ -30,6 +30,8 @@ class QuoteFormViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        NotificationCenter.default.addObserver(self, selector: #selector(QuoteFormViewController.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
+        defaultsChanged()
         // Do any additional setup after loading the view.
     }
 
@@ -58,7 +60,6 @@ class QuoteFormViewController: BaseViewController {
         lblCompanyName.text =  companyDetails?["companyName"]
         
         proceedBtn.setBorderToButton()
-        loadDataFromPlist()
 
         let actualPriceStr:String = (companyDetails?["price"])!
         lblActilaPrice.text = "$" + " " + actualPriceStr + "/y"
@@ -66,6 +67,12 @@ class QuoteFormViewController: BaseViewController {
         let savedPrice = 4000 - actualPrice
         lblSavedaAmount.text = String(format:"You Saved $ %d",savedPrice)
         viewAmount.layer.cornerRadius = 8
+    }
+    
+    func defaultsChanged() {
+        if UserDefaults.standard.bool(forKey: "demo_preference") {
+            loadDataFromPlist()
+        }
     }
     
     /**
@@ -254,7 +261,15 @@ extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate {
         let dict:NSDictionary = dataArr?.object(at: indexPath.section) as! NSDictionary
         let arr:NSArray = dict.value(forKey: "data") as! NSArray
         let data:NSDictionary = arr.object(at: indexPath.row) as! NSDictionary
-        cell.headerLabel.text =  data.value(forKey: "heading") as? String
+        
+        var headerText = data.value(forKey: "heading") as? String
+        headerText!.append("*")
+        let font:UIFont? = cell.headerLabel.font
+        let fontSuper:UIFont? = UIFont(name: (font?.fontName)!, size:10)
+        let attString:NSMutableAttributedString = NSMutableAttributedString(string: headerText!, attributes: [NSFontAttributeName:font!])
+        attString.setAttributes([NSFontAttributeName:fontSuper!,NSBaselineOffsetAttributeName:10], range: NSRange(location:attString.length - 1,length:1))
+        
+        cell.headerLabel.attributedText = attString
         cell.descriptionLabel.text =  data.value(forKey: "value") as? String
         
         if indexPath.row == arr.count - 1

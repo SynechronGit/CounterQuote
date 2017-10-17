@@ -31,8 +31,6 @@ class BaseViewController: UIViewController {
             }        
         }
         hideLeftnRightCureve()
-        registerSettingsBundle()
-        
         // Do any additional setup after loading the view.
     }
     
@@ -42,11 +40,6 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: - Settings Bundle methods
-    func registerSettingsBundle() {
-        let appDefaults = [String:AnyObject]()
-        UserDefaults.standard.register(defaults: appDefaults)
-    }
     
     
     // MARK: - Animation methods
