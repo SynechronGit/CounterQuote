@@ -149,13 +149,7 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell") as! AddCardTableViewCell
-        var headerString = cardHeaderArray[indexPath.row]
-        headerString.append("*")
-        let font:UIFont? = cell.descriptionField.font
-        let fontSuper:UIFont? = UIFont(name: (font?.fontName)!, size:12)
-        let attString:NSMutableAttributedString = NSMutableAttributedString(string: headerString, attributes: [NSFontAttributeName:font!])
-        attString.setAttributes([NSFontAttributeName:fontSuper!,NSBaselineOffsetAttributeName:10], range: NSRange(location:attString.length - 1,length:1))
-        cell.descriptionField.attributedPlaceholder = attString
+        
         if indexPath.section == 0 {
             cell.descriptionField.tag = indexPath.row
         } else {
@@ -166,6 +160,14 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
         cell.cellDividerImage.isHidden = false
         if indexPath.section == 0
         {
+            var headerString = cardHeaderArray[indexPath.row]
+            headerString.append("*")
+            let font:UIFont? = cell.descriptionField.font
+            let fontSuper:UIFont? = UIFont(name: (font?.fontName)!, size:10)
+            let attString:NSMutableAttributedString = NSMutableAttributedString(string: headerString, attributes: [NSFontAttributeName:font!])
+            attString.setAttributes([NSFontAttributeName:fontSuper!,NSBaselineOffsetAttributeName:10], range: NSRange(location:attString.length - 1,length:1))
+            cell.descriptionField.attributedPlaceholder = attString
+            
             switch indexPath.row {
             case 0:
                 cell.descriptionField.rightViewMode = UITextFieldViewMode.always
@@ -202,6 +204,14 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
             }
         }
         else{
+            var headerString = "Email ID"
+            headerString.append("*")
+            let font:UIFont? = cell.descriptionField.font
+            let fontSuper:UIFont? = UIFont(name: (font?.fontName)!, size:8)
+            let attString:NSMutableAttributedString = NSMutableAttributedString(string: headerString, attributes: [NSFontAttributeName:font!])
+            attString.setAttributes([NSFontAttributeName:fontSuper!,NSBaselineOffsetAttributeName:10], range: NSRange(location:attString.length - 1,length:1))
+            cell.descriptionField.attributedPlaceholder = attString
+            
             cell.descriptionField.text = emailId
             cell.descriptionField.keyboardType = .emailAddress
             cell.cardScanBtn.isHidden = true

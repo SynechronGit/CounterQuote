@@ -25,6 +25,10 @@ class QuoteFormViewController: BaseViewController {
     var termsnQVc:TermsnConditionViewController?
     var dataArr:NSArray?
     var companyDetails:[String:String]?
+    
+    var quoteType: String?
+    var indexPath: IndexPath?
+    var dateString: String?
 
     // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
@@ -70,9 +74,7 @@ class QuoteFormViewController: BaseViewController {
     }
     
     func defaultsChanged() {
-        if UserDefaults.standard.bool(forKey: "demo_preference") {
-            loadDataFromPlist()
-        }
+        loadDataFromPlist()
     }
     
     /**
@@ -227,7 +229,23 @@ class QuoteFormViewController: BaseViewController {
         }
     }
     
-
+    //MARK: - UIDatePicker delegate method
+    func dateChanged(_ sender: UIDatePicker) {
+        let componenets = Calendar.current.dateComponents([.year, .month, .day], from: sender.date)
+        if let day = componenets.day, let month = componenets.month, let year = componenets.year {
+            var indexPaths = [IndexPath]()
+            indexPaths.append(indexPath!)
+            dateString = String(day) + "/" + String(month) + "/" + String(year)
+            self.tableForm.reloadRows(at: indexPaths, with: .top)
+        }
+    }
+    
+    func myTextFieldDidChange(_ textField: UITextField) {
+        if let amountString = textField.text?.currencyInputFormatting() {
+            textField.text = amountString
+        }
+    }
+    
 }
 
 //MARK: - UItableView datasource and delegate methods
@@ -253,11 +271,15 @@ extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 68
+        return 68
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        self.indexPath = indexPath
+        
         let cell:QuoteFormTableViewCell = tableView.dequeueReusableCell(withIdentifier: "formCell", for: indexPath ) as! QuoteFormTableViewCell
+        cell.quoteDelegate = self
+        
         let dict:NSDictionary = dataArr?.object(at: indexPath.section) as! NSDictionary
         let arr:NSArray = dict.value(forKey: "data") as! NSArray
         let data:NSDictionary = arr.object(at: indexPath.row) as! NSDictionary
@@ -268,9 +290,25 @@ extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate {
         let fontSuper:UIFont? = UIFont(name: (font?.fontName)!, size:10)
         let attString:NSMutableAttributedString = NSMutableAttributedString(string: headerText!, attributes: [NSFontAttributeName:font!])
         attString.setAttributes([NSFontAttributeName:fontSuper!,NSBaselineOffsetAttributeName:10], range: NSRange(location:attString.length - 1,length:1))
+        quoteType = data.value(forKey: "type") as? String
+        if quoteType == QuoteFormFieldType.TYPE_STRING.rawValue {
+            cell.descriptionField.keyboardType = .asciiCapable
+        } else if quoteType == QuoteFormFieldType.TYPE_NUMBER.rawValue {
+            cell.descriptionField.keyboardType = .numberPad
+        } else if quoteType == QuoteFormFieldType.TYPE_DATE.rawValue {
+            cell.descriptionField.keyboardType = .numbersAndPunctuation
+            cell.descriptionField.text = dateString
+        } else {
+            cell.descriptionField.keyboardType = .numbersAndPunctuation
+            cell.descriptionField.addTarget(self, action: #selector(QuoteFormViewController.myTextFieldDidChange), for: .editingChanged)
+        }
         
         cell.headerLabel.attributedText = attString
-        cell.descriptionLabel.text =  data.value(forKey: "value") as? String
+        if UserDefaults.standard.bool(forKey: "demo_preference") {
+            cell.descriptionField.text =  data.value(forKey: "value") as? String
+        } else {
+            cell.descriptionField.placeholder =  data.value(forKey: "heading") as? String
+        }
         
         if indexPath.row == arr.count - 1
         {
@@ -292,8 +330,7 @@ extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate {
 }
 
 //MARK: - AgentCallViewControllerDelegate delegate methods
-extension QuoteFormViewController:AgentCallViewControllerDelegate
-{
+extension QuoteFormViewController: AgentCallViewControllerDelegate {
     func dismissCallUsView() {
         agentCallVc?.view.removeFromSuperview()
         agentCallVc = nil
@@ -301,11 +338,82 @@ extension QuoteFormViewController:AgentCallViewControllerDelegate
 }
 
 //MARK: - TermsnConditionViewControllerDelegate delegate methods
-extension QuoteFormViewController:TermsnConditionViewControllerDelegate
-{
+extension QuoteFormViewController: TermsnConditionViewControllerDelegate {
     func dismissTnQView() {
         termsnQVc?.view.removeFromSuperview()
         termsnQVc = nil
     }
 }
 
+
+//MARK: - QuoteFormFieldType enum
+public enum QuoteFormFieldType : String {
+    case TYPE_STRING = "String"
+    case TYPE_NUMBER = "Number"
+    case TYPE_DATE = "Date"
+    case TYPE_CURRENCY = "Currency"
+    
+    static let allValues = [TYPE_STRING, TYPE_NUMBER, TYPE_DATE, TYPE_CURRENCY]
+    
+    
+    public init(rawValue pRawValue :String) {
+        var aValue :QuoteFormFieldType = QuoteFormFieldType.TYPE_STRING
+        for aCase in QuoteFormFieldType.allValues {
+            if aCase.rawValue == pRawValue {
+                aValue = aCase
+                break
+            }
+        }
+        self = aValue
+    }
+}
+
+
+//MARK: TableViewCell textfield delegate methods
+extension QuoteFormViewController: QuoteTextFieldDelegate {
+    // Textfield tap to show picker view for year and month of card expiry date
+    func textFieldTappedAt(cell: QuoteFormTableViewCell) {
+        indexPath = self.tableForm.indexPath(for: cell)
+        let dict:NSDictionary = dataArr?.object(at: indexPath!.section) as! NSDictionary
+        let arr:NSArray = dict.value(forKey: "data") as! NSArray
+        let data:NSDictionary = arr.object(at: indexPath!.row) as! NSDictionary
+        quoteType = data.value(forKey: "type") as? String
+        if quoteType == QuoteFormFieldType.TYPE_DATE.rawValue {
+            let picker = UIDatePicker()
+            picker.datePickerMode = .date
+            cell.descriptionField.inputView = picker
+            picker.addTarget(self, action: #selector(QuoteFormViewController.dateChanged), for: .valueChanged)
+        }
+    }
+}
+
+
+extension String {
+    
+    // formatting text for currency textField
+    func currencyInputFormatting() -> String {
+        
+        var number: NSNumber!
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currencyAccounting
+        formatter.currencySymbol = "$"
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
+        
+        var amountWithPrefix = self
+        
+        // remove from String: "$", ".", ","
+        let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
+        amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.characters.count), withTemplate: "")
+        
+        let double = (amountWithPrefix as NSString).doubleValue
+        number = NSNumber(value: (double / 100))
+        
+        // if first number is 0 or all numbers were deleted
+        guard number != 0 as NSNumber else {
+            return ""
+        }
+        
+        return formatter.string(from: number)!
+    }
+}
