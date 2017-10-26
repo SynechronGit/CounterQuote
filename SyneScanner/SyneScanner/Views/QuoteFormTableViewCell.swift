@@ -41,11 +41,12 @@ extension QuoteFormTableViewCell: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+        quoteDelegate?.textFieldReturnedFor(cell: self)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        quoteDelegate?.textFieldReturnedFor(cell: self)
         return true
     }
 }
