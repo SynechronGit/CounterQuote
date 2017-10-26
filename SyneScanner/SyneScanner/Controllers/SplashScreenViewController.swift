@@ -26,6 +26,7 @@ class SplashScreenViewController: BaseViewController {
         topConstraintLblHeader.constant = -50
 
         self.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.endSplashScreenView), userInfo: nil, repeats: false)
+        self.startTokenApi()
         // Do any additional setup after loading the view.
     }
 
@@ -82,3 +83,26 @@ class SplashScreenViewController: BaseViewController {
     */
 
 }
+
+
+//MARK: StartAuthorizationToken methods
+extension SplashScreenViewController: OCRTokenDelegate {
+    
+    //Start Token service method 
+    func startTokenApi() {
+        let startTokenProxy =  OCRTokenProxy()
+        startTokenProxy.delegate = self
+        startTokenProxy.startOCRTokenApi(userName: SharedData.sharedInstance.userName, password: SharedData.sharedInstance.password, grantType: SharedData.sharedInstance.grantType)
+    }
+    
+    
+    func getTokenSuccess(responseData: [String : AnyObject]) {
+        SharedData.sharedInstance.authToken = (responseData["token_type"] as! String) + " " + (responseData["access_token"] as! String)
+    }
+    
+    
+    func getTokenFailed(errorMessage: String) {
+        SharedData.sharedInstance.authToken = "bearer "
+    }
+}
+

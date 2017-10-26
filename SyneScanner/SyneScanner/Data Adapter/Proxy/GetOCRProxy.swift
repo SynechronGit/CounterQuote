@@ -19,8 +19,9 @@ class GetOCRProxy: NetworkManager {
     
     //MARK: - OCR Api methods
     func callGetOCRApi(corelationId: String) {
-        let url = GET_OCR + corelationId          
-        super.callGetMethod(url: url)
+        let url = GET_OCR + corelationId
+        let headers = ["Authorization": SharedData.sharedInstance.authToken]
+        super.callGetMethod(headers: headers as! [String : String], url: url)
     }
     
     //MARK: - Response callback methods
@@ -32,9 +33,7 @@ class GetOCRProxy: NetworkManager {
         }
     }
     
-    override func failureCallBack(error:String)
-    {
+    override func failureCallBack(error:String) {
         delegate?.getOCRFailed(errorMessage: error)
-
     }
 }

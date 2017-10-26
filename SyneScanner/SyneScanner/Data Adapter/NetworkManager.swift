@@ -19,13 +19,13 @@ class NetworkManager: NSObject {
     
     //MARK: - Network Manager methods
     // Image uploading method
-    func uploadImage(url:String,image:UIImage) {
+    func uploadImage(headers:[String:String], url:String, image:UIImage) {
         let serverUrl = BASE_URL + url
         let imgData = UIImageJPEGRepresentation(image, 1.0)!
 
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             multipartFormData.append(imgData, withName: "AcordForm", fileName: "doc.jpeg", mimeType: "image/jpeg")
-        }, to:serverUrl)
+        }, to:serverUrl, headers: headers)
         { (result) in
             switch result {
             case .success(let upload, _, _):
@@ -57,11 +57,11 @@ class NetworkManager: NSObject {
         }
     }
     
-    func callPostMethod(paramaters:[String:Any], url:String)
+    func callPostMethod(headers:[String:String], paramaters:[String:Any], url:String)
     {
         let serverUrl = BASE_URL + url
 
-        Alamofire.request(serverUrl, method: .post, parameters: paramaters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
+        Alamofire.request(serverUrl, method: .post, parameters: paramaters, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response:DataResponse<Any>) in
 
             switch(response.result) {
             case .success(_):
@@ -84,10 +84,10 @@ class NetworkManager: NSObject {
         }
     }
     
-    func callGetMethod(url:String)
+    func callGetMethod(headers:[String:String], url:String)
     {
         let serverUrl = BASE_URL + url
-        Alamofire.request(serverUrl, method: .get, parameters: ["":""], encoding: URLEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
+        Alamofire.request(serverUrl, method: .get, parameters: ["":""], encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response:DataResponse<Any>) in
             
             switch(response.result) {
             case .success(_):

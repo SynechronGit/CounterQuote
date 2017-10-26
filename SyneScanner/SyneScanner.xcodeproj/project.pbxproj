@@ -85,6 +85,7 @@
 		536DF50F1F88B1E000AB1C39 /* AgentCallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DE1631F8799500046B229 /* AgentCallTableViewCell.swift */; };
 		536DF5111F88DB3100AB1C39 /* InvoicePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DF5101F88DB3100AB1C39 /* InvoicePaymentViewController.swift */; };
 		539D7F961F95025900C57C0F /* BestQuoteOfferedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539D7F951F95025900C57C0F /* BestQuoteOfferedTableViewCell.swift */; };
+		53D0B46C1F9F8D35006CFBAD /* OCRTokenProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D0B46B1F9F8D35006CFBAD /* OCRTokenProxy.swift */; };
 		53DC90A91F94C464009C2EB4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 53DC90A81F94C464009C2EB4 /* Settings.bundle */; };
 		53DC90AB1F94C713009C2EB4 /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DC90AA1F94C713009C2EB4 /* SettingsBundleHelper.swift */; };
 		53DCED0E1F8669C100425E8B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DCED0D1F8669C100425E8B /* BaseViewController.swift */; };
@@ -216,6 +217,7 @@
 		536DE16B1F87C9780046B229 /* PaymentOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentOptionViewController.swift; sourceTree = "<group>"; };
 		536DF5101F88DB3100AB1C39 /* InvoicePaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicePaymentViewController.swift; sourceTree = "<group>"; };
 		539D7F951F95025900C57C0F /* BestQuoteOfferedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestQuoteOfferedTableViewCell.swift; sourceTree = "<group>"; };
+		53D0B46B1F9F8D35006CFBAD /* OCRTokenProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCRTokenProxy.swift; sourceTree = "<group>"; };
 		53DC90A81F94C464009C2EB4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		53DC90AA1F94C713009C2EB4 /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
 		53DCED0D1F8669C100425E8B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				1B5403F91F73F451007CF73B /* UploadImageProxy.swift */,
 				5346F1B01F752031000E6AC5 /* ImageWorkflowProxy.swift */,
 				1BAD97931F8763C3007289EB /* GetOCRProxy.swift */,
+				53D0B46B1F9F8D35006CFBAD /* OCRTokenProxy.swift */,
 			);
 			path = Proxy;
 			sourceTree = "<group>";
@@ -964,6 +967,7 @@
 				1B6E11111F7CF3E600C4069A /* InsuranceQuoteViewController.swift in Sources */,
 				1B6E11351F7D0D3100C4069A /* TPKeyboardAvoidingTableView.m in Sources */,
 				5346F1B51F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift in Sources */,
+				53D0B46C1F9F8D35006CFBAD /* OCRTokenProxy.swift in Sources */,
 				536DE16C1F87C9780046B229 /* PaymentOptionViewController.swift in Sources */,
 				536A33A21F725C5F00F019C5 /* QuadrangleFilter.swift in Sources */,
 			);

@@ -16,9 +16,11 @@ class SharedData: NSObject {
     //MARK: - Properties
     public static let sharedInstance :SharedData = SharedData()
     var corelationId = UUID().uuidString
-    
+    var userName = "Service.User"
+    var password = "welcome1"
+    var grantType = "password"
     var arrImage:[ImageDataModel] = []
-    
+    var authToken: String?
     //MARK: - Initialization methods
     private override init() {
         

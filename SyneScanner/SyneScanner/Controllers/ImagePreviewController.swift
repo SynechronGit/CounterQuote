@@ -234,18 +234,18 @@ extension ImagePreviewController: StartWorkflowDelegate {
     
     //Start Workflow service method after each image is successfully uploaded
     func startWorkflowApi() {
-       // SVProgressHUD.show()
-        self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
-//        var blobUrl = ""
-//        for scanItem in 0..<SharedData.sharedInstance.arrImage.count {
-//            blobUrl.append((SharedData.sharedInstance.arrImage[scanItem].fileUrl))
-//            if scanItem != SharedData.sharedInstance.arrImage.count - 1 {
-//                blobUrl.append(";")
-//            }
-//        }
-//        let startWorkflowProxy =  ImageWorkflowProxy()
-//        startWorkflowProxy.delegate = self
-//        startWorkflowProxy.startWorkflowApi(blobUrl: blobUrl, corelationId: SharedData.sharedInstance.corelationId)
+//        SVProgressHUD.show()
+//        self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
+        var blobUrl = ""
+        for scanItem in 0..<SharedData.sharedInstance.arrImage.count {
+            blobUrl.append((SharedData.sharedInstance.arrImage[scanItem].fileUrl))
+            if scanItem != SharedData.sharedInstance.arrImage.count - 1 {
+                blobUrl.append(";")
+            }
+        }
+        let startWorkflowProxy =  ImageWorkflowProxy()
+        startWorkflowProxy.delegate = self
+        startWorkflowProxy.startWorkflowApi(blobUrl: blobUrl, corelationId: SharedData.sharedInstance.corelationId)
     }
     
     

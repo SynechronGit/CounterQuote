@@ -20,8 +20,9 @@ class ImageWorkflowProxy: NetworkManager {
     
     //MARK: - Start Workflow Api methods
     func startWorkflowApi(blobUrl: String, corelationId: String) {
+        let headers = ["Authorization": SharedData.sharedInstance.authToken]
         let parameters = ["BlobUrl": blobUrl, "CorelationId": corelationId]
-        super.callPostMethod(paramaters: parameters, url: START_WORKFLOW)
+        super.callPostMethod(headers: headers as! [String : String], paramaters: parameters, url: START_WORKFLOW)
     }
     
     //MARK: - Response callback methods

@@ -23,7 +23,8 @@ class UploadImageProxy: NetworkManager {
     //MARK: - Upload scan methods
     func uploadScanningImage(image:UIImage,indexNo:Int)   {
         currentIndex = indexNo
-        super.uploadImage(url: UPLOAD_IMAGE, image: image)
+        let headers = ["Authorization": SharedData.sharedInstance.authToken]
+        super.uploadImage(headers: headers as! [String : String], url: UPLOAD_IMAGE, image: image)
     }
     
     //MARK: - Response callback methods
