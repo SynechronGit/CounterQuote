@@ -85,7 +85,20 @@ class QuoteFormViewController: BaseViewController {
      * Method that will load the plist containing the quote properties
      */
     func loadDataFromPlist() {
-        let path = Bundle.main.path(forResource: "QuoteFormData", ofType: "plist")!
+        var path: String
+        
+        switch UserDefaults.standard.value(forKey: "business_preference") as? String {
+        case "1"?:
+            path = Bundle.main.path(forResource: "QuoteFormData", ofType: "plist")!
+        case "2"?:
+            path = Bundle.main.path(forResource: "QuoteFormData-HomeRenter", ofType: "plist")!
+        case "3"?:
+            path = Bundle.main.path(forResource: "QuoteFormData-HomeOwner", ofType: "plist")!
+        default:
+            path = Bundle.main.path(forResource: "QuoteFormData", ofType: "plist")!
+            break
+        }
+        
         let url = URL(fileURLWithPath: path)
         let data = try! Data(contentsOf: url)
         let plist = try! PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil)

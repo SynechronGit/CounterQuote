@@ -13,6 +13,7 @@ class SettingsBundleHelper: NSObject {
         static let DemoVersionKey = "demo_preference"
         static let MultipleCarriersVersionKey = "carriers_preference"
         static let ProducerCodeKey = "producer_preference"
+        static let LineOfBusinessKey = "business_preference"
     }
     
     class func setVersionAndBuildNumber() {

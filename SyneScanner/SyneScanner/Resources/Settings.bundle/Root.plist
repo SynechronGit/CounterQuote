@@ -40,6 +40,28 @@
 			<key>Key</key>
 			<string>producer_preference</string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Line of business</string>
+			<key>Key</key>
+			<string>business_preference</string>
+			<key>DefaultValue</key>
+			<string>1</string>
+			<key>Titles</key>
+			<array>
+				<string>Business Owner Policy</string>
+				<string>Home Renter</string>
+				<string>Home Owner</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

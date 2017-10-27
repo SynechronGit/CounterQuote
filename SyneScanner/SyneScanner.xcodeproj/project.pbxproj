@@ -84,6 +84,8 @@
 		536DE16C1F87C9780046B229 /* PaymentOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DE16B1F87C9780046B229 /* PaymentOptionViewController.swift */; };
 		536DF50F1F88B1E000AB1C39 /* AgentCallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DE1631F8799500046B229 /* AgentCallTableViewCell.swift */; };
 		536DF5111F88DB3100AB1C39 /* InvoicePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DF5101F88DB3100AB1C39 /* InvoicePaymentViewController.swift */; };
+		5375A9C41FA2246F00F5F08E /* QuoteFormData-HomeOwner.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5375A9C21FA2246F00F5F08E /* QuoteFormData-HomeOwner.plist */; };
+		5375A9C51FA2246F00F5F08E /* QuoteFormData-HomeRenter.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5375A9C31FA2246F00F5F08E /* QuoteFormData-HomeRenter.plist */; };
 		539D7F961F95025900C57C0F /* BestQuoteOfferedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539D7F951F95025900C57C0F /* BestQuoteOfferedTableViewCell.swift */; };
 		53D0B46C1F9F8D35006CFBAD /* OCRTokenProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D0B46B1F9F8D35006CFBAD /* OCRTokenProxy.swift */; };
 		53DC90A91F94C464009C2EB4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 53DC90A81F94C464009C2EB4 /* Settings.bundle */; };
@@ -216,6 +218,8 @@
 		536DE1691F87BD580046B229 /* AgentCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentCallViewController.swift; sourceTree = "<group>"; };
 		536DE16B1F87C9780046B229 /* PaymentOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentOptionViewController.swift; sourceTree = "<group>"; };
 		536DF5101F88DB3100AB1C39 /* InvoicePaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicePaymentViewController.swift; sourceTree = "<group>"; };
+		5375A9C21FA2246F00F5F08E /* QuoteFormData-HomeOwner.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "QuoteFormData-HomeOwner.plist"; sourceTree = "<group>"; };
+		5375A9C31FA2246F00F5F08E /* QuoteFormData-HomeRenter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "QuoteFormData-HomeRenter.plist"; sourceTree = "<group>"; };
 		539D7F951F95025900C57C0F /* BestQuoteOfferedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestQuoteOfferedTableViewCell.swift; sourceTree = "<group>"; };
 		53D0B46B1F9F8D35006CFBAD /* OCRTokenProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCRTokenProxy.swift; sourceTree = "<group>"; };
 		53DC90A81F94C464009C2EB4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -422,6 +426,8 @@
 				1B66F23E1F7E2FDE00FA52C0 /* Font */,
 				1BEF2E7A1F79292700AE94E6 /* PDF */,
 				1BAD979C1F87AB47007289EB /* QuoteFormData.plist */,
+				5375A9C21FA2246F00F5F08E /* QuoteFormData-HomeOwner.plist */,
+				5375A9C31FA2246F00F5F08E /* QuoteFormData-HomeRenter.plist */,
 				53DC90A81F94C464009C2EB4 /* Settings.bundle */,
 			);
 			path = Resources;
@@ -719,6 +725,7 @@
 				1B66F25E1F7E300000FA52C0 /* Carnas Thin.otf in Resources */,
 				1B66F2561F7E300000FA52C0 /* Carnas Extra Light.otf in Resources */,
 				1B66F24F1F7E300000FA52C0 /* Carnas Black Italic.otf in Resources */,
+				5375A9C41FA2246F00F5F08E /* QuoteFormData-HomeOwner.plist in Resources */,
 				1BCC63821F7EA1DC00C87694 /* COI.pdf in Resources */,
 				536A336A1F725AE500F019C5 /* Assets.xcassets in Resources */,
 				1B31C0DF1F85315700C2EC04 /* HockeySDKResources.bundle in Resources */,
@@ -728,6 +735,7 @@
 				536A33681F725AE500F019C5 /* Main.storyboard in Resources */,
 				1B66F2571F7E300000FA52C0 /* Carnas Italic.otf in Resources */,
 				1B66F25A1F7E300000FA52C0 /* Carnas Medium Italic.otf in Resources */,
+				5375A9C51FA2246F00F5F08E /* QuoteFormData-HomeRenter.plist in Resources */,
 				1B66F2521F7E300000FA52C0 /* Carnas Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
