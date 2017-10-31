@@ -106,6 +106,7 @@ class InsuranceQuoteViewController: BaseViewController {
         SVProgressHUD.dismiss(withDelay: 1) {
             self.performSegue(withIdentifier: "navToPaymentScreen", sender: nil)
         }
+        //a
     }
     
     
