@@ -44,6 +44,8 @@
 		1B6E11351F7D0D3100C4069A /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E11301F7D0D3100C4069A /* TPKeyboardAvoidingTableView.m */; };
 		1B6E11361F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E11321F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		1B7E16EC1F83E1B0005C2165 /* Search_animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1B7E16EB1F83E1B0005C2165 /* Search_animation.gif */; };
+		1B7EF2F11FA8B9D90087A813 /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EF2F01FA8B9D90087A813 /* VideoCallViewController.swift */; };
+		1B7EF2F31FA8B9E00087A813 /* TwilioUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EF2F21FA8B9E00087A813 /* TwilioUtils.swift */; };
 		1B97050F1F8D1405005B0F35 /* TermsnConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B97050E1F8D1405005B0F35 /* TermsnConditionViewController.swift */; };
 		1BAD97941F8763C3007289EB /* GetOCRProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD97931F8763C3007289EB /* GetOCRProxy.swift */; };
 		1BAD979B1F87AA38007289EB /* QuoteFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD979A1F87AA38007289EB /* QuoteFormViewController.swift */; };
@@ -169,6 +171,8 @@
 		1B6E11311F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		1B6E11321F7D0D3100C4069A /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		1B7E16EB1F83E1B0005C2165 /* Search_animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Search_animation.gif; sourceTree = "<group>"; };
+		1B7EF2F01FA8B9D90087A813 /* VideoCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
+		1B7EF2F21FA8B9E00087A813 /* TwilioUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwilioUtils.swift; sourceTree = "<group>"; };
 		1B97050E1F8D1405005B0F35 /* TermsnConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsnConditionViewController.swift; sourceTree = "<group>"; };
 		1BAD97931F8763C3007289EB /* GetOCRProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetOCRProxy.swift; sourceTree = "<group>"; };
 		1BAD979A1F87AA38007289EB /* QuoteFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteFormViewController.swift; sourceTree = "<group>"; };
@@ -414,6 +418,7 @@
 		1BAD97BE1F88CC93007289EB /* CallUs ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1B7EF2F01FA8B9D90087A813 /* VideoCallViewController.swift */,
 				1BAD97BF1F88CCC2007289EB /* CallusViewController.swift */,
 			);
 			name = "CallUs ViewController";
@@ -546,6 +551,7 @@
 		536A33911F725B1A00F019C5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				1B7EF2F21FA8B9E00087A813 /* TwilioUtils.swift */,
 				536A33961F725B6C00F019C5 /* Extensions */,
 				536A339B1F725BFB00F019C5 /* ImageEditManager.swift */,
 				536A339D1F725C2700F019C5 /* ImageCaptureManager.swift */,
@@ -946,6 +952,8 @@
 				536A33AA1F725D5C00F019C5 /* CameraViewController.swift in Sources */,
 				53DCED0E1F8669C100425E8B /* BaseViewController.swift in Sources */,
 				536A33A01F725C4600F019C5 /* PointFilter.swift in Sources */,
+				1B7EF2F11FA8B9D90087A813 /* VideoCallViewController.swift in Sources */,
+				1B7EF2F31FA8B9E00087A813 /* TwilioUtils.swift in Sources */,
 				1BDFD5741F8CC9B20036B0FC /* QuoteFromSectionHeaderTableViewCell.swift in Sources */,
 				536DF5111F88DB3100AB1C39 /* InvoicePaymentViewController.swift in Sources */,
 				536DE16A1F87BD580046B229 /* AgentCallViewController.swift in Sources */,

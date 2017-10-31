@@ -1117,7 +1117,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-Ii-uIo">
-                                                            <rect key="frame" x="10" y="36" width="135" height="19"/>
+                                                            <rect key="frame" x="10" y="35" width="135" height="19"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="19"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
