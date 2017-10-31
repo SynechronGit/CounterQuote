@@ -16,8 +16,12 @@ class QuoteFormViewController: BaseViewController {
     @IBOutlet weak var lblSavedaAmount: UILabel!
     @IBOutlet weak var imgCompanyLogo: UIImageView!
     @IBOutlet weak var viewAmount: UIView!
+    @IBOutlet weak var btnEdit: UIButton!
+    @IBOutlet weak var btnDiscard: UIButton!
 
     var isAnimationShow = false
+    var isEditMode = false
+
     var dataArr:NSArray?
 //    var companyDetails:[String:String]?
     
@@ -54,6 +58,9 @@ class QuoteFormViewController: BaseViewController {
      */
     // MARK: - Configure UI
     func configureUI() {
+        btnEdit.setBorderToButton()
+        btnDiscard.setBorderToButton()
+
         imgCompanyLogo.image = UIImage(named: "com1")
 
         self.tableForm.alpha = 0
@@ -97,23 +104,24 @@ class QuoteFormViewController: BaseViewController {
         let plist = try! PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil)
         dataArr = plist as? NSArray
         
-        if !UserDefaults.standard.bool(forKey: "demo_preference") {
-            var pDict = NSDictionary()
-            var pArr = NSArray()
-            
-            for i in 0..<(dataArr?.count)! {
-                pDict = dataArr?.object(at: i) as! NSDictionary
-                pArr = pDict.value(forKey: "data") as! NSArray
-                pArr.setValue("", forKey: "value")
-            }
-            
-            if listDict == nil {
-                listDict = pDict
-            }
-            if dictArray == nil {
-                dictArray = pArr
-            }
-        }
+//        if !UserDefaults.standard.bool(forKey: "demo_preference")
+//        {
+//            var pDict = NSDictionary()
+//            var pArr = NSArray()
+//            
+//            for i in 0..<(dataArr?.count)! {
+//                pDict = dataArr?.object(at: i) as! NSDictionary
+//                pArr = pDict.value(forKey: "data") as! NSArray
+//                pArr.setValue("", forKey: "value")
+//            }
+//            
+//            if listDict == nil {
+//                listDict = pDict
+//            }
+//            if dictArray == nil {
+//                dictArray = pArr
+//            }
+//        }
     }
     
     /**
@@ -151,7 +159,29 @@ class QuoteFormViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction   func btnEditClicked() {
+        if isEditMode
+        {
+            isEditMode = false
+            btnDiscard.isEnabled = false
+            btnEdit.setTitle("EDIT", for: .normal)
+
+        }
+        else
+        {
+            isEditMode = true
+            btnDiscard.isEnabled = true
+            btnEdit.setTitle("SAVE", for: .normal)
+
+        }
+        tableForm.reloadData()
+    }
     
+    @IBAction   func btnDiscardClicked() {
+        
+        btnEditClicked()
+
+    }
     // Share Quote form with popover view presented
     @IBAction func shareBtnTapped(_ sender: Any) {
         if let pdf = Bundle.main.url(forResource: "Quote", withExtension: "pdf", subdirectory: nil, localization: nil)  {
@@ -235,15 +265,25 @@ extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate {
         attString.setAttributes([NSFontAttributeName:fontSuper!,NSBaselineOffsetAttributeName:10], range: NSRange(location:attString.length - 1,length:1))
         cell.headerLabel.attributedText = attString
         
-        if UserDefaults.standard.bool(forKey: "demo_preference") {
-            cell.descriptionField.text =  data.value(forKey: "value") as? String
-        } else {
-            cell.descriptionField.placeholder =  data.value(forKey: "heading") as? String
-            listDict = dataArr?.object(at: indexPath.section) as? NSDictionary
-            dictArray = listDict?.value(forKey: "data") as? NSArray
-            quoteData = dictArray?.object(at: indexPath.row) as? NSDictionary
-            cell.descriptionField.text = quoteData?.value(forKey: "value") as? String
-        }
+//        if UserDefaults.standard.bool(forKey: "demo_preference") {
+//            cell.descriptionField.text =  data.value(forKey: "value") as? String
+//        }
+//        
+//        else
+//        {
+//            cell.descriptionField.placeholder =  data.value(forKey: "heading") as? String
+//            listDict = dataArr?.object(at: indexPath.section) as? NSDictionary
+//            dictArray = listDict?.value(forKey: "data") as? NSArray
+//            quoteData = dictArray?.object(at: indexPath.row) as? NSDictionary
+//            cell.descriptionField.text = quoteData?.value(forKey: "value") as? String
+//       }
+//        
+        
+                    cell.descriptionField.text =  data.value(forKey: "value") as? String
+
+        
+        cell.descriptionField.isEnabled = isEditMode
+
         
         quoteType = data.value(forKey: "type") as? String
         if quoteType == QuoteFormFieldType.TYPE_CURRENCY.rawValue {

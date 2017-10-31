@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iVc-St-kCb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Br-jY-exR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Medium</string>
+        </array>
         <array key="Carnas Regular.otf">
             <string>Carnas-Regular</string>
         </array>
@@ -89,8 +92,10 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="iVc-St-kCb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="z49-Z7-etO">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="TrZ-PO-oqn" kind="relationship" relationship="viewControllers" id="Z5I-Qy-qGN"/>
@@ -115,13 +120,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_cureve_line" translatesAutoresizingMaskIntoConstraints="NO" id="wOy-X7-sXK">
-                                <rect key="frame" x="0.0" y="108.5" width="71" height="193"/>
+                                <rect key="frame" x="0.0" y="101" width="71" height="193"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_Curve_line" translatesAutoresizingMaskIntoConstraints="NO" id="4OT-EW-Y61">
                                 <rect key="frame" x="298" y="323" width="77" height="205"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oUP-cF-xtg">
-                                <rect key="frame" x="0.0" y="143.5" width="375" height="417.5"/>
+                                <rect key="frame" x="0.0" y="136" width="375" height="425"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="aAm-rX-WvV">
                                     <size key="itemSize" width="371" height="358"/>
@@ -131,7 +136,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" reuseIdentifier="cell" id="29e-xC-q0l" customClass="ImagePreviewCollectionViewCell" customModule="CounterQuoteAgentApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="30" width="371" height="358"/>
+                                        <rect key="frame" x="0.0" y="33.5" width="371" height="358"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="371" height="358"/>
@@ -166,7 +171,7 @@
                                 <color key="currentPageIndicatorTintColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJI-CE-zou">
-                                <rect key="frame" x="20" y="40" width="81" height="29.5"/>
+                                <rect key="frame" x="20" y="40" width="78.5" height="25"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="25"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -175,7 +180,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are in (1/10) pages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oet-DU-dlh">
-                                <rect key="frame" x="20" y="74.5" width="163.5" height="19"/>
+                                <rect key="frame" x="20" y="70" width="162" height="16"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="16"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -228,13 +233,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_cureve_line" translatesAutoresizingMaskIntoConstraints="NO" id="hRk-pi-8Fv">
-                                <rect key="frame" x="0.0" y="122" width="71" height="193"/>
+                                <rect key="frame" x="0.0" y="115" width="71" height="193"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_Curve_line" translatesAutoresizingMaskIntoConstraints="NO" id="S4D-Xg-EXU">
                                 <rect key="frame" x="298" y="343" width="77" height="205"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48b-rw-oQZ">
-                                <rect key="frame" x="50" y="40" width="259" height="27"/>
+                                <rect key="frame" x="50" y="40" width="259" height="23"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="23"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -243,7 +248,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Business Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTx-u1-aTb">
-                                <rect key="frame" x="20" y="75" width="150" height="19"/>
+                                <rect key="frame" x="20" y="71" width="144" height="16"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="16"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -252,7 +257,7 @@
                                 </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lDN-0c-fIW">
-                                <rect key="frame" x="0.0" y="182" width="375" height="426"/>
+                                <rect key="frame" x="0.0" y="175" width="375" height="367"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SectionHeaderCell" rowHeight="68" id="qvb-tb-0qB" customClass="QuoteFromSectionHeaderTableViewCell" customModule="CounterQuoteAgentApp" customModuleProvider="target">
@@ -270,7 +275,7 @@
                                                     <rect key="frame" x="20" y="0.0" width="335" height="68"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHk-Im-AfS">
-                                                            <rect key="frame" x="148.5" y="24.5" width="39" height="19"/>
+                                                            <rect key="frame" x="148.5" y="26" width="39" height="16"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="16"/>
                                                             <color key="textColor" red="0.18039215689999999" green="0.5450980392" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -308,7 +313,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQP-z5-r0C">
-                                                    <rect key="frame" x="35" y="10" width="37" height="17.5"/>
+                                                    <rect key="frame" x="35" y="10.5" width="37" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -317,7 +322,7 @@
                                                     <rect key="frame" x="25" y="57" width="325" height="1"/>
                                                 </imageView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JuY-rV-e10">
-                                                    <rect key="frame" x="35" y="32" width="305" height="18"/>
+                                                    <rect key="frame" x="35" y="33.5" width="305" height="15"/>
                                                     <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -352,16 +357,16 @@
                                 </connections>
                             </tableView>
                             <view clipsSubviews="YES" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0FC-u9-Txo">
-                                <rect key="frame" x="20" y="114" width="335" height="68"/>
+                                <rect key="frame" x="20" y="107" width="335" height="68"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SavedCard" translatesAutoresizingMaskIntoConstraints="NO" id="hOq-ur-fUj">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="68"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yuQ-EG-HKl">
-                                        <rect key="frame" x="10" y="7.5" width="143.5" height="54"/>
+                                        <rect key="frame" x="10" y="11" width="134" height="47"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 3000/y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXi-tR-07n">
-                                                <rect key="frame" x="0.0" y="0.0" width="143.5" height="28"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="134" height="24"/>
                                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="24"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -370,7 +375,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You saved $ 1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXd-n2-uEC">
-                                                <rect key="frame" x="0.0" y="33" width="143.5" height="21"/>
+                                                <rect key="frame" x="0.0" y="29" width="134" height="18"/>
                                                 <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="18"/>
                                                 <color key="textColor" red="0.63137254899999995" green="0.60392156860000001" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -394,7 +399,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFd-6e-eIJ">
-                                <rect key="frame" x="319" y="69" width="20" height="25"/>
+                                <rect key="frame" x="319" y="62" width="20" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="Rtj-wI-hyO"/>
                                     <constraint firstAttribute="height" constant="25" id="rZq-hT-Xg0"/>
@@ -405,7 +410,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="X4a-rS-qIx">
-                                <rect key="frame" x="20" y="44" width="20" height="20"/>
+                                <rect key="frame" x="20" y="42" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="9ir-Ql-jOM"/>
                                     <constraint firstAttribute="width" constant="20" id="RW9-lX-h3L"/>
@@ -413,19 +418,61 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="vN3-xs-0Ep"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nrg-V0-E8C">
+                                <rect key="frame" x="66.5" y="562" width="100" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Jem-h3-7WD"/>
+                                    <constraint firstAttribute="height" constant="36" id="OAW-sC-ZaR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="EDIT">
+                                    <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnEditClicked" destination="J49-ho-rEZ" eventType="touchUpInside" id="mfU-b1-9Q8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WxG-m3-0gO">
+                                <rect key="frame" x="208.5" y="562" width="100" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="BgL-0Q-3lZ"/>
+                                    <constraint firstAttribute="height" constant="36" id="Kk7-h2-MNm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="DISCARD">
+                                    <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnDiscardClicked" destination="J49-ho-rEZ" eventType="touchUpInside" id="KAm-KJ-fOd"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuE-3H-wg9">
+                                <rect key="frame" x="186.5" y="557" width="2" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Wcm-ES-v6Q"/>
+                                    <constraint firstAttribute="width" constant="2" id="hwM-uD-GtK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fuE-3H-wg9" secondAttribute="bottom" constant="60" id="4ZK-rv-ess"/>
+                            <constraint firstItem="klK-rX-ehg" firstAttribute="top" secondItem="Nrg-V0-E8C" secondAttribute="bottom" constant="20" id="5OI-HY-9wu"/>
                             <constraint firstItem="iTx-u1-aTb" firstAttribute="leading" secondItem="lKe-0O-sVM" secondAttribute="leading" constant="20" id="66Y-mY-5ou"/>
+                            <constraint firstItem="WxG-m3-0gO" firstAttribute="leading" secondItem="fuE-3H-wg9" secondAttribute="trailing" constant="20" id="94e-Mt-8WZ"/>
                             <constraint firstItem="eFd-6e-eIJ" firstAttribute="bottom" secondItem="iTx-u1-aTb" secondAttribute="bottom" id="9AM-fm-Eci"/>
                             <constraint firstItem="48b-rw-oQZ" firstAttribute="leading" secondItem="X4a-rS-qIx" secondAttribute="trailing" constant="10" id="9cO-Uo-Exa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eFd-6e-eIJ" secondAttribute="trailing" constant="20" id="Be7-K7-594"/>
+                            <constraint firstItem="fuE-3H-wg9" firstAttribute="leading" secondItem="Nrg-V0-E8C" secondAttribute="trailing" constant="20" id="EIu-X1-C7w"/>
                             <constraint firstItem="klK-rX-ehg" firstAttribute="top" secondItem="S4D-Xg-EXU" secondAttribute="bottom" constant="70" id="EvO-gA-wyk"/>
+                            <constraint firstItem="klK-rX-ehg" firstAttribute="top" secondItem="WxG-m3-0gO" secondAttribute="bottom" constant="20" id="GcM-wa-UfE"/>
                             <constraint firstItem="hRk-pi-8Fv" firstAttribute="leading" secondItem="lKe-0O-sVM" secondAttribute="leading" id="IzB-Ek-nLe"/>
                             <constraint firstItem="0FC-u9-Txo" firstAttribute="top" secondItem="iTx-u1-aTb" secondAttribute="bottom" constant="20" id="JsA-OY-6Wb"/>
                             <constraint firstItem="iTx-u1-aTb" firstAttribute="top" secondItem="48b-rw-oQZ" secondAttribute="bottom" constant="8" id="OAe-QD-Uc2"/>
+                            <constraint firstItem="fuE-3H-wg9" firstAttribute="centerX" secondItem="lKe-0O-sVM" secondAttribute="centerX" id="RDH-KU-1D9"/>
+                            <constraint firstItem="WxG-m3-0gO" firstAttribute="top" secondItem="lDN-0c-fIW" secondAttribute="bottom" constant="20" id="SO8-3A-2jb"/>
                             <constraint firstItem="lDN-0c-fIW" firstAttribute="top" secondItem="0FC-u9-Txo" secondAttribute="bottom" id="TpX-fz-D1T"/>
-                            <constraint firstItem="klK-rX-ehg" firstAttribute="top" secondItem="lDN-0c-fIW" secondAttribute="bottom" constant="10" id="USZ-to-w6u"/>
                             <constraint firstAttribute="trailing" secondItem="S4D-Xg-EXU" secondAttribute="trailing" id="VOm-me-GYF"/>
                             <constraint firstAttribute="trailing" secondItem="lDN-0c-fIW" secondAttribute="trailing" id="WON-wj-mCR"/>
                             <constraint firstItem="lDN-0c-fIW" firstAttribute="leading" secondItem="lKe-0O-sVM" secondAttribute="leading" id="afZ-Ga-ING"/>
@@ -440,6 +487,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="DOCUMENTS" id="pIK-Fe-GHd"/>
                     <connections>
+                        <outlet property="btnDiscard" destination="WxG-m3-0gO" id="bGF-8G-Zgx"/>
+                        <outlet property="btnEdit" destination="Nrg-V0-E8C" id="0Kb-Sz-ILr"/>
                         <outlet property="imgCompanyLogo" destination="X4a-rS-qIx" id="2cC-Fh-6Jp"/>
                         <outlet property="lblActilaPrice" destination="RXi-tR-07n" id="9nC-EL-BPa"/>
                         <outlet property="lblCompanyName" destination="48b-rw-oQZ" id="ou5-BA-xti"/>
@@ -452,16 +501,86 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MWM-eJ-SvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5598" y="844"/>
+            <point key="canvasLocation" x="5597.6000000000004" y="843.32833583208401"/>
+        </scene>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="TVn-e0-6Bo">
+            <objects>
+                <viewController id="5Br-jY-exR" customClass="SplashScreenViewController" customModule="CounterQuoteAgentApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Fj-nc-fxo"/>
+                        <viewControllerLayoutGuide type="bottom" id="EkW-Qd-1hH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rIK-86-VrV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashBg" translatesAutoresizingMaskIntoConstraints="NO" id="MuY-24-sRi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_right_line" translatesAutoresizingMaskIntoConstraints="NO" id="w6J-wv-mjk">
+                                <rect key="frame" x="298" y="20" width="77" height="205"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="205" id="BRY-fs-Lsj"/>
+                                    <constraint firstAttribute="width" constant="77" id="eYo-Ah-hUk"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_left_line" translatesAutoresizingMaskIntoConstraints="NO" id="53P-RL-g6l">
+                                <rect key="frame" x="0.0" y="454" width="71" height="193"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="TFB-gs-Lzl"/>
+                                    <constraint firstAttribute="height" constant="193" id="flz-I0-wHJ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CQLogo" translatesAutoresizingMaskIntoConstraints="NO" id="To4-k6-oGF">
+                                <rect key="frame" x="117.5" y="262" width="140" height="143"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COUNTERQUOTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1a-s7-1Lv">
+                                <rect key="frame" x="89" y="-30" width="198.5" height="26"/>
+                                <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="To4-k6-oGF" firstAttribute="centerX" secondItem="rIK-86-VrV" secondAttribute="centerX" id="67l-Pi-hkn"/>
+                            <constraint firstAttribute="trailing" secondItem="w6J-wv-mjk" secondAttribute="trailing" id="FsR-Kr-acK"/>
+                            <constraint firstItem="c1a-s7-1Lv" firstAttribute="centerX" secondItem="rIK-86-VrV" secondAttribute="centerX" id="N5G-jv-3D3"/>
+                            <constraint firstItem="To4-k6-oGF" firstAttribute="centerY" secondItem="rIK-86-VrV" secondAttribute="centerY" id="PmB-FE-xRG"/>
+                            <constraint firstItem="EkW-Qd-1hH" firstAttribute="top" secondItem="53P-RL-g6l" secondAttribute="bottom" constant="20" id="WdJ-Hz-3bd"/>
+                            <constraint firstItem="w6J-wv-mjk" firstAttribute="top" secondItem="rIK-86-VrV" secondAttribute="top" constant="20" id="YQC-R3-V7R"/>
+                            <constraint firstAttribute="bottom" secondItem="MuY-24-sRi" secondAttribute="bottom" id="ce8-nh-Fgx"/>
+                            <constraint firstAttribute="trailing" secondItem="MuY-24-sRi" secondAttribute="trailing" id="kMU-11-p1j"/>
+                            <constraint firstItem="MuY-24-sRi" firstAttribute="top" secondItem="rIK-86-VrV" secondAttribute="top" id="pi0-BP-IJT"/>
+                            <constraint firstItem="c1a-s7-1Lv" firstAttribute="top" secondItem="7Fj-nc-fxo" secondAttribute="bottom" constant="-50" id="rUV-lv-OZn"/>
+                            <constraint firstItem="53P-RL-g6l" firstAttribute="leading" secondItem="rIK-86-VrV" secondAttribute="leading" id="xYm-su-N3q"/>
+                            <constraint firstItem="MuY-24-sRi" firstAttribute="leading" secondItem="rIK-86-VrV" secondAttribute="leading" id="xtR-G6-e1K"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Qv3-Gm-hmW"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="topConstraintLblHeader" destination="rUV-lv-OZn" id="gCN-y6-o2S"/>
+                        <segue destination="iVc-St-kCb" kind="show" identifier="navToTabBarVc" id="9OR-Jj-k6C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o9v-U8-cbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-599.20000000000005" y="300"/>
         </scene>
     </scenes>
     <resources>
+        <image name="CQLogo" width="140" height="143"/>
         <image name="CardDivider" width="686" height="1"/>
         <image name="SavedCard" width="561" height="127"/>
         <image name="hangUp" width="28" height="20"/>
         <image name="left_Curve_line" width="77" height="205"/>
         <image name="right_cureve_line" width="71" height="193"/>
         <image name="share_pdf" width="58" height="70"/>
+        <image name="splashBg" width="414" height="736"/>
+        <image name="splash_left_line" width="119" height="290"/>
+        <image name="splash_right_line" width="94" height="239"/>
         <image name="star" width="79" height="76"/>
         <image name="startCall" width="15" height="30"/>
     </resources>

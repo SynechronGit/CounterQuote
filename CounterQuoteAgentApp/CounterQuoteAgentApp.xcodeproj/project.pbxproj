@@ -12,6 +12,8 @@
 		1B7EF2D91FA733FF0087A813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B7EF2D81FA733FF0087A813 /* Assets.xcassets */; };
 		1B7EF2DC1FA733FF0087A813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7EF2DA1FA733FF0087A813 /* LaunchScreen.storyboard */; };
 		1B7EF2E61FA736070087A813 /* TwilioUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EF2E51FA736070087A813 /* TwilioUtils.swift */; };
+		1B7EF2EC1FA8A3C20087A813 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EF2EB1FA8A3C20087A813 /* SplashScreenViewController.swift */; };
+		1B7EF2EF1FA8ACFB0087A813 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EF2EE1FA8ACFB0087A813 /* UIButton+Extension.swift */; };
 		407E5DA86E2FBF0F6B75E3AD /* Pods_CounterQuoteAgentApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2605835D993602DBF4FA7BFF /* Pods_CounterQuoteAgentApp.framework */; };
 		5344B8FA1FA89CDB0099ECE5 /* AcordForm.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5344B8E51FA89CDB0099ECE5 /* AcordForm.jpeg */; };
 		5344B8FB1FA89CDB0099ECE5 /* Carnas Black Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5344B8E71FA89CDB0099ECE5 /* Carnas Black Italic.otf */; };
@@ -49,7 +51,9 @@
 		1B7EF2D81FA733FF0087A813 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B7EF2DB1FA733FF0087A813 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B7EF2DD1FA733FF0087A813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B7EF2E51FA736070087A813 /* TwilioUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwilioUtils.swift; sourceTree = "<group>"; };
+		1B7EF2E51FA736070087A813 /* TwilioUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwilioUtils.swift; path = ../TwilioUtils.swift; sourceTree = "<group>"; };
+		1B7EF2EB1FA8A3C20087A813 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		1B7EF2EE1FA8ACFB0087A813 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		2605835D993602DBF4FA7BFF /* Pods_CounterQuoteAgentApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CounterQuoteAgentApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5344B8E51FA89CDB0099ECE5 /* AcordForm.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AcordForm.jpeg; sourceTree = "<group>"; };
 		5344B8E71FA89CDB0099ECE5 /* Carnas Black Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Carnas Black Italic.otf"; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 		1B7EF2D01FA733FF0087A813 /* CounterQuoteAgentApp */ = {
 			isa = PBXGroup;
 			children = (
+				1B7EF2ED1FA8ACF60087A813 /* Utils */,
 				1B7EF2D11FA733FF0087A813 /* AppDelegate.swift */,
 				1B7EF2D51FA733FF0087A813 /* Main.storyboard */,
 				1B7EF2D81FA733FF0087A813 /* Assets.xcassets */,
@@ -123,9 +128,17 @@
 				5344B8E41FA89CDB0099ECE5 /* Resources */,
 				535503181FA88C8D007267E9 /* Views */,
 				535503191FA88C97007267E9 /* Controllers */,
-				1B7EF2E51FA736070087A813 /* TwilioUtils.swift */,
 			);
 			path = CounterQuoteAgentApp;
+			sourceTree = "<group>";
+		};
+		1B7EF2ED1FA8ACF60087A813 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1B7EF2E51FA736070087A813 /* TwilioUtils.swift */,
+				1B7EF2EE1FA8ACFB0087A813 /* UIButton+Extension.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		42F1DC144D31BC1179A5BA1B /* Pods */ = {
@@ -185,6 +198,7 @@
 		535503191FA88C97007267E9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1B7EF2EB1FA8A3C20087A813 /* SplashScreenViewController.swift */,
 				5355031C1FA88CE9007267E9 /* BaseViewController.swift */,
 				5355031D1FA88CE9007267E9 /* ImagePreviewController.swift */,
 				5355031E1FA88CE9007267E9 /* VideoCallViewController.swift */,
@@ -320,10 +334,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CounterQuoteAgentApp/Pods-CounterQuoteAgentApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${PODS_ROOT}/TwilioVideo/TwilioVideo.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,11 +375,13 @@
 				535503201FA88CE9007267E9 /* ImagePreviewController.swift in Sources */,
 				5355031B1FA88CDE007267E9 /* ImagePreviewCollectionViewCell.swift in Sources */,
 				535503211FA88CE9007267E9 /* VideoCallViewController.swift in Sources */,
+				1B7EF2EF1FA8ACFB0087A813 /* UIButton+Extension.swift in Sources */,
 				535503231FA88FA5007267E9 /* QuoteFormViewController.swift in Sources */,
 				535503261FA8902B007267E9 /* QuoteFormTableViewCell.swift in Sources */,
 				5355031F1FA88CE9007267E9 /* BaseViewController.swift in Sources */,
 				1B7EF2E61FA736070087A813 /* TwilioUtils.swift in Sources */,
 				1B7EF2D21FA733FF0087A813 /* AppDelegate.swift in Sources */,
+				1B7EF2EC1FA8A3C20087A813 /* SplashScreenViewController.swift in Sources */,
 				535503271FA8902B007267E9 /* QuoteFromSectionHeaderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,10 +512,10 @@
 				DEVELOPMENT_TEAM = N6ZJQTRK2Z;
 				INFOPLIST_FILE = CounterQuoteAgentApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.synechron.markel.AgentApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markelPoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "34b93c69-a6ba-4b1c-8207-ec3e29ceb02e";
-				PROVISIONING_PROFILE_SPECIFIER = "Markel - Debug";
+				PROVISIONING_PROFILE = "7f82c427-8230-4f28-96c4-499477ea8783";
+				PROVISIONING_PROFILE_SPECIFIER = MarkelPocDev;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -507,14 +525,14 @@
 			baseConfigurationReference = 8453E543623762439C78E26B /* Pods-CounterQuoteAgentApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = N6ZJQTRK2Z;
 				INFOPLIST_FILE = CounterQuoteAgentApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.synechron.markel.AgentApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markelPoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "73a5f13a-e29b-4e1d-8934-37b9a6398bd5";
-				PROVISIONING_PROFILE_SPECIFIER = "Markel -  Universal Distribution";
+				PROVISIONING_PROFILE = "7f82c427-8230-4f28-96c4-499477ea8783";
+				PROVISIONING_PROFILE_SPECIFIER = MarkelPocDev;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
