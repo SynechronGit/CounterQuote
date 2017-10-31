@@ -16,11 +16,10 @@ class QuoteFormViewController: BaseViewController {
     @IBOutlet weak var lblSavedaAmount: UILabel!
     @IBOutlet weak var imgCompanyLogo: UIImageView!
     @IBOutlet weak var viewAmount: UIView!
-    @IBOutlet weak var bottomConstraintBackBtn: NSLayoutConstraint!
 
     var isAnimationShow = false
     var dataArr:NSArray?
-    var companyDetails:[String:String]?
+//    var companyDetails:[String:String]?
     
     var quoteType: String?
     var indexPath: IndexPath?
@@ -55,16 +54,15 @@ class QuoteFormViewController: BaseViewController {
      */
     // MARK: - Configure UI
     func configureUI() {
-        imgCompanyLogo.image = UIImage(named: (companyDetails?["imgName"])!)
+        imgCompanyLogo.image = UIImage(named: "com1")
 
-        self.bottomConstraintBackBtn.constant = -80
         self.tableForm.alpha = 0
         self.tableForm.layer.masksToBounds = true
 
-        lblCompanyName.text =  companyDetails?["companyName"]
+        lblCompanyName.text =  "Company 1"
         
 
-        let actualPriceStr:String = (companyDetails?["price"])!
+        let actualPriceStr:String = "2000"
         lblActilaPrice.text = "$" + " " + actualPriceStr + "/y"
         let actualPrice:Int = Int(actualPriceStr)!
         let savedPrice = 4000 - actualPrice
@@ -130,7 +128,6 @@ class QuoteFormViewController: BaseViewController {
 
         leftCurveLeading.constant = -10
         rightaCureveTrailing.constant = -16
-        self.bottomConstraintBackBtn.constant = 0
         UIView.animate(withDuration: 1.2, delay: 0.0,
                        usingSpringWithDamping: 0.5,
                        initialSpringVelocity: 0.8,

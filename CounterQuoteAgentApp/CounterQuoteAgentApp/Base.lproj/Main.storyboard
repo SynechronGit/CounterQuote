@@ -105,7 +105,7 @@
         <!--GALLERY-->
         <scene sceneID="OUR-7B-uKi">
             <objects>
-                <viewController storyboardIdentifier="ImagePreviewController" automaticallyAdjustsScrollViewInsets="NO" id="DiU-8x-PIx" customClass="ImagePreviewController" customModule="SyneScanner" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImagePreviewController" automaticallyAdjustsScrollViewInsets="NO" id="DiU-8x-PIx" customClass="ImagePreviewController" customModule="CounterQuoteAgentApp" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="liC-mx-mYK"/>
                         <viewControllerLayoutGuide type="bottom" id="kIB-fe-umP"/>
@@ -204,7 +204,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="GALLERY" id="50C-wq-7l0"/>
                     <connections>
-                        <outlet property="collectionView" destination="oUP-cF-xtg" id="Nt4-jf-xfn"/>
+                        <outlet property="collectionView" destination="oUP-cF-xtg" id="Fhg-zy-Wq5"/>
                         <outlet property="lblHeader" destination="oet-DU-dlh" id="QRE-Gz-30c"/>
                         <outlet property="leftCurveLeading" destination="eDm-95-988" id="xC5-Ve-7T8"/>
                         <outlet property="pageControl" destination="7Xp-OF-uC6" id="Sl4-aW-alY"/>
