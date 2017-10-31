@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B7EF2D21FA733FF0087A813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EF2D11FA733FF0087A813 /* AppDelegate.swift */; };
+		1B7EF2D71FA733FF0087A813 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7EF2D51FA733FF0087A813 /* Main.storyboard */; };
+		1B7EF2D91FA733FF0087A813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B7EF2D81FA733FF0087A813 /* Assets.xcassets */; };
+		1B7EF2DC1FA733FF0087A813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B7EF2DA1FA733FF0087A813 /* LaunchScreen.storyboard */; };
+		1B7EF2E41FA734190087A813 /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EF2E31FA734190087A813 /* VideoCallViewController.swift */; };
+		1B7EF2E61FA736070087A813 /* TwilioUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EF2E51FA736070087A813 /* TwilioUtils.swift */; };
+		407E5DA86E2FBF0F6B75E3AD /* Pods_CounterQuoteAgentApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2605835D993602DBF4FA7BFF /* Pods_CounterQuoteAgentApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B7EF2CE1FA733FF0087A813 /* CounterQuoteAgentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CounterQuoteAgentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B7EF2D11FA733FF0087A813 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1B7EF2D61FA733FF0087A813 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1B7EF2D81FA733FF0087A813 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B7EF2DB1FA733FF0087A813 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1B7EF2DD1FA733FF0087A813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B7EF2E31FA734190087A813 /* VideoCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
+		1B7EF2E51FA736070087A813 /* TwilioUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwilioUtils.swift; sourceTree = "<group>"; };
+		2605835D993602DBF4FA7BFF /* Pods_CounterQuoteAgentApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CounterQuoteAgentApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8453E543623762439C78E26B /* Pods-CounterQuoteAgentApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CounterQuoteAgentApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CounterQuoteAgentApp/Pods-CounterQuoteAgentApp.release.xcconfig"; sourceTree = "<group>"; };
+		DCB8C3D74961C5776BEBBD53 /* Pods-CounterQuoteAgentApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CounterQuoteAgentApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CounterQuoteAgentApp/Pods-CounterQuoteAgentApp.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B7EF2CB1FA733FF0087A813 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				407E5DA86E2FBF0F6B75E3AD /* Pods_CounterQuoteAgentApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B7EF2C51FA733FE0087A813 = {
+			isa = PBXGroup;
+			children = (
+				1B7EF2D01FA733FF0087A813 /* CounterQuoteAgentApp */,
+				1B7EF2CF1FA733FF0087A813 /* Products */,
+				42F1DC144D31BC1179A5BA1B /* Pods */,
+				DE32DB722398EA4A211A45B3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1B7EF2CF1FA733FF0087A813 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B7EF2CE1FA733FF0087A813 /* CounterQuoteAgentApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B7EF2D01FA733FF0087A813 /* CounterQuoteAgentApp */ = {
+			isa = PBXGroup;
+			children = (
+				1B7EF2D11FA733FF0087A813 /* AppDelegate.swift */,
+				1B7EF2D51FA733FF0087A813 /* Main.storyboard */,
+				1B7EF2D81FA733FF0087A813 /* Assets.xcassets */,
+				1B7EF2DA1FA733FF0087A813 /* LaunchScreen.storyboard */,
+				1B7EF2DD1FA733FF0087A813 /* Info.plist */,
+				1B7EF2E31FA734190087A813 /* VideoCallViewController.swift */,
+				1B7EF2E51FA736070087A813 /* TwilioUtils.swift */,
+			);
+			path = CounterQuoteAgentApp;
+			sourceTree = "<group>";
+		};
+		42F1DC144D31BC1179A5BA1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DCB8C3D74961C5776BEBBD53 /* Pods-CounterQuoteAgentApp.debug.xcconfig */,
+				8453E543623762439C78E26B /* Pods-CounterQuoteAgentApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DE32DB722398EA4A211A45B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2605835D993602DBF4FA7BFF /* Pods_CounterQuoteAgentApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B7EF2CD1FA733FF0087A813 /* CounterQuoteAgentApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B7EF2E01FA733FF0087A813 /* Build configuration list for PBXNativeTarget "CounterQuoteAgentApp" */;
+			buildPhases = (
+				602D854057F4EED2786B8723 /* [CP] Check Pods Manifest.lock */,
+				1B7EF2CA1FA733FF0087A813 /* Sources */,
+				1B7EF2CB1FA733FF0087A813 /* Frameworks */,
+				1B7EF2CC1FA733FF0087A813 /* Resources */,
+				1A56F7737F9DA829A01B071E /* [CP] Embed Pods Frameworks */,
+				13417B6918FD921DD286B24D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CounterQuoteAgentApp;
+			productName = CounterQuoteAgentApp;
+			productReference = 1B7EF2CE1FA733FF0087A813 /* CounterQuoteAgentApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B7EF2C61FA733FE0087A813 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Markel;
+				TargetAttributes = {
+					1B7EF2CD1FA733FF0087A813 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = N6ZJQTRK2Z;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 1B7EF2C91FA733FE0087A813 /* Build configuration list for PBXProject "CounterQuoteAgentApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1B7EF2C51FA733FE0087A813;
+			productRefGroup = 1B7EF2CF1FA733FF0087A813 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B7EF2CD1FA733FF0087A813 /* CounterQuoteAgentApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B7EF2CC1FA733FF0087A813 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B7EF2DC1FA733FF0087A813 /* LaunchScreen.storyboard in Resources */,
+				1B7EF2D91FA733FF0087A813 /* Assets.xcassets in Resources */,
+				1B7EF2D71FA733FF0087A813 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13417B6918FD921DD286B24D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CounterQuoteAgentApp/Pods-CounterQuoteAgentApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1A56F7737F9DA829A01B071E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CounterQuoteAgentApp/Pods-CounterQuoteAgentApp-frameworks.sh",
+				"${PODS_ROOT}/TwilioVideo/TwilioVideo.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CounterQuoteAgentApp/Pods-CounterQuoteAgentApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		602D854057F4EED2786B8723 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CounterQuoteAgentApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B7EF2CA1FA733FF0087A813 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B7EF2E41FA734190087A813 /* VideoCallViewController.swift in Sources */,
+				1B7EF2E61FA736070087A813 /* TwilioUtils.swift in Sources */,
+				1B7EF2D21FA733FF0087A813 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1B7EF2D51FA733FF0087A813 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B7EF2D61FA733FF0087A813 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1B7EF2DA1FA733FF0087A813 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B7EF2DB1FA733FF0087A813 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B7EF2DE1FA733FF0087A813 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1B7EF2DF1FA733FF0087A813 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B7EF2E11FA733FF0087A813 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCB8C3D74961C5776BEBBD53 /* Pods-CounterQuoteAgentApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = N6ZJQTRK2Z;
+				INFOPLIST_FILE = CounterQuoteAgentApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.synechron.markel.AgentApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "73a5f13a-e29b-4e1d-8934-37b9a6398bd5";
+				PROVISIONING_PROFILE_SPECIFIER = "Markel -  Universal Distribution";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1B7EF2E21FA733FF0087A813 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8453E543623762439C78E26B /* Pods-CounterQuoteAgentApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = N6ZJQTRK2Z;
+				INFOPLIST_FILE = CounterQuoteAgentApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.synechron.markel.AgentApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "73a5f13a-e29b-4e1d-8934-37b9a6398bd5";
+				PROVISIONING_PROFILE_SPECIFIER = "Markel -  Universal Distribution";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B7EF2C91FA733FE0087A813 /* Build configuration list for PBXProject "CounterQuoteAgentApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B7EF2DE1FA733FF0087A813 /* Debug */,
+				1B7EF2DF1FA733FF0087A813 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B7EF2E01FA733FF0087A813 /* Build configuration list for PBXNativeTarget "CounterQuoteAgentApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B7EF2E11FA733FF0087A813 /* Debug */,
+				1B7EF2E21FA733FF0087A813 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B7EF2C61FA733FE0087A813 /* Project object */;
+}

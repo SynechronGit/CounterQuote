@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TrZ-PO-oqn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Video Call View Controller-->
+        <scene sceneID="mnq-PU-TTV">
+            <objects>
+                <viewController id="TrZ-PO-oqn" customClass="VideoCallViewController" customModule="CounterQuoteAgentApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dma-Xz-xv8"/>
+                        <viewControllerLayoutGuide type="bottom" id="pSp-LU-Xbe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AOU-kj-8zF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="wuU-ag-suV" customClass="TVIVideoView">
+                                <rect key="frame" x="295" y="0.0" width="80" height="120"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Gki-AM-Me0"/>
+                                    <constraint firstAttribute="width" constant="80" id="x4n-MM-PER"/>
+                                </constraints>
+                            </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMn-TV-Eua">
+                                <rect key="frame" x="167.5" y="597" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0SF-e2-6Uq"/>
+                                    <constraint firstAttribute="width" constant="40" id="o9l-7e-ftq"/>
+                                </constraints>
+                                <state key="normal" image="hangUp">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="disconnectWithSender:" destination="TrZ-PO-oqn" eventType="touchUpInside" id="WWu-rp-MfF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Has-Be-S13">
+                                <rect key="frame" x="167.5" y="597" width="40" height="40"/>
+                                <state key="normal" image="startCall"/>
+                                <connections>
+                                    <action selector="connect" destination="TrZ-PO-oqn" eventType="touchUpInside" id="bvF-KU-wa9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wuU-ag-suV" firstAttribute="top" secondItem="AOU-kj-8zF" secondAttribute="top" id="28o-91-Mhq"/>
+                            <constraint firstAttribute="trailing" secondItem="wuU-ag-suV" secondAttribute="trailing" id="KRL-Ew-nV8"/>
+                            <constraint firstItem="nMn-TV-Eua" firstAttribute="centerX" secondItem="AOU-kj-8zF" secondAttribute="centerX" id="RZJ-y0-IVx"/>
+                            <constraint firstItem="Has-Be-S13" firstAttribute="height" secondItem="nMn-TV-Eua" secondAttribute="height" id="TQP-bS-bwu"/>
+                            <constraint firstItem="Has-Be-S13" firstAttribute="top" secondItem="nMn-TV-Eua" secondAttribute="top" id="dQg-Kw-EFc"/>
+                            <constraint firstItem="pSp-LU-Xbe" firstAttribute="top" secondItem="nMn-TV-Eua" secondAttribute="bottom" constant="30" id="j5l-37-Ebi"/>
+                            <constraint firstItem="Has-Be-S13" firstAttribute="centerX" secondItem="AOU-kj-8zF" secondAttribute="centerX" id="lGY-Ty-hPT"/>
+                            <constraint firstItem="Has-Be-S13" firstAttribute="width" secondItem="nMn-TV-Eua" secondAttribute="width" id="p6H-iz-Ga6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="connectButton" destination="Has-Be-S13" id="g9C-vB-pQ0"/>
+                        <outlet property="disconnectButton" destination="nMn-TV-Eua" id="AJf-ez-CpB"/>
+                        <outlet property="previewView" destination="wuU-ag-suV" id="71h-no-emt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gzy-ra-a97" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5599" y="1684"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hangUp" width="28" height="20"/>
+        <image name="startCall" width="15" height="30"/>
+    </resources>
+</document>
