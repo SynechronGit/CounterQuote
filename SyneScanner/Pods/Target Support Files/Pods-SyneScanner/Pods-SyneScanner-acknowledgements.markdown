@@ -143,6 +143,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+## TwilioVideo
+
+Copyright 2011-2017 Twilio, Inc. All rights reserved. Use of this software is subject to the terms and conditions of the Twilio Terms of Service located at http://www.twilio.com/legal/tos
+
 ## UICircularProgressRing
 
 Copyright (c) 2017 Luis Padron
