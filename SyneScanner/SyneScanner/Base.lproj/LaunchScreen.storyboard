@@ -17,7 +17,7 @@
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="videoCallVc" id="01J-lp-oVM" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tPu-RP-tzw"/>
                         <viewControllerLayoutGuide type="bottom" id="45l-zT-Bz4"/>
@@ -47,7 +47,7 @@
                                 <rect key="frame" x="117.5" y="262" width="140" height="143"/>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COUNTERQUOTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5H-8j-7zH">
-                                <rect key="frame" x="88.5" y="60" width="198.5" height="26"/>
+                                <rect key="frame" x="89" y="60" width="198.5" height="26"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>

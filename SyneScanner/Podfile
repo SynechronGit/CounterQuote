@@ -11,7 +11,8 @@ target 'SyneScanner' do
     pod 'DKImagePickerController', '3.6.0'
     pod 'UICircularProgressRing'
     pod 'CardIO'
-pod 'SwiftGifOrigin', '~> 1.6.1'
+    pod 'SwiftGifOrigin', '~> 1.6.1'
+    pod 'TwilioVideo', '~> 1.3.3'
 target 'SyneScannerTests' do
     inherit! :search_paths
     # Pods for testing

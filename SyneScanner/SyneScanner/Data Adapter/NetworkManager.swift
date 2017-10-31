@@ -21,7 +21,7 @@ class NetworkManager: NSObject {
     // Image uploading method
     func uploadImage(headers:[String:String], url:String, image:UIImage) {
         let serverUrl = BASE_URL + url
-        let imgData = UIImageJPEGRepresentation(image, 1.0)!
+        let imgData = UIImageJPEGRepresentation(image, 0.1)!
 
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             multipartFormData.append(imgData, withName: "AcordForm", fileName: "doc.jpeg", mimeType: "image/jpeg")

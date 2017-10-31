@@ -178,7 +178,7 @@ class QuoteFormViewController: BaseViewController {
         }
         actionSheetControllerIOS8.addAction(saveActionButton)
         
-        let deleteActionButton = UIAlertAction(title: "Call Now", style: .default)
+        let deleteActionButton = UIAlertAction(title: "Call Agent Now", style: .default)
         { _ in
             self.callOnNumber()
         }
@@ -221,13 +221,15 @@ class QuoteFormViewController: BaseViewController {
     //MARK: - Agent call methods
     //Call on an agent number
     func callOnNumber() {
-        if let url = URL(string: "tel://\("+91999999999")"), UIApplication.shared.canOpenURL(url) {
-            if #available(iOS 10, *) {
-                UIApplication.shared.open(url)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
-        }
+        
+        self.performSegue(withIdentifier: "presentVideoCallVc", sender: nil)
+//        if let url = URL(string: "tel://\("+91999999999")"), UIApplication.shared.canOpenURL(url) {
+//            if #available(iOS 10, *) {
+//                UIApplication.shared.open(url)
+//            } else {
+//                UIApplication.shared.openURL(url)
+//            }
+//        }
     }
     
     //Call us view with fileds name and phone to be added

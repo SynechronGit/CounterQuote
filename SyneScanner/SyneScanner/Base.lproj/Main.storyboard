@@ -80,7 +80,7 @@
                                 <rect key="frame" x="90" y="213" width="140" height="143"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COUNTERQUOTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bf3-nv-PXw">
-                                <rect key="frame" x="61" y="-30" width="198.5" height="26"/>
+                                <rect key="frame" x="61.5" y="-30" width="198.5" height="26"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -748,7 +748,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Process" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4Q-Nk-fRQ">
-                                        <rect key="frame" x="91" y="4" width="108" height="16"/>
+                                        <rect key="frame" x="90.5" y="4" width="108" height="16"/>
                                         <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="16"/>
                                         <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1117,7 +1117,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-Ii-uIo">
-                                                            <rect key="frame" x="10" y="35.5" width="135" height="19"/>
+                                                            <rect key="frame" x="10" y="36" width="135" height="19"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="19"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -1181,7 +1181,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XPM-Ji-Anv">
-                                                    <rect key="frame" x="55" y="11" width="135.5" height="33"/>
+                                                    <rect key="frame" x="55" y="11.5" width="135.5" height="33"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ete-tb-38U">
                                                             <rect key="frame" x="0.0" y="0.0" width="135.5" height="18"/>
@@ -2131,7 +2131,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o39-UH-0KX">
-                                                    <rect key="frame" x="35" y="10" width="250" height="15"/>
+                                                    <rect key="frame" x="35" y="9.5" width="250" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2140,7 +2140,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPS-uT-oDM">
-                                                    <rect key="frame" x="35" y="31" width="250" height="15"/>
+                                                    <rect key="frame" x="35" y="30.5" width="250" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -2266,7 +2266,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONGRATULATIONS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJO-iO-wAm">
-                                <rect key="frame" x="42" y="46" width="236.5" height="26"/>
+                                <rect key="frame" x="42.5" y="46" width="236.5" height="26"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="26"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2410,7 +2410,7 @@ We are now making insurance companies fight for your business. We will present y
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="280"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Agent will Call You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRN-Ay-YwY">
-                                                <rect key="frame" x="61" y="20" width="179" height="18"/>
+                                                <rect key="frame" x="60.5" y="20" width="179" height="18"/>
                                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="18"/>
                                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2741,7 +2741,7 @@ We are now making insurance companies fight for your business. We will present y
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQ0-2D-NWF">
-                                                    <rect key="frame" x="35" y="11" width="37" height="15"/>
+                                                    <rect key="frame" x="35" y="10.5" width="37" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2902,6 +2902,7 @@ We are now making insurance companies fight for your business. We will present y
                         <outlet property="tableForm" destination="E1g-HF-tHn" id="tfQ-sG-Ig9"/>
                         <outlet property="viewAmount" destination="8E4-cg-9I1" id="wG2-EA-sUg"/>
                         <segue destination="UT7-qo-NyP" kind="show" identifier="NavToPayment" id="ZpF-WJ-z9p"/>
+                        <segue destination="K2o-J3-8K1" kind="show" identifier="presentVideoCallVc" id="PEc-wC-bof"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GUg-rI-Vdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3037,6 +3038,90 @@ We are now making insurance companies fight for your business. We will present y
             </objects>
             <point key="canvasLocation" x="3918.75" y="1784.1549295774648"/>
         </scene>
+        <!--Video Call View Controller-->
+        <scene sceneID="hH9-Cz-YT5">
+            <objects>
+                <viewController id="K2o-J3-8K1" customClass="VideoCallViewController" customModule="SyneScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nih-PK-MzU"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZGp-aE-scP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n2A-Ko-Fia">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="nnQ-nx-IVp" customClass="TVIVideoView">
+                                <rect key="frame" x="200" y="0.0" width="120" height="160"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="9jt-gH-b7Q"/>
+                                    <constraint firstAttribute="height" constant="160" id="OEv-lO-PJn"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUZ-Sq-tnl" userLabel="Mic Button">
+                                <rect key="frame" x="246.5" y="498" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" image="mic">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleMicWithSender:" destination="K2o-J3-8K1" eventType="touchUpInside" id="qxc-RU-bEe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jn1-Gt-yFW">
+                                <rect key="frame" x="33.5" y="498" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="FxP-SO-VnR"/>
+                                    <constraint firstAttribute="height" constant="40" id="M0Q-th-XGv"/>
+                                </constraints>
+                                <state key="normal" image="hangUp">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="disconnectWithSender:" destination="K2o-J3-8K1" eventType="touchUpInside" id="iUW-Ja-WBf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahO-ai-RMF" userLabel="Mic Button">
+                                <rect key="frame" x="140" y="498" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" image="noVideoIcon">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleVideoOnOffWithSender:" destination="K2o-J3-8K1" eventType="touchUpInside" id="Gdb-RN-gT5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WUZ-Sq-tnl" firstAttribute="centerX" secondItem="n2A-Ko-Fia" secondAttribute="centerX" multiplier="5:3" id="6Fo-pt-5CT"/>
+                            <constraint firstItem="ahO-ai-RMF" firstAttribute="height" secondItem="jn1-Gt-yFW" secondAttribute="height" id="6WG-2Y-8DY"/>
+                            <constraint firstItem="jn1-Gt-yFW" firstAttribute="centerX" secondItem="n2A-Ko-Fia" secondAttribute="centerX" multiplier="1:3" id="6b7-Pp-D7p"/>
+                            <constraint firstItem="ZGp-aE-scP" firstAttribute="top" secondItem="jn1-Gt-yFW" secondAttribute="bottom" constant="30" id="ASe-n8-bgS"/>
+                            <constraint firstItem="WUZ-Sq-tnl" firstAttribute="width" secondItem="jn1-Gt-yFW" secondAttribute="width" id="FRp-qY-4bm"/>
+                            <constraint firstItem="ahO-ai-RMF" firstAttribute="centerX" secondItem="n2A-Ko-Fia" secondAttribute="centerX" multiplier="3:3" id="GYp-oA-Ggy"/>
+                            <constraint firstItem="nnQ-nx-IVp" firstAttribute="top" secondItem="n2A-Ko-Fia" secondAttribute="top" id="PBm-XJ-INy"/>
+                            <constraint firstItem="ahO-ai-RMF" firstAttribute="bottom" secondItem="jn1-Gt-yFW" secondAttribute="bottom" id="Qha-bl-YGh"/>
+                            <constraint firstItem="ahO-ai-RMF" firstAttribute="width" secondItem="jn1-Gt-yFW" secondAttribute="width" id="Sf6-qN-sYf"/>
+                            <constraint firstItem="WUZ-Sq-tnl" firstAttribute="height" secondItem="jn1-Gt-yFW" secondAttribute="height" id="ZLO-ui-g8D"/>
+                            <constraint firstItem="WUZ-Sq-tnl" firstAttribute="bottom" secondItem="jn1-Gt-yFW" secondAttribute="bottom" id="dCb-5T-Lry"/>
+                            <constraint firstAttribute="trailing" secondItem="nnQ-nx-IVp" secondAttribute="trailing" id="zuY-hr-mCg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="disconnectButton" destination="jn1-Gt-yFW" id="hf3-xM-EJ8"/>
+                        <outlet property="micButton" destination="WUZ-Sq-tnl" id="tVT-sa-HSL"/>
+                        <outlet property="previewView" destination="nnQ-nx-IVp" id="tJ0-iO-Exq"/>
+                        <outlet property="videoOnOffButton" destination="ahO-ai-RMF" id="DwD-Xh-nHs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lfr-UF-MJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5599" y="1684"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Agent" width="63" height="79"/>
@@ -3058,10 +3143,13 @@ We are now making insurance companies fight for your business. We will present y
         <image name="comp1" width="40" height="37"/>
         <image name="congrats" width="250" height="250"/>
         <image name="delete" width="100" height="100"/>
+        <image name="hangUp" width="28" height="20"/>
         <image name="ic_close_white" width="24" height="24"/>
         <image name="icon-check" width="38" height="32"/>
         <image name="left_Curve_line" width="77" height="205"/>
+        <image name="mic" width="21" height="26"/>
         <image name="mobile_scan_logo_welcome" width="202" height="268"/>
+        <image name="noVideoIcon" width="27" height="26"/>
         <image name="retake" width="100" height="100"/>
         <image name="right_cureve_line" width="71" height="193"/>
         <image name="share_pdf" width="58" height="70"/>
