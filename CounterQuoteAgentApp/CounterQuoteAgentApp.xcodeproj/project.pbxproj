@@ -36,6 +36,7 @@
 		5344B90B1FA89CDB0099ECE5 /* QuoteFormData-HomeOwner.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5344B8F71FA89CDB0099ECE5 /* QuoteFormData-HomeOwner.plist */; };
 		5344B90C1FA89CDB0099ECE5 /* QuoteFormData-HomeRenter.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5344B8F81FA89CDB0099ECE5 /* QuoteFormData-HomeRenter.plist */; };
 		5344B90D1FA89CDB0099ECE5 /* QuoteFormData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5344B8F91FA89CDB0099ECE5 /* QuoteFormData.plist */; };
+		5344B90F1FA9BF260099ECE5 /* VideoCallViewController+CallKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5344B90E1FA9BF260099ECE5 /* VideoCallViewController+CallKit.swift */; };
 		5355031B1FA88CDE007267E9 /* ImagePreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5355031A1FA88CDE007267E9 /* ImagePreviewCollectionViewCell.swift */; };
 		5355031F1FA88CE9007267E9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5355031C1FA88CE9007267E9 /* BaseViewController.swift */; };
 		535503201FA88CE9007267E9 /* ImagePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5355031D1FA88CE9007267E9 /* ImagePreviewController.swift */; };
@@ -77,6 +78,7 @@
 		5344B8F71FA89CDB0099ECE5 /* QuoteFormData-HomeOwner.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "QuoteFormData-HomeOwner.plist"; sourceTree = "<group>"; };
 		5344B8F81FA89CDB0099ECE5 /* QuoteFormData-HomeRenter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "QuoteFormData-HomeRenter.plist"; sourceTree = "<group>"; };
 		5344B8F91FA89CDB0099ECE5 /* QuoteFormData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QuoteFormData.plist; sourceTree = "<group>"; };
+		5344B90E1FA9BF260099ECE5 /* VideoCallViewController+CallKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VideoCallViewController+CallKit.swift"; sourceTree = "<group>"; };
 		5355031A1FA88CDE007267E9 /* ImagePreviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePreviewCollectionViewCell.swift; path = Views/ImagePreviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		5355031C1FA88CE9007267E9 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Controllers/BaseViewController.swift; sourceTree = "<group>"; };
 		5355031D1FA88CE9007267E9 /* ImagePreviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePreviewController.swift; path = Controllers/ImagePreviewController.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				5355031C1FA88CE9007267E9 /* BaseViewController.swift */,
 				5355031D1FA88CE9007267E9 /* ImagePreviewController.swift */,
 				5355031E1FA88CE9007267E9 /* VideoCallViewController.swift */,
+				5344B90E1FA9BF260099ECE5 /* VideoCallViewController+CallKit.swift */,
 				535503221FA88FA5007267E9 /* QuoteFormViewController.swift */,
 				1B7EF2F41FA9A7C70087A813 /* RootViewController.swift */,
 			);
@@ -386,6 +389,7 @@
 				1B7EF2E61FA736070087A813 /* TwilioUtils.swift in Sources */,
 				1B7EF2D21FA733FF0087A813 /* AppDelegate.swift in Sources */,
 				1B7EF2EC1FA8A3C20087A813 /* SplashScreenViewController.swift in Sources */,
+				5344B90F1FA9BF260099ECE5 /* VideoCallViewController+CallKit.swift in Sources */,
 				535503271FA8902B007267E9 /* QuoteFromSectionHeaderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

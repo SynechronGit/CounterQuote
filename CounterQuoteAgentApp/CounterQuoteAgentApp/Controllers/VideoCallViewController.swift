@@ -8,6 +8,7 @@
 
 import UIKit
 import TwilioVideo
+import CallKit
 
 class VideoCallViewController: UIViewController {
     var accessToken = "TWILIO_ACCESS_TOKEN"
@@ -24,6 +25,11 @@ class VideoCallViewController: UIViewController {
     var participant: TVIParticipant?
     var remoteView: TVIVideoView?
     
+    // CallKit components
+    let callKitProvider:CXProvider
+    let callKitCallController:CXCallController
+    var callKitCompletionHandler: ((Bool)->Swift.Void?)? = nil
+    
     
     // `TVIVideoView` created from a storyboard
     @IBOutlet weak var previewView: TVIVideoView!
@@ -32,6 +38,29 @@ class VideoCallViewController: UIViewController {
     @IBOutlet weak var disconnectButton: UIButton!
   //  @IBOutlet weak var micButton: UIButton!
    // @IBOutlet weak var videoOnOffButton: UIButton!
+    
+    required init?(coder aDecoder: NSCoder) {
+        let configuration = CXProviderConfiguration(localizedName: "")
+        configuration.maximumCallGroups = 1
+        configuration.maximumCallsPerCallGroup = 1
+        configuration.supportsVideo = true
+        if let callKitIcon : UIImage = nil {
+            configuration.iconTemplateImageData = UIImagePNGRepresentation(callKitIcon)
+        }
+        
+        callKitProvider = CXProvider(configuration: configuration)
+        callKitCallController = CXCallController()
+        
+        super.init(coder: aDecoder)
+        
+        callKitProvider.setDelegate(self, queue: nil)
+    }
+    
+    deinit {
+        // CallKit has an odd API contract where the developer must call invalidate or the CXProvider is leaked.
+        callKitProvider.invalidate()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -259,6 +288,10 @@ class VideoCallViewController: UIViewController {
         print (messageText)
     }
     
+    func holdCall(onHold: Bool) {
+        localAudioTrack?.isEnabled = !onHold
+        localVideoTrack?.isEnabled = !onHold
+    }
     
     /*
      // MARK: - Navigation
@@ -309,6 +342,7 @@ extension VideoCallViewController : TVIRoomDelegate {
             self.participant = participant
             self.participant?.delegate = self
         }
+        self.reportIncomingCall(uuid: UUID(), roomName: "Customer")
         logMessage(messageText: "Room \(room.name), Participant \(participant.identity) connected")
     }
     
