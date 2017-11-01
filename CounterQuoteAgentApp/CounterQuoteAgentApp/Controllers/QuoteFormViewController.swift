@@ -61,7 +61,7 @@ class QuoteFormViewController: BaseViewController {
         btnEdit.setBorderToButton()
         btnDiscard.setBorderToButton()
 
-        imgCompanyLogo.image = UIImage(named: "com1")
+        imgCompanyLogo.image = UIImage(named: "comp1")
 
         self.tableForm.alpha = 0
         self.tableForm.layer.masksToBounds = true

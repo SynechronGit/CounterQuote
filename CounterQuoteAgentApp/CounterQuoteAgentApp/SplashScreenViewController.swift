@@ -66,7 +66,7 @@ class SplashScreenViewController: BaseViewController {
     
     // MARK: - Perform Segue
     func endSplashScreenView() {
-        self.performSegue(withIdentifier: "navToTabBarVc", sender: nil)
+        self.performSegue(withIdentifier: "pushToRootVc", sender: nil)
         self.timer?.invalidate()
         self.timer = nil
     }
