@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Keyboard with next,previous and done buttons initailized
+        
+        
         IQKeyboardManager.sharedManager().enable = true
         return true
     }

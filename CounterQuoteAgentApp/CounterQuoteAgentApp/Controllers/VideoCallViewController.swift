@@ -77,7 +77,7 @@ class VideoCallViewController: UIViewController {
 //        self.micButton.isHidden = true
 //        self.videoOnOffButton.isHidden = true
         
-        connect()
+        
         
         // Do any additional setup after loading the view.
     }
@@ -88,6 +88,7 @@ class VideoCallViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        connect()
     }
     
     func setupRemoteVideoView() {
