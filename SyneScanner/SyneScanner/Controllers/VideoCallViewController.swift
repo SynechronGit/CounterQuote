@@ -181,7 +181,7 @@ class VideoCallViewController: UIViewController {
         // Preview our local camera track in the local video preview view.
         camera = TVICameraCapturer(source: .frontCamera, delegate: self)
         localVideoTrack = TVILocalVideoTrack.init(capturer: camera!)
-        localVideoTrack?.isEnabled = false
+       localVideoTrack?.isEnabled = false
         if (localVideoTrack == nil) {
             logMessage(messageText: "Failed to create video track")
         } else {
