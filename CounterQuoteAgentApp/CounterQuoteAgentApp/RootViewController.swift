@@ -10,14 +10,20 @@ import UIKit
 
 class RootViewController: UIViewController {
 
+     //MARK: Properties
+    
     @IBOutlet weak var centerView: UIView!
     @IBOutlet weak var documentView: UIView!
     @IBOutlet weak var camerView: UIView!
     var callVc:VideoCallViewController?
     var galleryVc:ImagePreviewController?
     var formVc:QuoteFormViewController?
+    var chatVc:ChatViewController?
+
+    
     @IBOutlet weak var segmentControl: UISegmentedControl!
 
+     //MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         loadInitialView()
@@ -32,10 +38,13 @@ class RootViewController: UIViewController {
     func loadInitialView()
     {
         callVc = self.storyboard?.instantiateViewController(withIdentifier: "videoView") as? VideoCallViewController
-        callVc?.view.frame = CGRect(x: 0, y: 0, width: camerView.frame.size.width, height: camerView.frame.size.height)
+        callVc?.view.frame = CGRect(x: 0, y: 0, width: camerView.frame.size.width, height: camerView.frame.size.height / 2)
         camerView.addSubview((callVc?.view)!)
         
-        
+        chatVc = self.storyboard?.instantiateViewController(withIdentifier: "Chat") as? ChatViewController
+        chatVc?.view.frame = CGRect(x: 0, y: camerView.frame.size.height / 2, width: camerView.frame.size.width, height: camerView.frame.size.height / 2)
+        camerView.addSubview((chatVc?.view)!)
+        self.addChildViewController(chatVc!)
         galleryVc = self.storyboard?.instantiateViewController(withIdentifier: "ImagePreviewController") as? ImagePreviewController
         galleryVc?.view.frame = CGRect(x: 0, y: 0, width: centerView.frame.size.width, height: centerView.frame.size.height)
         centerView.addSubview((galleryVc?.view)!)
@@ -46,12 +55,15 @@ class RootViewController: UIViewController {
         formVc?.view.frame = CGRect(x: 0, y: 0, width: centerView.frame.size.width, height: centerView.frame.size.height)
         centerView.addSubview((formVc?.view)!)
         
+        
+        
         formVc?.view.isHidden = true
         
    
 
     }
 
+     //MARK: Button Actions
     @IBAction func segmentControlClicked()
     {
         if segmentControl.selectedSegmentIndex == 0 {
@@ -66,6 +78,9 @@ class RootViewController: UIViewController {
 
         }
     }
+    
+    
+        
     
     /*
     // MARK: - Navigation

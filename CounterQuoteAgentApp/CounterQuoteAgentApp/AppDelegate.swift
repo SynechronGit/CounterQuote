@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Keyboard with next,previous and done buttons initailized
         
-        
+        FirebaseApp.configure()
         IQKeyboardManager.sharedManager().enable = true
         return true
     }

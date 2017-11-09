@@ -6,6 +6,9 @@ target 'CounterQuoteAgentApp' do
   use_frameworks!
     pod 'TwilioVideo', '~> 1.3.3'
     pod 'IQKeyboardManagerSwift', '4.0.10'
+    pod 'Firebase/Database'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Storage'
   # Pods for CounterQuoteAgentApp
 
 end

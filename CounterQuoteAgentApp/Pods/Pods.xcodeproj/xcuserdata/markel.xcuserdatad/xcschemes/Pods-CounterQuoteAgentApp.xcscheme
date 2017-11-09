@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8AC1EA7BE3ABC64D321A14918B9E7F0F"
+               BlueprintIdentifier = "97B5505CC14ACB67C7D87EA053EAE600"
                BuildableName = "Pods_CounterQuoteAgentApp.framework"
                BlueprintName = "Pods-CounterQuoteAgentApp"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8AC1EA7BE3ABC64D321A14918B9E7F0F"
+            BlueprintIdentifier = "97B5505CC14ACB67C7D87EA053EAE600"
             BuildableName = "Pods_CounterQuoteAgentApp.framework"
             BlueprintName = "Pods-CounterQuoteAgentApp"
             ReferencedContainer = "container:Pods.xcodeproj">
