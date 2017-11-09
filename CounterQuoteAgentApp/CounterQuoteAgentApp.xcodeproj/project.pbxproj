@@ -219,6 +219,7 @@
 		535503181FA88C8D007267E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1BFD48C91FB4412000E990C2 /* VCCells.swift */,
 				5355031A1FA88CDE007267E9 /* ImagePreviewCollectionViewCell.swift */,
 				535503241FA8902B007267E9 /* QuoteFormTableViewCell.swift */,
 				535503251FA8902B007267E9 /* QuoteFromSectionHeaderTableViewCell.swift */,
@@ -229,7 +230,6 @@
 		535503191FA88C97007267E9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1BFD48C91FB4412000E990C2 /* VCCells.swift */,
 				1B7EF2EB1FA8A3C20087A813 /* SplashScreenViewController.swift */,
 				5355031C1FA88CE9007267E9 /* BaseViewController.swift */,
 				5355031D1FA88CE9007267E9 /* ImagePreviewController.swift */,
