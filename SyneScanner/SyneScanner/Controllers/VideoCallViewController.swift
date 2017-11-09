@@ -37,11 +37,6 @@ class VideoCallViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chatVc = self.storyboard?.instantiateViewController(withIdentifier: "Chat") as? ChatViewController
-        chatVc?.view.frame = CGRect(x: 0, y: 0, width: chatView.frame.size.width, height: chatView.frame.size.height)
-        chatView.addSubview((chatVc?.view)!)
-        self.addChildViewController(chatVc!)
-        
         if PlatformUtils.isSimulator {
             self.previewView.removeFromSuperview()
         } else {
@@ -59,9 +54,22 @@ class VideoCallViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        self.intitaliseChat()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func intitaliseChat() {
+        if chatVc == nil {
+            chatVc = self.storyboard?.instantiateViewController(withIdentifier: "Chat") as? ChatViewController
+            chatVc?.view.frame = CGRect(x: 0, y: 0, width: chatView.frame.size.width, height: chatView.frame.size.height)
+            chatView.addSubview((chatVc?.view)!)
+            self.addChildViewController(chatVc!)
+        }
     }
     
     func setupRemoteVideoView() {
