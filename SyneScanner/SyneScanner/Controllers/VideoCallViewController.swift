@@ -24,10 +24,11 @@ class VideoCallViewController: UIViewController {
     var localAudioTrack: TVILocalAudioTrack?
     var participant: TVIParticipant?
     var remoteView: TVIVideoView?
-
+    var chatVc:ChatViewController?
     
     // `TVIVideoView` created from a storyboard
     @IBOutlet weak var previewView: TVIVideoView!
+    @IBOutlet weak var chatView: UIView!
     
     @IBOutlet weak var disconnectButton: UIButton!
     @IBOutlet weak var micButton: UIButton!
@@ -35,7 +36,12 @@ class VideoCallViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        chatVc = self.storyboard?.instantiateViewController(withIdentifier: "Chat") as? ChatViewController
+        chatVc?.view.frame = CGRect(x: 0, y: 0, width: chatView.frame.size.width, height: chatView.frame.size.height)
+        chatView.addSubview((chatVc?.view)!)
+        self.addChildViewController(chatVc!)
+        
         if PlatformUtils.isSimulator {
             self.previewView.removeFromSuperview()
         } else {
@@ -103,6 +109,7 @@ class VideoCallViewController: UIViewController {
     }
     
     // MARK: IBActions
+    
      func connect() {
         // Configure access token either from server or manually.
         // If the default wasn't changed, try fetching from server.

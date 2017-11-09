@@ -89,6 +89,13 @@
 		5375A9C41FA2246F00F5F08E /* QuoteFormData-HomeOwner.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5375A9C21FA2246F00F5F08E /* QuoteFormData-HomeOwner.plist */; };
 		5375A9C51FA2246F00F5F08E /* QuoteFormData-HomeRenter.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5375A9C31FA2246F00F5F08E /* QuoteFormData-HomeRenter.plist */; };
 		539D7F961F95025900C57C0F /* BestQuoteOfferedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539D7F951F95025900C57C0F /* BestQuoteOfferedTableViewCell.swift */; };
+		53A2A8201FB461B000BF8AF2 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A2A81D1FB461B000BF8AF2 /* Conversation.swift */; };
+		53A2A8211FB461B000BF8AF2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A2A81E1FB461B000BF8AF2 /* Message.swift */; };
+		53A2A8221FB461B000BF8AF2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A2A81F1FB461B000BF8AF2 /* User.swift */; };
+		53A2A8241FB461C600BF8AF2 /* Helper Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A2A8231FB461C600BF8AF2 /* Helper Files.swift */; };
+		53A2A8261FB461EA00BF8AF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53A2A8251FB461EA00BF8AF2 /* GoogleService-Info.plist */; };
+		53A2A8281FB4626800BF8AF2 /* VCCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A2A8271FB4626800BF8AF2 /* VCCells.swift */; };
+		53A2A82A1FB4627B00BF8AF2 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A2A8291FB4627B00BF8AF2 /* ChatViewController.swift */; };
 		53D0B46C1F9F8D35006CFBAD /* OCRTokenProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D0B46B1F9F8D35006CFBAD /* OCRTokenProxy.swift */; };
 		53DC90A91F94C464009C2EB4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 53DC90A81F94C464009C2EB4 /* Settings.bundle */; };
 		53DC90AB1F94C713009C2EB4 /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DC90AA1F94C713009C2EB4 /* SettingsBundleHelper.swift */; };
@@ -225,6 +232,13 @@
 		5375A9C21FA2246F00F5F08E /* QuoteFormData-HomeOwner.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "QuoteFormData-HomeOwner.plist"; sourceTree = "<group>"; };
 		5375A9C31FA2246F00F5F08E /* QuoteFormData-HomeRenter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "QuoteFormData-HomeRenter.plist"; sourceTree = "<group>"; };
 		539D7F951F95025900C57C0F /* BestQuoteOfferedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestQuoteOfferedTableViewCell.swift; sourceTree = "<group>"; };
+		53A2A81D1FB461B000BF8AF2 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		53A2A81E1FB461B000BF8AF2 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		53A2A81F1FB461B000BF8AF2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		53A2A8231FB461C600BF8AF2 /* Helper Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Helper Files.swift"; sourceTree = "<group>"; };
+		53A2A8251FB461EA00BF8AF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		53A2A8271FB4626800BF8AF2 /* VCCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCCells.swift; sourceTree = "<group>"; };
+		53A2A8291FB4627B00BF8AF2 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		53D0B46B1F9F8D35006CFBAD /* OCRTokenProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCRTokenProxy.swift; sourceTree = "<group>"; };
 		53DC90A81F94C464009C2EB4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		53DC90AA1F94C713009C2EB4 /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
@@ -270,6 +284,7 @@
 		1B17C7CE1F8DFF530040D470 /* UiTableview Cell */ = {
 			isa = PBXGroup;
 			children = (
+				53A2A8271FB4626800BF8AF2 /* VCCells.swift */,
 				1B5403DD1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift */,
 				5346F1B41F7542E3000E6AC5 /* ImageReviewCollectionViewCell.swift */,
 				5346F1E01F7A3B7C000E6AC5 /* AddCardTableViewCell.swift */,
@@ -420,6 +435,7 @@
 			children = (
 				1B7EF2F01FA8B9D90087A813 /* VideoCallViewController.swift */,
 				1BAD97BF1F88CCC2007289EB /* CallusViewController.swift */,
+				53A2A8291FB4627B00BF8AF2 /* ChatViewController.swift */,
 			);
 			name = "CallUs ViewController";
 			sourceTree = "<group>";
@@ -427,6 +443,7 @@
 		1BE2859E1F7908E200314168 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				53A2A8251FB461EA00BF8AF2 /* GoogleService-Info.plist */,
 				1B7E16EB1F83E1B0005C2165 /* Search_animation.gif */,
 				1B66F23E1F7E2FDE00FA52C0 /* Font */,
 				1BEF2E7A1F79292700AE94E6 /* PDF */,
@@ -542,6 +559,7 @@
 		536A33901F725B0C00F019C5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				53A2A81C1FB461A400BF8AF2 /* Chat */,
 				536A33941F725B4A00F019C5 /* Quadrangle.swift */,
 				1B5403EE1F73D70A007CF73B /* ImageDataModel.swift */,
 			);
@@ -551,6 +569,7 @@
 		536A33911F725B1A00F019C5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				53A2A8231FB461C600BF8AF2 /* Helper Files.swift */,
 				1B7EF2F21FA8B9E00087A813 /* TwilioUtils.swift */,
 				536A33961F725B6C00F019C5 /* Extensions */,
 				536A339B1F725BFB00F019C5 /* ImageEditManager.swift */,
@@ -595,6 +614,16 @@
 				1B17C7D21F8E1B850040D470 /* UITableview+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		53A2A81C1FB461A400BF8AF2 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				53A2A81D1FB461B000BF8AF2 /* Conversation.swift */,
+				53A2A81E1FB461B000BF8AF2 /* Message.swift */,
+				53A2A81F1FB461B000BF8AF2 /* User.swift */,
+			);
+			name = Chat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -719,6 +748,7 @@
 				536A336D1F725AE500F019C5 /* LaunchScreen.storyboard in Resources */,
 				53DC90A91F94C464009C2EB4 /* Settings.bundle in Resources */,
 				1B7E16EC1F83E1B0005C2165 /* Search_animation.gif in Resources */,
+				53A2A8261FB461EA00BF8AF2 /* GoogleService-Info.plist in Resources */,
 				1B66F2541F7E300000FA52C0 /* Carnas Extra Bold.otf in Resources */,
 				1B66F25D1F7E300000FA52C0 /* Carnas Thin Italic.otf in Resources */,
 				1BCC637F1F7E9FB300C87694 /* Binder.pdf in Resources */,
@@ -808,21 +838,29 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SyneScanner/Pods-SyneScanner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DKImagePickerController/DKImagePickerController.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
 				"${PODS_ROOT}/TwilioVideo/TwilioVideo.framework",
 				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DKImagePickerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -940,6 +978,7 @@
 				1BCC638A1F7EBA1000C87694 /* LoaderViewController.swift in Sources */,
 				1BAD97BD1F88AD64007289EB /* UIButton+Extension.swift in Sources */,
 				1BAD979B1F87AA38007289EB /* QuoteFormViewController.swift in Sources */,
+				53A2A8241FB461C600BF8AF2 /* Helper Files.swift in Sources */,
 				1BAD979F1F87B0FF007289EB /* QuoteFormTableViewCell.swift in Sources */,
 				1B5403FE1F75459D007CF73B /* SplashScreenViewController.swift in Sources */,
 				5346F1E31F7A3CAD000E6AC5 /* AddCardViewController.swift in Sources */,
@@ -957,14 +996,18 @@
 				1BDFD5741F8CC9B20036B0FC /* QuoteFromSectionHeaderTableViewCell.swift in Sources */,
 				536DF5111F88DB3100AB1C39 /* InvoicePaymentViewController.swift in Sources */,
 				536DE16A1F87BD580046B229 /* AgentCallViewController.swift in Sources */,
+				53A2A8221FB461B000BF8AF2 /* User.swift in Sources */,
 				1B6E11341F7D0D3100C4069A /* TPKeyboardAvoidingScrollView.m in Sources */,
 				535888751F7CECE400A6E0D0 /* PaymentReceiptViewController.swift in Sources */,
 				536A33981F725BB600F019C5 /* CALayer+Extension.swift in Sources */,
+				53A2A82A1FB4627B00BF8AF2 /* ChatViewController.swift in Sources */,
 				536A339E1F725C2700F019C5 /* ImageCaptureManager.swift in Sources */,
 				536DF50F1F88B1E000AB1C39 /* AgentCallTableViewCell.swift in Sources */,
 				536A33A61F725CBA00F019C5 /* CameraView.swift in Sources */,
 				536A33A81F725CEF00F019C5 /* ImagePreviewController.swift in Sources */,
 				1B5403F71F73EFC0007CF73B /* APIURL.swift in Sources */,
+				53A2A8211FB461B000BF8AF2 /* Message.swift in Sources */,
+				53A2A8281FB4626800BF8AF2 /* VCCells.swift in Sources */,
 				1B5403F51F73EFB2007CF73B /* NetworkManager.swift in Sources */,
 				1B97050F1F8D1405005B0F35 /* TermsnConditionViewController.swift in Sources */,
 				1B5403DE1F72930B007CF73B /* ImagePreviewCollectionViewCell.swift in Sources */,
@@ -980,6 +1023,7 @@
 				1B6E11331F7D0D3100C4069A /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				1BAD97941F8763C3007289EB /* GetOCRProxy.swift in Sources */,
 				53DC90AB1F94C713009C2EB4 /* SettingsBundleHelper.swift in Sources */,
+				53A2A8201FB461B000BF8AF2 /* Conversation.swift in Sources */,
 				1B17C7D11F8E03F10040D470 /* UITableviewCell+Extension.swift in Sources */,
 				1B6E110F1F7CE71800C4069A /* UIColor+Extension.swift in Sources */,
 				1B6E11111F7CF3E600C4069A /* InsuranceQuoteViewController.swift in Sources */,
@@ -1171,7 +1215,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.markelPoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e11fa177-e871-4db7-851f-3c507299a6cd";
+				PROVISIONING_PROFILE = "7f82c427-8230-4f28-96c4-499477ea8783";
 				PROVISIONING_PROFILE_SPECIFIER = MarkelPocDev;
 				SWIFT_OBJC_BRIDGING_HEADER = "SyneScanner/Third Party/TPScrollVIew/SyneScanner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1187,7 +1231,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: SYNECHRON TECHNOLOGIES PRIVATE LIMITED";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SYNECHRON TECHNOLOGIES PRIVATE LIMITED";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N6ZJQTRK2Z;
 				ENABLE_BITCODE = YES;
@@ -1202,7 +1246,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.markelPoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b8f669e6-7ce8-4d76-9e23-2d7ccb4a3699";
+				PROVISIONING_PROFILE = "777a18ce-aca1-40d3-a919-d02947826093";
 				PROVISIONING_PROFILE_SPECIFIER = MarkelPOCInhouse;
 				SWIFT_OBJC_BRIDGING_HEADER = "SyneScanner/Third Party/TPScrollVIew/SyneScanner-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

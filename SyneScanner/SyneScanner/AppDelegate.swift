@@ -10,6 +10,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import SVProgressHUD
 import HockeySDK
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Progress HUD initialization
         self.initializeProgressHUD()
 
+        // Firebase configure
+        FirebaseApp.configure()
+        
         // Keyboard with next,previous and done buttons initailized
         IQKeyboardManager.sharedManager().enable = true
                 
