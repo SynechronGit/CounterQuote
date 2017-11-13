@@ -11,7 +11,6 @@ import UIKit
 class RootViewController: UIViewController {
 
      //MARK: Properties
-    
     @IBOutlet weak var centerView: UIView!
     @IBOutlet weak var documentView: UIView!
     @IBOutlet weak var camerView: UIView!
@@ -30,11 +29,13 @@ class RootViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // Initial set up
     func loadInitialView()
     {
         callVc = self.storyboard?.instantiateViewController(withIdentifier: "videoView") as? VideoCallViewController
@@ -48,19 +49,13 @@ class RootViewController: UIViewController {
         galleryVc = self.storyboard?.instantiateViewController(withIdentifier: "ImagePreviewController") as? ImagePreviewController
         galleryVc?.view.frame = CGRect(x: 0, y: 0, width: centerView.frame.size.width, height: centerView.frame.size.height)
         centerView.addSubview((galleryVc?.view)!)
-
-        
         
         formVc = self.storyboard?.instantiateViewController(withIdentifier: "documentView") as? QuoteFormViewController
         formVc?.view.frame = CGRect(x: 0, y: 0, width: centerView.frame.size.width, height: centerView.frame.size.height)
         centerView.addSubview((formVc?.view)!)
-        
-        
-        
+
         formVc?.view.isHidden = true
         
-   
-
     }
 
      //MARK: Button Actions

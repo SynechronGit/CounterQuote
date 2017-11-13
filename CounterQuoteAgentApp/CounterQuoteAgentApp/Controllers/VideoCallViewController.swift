@@ -11,6 +11,7 @@ import TwilioVideo
 import CallKit
 
 class VideoCallViewController: UIViewController {
+    // MARK: - Properties
     var accessToken = "TWILIO_ACCESS_TOKEN"
     
     var roomName = "CQ"
@@ -39,6 +40,7 @@ class VideoCallViewController: UIViewController {
   //  @IBOutlet weak var micButton: UIButton!
    // @IBOutlet weak var videoOnOffButton: UIButton!
     
+    // MARK: - View LifeCycle
     required init?(coder aDecoder: NSCoder) {
         let configuration = CXProviderConfiguration(localizedName: "")
         configuration.maximumCallGroups = 1
@@ -91,6 +93,8 @@ class VideoCallViewController: UIViewController {
         connect()
     }
     
+    
+    // MARK: - Initial setup
     func setupRemoteVideoView() {
         // Creating `TVIVideoView` programmatically
         self.remoteView = TVIVideoView.init(frame: self.view.frame, delegate:self)

@@ -54,6 +54,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
       //  self.inputBar.backgroundColor = UIColor.clear
@@ -104,6 +105,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
+    //Firebase login with email credentials
     func callFireBaseLoginApi()
     {
         User.loginUser("kalpesh21m@gmail.com", password: "Welcome1") { [weak weakSelf = self](status) in
@@ -125,13 +127,15 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             User.downloadAllUsers(id, completion: {(user) in
                 DispatchQueue.main.async {
                     self.users.append(user)
-                    self.startConverSation()
+                    self.startConversation()
                     
                 }
             })
         }
     }
-    func startConverSation()
+    
+    //Fetch conversations with users
+    func startConversation()
     {
         if self.users.count > 0 {
             self.currentUser = self.users[0]
@@ -140,6 +144,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
     }
+    
     //Downloads messages
     func fetchData() {
         Message.downloadAllMessages(self.currentUser!.id, completion: {[weak weakSelf = self] (message) in
@@ -156,13 +161,14 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
 
-   
+   //Compose message function
     func composeMessage(_ type: MessageType, content: Any)  {
         let message = Message.init(type: type, content: content, owner: .sender, timestamp: Int(Date().timeIntervalSince1970), isRead: false)
         Message.send(message, toID: self.currentUser!.id, completion: {(_) in
         })
     }
     
+    //Check location permission of app
     func checkLocationPermission() -> Bool {
         var state = false
         switch CLLocationManager.authorizationStatus() {
@@ -175,6 +181,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         return state
     }
     
+    //Animation on chat options
     func animateExtraButtons(_ toHide: Bool)  {
         switch toHide {
         case true:
@@ -190,6 +197,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    //MARK: Button Actions
     @IBAction func showMessage(_ sender: Any) {
         self.animateExtraButtons(true)
     }
@@ -367,19 +375,4 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    
-   
-
-
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
