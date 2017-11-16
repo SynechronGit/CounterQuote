@@ -133,7 +133,11 @@ class ImagePreviewController: BaseViewController {
     
     
     @IBAction  func finishBtnTapped() {
-        startWorkflowApi()
+        if UserDefaults.standard.bool(forKey: "demo_preference") {
+            self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
+        } else {
+            startWorkflowApi()
+        }
     }
    
 }

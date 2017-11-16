@@ -26,7 +26,11 @@ class SplashScreenViewController: BaseViewController {
         topConstraintLblHeader.constant = -50
 
         self.timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.endSplashScreenView), userInfo: nil, repeats: false)
-        self.startTokenApi()
+        if UserDefaults.standard.bool(forKey: "demo_preference") {
+            //TODO: Demo mode handle
+        } else {
+            self.startTokenApi()
+        }
         // Do any additional setup after loading the view.
     }
 

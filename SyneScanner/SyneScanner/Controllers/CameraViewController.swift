@@ -232,14 +232,22 @@ class CameraViewController: BaseViewController {
             model.image = image
             model.isUploadingInProgress =  true
             SharedData.sharedInstance.arrImage[self.retakeIndexNo] = model
-            self.callUploadImageApi(indexNo: self.retakeIndexNo)
+            if UserDefaults.standard.bool(forKey: "demo_preference") {
+                //TODO: Demo mode handle
+            } else {
+                self.callUploadImageApi(indexNo: self.retakeIndexNo)
+            }
         }
         else {
             let model = ImageDataModel()
             model.image = image
             model.isUploadingInProgress =  true
             SharedData.sharedInstance.arrImage.append(model)
-            self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
+            if UserDefaults.standard.bool(forKey: "demo_preference") {
+                //TODO: Demo mode handle
+            } else {
+                self.callUploadImageApi(indexNo: SharedData.sharedInstance.arrImage.count - 1)
+            }
         }
         self.retakeIndexNo = -1
         self.centerImageView.isHidden = false
@@ -284,7 +292,8 @@ extension CameraViewController:ImageDeleteDelegate
     func updateCollectionWhenImageDeletedAt(index: Int) {
         let model = SharedData.sharedInstance.arrImage[index]
         model.isDeleted = true
-        if model.imageSuccesfullyUpload == true || model.isUploadingInProgress == false {
+        
+        if model.imageSuccesfullyUpload == true || model.isUploadingInProgress == false || UserDefaults.standard.bool(forKey: "demo_preference") {
             SharedData.sharedInstance.arrImage.remove(at: index)
         }
         if index == 0 && SharedData.sharedInstance.arrImage.count == 0 {

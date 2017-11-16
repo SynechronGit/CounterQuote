@@ -33,6 +33,11 @@ class LoaderViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         startAnimation()
+        if UserDefaults.standard.bool(forKey: "demo_preference") {
+            //pushToQuoteVc()
+        } else {
+//            self.startOCR()
+        }
     }
     
     func defaultsChanged() {
