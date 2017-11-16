@@ -63,7 +63,7 @@
                                 <rect key="frame" x="90" y="213" width="140" height="143"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COUNTERQUOTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bf3-nv-PXw">
-                                <rect key="frame" x="61" y="-30" width="198.5" height="26"/>
+                                <rect key="frame" x="61.5" y="-30" width="198.5" height="26"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -226,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="210.40000000000001" y="300"/>
+            <point key="canvasLocation" x="114" y="300"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="4rH-fX-gxU">
@@ -384,12 +384,11 @@
                         <outlet property="galleryView" destination="pG2-Q2-qvg" id="Imp-wn-FQV"/>
                         <outlet property="lastCatpureImageView" destination="EOc-cT-C58" id="Eoj-In-hhS"/>
                         <outlet property="lblImageCount" destination="Xzz-fu-DCo" id="gz9-Jx-3jq"/>
-                        <segue destination="bcB-w8-SKA" kind="show" identifier="NavToCompleteScreen" id="Q13-jj-gmT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ooc-iN-kKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000.8" y="300"/>
+            <point key="canvasLocation" x="874" y="300"/>
         </scene>
         <!--Image Preview Controller-->
         <scene sceneID="Ph1-Q9-T27">
@@ -569,7 +568,6 @@
                                 </state>
                                 <connections>
                                     <action selector="finishBtnTapped" destination="SAj-WX-AcZ" eventType="touchUpInside" id="Dw7-Jf-DpX"/>
-                                    <action selector="scanningDoneTapped:" destination="bcB-w8-SKA" eventType="touchUpInside" id="Q3f-rc-3nR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -610,212 +608,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DBR-cb-6Sd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1856.25" y="300"/>
-        </scene>
-        <!--Scan Complete View Controller-->
-        <scene sceneID="LBb-V8-bqm">
-            <objects>
-                <viewController id="bcB-w8-SKA" customClass="ScanCompleteViewController" customModule="SyneScanner" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="W34-xc-iq8"/>
-                        <viewControllerLayoutGuide type="bottom" id="SmH-zo-BXA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vfV-H3-LYD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2gK-S7-cjS">
-                                <rect key="frame" x="0.0" y="80" width="320" height="335"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="vJ1-MT-93V">
-                                    <size key="itemSize" width="90" height="90"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="2" minY="0.0" maxX="2" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reviewCell" id="0hJ-Zh-3bW" customClass="ImageReviewCollectionViewCell" customModule="SyneScanner" customModuleProvider="target">
-                                        <rect key="frame" x="2" y="0.0" width="90" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="G01-wt-gg8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncheck" translatesAutoresizingMaskIntoConstraints="NO" id="vGn-yF-ldD">
-                                                    <rect key="frame" x="70" y="70" width="15" height="15"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="15" id="YEu-2E-Q86"/>
-                                                        <constraint firstAttribute="height" constant="15" id="vW7-yR-KN2"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="G01-wt-gg8" firstAttribute="top" secondItem="0hJ-Zh-3bW" secondAttribute="top" id="2LJ-Mn-9XY"/>
-                                            <constraint firstAttribute="trailing" secondItem="vGn-yF-ldD" secondAttribute="trailing" constant="5" id="2v2-7g-nlz"/>
-                                            <constraint firstAttribute="bottom" secondItem="vGn-yF-ldD" secondAttribute="bottom" constant="5" id="bGY-ZV-8aV"/>
-                                            <constraint firstAttribute="bottom" secondItem="G01-wt-gg8" secondAttribute="bottom" id="inc-OJ-jMs"/>
-                                            <constraint firstItem="G01-wt-gg8" firstAttribute="leading" secondItem="0hJ-Zh-3bW" secondAttribute="leading" id="jt6-a4-Eje"/>
-                                            <constraint firstAttribute="trailing" secondItem="G01-wt-gg8" secondAttribute="trailing" id="yi4-o8-DxB"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="imageReview" destination="G01-wt-gg8" id="bkc-Dr-vV0"/>
-                                            <outlet property="imageUploadingStatus" destination="vGn-yF-ldD" id="snH-f3-iw7"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="bcB-w8-SKA" id="NK7-NQ-Tg9"/>
-                                    <outlet property="delegate" destination="bcB-w8-SKA" id="SkY-ED-T6Z"/>
-                                </connections>
-                            </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7K-y7-pKo">
-                                <rect key="frame" x="50" y="488" width="220" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Mlz-pg-26a"/>
-                                    <constraint firstAttribute="width" constant="220" id="cCe-EU-z7W"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
-                                <state key="normal" title="PROCEED">
-                                    <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="disabled">
-                                    <color key="titleColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="scanningDoneTapped:" destination="bcB-w8-SKA" eventType="touchUpInside" id="RyG-9F-IRA"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hO5-pc-CB9">
-                                <rect key="frame" x="16" y="425" width="288" height="58"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUk-Qf-bEt">
-                                        <rect key="frame" x="256" y="38" width="32" height="13"/>
-                                        <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="13"/>
-                                        <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="16"/>
-                                        </variation>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QU4-fL-vnO" customClass="TCProgressBar" customModule="TCProgressBar">
-                                        <rect key="frame" x="0.0" y="25" width="288" height="8"/>
-                                        <color key="backgroundColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="8" id="Nae-SF-8A2"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="spacing">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
-                                                <color key="value" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                                <real key="value" value="0.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="outlineWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="NO"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Process" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4Q-Nk-fRQ">
-                                        <rect key="frame" x="90" y="4" width="108" height="16"/>
-                                        <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="16"/>
-                                        <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="20"/>
-                                        </variation>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTp-4K-Pz5">
-                                        <rect key="frame" x="0.0" y="38" width="32" height="13"/>
-                                        <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="13"/>
-                                        <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="16"/>
-                                        </variation>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="QU4-fL-vnO" firstAttribute="top" secondItem="L4Q-Nk-fRQ" secondAttribute="bottom" constant="5" id="6ex-4p-xas"/>
-                                    <constraint firstItem="L4Q-Nk-fRQ" firstAttribute="centerX" secondItem="hO5-pc-CB9" secondAttribute="centerX" id="HSg-Zh-pn3"/>
-                                    <constraint firstItem="nUk-Qf-bEt" firstAttribute="trailing" secondItem="QU4-fL-vnO" secondAttribute="trailing" id="Q8r-vL-C5F"/>
-                                    <constraint firstItem="wTp-4K-Pz5" firstAttribute="leading" secondItem="QU4-fL-vnO" secondAttribute="leading" id="cLX-Kk-oh1"/>
-                                    <constraint firstItem="nUk-Qf-bEt" firstAttribute="centerY" secondItem="wTp-4K-Pz5" secondAttribute="centerY" id="eEK-PS-QSA"/>
-                                    <constraint firstItem="QU4-fL-vnO" firstAttribute="leading" secondItem="hO5-pc-CB9" secondAttribute="leading" id="fCk-nV-R8r"/>
-                                    <constraint firstItem="wTp-4K-Pz5" firstAttribute="top" secondItem="QU4-fL-vnO" secondAttribute="bottom" constant="5" id="iXR-hF-uqK"/>
-                                    <constraint firstItem="QU4-fL-vnO" firstAttribute="centerY" secondItem="hO5-pc-CB9" secondAttribute="centerY" id="kJF-DL-Iwr"/>
-                                    <constraint firstAttribute="trailing" secondItem="QU4-fL-vnO" secondAttribute="trailing" id="lt5-bL-7rM"/>
-                                    <constraint firstItem="QU4-fL-vnO" firstAttribute="top" secondItem="hO5-pc-CB9" secondAttribute="top" constant="25" id="ppB-TY-zpl"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EO-c7-ACZ">
-                                <rect key="frame" x="125" y="528" width="71" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="71" id="Jnp-g2-5bi"/>
-                                    <constraint firstAttribute="height" constant="40" id="PrH-Dw-2R2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="18"/>
-                                <state key="normal" title="GO BACK">
-                                    <color key="titleColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="popToRoot" destination="bcB-w8-SKA" eventType="touchUpInside" id="f6x-Rl-eqh"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qL1-Tm-QLu">
-                                <rect key="frame" x="20" y="40" width="105" height="25"/>
-                                <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="25"/>
-                                <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="32"/>
-                                </variation>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="2gK-S7-cjS" firstAttribute="top" secondItem="qL1-Tm-QLu" secondAttribute="bottom" constant="15" id="56P-1x-Dg4"/>
-                            <constraint firstItem="U7K-y7-pKo" firstAttribute="top" secondItem="hO5-pc-CB9" secondAttribute="bottom" constant="5" id="5mg-KJ-Shj"/>
-                            <constraint firstItem="hO5-pc-CB9" firstAttribute="leading" secondItem="vfV-H3-LYD" secondAttribute="leadingMargin" id="LmI-0G-667"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hO5-pc-CB9" secondAttribute="trailing" id="PYc-zB-bgt"/>
-                            <constraint firstItem="qL1-Tm-QLu" firstAttribute="leading" secondItem="vfV-H3-LYD" secondAttribute="leading" constant="20" id="RXY-MF-OhQ"/>
-                            <constraint firstItem="U7K-y7-pKo" firstAttribute="centerX" secondItem="vfV-H3-LYD" secondAttribute="centerX" id="Web-kd-X7O"/>
-                            <constraint firstItem="SmH-zo-BXA" firstAttribute="top" secondItem="3EO-c7-ACZ" secondAttribute="bottom" id="cvb-Ts-uB8"/>
-                            <constraint firstItem="qL1-Tm-QLu" firstAttribute="top" secondItem="W34-xc-iq8" secondAttribute="bottom" constant="20" id="hkx-AP-FKt"/>
-                            <constraint firstItem="3EO-c7-ACZ" firstAttribute="centerX" secondItem="vfV-H3-LYD" secondAttribute="centerX" id="k7V-dB-vEr"/>
-                            <constraint firstItem="3EO-c7-ACZ" firstAttribute="top" secondItem="U7K-y7-pKo" secondAttribute="bottom" id="mKz-UE-Hk7"/>
-                            <constraint firstItem="hO5-pc-CB9" firstAttribute="top" secondItem="2gK-S7-cjS" secondAttribute="bottom" constant="10" id="oAZ-J6-Ypa"/>
-                            <constraint firstItem="2gK-S7-cjS" firstAttribute="leading" secondItem="vfV-H3-LYD" secondAttribute="leading" id="qpe-H7-uM6"/>
-                            <constraint firstAttribute="trailing" secondItem="2gK-S7-cjS" secondAttribute="trailing" id="uLW-bl-Zya"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="btnComplete" destination="U7K-y7-pKo" id="0do-NQ-Sg8"/>
-                        <outlet property="collectionView" destination="2gK-S7-cjS" id="FPM-WB-QQJ"/>
-                        <outlet property="progressBar" destination="QU4-fL-vnO" id="ho4-B4-jb0"/>
-                        <outlet property="progressPendingLabel" destination="wTp-4K-Pz5" id="6VO-dX-la4"/>
-                        <outlet property="progressPercentageLabel" destination="nUk-Qf-bEt" id="Zuj-HQ-xGH"/>
-                        <segue destination="SAj-WX-AcZ" kind="show" identifier="NavToPreviewImage" id="VFL-Py-QaS"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oHt-A8-6kt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2650" y="300"/>
+            <point key="canvasLocation" x="1554" y="300"/>
         </scene>
         <!--Binder View Controller-->
         <scene sceneID="SSa-yU-jWm">
@@ -932,7 +725,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X7z-iJ-CFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5156" y="-458"/>
+            <point key="canvasLocation" x="4110" y="343"/>
         </scene>
         <!--Insurance Quote View Controller-->
         <scene sceneID="LOw-1K-4Zc">
@@ -1100,7 +893,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-Ii-uIo">
-                                                            <rect key="frame" x="10" y="36" width="135" height="19"/>
+                                                            <rect key="frame" x="10" y="35.5" width="135" height="19"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="19"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -1164,7 +957,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XPM-Ji-Anv">
-                                                    <rect key="frame" x="55" y="11.5" width="135.5" height="33"/>
+                                                    <rect key="frame" x="55" y="12" width="135.5" height="33"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ete-tb-38U">
                                                             <rect key="frame" x="0.0" y="0.0" width="135.5" height="18"/>
@@ -1286,12 +1079,12 @@
                         <outlet property="leftCurveLeading" destination="gvF-a1-Wq8" id="gYD-nV-0tD"/>
                         <outlet property="rightaCureveTrailing" destination="q2X-90-PV1" id="fwo-EI-qHg"/>
                         <outlet property="tableView" destination="ZZu-fS-yAP" id="Dz3-ar-Z8a"/>
-                        <segue destination="Cb2-NC-yeH" kind="show" identifier="NavToQuote" id="EEz-wM-bEl"/>
+                        <segue destination="UT7-qo-NyP" kind="show" identifier="NavToPayment" id="qhT-ZJ-sFj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hH9-bi-QLk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3512.8000000000002" y="231.63418290854574"/>
+            <point key="canvasLocation" x="3111" y="1087"/>
         </scene>
         <!--COIViewController-->
         <scene sceneID="ipS-WJ-Vxu">
@@ -1424,7 +1217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iPH-gl-4V0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5284" y="300"/>
+            <point key="canvasLocation" x="4924" y="343"/>
         </scene>
         <!--Invoice Payment View Controller-->
         <scene sceneID="uNU-ct-BmV">
@@ -1604,7 +1397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VsF-hb-Rxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1944" y="-568"/>
+            <point key="canvasLocation" x="4082" y="-372"/>
         </scene>
         <!--Payment Option View Controller-->
         <scene sceneID="iyw-Kf-Cqz">
@@ -1805,7 +1598,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Piw-G5-OUS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2964" y="-568"/>
+            <point key="canvasLocation" x="3831" y="1087"/>
         </scene>
         <!--Add Card View Controller-->
         <scene sceneID="hja-TS-Lau">
@@ -2030,7 +1823,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Np-pg-bH2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4020" y="-568.06596701649175"/>
+            <point key="canvasLocation" x="3362" y="-371"/>
         </scene>
         <!--Payment Receipt View Controller-->
         <scene sceneID="p93-r9-fCd">
@@ -2080,8 +1873,8 @@
                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="30"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receipt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7e-hA-2jP">
-                                        <rect key="frame" x="20" y="20" width="81.5" height="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7e-hA-2jP">
+                                        <rect key="frame" x="20" y="20" width="100" height="25"/>
                                         <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="25"/>
                                         <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2114,7 +1907,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o39-UH-0KX">
-                                                    <rect key="frame" x="35" y="10" width="250" height="15"/>
+                                                    <rect key="frame" x="35" y="9.5" width="250" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2123,7 +1916,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPS-uT-oDM">
-                                                    <rect key="frame" x="35" y="31" width="250" height="15"/>
+                                                    <rect key="frame" x="35" y="30.5" width="250" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -2206,7 +1999,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ceq-mu-4lo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6094" y="300"/>
+            <point key="canvasLocation" x="3386" y="342"/>
         </scene>
         <!--Thank You View Controller-->
         <scene sceneID="E9V-bK-9kt">
@@ -2249,7 +2042,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONGRATULATIONS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJO-iO-wAm">
-                                <rect key="frame" x="42" y="46" width="236.5" height="26"/>
+                                <rect key="frame" x="42.5" y="46" width="236.5" height="26"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="26"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2297,7 +2090,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M1u-e5-eHe" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="1061"/>
+            <point key="canvasLocation" x="5994" y="344"/>
         </scene>
         <!--Loader View Controller-->
         <scene sceneID="VZb-T3-YVp">
@@ -2363,12 +2156,12 @@ We are now making insurance companies fight for your business. We will present y
                         <outlet property="leftCurveLeading" destination="Weq-XU-ixQ" id="4Uu-ue-HNk"/>
                         <outlet property="rightaCureveTrailing" destination="SWi-U0-8E1" id="cyG-1r-1Da"/>
                         <outlet property="searchImageVIew" destination="oyX-JE-d57" id="7vR-xA-Lpi"/>
-                        <segue destination="0LF-t6-SUx" kind="show" identifier="NavToQuoteVc" id="YcN-MR-mKg"/>
+                        <segue destination="Cb2-NC-yeH" kind="show" identifier="NavToQuoteVc" id="53T-Fw-hNz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gK8-kd-vJM" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1032.8" y="1071.8140929535234"/>
+            <point key="canvasLocation" x="936" y="1087"/>
         </scene>
         <!--Agent Call View Controller-->
         <scene sceneID="5Wg-6Y-7cy">
@@ -2393,7 +2186,7 @@ We are now making insurance companies fight for your business. We will present y
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="280"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Agent will Call You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRN-Ay-YwY">
-                                                <rect key="frame" x="61" y="20" width="179" height="18"/>
+                                                <rect key="frame" x="60.5" y="20" width="179" height="18"/>
                                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="18"/>
                                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2551,7 +2344,7 @@ We are now making insurance companies fight for your business. We will present y
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPQ-NV-BOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3026.25" y="1489.4366197183099"/>
+            <point key="canvasLocation" x="3362" y="1784"/>
         </scene>
         <!--Quote Form View Controller-->
         <scene sceneID="aew-nT-2l0">
@@ -2724,7 +2517,7 @@ We are now making insurance companies fight for your business. We will present y
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQ0-2D-NWF">
-                                                    <rect key="frame" x="35" y="11" width="37" height="15"/>
+                                                    <rect key="frame" x="35" y="10.5" width="37" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2809,7 +2602,7 @@ We are now making insurance companies fight for your business. We will present y
                                     <constraint firstItem="7R4-Tm-a02" firstAttribute="leading" secondItem="8E4-cg-9I1" secondAttribute="leading" id="qlZ-Ne-mpL"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgW-Ff-eJd">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgW-Ff-eJd">
                                 <rect key="frame" x="275" y="42.5" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="c6y-av-hVJ"/>
@@ -2884,13 +2677,142 @@ We are now making insurance companies fight for your business. We will present y
                         <outlet property="rightaCureveTrailing" destination="kU8-ai-4rm" id="s1D-Sj-gXK"/>
                         <outlet property="tableForm" destination="E1g-HF-tHn" id="tfQ-sG-Ig9"/>
                         <outlet property="viewAmount" destination="8E4-cg-9I1" id="wG2-EA-sUg"/>
-                        <segue destination="UT7-qo-NyP" kind="show" identifier="NavToPayment" id="ZpF-WJ-z9p"/>
-                        <segue destination="K2o-J3-8K1" kind="show" identifier="presentVideoCallVc" id="PEc-wC-bof"/>
+                        <segue destination="LSe-e6-zRQ" kind="show" identifier="NavToCallVc" id="WVc-bE-oaH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GUg-rI-Vdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3918.75" y="1134.5070422535211"/>
+            <point key="canvasLocation" x="1693" y="1087"/>
+        </scene>
+        <!--Call View Controller-->
+        <scene sceneID="YsL-OS-5ub">
+            <objects>
+                <viewController id="LSe-e6-zRQ" customClass="CallViewController" customModule="SyneScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eik-wJ-Qjb"/>
+                        <viewControllerLayoutGuide type="bottom" id="4tF-L9-s1v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4V7-uu-4po">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUo-nv-J6c">
+                                <rect key="frame" x="124.5" y="528" width="71" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="LEx-RG-5BR"/>
+                                    <constraint firstAttribute="width" constant="71" id="Usr-Pg-ZxU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="18"/>
+                                <state key="normal" title="GO BACK">
+                                    <color key="titleColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backBtnClicked" destination="LSe-e6-zRQ" eventType="touchUpInside" id="ZX8-zs-AP4"/>
+                                    <action selector="popToRoot" destination="UT7-qo-NyP" eventType="touchUpInside" id="tZA-EH-zru"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="561-b0-g4v">
+                                <rect key="frame" x="50" y="488" width="220" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="t7K-7K-OZm"/>
+                                    <constraint firstAttribute="width" constant="220" id="w2m-gh-Fhd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="PROCEED">
+                                    <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="proceedBtnTapped:" destination="LSe-e6-zRQ" eventType="touchUpInside" id="ffr-PE-Dzm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxG-xT-nXj">
+                                <rect key="frame" x="20" y="20" width="132.5" height="25"/>
+                                <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="25"/>
+                                <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="32"/>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_cureve_line" translatesAutoresizingMaskIntoConstraints="NO" id="IAS-iz-Ri9">
+                                <rect key="frame" x="0.0" y="67" width="71" height="193"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_Curve_line" translatesAutoresizingMaskIntoConstraints="NO" id="OMy-Uc-plv">
+                                <rect key="frame" x="243" y="283" width="77" height="205"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZ1-2B-F0l">
+                                <rect key="frame" x="50" y="214" width="220" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1rc-8N-5b4"/>
+                                    <constraint firstAttribute="width" constant="220" id="vue-as-TiC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Call Agent Now">
+                                    <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="callNowBtnTapped" destination="LSe-e6-zRQ" eventType="touchUpInside" id="PbG-2t-5BI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24E-Qm-RID">
+                                <rect key="frame" x="50" y="314" width="220" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="Zk6-cw-9jx"/>
+                                    <constraint firstAttribute="height" constant="40" id="wwM-RT-pvq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Agent Call Me">
+                                    <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="callLaterBtnTapped" destination="LSe-e6-zRQ" eventType="touchUpInside" id="bnF-zj-vPN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="4tF-L9-s1v" firstAttribute="top" secondItem="OMy-Uc-plv" secondAttribute="bottom" constant="80" id="187-0k-R9c"/>
+                            <constraint firstAttribute="trailing" secondItem="OMy-Uc-plv" secondAttribute="trailing" id="2Lg-ah-3ek"/>
+                            <constraint firstItem="24E-Qm-RID" firstAttribute="centerX" secondItem="4V7-uu-4po" secondAttribute="centerX" id="5XP-P8-YHZ"/>
+                            <constraint firstItem="4tF-L9-s1v" firstAttribute="top" secondItem="qUo-nv-J6c" secondAttribute="bottom" id="ERk-hO-StT"/>
+                            <constraint firstItem="IAS-iz-Ri9" firstAttribute="top" secondItem="NxG-xT-nXj" secondAttribute="bottom" constant="22" id="GaP-Kn-Hkj"/>
+                            <constraint firstItem="561-b0-g4v" firstAttribute="centerX" secondItem="4V7-uu-4po" secondAttribute="centerX" id="J2W-Uv-911"/>
+                            <constraint firstItem="24E-Qm-RID" firstAttribute="centerY" secondItem="4V7-uu-4po" secondAttribute="centerY" constant="50" id="KHX-b6-BgG"/>
+                            <constraint firstItem="NxG-xT-nXj" firstAttribute="top" secondItem="Eik-wJ-Qjb" secondAttribute="bottom" constant="20" id="OuJ-30-xYN"/>
+                            <constraint firstItem="qUo-nv-J6c" firstAttribute="centerX" secondItem="4V7-uu-4po" secondAttribute="centerX" id="Q4k-xN-MUD"/>
+                            <constraint firstItem="IAS-iz-Ri9" firstAttribute="leading" secondItem="4V7-uu-4po" secondAttribute="leading" id="gJ5-WI-rKf"/>
+                            <constraint firstItem="GZ1-2B-F0l" firstAttribute="centerX" secondItem="4V7-uu-4po" secondAttribute="centerX" id="hfk-b4-XpO"/>
+                            <constraint firstItem="GZ1-2B-F0l" firstAttribute="centerY" secondItem="4V7-uu-4po" secondAttribute="centerY" constant="-50" id="mYc-le-xMq"/>
+                            <constraint firstItem="qUo-nv-J6c" firstAttribute="top" secondItem="561-b0-g4v" secondAttribute="bottom" id="r33-8m-Boy"/>
+                            <constraint firstItem="NxG-xT-nXj" firstAttribute="leading" secondItem="4V7-uu-4po" secondAttribute="leading" constant="20" id="wIg-zo-v4R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraintBackBtn" destination="ERk-hO-StT" id="5vG-mB-vvT"/>
+                        <outlet property="callLaterBtn" destination="24E-Qm-RID" id="7Dr-63-A30"/>
+                        <outlet property="callNowBtn" destination="GZ1-2B-F0l" id="LaP-3b-T8g"/>
+                        <outlet property="leftCurveLeading" destination="gJ5-WI-rKf" id="MOr-a7-Vk8"/>
+                        <outlet property="proceedBtn" destination="561-b0-g4v" id="sD7-b8-9AY"/>
+                        <outlet property="rightaCureveTrailing" destination="2Lg-ah-3ek" id="wQ9-Y0-WnL"/>
+                        <segue destination="K2o-J3-8K1" kind="show" identifier="NavToVideoVc" id="A7I-XI-pSq"/>
+                        <segue destination="0LF-t6-SUx" kind="show" identifier="NavToCompanyOptionVc" id="r3Y-Hq-anR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tym-Th-JQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2415" y="1086.9718309859154"/>
         </scene>
         <!--Termsn Condition View Controller-->
         <scene sceneID="Awq-uh-jCR">
@@ -3019,7 +2941,7 @@ We are now making insurance companies fight for your business. We will present y
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUS-UG-7Q8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3918.75" y="1784.1549295774648"/>
+            <point key="canvasLocation" x="2649" y="1785"/>
         </scene>
         <!--Video Call View Controller-->
         <scene sceneID="hH9-Cz-YT5">
@@ -3124,7 +3046,7 @@ We are now making insurance companies fight for your business. We will present y
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfr-UF-MJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5599" y="1684"/>
+            <point key="canvasLocation" x="1879" y="1886"/>
         </scene>
         <!--Chat-->
         <scene sceneID="fWy-Db-aN9">
@@ -3400,7 +3322,7 @@ We are now making insurance companies fight for your business. We will present y
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RI3-sz-KIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6608" y="1684"/>
+            <point key="canvasLocation" x="4035" y="1785"/>
         </scene>
         <!--NavVC-->
         <scene sceneID="MHu-bL-6yB">
@@ -3692,7 +3614,6 @@ We are now making insurance companies fight for your business. We will present y
     </scenes>
     <resources>
         <image name="Agent" width="63" height="79"/>
-        <image name="Background" width="750" height="1334"/>
         <image name="CQLogo" width="140" height="143"/>
         <image name="Cancel_popup" width="14" height="14"/>
         <image name="Capture" width="75" height="75"/>
@@ -3734,6 +3655,5 @@ We are now making insurance companies fight for your business. We will present y
         <image name="splash_right_line" width="94" height="239"/>
         <image name="star" width="79" height="76"/>
         <image name="sussful_policy" width="250" height="250"/>
-        <image name="uncheck" width="40" height="40"/>
     </resources>
 </document>

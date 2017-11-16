@@ -37,6 +37,7 @@ class QuoteFormViewController: BaseViewController {
     // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        companyDetails = ["companyName": "Company 1", "price": "3500","imgName": "comp1"]
         configureUI()
         NotificationCenter.default.addObserver(self, selector: #selector(QuoteFormViewController.defaultsChanged), name: UserDefaults.didChangeNotification, object: nil)
         defaultsChanged()
@@ -157,13 +158,14 @@ class QuoteFormViewController: BaseViewController {
     @IBAction func proceedBtnTapped(_ sender: Any) {
         SVProgressHUD.show()
         SVProgressHUD.dismiss(withDelay: 1) {
-            self.performSegue(withIdentifier: "NavToPayment", sender: nil)
+            self.performSegue(withIdentifier: "NavToCallVc", sender: nil)
         }
     }
     
     
     @IBAction   func backBtnClicked() {
-        self.navigationController?.popViewController(animated: true)
+        let vc = self.navigationController?.viewControllers[3]
+        self.navigationController?.popToViewController(vc!, animated: true)
     }
     
     
@@ -259,11 +261,11 @@ class QuoteFormViewController: BaseViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "NavToPayment"
-        {
-            let vc:PaymentOptionViewController = segue.destination as! PaymentOptionViewController
-            vc.companyDetails = self.companyDetails
-        }
+//        if segue.identifier == "NavToPayment"
+//        {
+//            let vc:PaymentOptionViewController = segue.destination as! PaymentOptionViewController
+//            vc.companyDetails = self.companyDetails
+//        }
     }
     
     //MARK: - UIDatePicker delegate method

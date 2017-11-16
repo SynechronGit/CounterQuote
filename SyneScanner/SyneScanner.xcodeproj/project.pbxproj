@@ -47,6 +47,7 @@
 		1B7EF2F11FA8B9D90087A813 /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EF2F01FA8B9D90087A813 /* VideoCallViewController.swift */; };
 		1B7EF2F31FA8B9E00087A813 /* TwilioUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7EF2F21FA8B9E00087A813 /* TwilioUtils.swift */; };
 		1B97050F1F8D1405005B0F35 /* TermsnConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B97050E1F8D1405005B0F35 /* TermsnConditionViewController.swift */; };
+		1B97461B1FBD75FB004FF18E /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B97461A1FBD75FB004FF18E /* CallViewController.swift */; };
 		1BAD97941F8763C3007289EB /* GetOCRProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD97931F8763C3007289EB /* GetOCRProxy.swift */; };
 		1BAD979B1F87AA38007289EB /* QuoteFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD979A1F87AA38007289EB /* QuoteFormViewController.swift */; };
 		1BAD979D1F87AB47007289EB /* QuoteFormData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BAD979C1F87AB47007289EB /* QuoteFormData.plist */; };
@@ -182,6 +183,7 @@
 		1B7EF2F01FA8B9D90087A813 /* VideoCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
 		1B7EF2F21FA8B9E00087A813 /* TwilioUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwilioUtils.swift; sourceTree = "<group>"; };
 		1B97050E1F8D1405005B0F35 /* TermsnConditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsnConditionViewController.swift; sourceTree = "<group>"; };
+		1B97461A1FBD75FB004FF18E /* CallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
 		1BAD97931F8763C3007289EB /* GetOCRProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetOCRProxy.swift; sourceTree = "<group>"; };
 		1BAD979A1F87AA38007289EB /* QuoteFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteFormViewController.swift; sourceTree = "<group>"; };
 		1BAD979C1F87AB47007289EB /* QuoteFormData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QuoteFormData.plist; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 				1BCC638B1F7EC5BC00C87694 /* QuotePdfViewController.swift */,
 				1BAD979A1F87AA38007289EB /* QuoteFormViewController.swift */,
 				1B97050E1F8D1405005B0F35 /* TermsnConditionViewController.swift */,
+				1B97461A1FBD75FB004FF18E /* CallViewController.swift */,
 			);
 			name = "Quote Details ViewController";
 			sourceTree = "<group>";
@@ -1019,6 +1022,7 @@
 				5346F1B11F752031000E6AC5 /* ImageWorkflowProxy.swift in Sources */,
 				5346F1E11F7A3B7C000E6AC5 /* AddCardTableViewCell.swift in Sources */,
 				53DE22531F7D07C50045E9EA /* PaymentReceiptTableViewCell.swift in Sources */,
+				1B97461B1FBD75FB004FF18E /* CallViewController.swift in Sources */,
 				1B5403DC1F728842007CF73B /* RootViewController.swift in Sources */,
 				536A33A41F725C9100F019C5 /* EdgeDetectionView.swift in Sources */,
 				1B6E11131F7CFCED00C4069A /* BinderViewController.swift in Sources */,

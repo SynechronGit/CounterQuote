@@ -104,14 +104,14 @@ class InsuranceQuoteViewController: BaseViewController {
     @IBAction func acceptBtnTapped(_ sender: Any) {
         SVProgressHUD.show()
         SVProgressHUD.dismiss(withDelay: 1) {
-            self.performSegue(withIdentifier: "navToPaymentScreen", sender: nil)
+            self.performSegue(withIdentifier: "NavToPayment", sender: nil)
         }
     }
     
     
     @IBAction func cancelBtnTapped(_ sender: Any) {
-        let vc = self.navigationController?.viewControllers[3]
-        self.navigationController?.popToViewController(vc!, animated: true)
+        self.navigationController?.popViewController(animated: true)
+
     }
     
     // MARK: - Navigation
@@ -119,8 +119,8 @@ class InsuranceQuoteViewController: BaseViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "NavToQuote" {
-            let vc:QuoteFormViewController = segue.destination as! QuoteFormViewController
+        if segue.identifier == "NavToPayment" {
+            let vc:PaymentOptionViewController = segue.destination as! PaymentOptionViewController
             let indexPath:IndexPath = sender as! IndexPath
             vc.companyDetails = companyList[indexPath.row - 1]
             
@@ -194,7 +194,7 @@ extension InsuranceQuoteViewController:UITableViewDataSource,UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row != 0 {
-            self.performSegue(withIdentifier: "NavToQuote", sender:indexPath )
+            self.performSegue(withIdentifier: "NavToPayment", sender:indexPath )
         }
     }
     
