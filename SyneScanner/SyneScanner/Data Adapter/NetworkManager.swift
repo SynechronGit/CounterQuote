@@ -20,7 +20,8 @@ class NetworkManager: NSObject {
     //MARK: - Network Manager methods
     // Image uploading method
     func uploadImage(headers:[String:String], url:String, image:UIImage) {
-        let serverUrl = BASE_URL + url
+        let baseUrl = getBaseUrl(index: (UserDefaults.standard.value(forKey: "env_preference") as? String)!)
+        let serverUrl = baseUrl + url
         let imgData = UIImageJPEGRepresentation(image, 0.1)!
 
         Alamofire.upload(multipartFormData: { (multipartFormData) in
@@ -59,7 +60,8 @@ class NetworkManager: NSObject {
     
     func callPostMethod(headers:[String:String], paramaters:[String:Any], url:String)
     {
-        let serverUrl = BASE_URL + url
+        let baseUrl = getBaseUrl(index: (UserDefaults.standard.value(forKey: "env_preference") as? String)!)
+        let serverUrl = baseUrl + url
 
         Alamofire.request(serverUrl, method: .post, parameters: paramaters, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response:DataResponse<Any>) in
 
@@ -86,7 +88,8 @@ class NetworkManager: NSObject {
     
     func callGetMethod(headers:[String:String], url:String)
     {
-        let serverUrl = BASE_URL + url
+        let baseUrl = getBaseUrl(index: (UserDefaults.standard.value(forKey: "env_preference") as? String)!)
+        let serverUrl = baseUrl + url
         Alamofire.request(serverUrl, method: .get, parameters: ["":""], encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response:DataResponse<Any>) in
             
             switch(response.result) {
@@ -130,5 +133,16 @@ class NetworkManager: NSObject {
     {
         uploadRequest?[index].cancel()
         uploadRequest?.remove(at: index)
+    }
+    
+    func getBaseUrl(index: String) -> String {
+        switch index {
+        case "1":
+            return DEV_BASE_URL
+        case "2":
+            return PROD_BASE_URL
+        default:
+            return DEV_BASE_URL
+        }
     }
 }

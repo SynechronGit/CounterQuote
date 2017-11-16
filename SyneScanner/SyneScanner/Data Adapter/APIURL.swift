@@ -11,7 +11,8 @@ import Foundation
  * Global constants
  */
 
-let BASE_URL = "https://ocr-dev-api.azurewebsites.net/"
+let DEV_BASE_URL = "https://ocr-dev-api.azurewebsites.net/"
+let PROD_BASE_URL = "https://ocr-dev-api.azurewebsites.net/"
 let UPLOAD_IMAGE = "api/CommonBlob/UploadFile"
 let START_WORKFLOW = "api/DocumentExtractor/StartWorkflow"
 let GET_OCR = "api/OCR/"

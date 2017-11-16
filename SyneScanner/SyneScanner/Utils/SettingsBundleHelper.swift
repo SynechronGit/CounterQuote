@@ -14,6 +14,7 @@ class SettingsBundleHelper: NSObject {
         static let MultipleCarriersVersionKey = "carriers_preference"
         static let ProducerCodeKey = "producer_preference"
         static let LineOfBusinessKey = "business_preference"
+        static let EnvironmentKey = "env_preference"
     }
     
     class func setVersionAndBuildNumber() {
