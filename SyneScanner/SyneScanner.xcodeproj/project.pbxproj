@@ -101,6 +101,7 @@
 		53CA89681FB5CE5A002B68CD /* NavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CA89671FB5CE5A002B68CD /* NavVC.swift */; };
 		53D0B46C1F9F8D35006CFBAD /* OCRTokenProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D0B46B1F9F8D35006CFBAD /* OCRTokenProxy.swift */; };
 		53DAB4661FC2D43200037422 /* OCRMapper.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53DAB4651FC2D43200037422 /* OCRMapper.plist */; };
+		53DAB4681FC2DD0400037422 /* LiveQouteFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DAB4671FC2DD0400037422 /* LiveQouteFormViewController.swift */; };
 		53DC90A91F94C464009C2EB4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 53DC90A81F94C464009C2EB4 /* Settings.bundle */; };
 		53DC90AB1F94C713009C2EB4 /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DC90AA1F94C713009C2EB4 /* SettingsBundleHelper.swift */; };
 		53DCED0E1F8669C100425E8B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DCED0D1F8669C100425E8B /* BaseViewController.swift */; };
@@ -248,6 +249,7 @@
 		53CA89671FB5CE5A002B68CD /* NavVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavVC.swift; sourceTree = "<group>"; };
 		53D0B46B1F9F8D35006CFBAD /* OCRTokenProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCRTokenProxy.swift; sourceTree = "<group>"; };
 		53DAB4651FC2D43200037422 /* OCRMapper.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OCRMapper.plist; sourceTree = "<group>"; };
+		53DAB4671FC2DD0400037422 /* LiveQouteFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveQouteFormViewController.swift; sourceTree = "<group>"; };
 		53DC90A81F94C464009C2EB4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		53DC90AA1F94C713009C2EB4 /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
 		53DCED0D1F8669C100425E8B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 				1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */,
 				1BCC638B1F7EC5BC00C87694 /* QuotePdfViewController.swift */,
 				1BAD979A1F87AA38007289EB /* QuoteFormViewController.swift */,
+				53DAB4671FC2DD0400037422 /* LiveQouteFormViewController.swift */,
 				1B97050E1F8D1405005B0F35 /* TermsnConditionViewController.swift */,
 				1B97461A1FBD75FB004FF18E /* CallViewController.swift */,
 			);
@@ -994,6 +997,7 @@
 				53A2A8241FB461C600BF8AF2 /* Helper Files.swift in Sources */,
 				1BAD979F1F87B0FF007289EB /* QuoteFormTableViewCell.swift in Sources */,
 				1B5403FE1F75459D007CF73B /* SplashScreenViewController.swift in Sources */,
+				53DAB4681FC2DD0400037422 /* LiveQouteFormViewController.swift in Sources */,
 				5346F1E31F7A3CAD000E6AC5 /* AddCardViewController.swift in Sources */,
 				1B6E11151F7CFCF900C4069A /* COIViewController.swift in Sources */,
 				1BCC637C1F7E6D7C00C87694 /* ThankYouViewController.swift in Sources */,

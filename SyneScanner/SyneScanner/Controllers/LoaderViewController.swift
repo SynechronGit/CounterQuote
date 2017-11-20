@@ -109,23 +109,28 @@ class LoaderViewController: BaseViewController {
     }
     
     
-    func pushToQuoteVc()
-    {
-    
-        self.performSegue(withIdentifier: "NavToQuoteVc", sender: nil)
-
+    func pushToQuoteVc() {
+        if UserDefaults.standard.bool(forKey: "demo_preference") {
+            self.performSegue(withIdentifier: "NavToQuoteVc", sender: nil)
+        } else {
+            self.performSegue(withIdentifier: "NavToLiveQuoteVc", sender: nil)
+        }
     }
     
    
-      /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "NavToLiveQuoteVc" {
+            let liveQuoteVC : LiveQouteFormViewController = segue.destination as! LiveQouteFormViewController
+            liveQuoteVC.quoteData = ocrData
+        }
     }
-    */
+ 
 
 }
 
