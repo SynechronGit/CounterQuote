@@ -100,6 +100,7 @@
 		53A2A82A1FB4627B00BF8AF2 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A2A8291FB4627B00BF8AF2 /* ChatViewController.swift */; };
 		53CA89681FB5CE5A002B68CD /* NavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CA89671FB5CE5A002B68CD /* NavVC.swift */; };
 		53D0B46C1F9F8D35006CFBAD /* OCRTokenProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D0B46B1F9F8D35006CFBAD /* OCRTokenProxy.swift */; };
+		53DAB4661FC2D43200037422 /* OCRMapper.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53DAB4651FC2D43200037422 /* OCRMapper.plist */; };
 		53DC90A91F94C464009C2EB4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 53DC90A81F94C464009C2EB4 /* Settings.bundle */; };
 		53DC90AB1F94C713009C2EB4 /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DC90AA1F94C713009C2EB4 /* SettingsBundleHelper.swift */; };
 		53DCED0E1F8669C100425E8B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DCED0D1F8669C100425E8B /* BaseViewController.swift */; };
@@ -246,6 +247,7 @@
 		53A2A8291FB4627B00BF8AF2 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		53CA89671FB5CE5A002B68CD /* NavVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavVC.swift; sourceTree = "<group>"; };
 		53D0B46B1F9F8D35006CFBAD /* OCRTokenProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCRTokenProxy.swift; sourceTree = "<group>"; };
+		53DAB4651FC2D43200037422 /* OCRMapper.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OCRMapper.plist; sourceTree = "<group>"; };
 		53DC90A81F94C464009C2EB4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		53DC90AA1F94C713009C2EB4 /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
 		53DCED0D1F8669C100425E8B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 				5375A9C21FA2246F00F5F08E /* QuoteFormData-HomeOwner.plist */,
 				5375A9C31FA2246F00F5F08E /* QuoteFormData-HomeRenter.plist */,
 				53DC90A81F94C464009C2EB4 /* Settings.bundle */,
+				53DAB4651FC2D43200037422 /* OCRMapper.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53DAB4661FC2D43200037422 /* OCRMapper.plist in Resources */,
 				1B66F2551F7E300000FA52C0 /* Carnas Extra Light Italic.otf in Resources */,
 				536A336D1F725AE500F019C5 /* LaunchScreen.storyboard in Resources */,
 				53DC90A91F94C464009C2EB4 /* Settings.bundle in Resources */,

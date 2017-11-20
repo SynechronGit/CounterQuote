@@ -42,7 +42,11 @@ class CallViewController: BaseViewController {
         self.bottomConstraintBackBtn.constant = -80
         proceedBtn.setBorderToButton()
         callNowBtn.setBorderToButton()
+        callNowBtn.layer.borderColor = UIColor.clear.cgColor
         callLaterBtn.setBorderToButton()
+        callLaterBtn.layer.borderColor = UIColor.clear.cgColor
+        callNowBtn.addShadow()
+        callLaterBtn.addShadow()
         loadDataFromPlist()
     }
     
