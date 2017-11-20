@@ -29,7 +29,7 @@ class SplashScreenViewController: BaseViewController {
         if UserDefaults.standard.bool(forKey: "demo_preference") {
             //TODO: Demo mode handle
         } else {
-            self.startTokenApi()
+           // self.startTokenApi()
         }
         // Do any additional setup after loading the view.
     }

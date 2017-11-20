@@ -23,15 +23,15 @@ class UploadImageProxy: NetworkManager {
     //MARK: - Upload scan methods
     func uploadScanningImage(image:UIImage,indexNo:Int)   {
         currentIndex = indexNo
-        let headers = ["Authorization": SharedData.sharedInstance.authToken]
-        super.uploadImage(headers: headers as! [String : String], url: UPLOAD_IMAGE, image: image)
+      //  let headers = ["Authorization": SharedData.sharedInstance.authToken]
+        let url = String(format: "%@%@/Document",UPLOAD_IMAGE,SharedData.sharedInstance.guid)
+        super.uploadImage(headers: [:], url: url, image: image)
     }
     
     //MARK: - Response callback methods
     override func successCallBack(response:Any) {
-    if    let dataArr:[[String:Any]] = response as? [[String : Any]] {
-        delegate?.imageSuccessfullyUpload(responseData: dataArr[0] as [String : AnyObject] ,indexNo: currentIndex!)
-        }
+        delegate?.imageSuccessfullyUpload(responseData: response as! [String : AnyObject] ,indexNo: currentIndex!)
+        
     }
     
     override func failureCallBack(error:String) {

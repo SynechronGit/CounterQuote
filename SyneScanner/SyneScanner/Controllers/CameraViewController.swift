@@ -9,6 +9,8 @@
 import UIKit
 import AVFoundation
 import Photos
+import SVProgressHUD
+
 /// The view controller that display the camera feeds and shows the edges of the document if detected.
 class CameraViewController: BaseViewController {
     
@@ -72,6 +74,9 @@ class CameraViewController: BaseViewController {
         lastCatpureImageView.layer.masksToBounds = false
         lastCatpureImageView.layer.cornerRadius = 20
         lastCatpureImageView.clipsToBounds = true
+        if UserDefaults.standard.bool(forKey: "demo_preference") == false {
+                getFolderIDFromServer()
+        }
     }
     
     /**
@@ -326,6 +331,8 @@ extension CameraViewController:UploadImageProxyDelegate {
         let isModelValid = SharedData.sharedInstance.arrImage.indices.contains(indexNo)
         if (isModelValid) {
             let model = SharedData.sharedInstance.arrImage[indexNo]
+             model.progress = 1
+
             // Check if image is deleted during uploading process
             if (model.isDeleted) {
                 NetworkManager.cancelUploadRequest(index: indexNo)
@@ -380,4 +387,24 @@ extension CameraViewController:UploadImageProxyDelegate {
         self.updateTotalNoImgLbl()
     }
     
+}
+extension CameraViewController:GetFolderDetailsDelegate {
+
+    func getFolderIDFromServer()
+    {
+        SVProgressHUD.show()
+        let folderDetailProxy =  GetFolderDetailsProxy()
+        folderDetailProxy.delegate = self
+        folderDetailProxy.getFolderDetailsFromServer()
+    }
+    func getfoldereDetailsSuccess(folderId:String)
+    {
+        SVProgressHUD.dismiss()
+        SharedData.sharedInstance.guid = folderId.replacingOccurrences(of: "\"", with: "")
+        print (SharedData.sharedInstance.guid)
+    }
+    func getFolderDetailFailed(errorMessage:String)
+    {
+        SVProgressHUD.dismiss()
+    }
 }

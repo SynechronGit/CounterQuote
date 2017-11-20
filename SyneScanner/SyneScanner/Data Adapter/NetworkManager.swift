@@ -22,14 +22,16 @@ class NetworkManager: NSObject {
     func uploadImage(headers:[String:String], url:String, image:UIImage) {
         let baseUrl = getBaseUrl(index: (UserDefaults.standard.value(forKey: "env_preference") as? String)!)
         let serverUrl = baseUrl + url
-        let imgData = UIImageJPEGRepresentation(image, 0.1)!
+        let imgData = UIImagePNGRepresentation(image)!
 
         Alamofire.upload(multipartFormData: { (multipartFormData) in
-            multipartFormData.append(imgData, withName: "AcordForm", fileName: "doc.jpeg", mimeType: "image/jpeg")
-        }, to:serverUrl, headers: headers)
+            multipartFormData.append(imgData, withName: "PolicyDoc", fileName: "PolicyDoc.png", mimeType: "application/octed-stream")
+        }, to:serverUrl)
         { (result) in
             switch result {
             case .success(let upload, _, _):
+               //x upload.validate()
+
                 NetworkManager.uploadRequest?.append(upload)
                 upload.uploadProgress(closure: { (Progress) in
                     if ((Progress.fractionCompleted * 100) != 100) {
@@ -40,14 +42,20 @@ class NetworkManager: NSObject {
                 
                 upload.responseJSON { response in
                     NetworkManager.uploadRequest = nil
+                    let status = response.response?.statusCode
                     if let JSON = response.result.value {
                         print("JSON: \(JSON)")
-                        self.successCallBack(response: JSON)
+                    }
+                     if(!response.result.isSuccess) {
+                        self.failureCallBack(error: "api failed")
+
                     }
                     else
-                    {
-                        self.failureCallBack(error: "Json could not serialized")
-                    }
+                     {
+                        self.successCallBack(response: ["":""])
+                     }
+                    
+
                 }
                 
             case .failure(let encodingError):
@@ -63,17 +71,29 @@ class NetworkManager: NSObject {
         let baseUrl = getBaseUrl(index: (UserDefaults.standard.value(forKey: "env_preference") as? String)!)
         let serverUrl = baseUrl + url
 
-        Alamofire.request(serverUrl, method: .post, parameters: paramaters, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response:DataResponse<Any>) in
+        Alamofire.request(serverUrl, method: .post, parameters: paramaters, encoding: URLEncoding.httpBody).responseJSON { (response:DataResponse<Any>) in
 
             switch(response.result) {
             case .success(_):
-                if let data = response.result.value{
-                    self.successCallBack(response: data)
-
+                
+                let status = response.response?.statusCode
+                if status == 200
+                {
+                    if let data = response.result.value{
+                        self.successCallBack(response: data)
+                        
+                    }
+                    else{
+                        self.failureCallBack(error: "Json could not serialized")
+                        
+                    }
                 }
-                else{
-                    self.failureCallBack(error: "Json could not serialized")
-
+                else
+                {
+                    if let JSON = response.result.value {
+                        print("JSON: \(JSON)")
+                    }
+                  self.failureCallBack(error: "api failed")
                 }
                 break
                 
@@ -90,7 +110,7 @@ class NetworkManager: NSObject {
     {
         let baseUrl = getBaseUrl(index: (UserDefaults.standard.value(forKey: "env_preference") as? String)!)
         let serverUrl = baseUrl + url
-        Alamofire.request(serverUrl, method: .get, parameters: ["":""], encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response:DataResponse<Any>) in
+        Alamofire.request(serverUrl, method: .get, parameters: ["":""], encoding: URLEncoding.httpBody).responseJSON { (response:DataResponse<Any>) in
             
             switch(response.result) {
             case .success(_):
@@ -113,6 +133,25 @@ class NetworkManager: NSObject {
         }
     }
     
+    func callPostMethodReuturnStringResponse( url:String)
+    {
+        let baseUrl = getBaseUrl(index: (UserDefaults.standard.value(forKey: "env_preference") as? String)!)
+        let serverUrl = baseUrl + url
+        Alamofire.request(serverUrl, method: .post, parameters: ["":""])
+            .responseString { response in
+                switch(response.result) {
+                case .success(_):
+                    if let data = response.result.value{
+                        print(data)
+                        self.successCallBack(response: data)
+
+                    }
+                    
+                case .failure(_):
+                    self.failureCallBack(error: (response.result.error?.localizedDescription)!)
+                }
+        }
+    }
     // Server success callback method
     func successCallBack(response:Any) {
         

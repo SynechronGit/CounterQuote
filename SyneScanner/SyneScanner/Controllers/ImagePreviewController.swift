@@ -68,7 +68,9 @@ class ImagePreviewController: BaseViewController {
                 self.pageControl.alpha = 1
                 self.lblHeader.alpha = 1
             }, completion:  { finish in
+                if UserDefaults.standard.bool(forKey: "demo_preference") == true {
                 self.progressTimer =   Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateProgressValue), userInfo: nil, repeats: true)
+                }
             })
         })
     }
@@ -89,9 +91,13 @@ class ImagePreviewController: BaseViewController {
         submitBtn.setTitleColor(UIColor.lightGray, for: .normal)
         
         lblHeader.text = String(format:"You are in (1/%d) pages",pageControl.numberOfPages)
+        
+        if UserDefaults.standard.bool(forKey: "demo_preference") == false {
+
         let notificationName = Notification.Name("updateProgress")
         NotificationCenter.default.addObserver(self, selector: #selector(ImagePreviewController.updateProgress), name: notificationName, object: nil)
-
+            updateProgress()
+        }
         collectionView.reloadData()
     }
     
@@ -102,9 +108,12 @@ class ImagePreviewController: BaseViewController {
     func updateProgress() {
          let calculateProgress = SharedData.sharedInstance.calculateCurrentProgress()
         if calculateProgress.progressValue >= 1.0 {
-           // submitBtn.isEnabled = true
+           submitBtn.isEnabled = true
+            submitBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+            submitBtn.setTitleColor(UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1), for: .normal)
+
         } else {
-          //  submitBtn.isEnabled = false
+            submitBtn.isEnabled = false
         }
         DispatchQueue.main.async {
             self.collectionView.reloadData()
@@ -136,7 +145,7 @@ class ImagePreviewController: BaseViewController {
         if UserDefaults.standard.bool(forKey: "demo_preference") {
             self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
         } else {
-            startWorkflowApi()
+            callCloseFloderApi()
         }
     }
    
@@ -162,7 +171,14 @@ extension ImagePreviewController:UICollectionViewDataSource, UICollectionViewDel
         model = SharedData.sharedInstance.arrImage[indexPath.row]
         cell.imagePreview.image = model?.image
         cell.retakeDelegate = self
-        cell.progressView.value = CGFloat(progressValue)
+        if UserDefaults.standard.bool(forKey: "demo_preference") == false {
+            cell.progressView.value = CGFloat((model?.progress)! * 100)
+
+        }
+        else{
+            cell.progressView.value = CGFloat(progressValue)
+ 
+        }
         return cell
     }
     
@@ -234,35 +250,32 @@ protocol ImageDeleteDelegate {
 }
 
 //MARK: StartWorkflowDelegate methods
-extension ImagePreviewController: StartWorkflowDelegate {
-    
-    //Start Workflow service method after each image is successfully uploaded
-    func startWorkflowApi() {
-//        SVProgressHUD.show()
-//        self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
-        var blobUrl = ""
-        for scanItem in 0..<SharedData.sharedInstance.arrImage.count {
-            blobUrl.append((SharedData.sharedInstance.arrImage[scanItem].fileUrl))
-            if scanItem != SharedData.sharedInstance.arrImage.count - 1 {
-                blobUrl.append(";")
-            }
-        }
-        let startWorkflowProxy =  ImageWorkflowProxy()
-        startWorkflowProxy.delegate = self
-        startWorkflowProxy.startWorkflowApi(blobUrl: blobUrl, corelationId: SharedData.sharedInstance.corelationId)
+extension ImagePreviewController: GetFolderDetailsDelegate {
+   
+    func callCloseFloderApi()
+    {
+        SVProgressHUD.show()
+        let folderDetailProxy =  GetFolderDetailsProxy()
+        folderDetailProxy.delegate = self
+        folderDetailProxy.closeFolder()
     }
-    
-    
-    func workflowSuccessfullyStarted(responseData:String) {
-       // SVProgressHUD.dismiss()
-        self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
-    }
-    
-    
-    func workflowFailedToStart(errorMessage: String) {
-        self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
-    }
-}
+    func closeFolderSuccessfully(response:String)
+    {
+        SVProgressHUD.dismiss()
 
+        self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
+
+    }
+    
+    func getFolderDetailFailed(errorMessage:String)
+    {
+        SVProgressHUD.dismiss()
+
+        self.popupAlert(title: "Error", message: errorMessage, actionTitles: ["Dismiss"], actions:[{action1 in
+            
+            }, nil])
+    }
+
+}
 
 

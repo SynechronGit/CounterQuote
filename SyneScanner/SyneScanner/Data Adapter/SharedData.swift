@@ -16,6 +16,8 @@ class SharedData: NSObject {
     //MARK: - Properties
     public static let sharedInstance :SharedData = SharedData()
     var corelationId = UUID().uuidString
+    var guid = ""
+
     var userName = "Service.User"
     var password = "welcome1"
     var grantType = "password"
@@ -31,7 +33,7 @@ class SharedData: NSObject {
          let model = SharedData.sharedInstance.arrImage[indexNo]
         
             model.imageSuccesfullyUpload = true
-            model.fileUrl = dict["FileUrl"] as! String
+            model.fileUrl = ""//dict["FileUrl"] as! String
     }
     
     //MARK: - Calculate image upload progress
