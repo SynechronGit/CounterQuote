@@ -14,7 +14,8 @@ class LoaderViewController: BaseViewController {
      // MARK: - Properties
     @IBOutlet var searchImageVIew: UIImageView!
     @IBOutlet var lblNote:UILabel!
-    
+    var ocrTimer:Timer?
+    var ocrData:[String:AnyObject]?
     // MARK: - View LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,7 @@ class LoaderViewController: BaseViewController {
         if UserDefaults.standard.bool(forKey: "demo_preference") {
             //pushToQuoteVc()
         } else {
-//            self.startOCR()
+            self.startOCR()
         }
     }
     
@@ -80,11 +81,24 @@ class LoaderViewController: BaseViewController {
                     self.searchImageVIew.alpha = 1
                 }, completion: { finish in
                     // Perform segue after interval
+
+                    if UserDefaults.standard.bool(forKey: "demo_preference") {
+
                     Timer.scheduledTimer(timeInterval: 5,
                                          target: self,
                                          selector: #selector(self.pushToQuoteVc),
                                          userInfo: nil,
                                          repeats: false)
+                    }
+                    else{
+                     self.ocrTimer =    Timer.scheduledTimer(timeInterval: 10,
+                                             target: self,
+                                             selector: #selector(self.startOCR),
+                                             userInfo: nil,
+                                             repeats: true)
+                    }
+                    
+                    
                 })
             })
         })
@@ -95,8 +109,11 @@ class LoaderViewController: BaseViewController {
     }
     
     
-    func pushToQuoteVc() {
+    func pushToQuoteVc()
+    {
+    
         self.performSegue(withIdentifier: "NavToQuoteVc", sender: nil)
+
     }
     
    
@@ -119,14 +136,22 @@ extension LoaderViewController:GetOCRProxyDelgate
     func startOCR() {
         let getOCRproxy =  GetOCRProxy()
         getOCRproxy.delegate = self
-        getOCRproxy.callGetOCRApi(corelationId: SharedData.sharedInstance.corelationId)
+        getOCRproxy.callGetOCRApi()
     }
     
     func getOCRSuccess(responseData:[String:AnyObject]) {
-        pushToQuoteVc()
+        print(responseData)
+        if let data:[String:AnyObject] = responseData["Result"] as? [String : AnyObject]
+        {
+            ocrData = data
+            ocrTimer?.invalidate()
+            ocrTimer = nil
+            self.performSegue(withIdentifier: "NavToQuoteVc", sender: nil)
+        }
+       
+       
     }
     
     func getOCRFailed(errorMessage:String) {
-        pushToQuoteVc()
     }
 }

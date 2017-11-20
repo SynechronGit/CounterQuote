@@ -30,7 +30,6 @@ class NetworkManager: NSObject {
         { (result) in
             switch result {
             case .success(let upload, _, _):
-               //x upload.validate()
 
                 NetworkManager.uploadRequest?.append(upload)
                 upload.uploadProgress(closure: { (Progress) in
@@ -43,16 +42,16 @@ class NetworkManager: NSObject {
                 upload.responseJSON { response in
                     NetworkManager.uploadRequest = nil
                     let status = response.response?.statusCode
-                    if let JSON = response.result.value {
-                        print("JSON: \(JSON)")
-                    }
-                     if(!response.result.isSuccess) {
-                        self.failureCallBack(error: "api failed")
+                  
+                     if(status == 200) {
+                        self.successCallBack(response: ["":""])
+
 
                     }
                     else
                      {
-                        self.successCallBack(response: ["":""])
+                        self.failureCallBack(error: "api failed")
+
                      }
                     
 
@@ -98,6 +97,7 @@ class NetworkManager: NSObject {
                 break
                 
             case .failure(_):
+                
                 self.failureCallBack(error: (response.result.error?.localizedDescription)!)
 
                 break
@@ -108,9 +108,27 @@ class NetworkManager: NSObject {
     
     func callGetMethod(headers:[String:String], url:String)
     {
+        
+//        let baseUrl = getBaseUrl(index: (UserDefaults.standard.value(forKey: "env_preference") as? String)!)
+//                let serverUrl = baseUrl + url
+//        Alamofire.request(serverUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
+//            
+//            switch(response.result) {
+//            case .success(_):
+//                if let data = response.result.value{
+//                    print(response.result.value)
+//                }
+//                break
+//                
+//            case .failure(_):
+//                print(response.result.error)
+//                break
+//                
+//            }
+//        }
         let baseUrl = getBaseUrl(index: (UserDefaults.standard.value(forKey: "env_preference") as? String)!)
         let serverUrl = baseUrl + url
-        Alamofire.request(serverUrl, method: .get, parameters: ["":""], encoding: URLEncoding.httpBody).responseJSON { (response:DataResponse<Any>) in
+        Alamofire.request(serverUrl, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response:DataResponse<Any>) in
             
             switch(response.result) {
             case .success(_):
@@ -125,6 +143,7 @@ class NetworkManager: NSObject {
                 break
                 
             case .failure(_):
+              
                 self.failureCallBack(error: (response.result.error?.localizedDescription)!)
 
                 break

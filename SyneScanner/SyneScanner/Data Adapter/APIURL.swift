@@ -15,7 +15,7 @@ let DEV_BASE_URL = "http://amtrust.azurewebsites.net/api/"
 let PROD_BASE_URL = "http://amtrust.azurewebsites.net/api/"
 let UPLOAD_IMAGE = "Folder/"
 
-let GET_FOLDER_ID = "Document/"
+let GET_FOLDER_ID = "Folder/Create"
 let CLOSE_FOLDER = "Folder/"
 let GET_EXTRACTED_DATA = "Folder/"
 

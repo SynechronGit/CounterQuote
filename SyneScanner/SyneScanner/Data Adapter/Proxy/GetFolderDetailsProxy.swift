@@ -29,7 +29,7 @@ class GetFolderDetailsProxy: NetworkManager {
     func closeFolder()
     {
         apiName = CLOSE_FOLDER
-        let url = String(format: "%@%@/Close",CLOSE_FOLDER,SharedData.sharedInstance.guid)
+        let url = String(format: "%@%@/Closed",CLOSE_FOLDER,SharedData.sharedInstance.guid)
         super.callPostMethod(headers: [:], paramaters: [:], url: url)
 
     }

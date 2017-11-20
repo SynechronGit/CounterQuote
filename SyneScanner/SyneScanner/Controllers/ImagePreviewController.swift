@@ -270,10 +270,11 @@ extension ImagePreviewController: GetFolderDetailsDelegate {
     func getFolderDetailFailed(errorMessage:String)
     {
         SVProgressHUD.dismiss()
+        self.performSegue(withIdentifier: "NavToLoaderVc", sender: nil)
 
-        self.popupAlert(title: "Error", message: errorMessage, actionTitles: ["Dismiss"], actions:[{action1 in
-            
-            }, nil])
+//        self.popupAlert(title: "Error", message: errorMessage, actionTitles: ["Dismiss"], actions:[{action1 in
+//            
+//            }, nil])
     }
 
 }

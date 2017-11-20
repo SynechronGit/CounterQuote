@@ -18,15 +18,14 @@ class GetOCRProxy: NetworkManager {
     var delegate:GetOCRProxyDelgate?
     
     //MARK: - OCR Api methods
-    func callGetOCRApi(corelationId: String) {
-        let url = GET_OCR + corelationId
-        let headers = ["Authorization": SharedData.sharedInstance.authToken]
-        super.callGetMethod(headers: headers as! [String : String], url: url)
+    func callGetOCRApi() {
+        let url = GET_EXTRACTED_DATA + SharedData.sharedInstance.guid
+        super.callGetMethod(headers: [:], url: url)
     }
     
     //MARK: - Response callback methods
     override func successCallBack(response:Any) {
-        if    let dataArr:[[String:Any]] = response as? [[String : Any]] {
+        if    let dataArr:[[String:AnyObject]] = response as? [[String : AnyObject]] {
             delegate?.getOCRSuccess(responseData: dataArr[0] as [String : AnyObject] )
         } else {
             delegate?.getOCRFailed(errorMessage: "Something went wrong.")
