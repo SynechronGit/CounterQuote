@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+    <dict>
+        <key>Key</key>
+        <string>NCCI_Number</string>
+        <key>Title</key>
+        <string>NCCI Number</string>
+    </dict>
+	<dict>
+		<key>Key</key>
+		<string>InsuredName</string>
+		<key>Title</key>
+		<string>Insured Name</string>
+	</dict>
+    <dict>
+        <key>Key</key>
+        <string>InsuredAddress</string>
+        <key>Title</key>
+        <string>Insured Address</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>PolicyNumber</string>
+        <key>Title</key>
+        <string>Policy Number</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>RenewingPolicy</string>
+        <key>Title</key>
+        <string>Renewing Policy</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>ProducerName</string>
+        <key>Title</key>
+        <string>Producer Name</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>Other_Work_Places</string>
+        <key>Title</key>
+        <string>Other Work Places</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>FEIN</string>
+        <key>Title</key>
+        <string>FEIN</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>BIN</string>
+        <key>Title</key>
+        <string>BIN</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>PolicyStartDate</string>
+        <key>Title</key>
+        <string>Policy Start Date</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>WCPartTwoCoverageStatesCSV_Bodily_Injury_By_Accident</string>
+        <key>Title</key>
+        <string>Bodily Injury by Accident</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>WCPartTwoCoverageStatesCSV_Bodily_Injury_By_Disease1</string>
+        <key>Title</key>
+        <string>Bodily Injury by Disease</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>WCPartTwoCoverageStatesCSV_Each_Accident</string>
+        <key>Title</key>
+        <string>Liability Insurance to Each Accident</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>WCPartTwoCoverageStatesCSV_Policy_Limit</string>
+        <key>Title</key>
+        <string>Policy Limit</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>Liability_Insurance_To_Each_Employee</string>
+        <key>Title</key>
+        <string>Liability Insurance to Each Employee</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>Other_States_Insurance</string>
+        <key>Title</key>
+        <string>Other States Insurance</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>PremiumAdjustmentPeriod</string>
+        <key>Title</key>
+        <string>Premium Adjustment Period</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>PolicyAnnualPremium</string>
+        <key>Title</key>
+        <string>Policy Annual Premium</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>Insurer</string>
+        <key>Title</key>
+        <string>Insurer</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>Company_Code</string>
+        <key>Title</key>
+        <string>Company Code</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>SIN</string>
+        <key>Title</key>
+        <string>SIN</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>AuditPeriod</string>
+        <key>Title</key>
+        <string>Audit Period</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>ProducerCode</string>
+        <key>Title</key>
+        <string>Producer Code</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>PolicyDepositPremium</string>
+        <key>Title</key>
+        <string>Policy Deposit Premium</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>PolicyMinimiumPremium</string>
+        <key>Title</key>
+        <string>Policy Minimium Premium</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>Installment_Term</string>
+        <key>Title</key>
+        <string>Installment Term</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>PolicyExpireDate</string>
+        <key>Title</key>
+        <string>Policy Expiry Date</string>
+    </dict><dict>
+        <key>Key</key>
+        <string>Interstate_Or_Intrastate_Identification_Number</string>
+        <key>Title</key>
+        <string>Interstate Or Intrastate Identification Number</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>NAICS_No</string>
+        <key>Title</key>
+        <string>NAICS No</string>
+    </dict>
+    <dict>
+        <key>Key</key>
+        <string>Labor_Contractors_Policy_Number</string>
+        <key>Title</key>
+        <string>Labor Contractors Policy Number</string>
+    </dict>
+	
+</array>
+</plist>

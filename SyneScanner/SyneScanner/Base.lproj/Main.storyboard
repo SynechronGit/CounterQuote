@@ -63,7 +63,7 @@
                                 <rect key="frame" x="90" y="213" width="140" height="143"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COUNTERQUOTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bf3-nv-PXw">
-                                <rect key="frame" x="61.5" y="-30" width="198.5" height="26"/>
+                                <rect key="frame" x="61" y="-30" width="198.5" height="26"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1907,7 +1907,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o39-UH-0KX">
-                                                    <rect key="frame" x="35" y="9.5" width="250" height="15"/>
+                                                    <rect key="frame" x="35" y="10" width="250" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1916,7 +1916,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPS-uT-oDM">
-                                                    <rect key="frame" x="35" y="30.5" width="250" height="15"/>
+                                                    <rect key="frame" x="35" y="31" width="250" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -2042,7 +2042,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONGRATULATIONS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJO-iO-wAm">
-                                <rect key="frame" x="42.5" y="46" width="236.5" height="26"/>
+                                <rect key="frame" x="42" y="46" width="236.5" height="26"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="26"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2186,7 +2186,7 @@ We are now making insurance companies fight for your business. We will present y
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="280"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Agent will Call You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRN-Ay-YwY">
-                                                <rect key="frame" x="60.5" y="20" width="179" height="18"/>
+                                                <rect key="frame" x="61" y="20" width="179" height="18"/>
                                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="18"/>
                                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2517,7 +2517,7 @@ We are now making insurance companies fight for your business. We will present y
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQ0-2D-NWF">
-                                                    <rect key="frame" x="35" y="10.5" width="37" height="15"/>
+                                                    <rect key="frame" x="35" y="11" width="37" height="15"/>
                                                     <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="15"/>
                                                     <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2729,8 +2729,8 @@ We are now making insurance companies fight for your business. We will present y
                                     <action selector="proceedBtnTapped:" destination="LSe-e6-zRQ" eventType="touchUpInside" id="ffr-PE-Dzm"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxG-xT-nXj">
-                                <rect key="frame" x="20" y="20" width="132.5" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Talk to Agent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxG-xT-nXj">
+                                <rect key="frame" x="20" y="20" width="144.5" height="25"/>
                                 <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="25"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2745,15 +2745,14 @@ We are now making insurance companies fight for your business. We will present y
                                 <rect key="frame" x="243" y="283" width="77" height="205"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZ1-2B-F0l">
-                                <rect key="frame" x="50" y="214" width="220" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="48" y="249" width="224" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1rc-8N-5b4"/>
-                                    <constraint firstAttribute="width" constant="220" id="vue-as-TiC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                 <state key="normal" title="Call Agent Now">
-                                    <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.29411764705882354" green="0.48627450980392156" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="disabled">
                                     <color key="titleColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -2763,15 +2762,14 @@ We are now making insurance companies fight for your business. We will present y
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24E-Qm-RID">
-                                <rect key="frame" x="50" y="314" width="220" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="48" y="314" width="224" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="Zk6-cw-9jx"/>
                                     <constraint firstAttribute="height" constant="40" id="wwM-RT-pvq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                 <state key="normal" title="Agent Call Me">
-                                    <color key="titleColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.29411764709999999" green="0.48627450979999998" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="disabled">
                                     <color key="titleColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -2780,23 +2778,45 @@ We are now making insurance companies fight for your business. We will present y
                                     <action selector="callLaterBtnTapped" destination="LSe-e6-zRQ" eventType="touchUpInside" id="bnF-zj-vPN"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4F-Mt-lYt">
+                                <rect key="frame" x="20" y="55" width="137.5" height="16"/>
+                                <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="16"/>
+                                <color key="textColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="24"/>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agentLogo" translatesAutoresizingMaskIntoConstraints="NO" id="9yb-4c-G6e">
+                                <rect key="frame" x="97.5" y="94" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="FhG-bD-r8X"/>
+                                    <constraint firstAttribute="width" constant="125" id="WtV-xA-uEA"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="GZ1-2B-F0l" firstAttribute="width" secondItem="4V7-uu-4po" secondAttribute="width" multiplier="0.7" id="09w-9c-Vcg"/>
                             <constraint firstItem="4tF-L9-s1v" firstAttribute="top" secondItem="OMy-Uc-plv" secondAttribute="bottom" constant="80" id="187-0k-R9c"/>
                             <constraint firstAttribute="trailing" secondItem="OMy-Uc-plv" secondAttribute="trailing" id="2Lg-ah-3ek"/>
+                            <constraint firstItem="9yb-4c-G6e" firstAttribute="centerX" secondItem="4V7-uu-4po" secondAttribute="centerX" id="588-t2-Plz"/>
                             <constraint firstItem="24E-Qm-RID" firstAttribute="centerX" secondItem="4V7-uu-4po" secondAttribute="centerX" id="5XP-P8-YHZ"/>
                             <constraint firstItem="4tF-L9-s1v" firstAttribute="top" secondItem="qUo-nv-J6c" secondAttribute="bottom" id="ERk-hO-StT"/>
                             <constraint firstItem="IAS-iz-Ri9" firstAttribute="top" secondItem="NxG-xT-nXj" secondAttribute="bottom" constant="22" id="GaP-Kn-Hkj"/>
+                            <constraint firstItem="24E-Qm-RID" firstAttribute="width" secondItem="4V7-uu-4po" secondAttribute="width" multiplier="0.7" id="HzB-8D-xPl"/>
                             <constraint firstItem="561-b0-g4v" firstAttribute="centerX" secondItem="4V7-uu-4po" secondAttribute="centerX" id="J2W-Uv-911"/>
                             <constraint firstItem="24E-Qm-RID" firstAttribute="centerY" secondItem="4V7-uu-4po" secondAttribute="centerY" constant="50" id="KHX-b6-BgG"/>
+                            <constraint firstItem="T4F-Mt-lYt" firstAttribute="leading" secondItem="NxG-xT-nXj" secondAttribute="leading" id="LpZ-kw-7pd"/>
                             <constraint firstItem="NxG-xT-nXj" firstAttribute="top" secondItem="Eik-wJ-Qjb" secondAttribute="bottom" constant="20" id="OuJ-30-xYN"/>
                             <constraint firstItem="qUo-nv-J6c" firstAttribute="centerX" secondItem="4V7-uu-4po" secondAttribute="centerX" id="Q4k-xN-MUD"/>
                             <constraint firstItem="IAS-iz-Ri9" firstAttribute="leading" secondItem="4V7-uu-4po" secondAttribute="leading" id="gJ5-WI-rKf"/>
                             <constraint firstItem="GZ1-2B-F0l" firstAttribute="centerX" secondItem="4V7-uu-4po" secondAttribute="centerX" id="hfk-b4-XpO"/>
-                            <constraint firstItem="GZ1-2B-F0l" firstAttribute="centerY" secondItem="4V7-uu-4po" secondAttribute="centerY" constant="-50" id="mYc-le-xMq"/>
+                            <constraint firstItem="GZ1-2B-F0l" firstAttribute="centerY" secondItem="4V7-uu-4po" secondAttribute="centerY" constant="-15" id="mYc-le-xMq"/>
+                            <constraint firstItem="GZ1-2B-F0l" firstAttribute="top" secondItem="9yb-4c-G6e" secondAttribute="bottom" constant="30" id="miS-Sf-Ol2"/>
                             <constraint firstItem="qUo-nv-J6c" firstAttribute="top" secondItem="561-b0-g4v" secondAttribute="bottom" id="r33-8m-Boy"/>
                             <constraint firstItem="NxG-xT-nXj" firstAttribute="leading" secondItem="4V7-uu-4po" secondAttribute="leading" constant="20" id="wIg-zo-v4R"/>
+                            <constraint firstItem="T4F-Mt-lYt" firstAttribute="top" secondItem="NxG-xT-nXj" secondAttribute="bottom" constant="10" id="z5i-Vj-g2o"/>
                         </constraints>
                     </view>
                     <connections>
@@ -3623,6 +3643,7 @@ We are now making insurance companies fight for your business. We will present y
         <image name="Line" width="325" height="1"/>
         <image name="SavedCard" width="561" height="127"/>
         <image name="Torch-off" width="24" height="24"/>
+        <image name="agentLogo" width="128" height="126"/>
         <image name="bgOverlayPad" width="416" height="280"/>
         <image name="bg_overlay_splash" width="266" height="180"/>
         <image name="blue_bg" width="374" height="85"/>
