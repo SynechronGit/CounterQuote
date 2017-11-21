@@ -55,6 +55,7 @@
 		1BAD979F1F87B0FF007289EB /* QuoteFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD979E1F87B0FF007289EB /* QuoteFormTableViewCell.swift */; };
 		1BAD97BD1F88AD64007289EB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD97BC1F88AD64007289EB /* UIButton+Extension.swift */; };
 		1BAD97C01F88CCC2007289EB /* CallusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD97BF1F88CCC2007289EB /* CallusViewController.swift */; };
+		1BB321491FC40D18000161E9 /* policy-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BB321481FC40D18000161E9 /* policy-1.jpg */; };
 		1BCC637C1F7E6D7C00C87694 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */; };
 		1BCC637F1F7E9FB300C87694 /* Binder.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1BCC637D1F7E9FB300C87694 /* Binder.pdf */; };
 		1BCC63801F7E9FB300C87694 /* Quote.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1BCC637E1F7E9FB300C87694 /* Quote.pdf */; };
@@ -194,6 +195,7 @@
 		1BAD979E1F87B0FF007289EB /* QuoteFormTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteFormTableViewCell.swift; sourceTree = "<group>"; };
 		1BAD97BC1F88AD64007289EB /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Extension.swift"; path = "../UIButton+Extension.swift"; sourceTree = "<group>"; };
 		1BAD97BF1F88CCC2007289EB /* CallusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallusViewController.swift; sourceTree = "<group>"; };
+		1BB321481FC40D18000161E9 /* policy-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "policy-1.jpg"; sourceTree = "<group>"; };
 		1BCC637B1F7E6D7C00C87694 /* ThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		1BCC637D1F7E9FB300C87694 /* Binder.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Binder.pdf; sourceTree = "<group>"; };
 		1BCC637E1F7E9FB300C87694 /* Quote.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Quote.pdf; sourceTree = "<group>"; };
@@ -457,6 +459,7 @@
 		1BE2859E1F7908E200314168 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1BB321481FC40D18000161E9 /* policy-1.jpg */,
 				53A2A8251FB461EA00BF8AF2 /* GoogleService-Info.plist */,
 				1B7E16EB1F83E1B0005C2165 /* Search_animation.gif */,
 				1B66F23E1F7E2FDE00FA52C0 /* Font */,
@@ -770,6 +773,7 @@
 				1BCC637F1F7E9FB300C87694 /* Binder.pdf in Resources */,
 				1BCC63801F7E9FB300C87694 /* Quote.pdf in Resources */,
 				1B66F25C1F7E300000FA52C0 /* Carnas Regular.otf in Resources */,
+				1BB321491FC40D18000161E9 /* policy-1.jpg in Resources */,
 				1B66F2511F7E300000FA52C0 /* Carnas Bold Italic.otf in Resources */,
 				1B66F2531F7E300000FA52C0 /* Carnas Extra Bold Italic.otf in Resources */,
 				1B66F25B1F7E300000FA52C0 /* Carnas Medium.otf in Resources */,

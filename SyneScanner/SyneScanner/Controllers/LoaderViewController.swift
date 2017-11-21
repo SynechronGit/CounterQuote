@@ -151,12 +151,24 @@ extension LoaderViewController:GetOCRProxyDelgate
         {
             return
         }
-            ocrData = responseData["Result"] as? [String : AnyObject]
+           let dict = convertToDictionary(text: data as! String)
+
+            ocrData = dict as [String : AnyObject]?
             ocrTimer?.invalidate()
             ocrTimer = nil
             self.performSegue(withIdentifier: "NavToLiveQuoteVc", sender: nil)
     }
-    
+    func convertToDictionary(text: String) -> [String: Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
+
     func getOCRFailed(errorMessage:String) {
     }
 }
