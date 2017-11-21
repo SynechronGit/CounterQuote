@@ -146,15 +146,15 @@ extension LoaderViewController:GetOCRProxyDelgate
     
     func getOCRSuccess(responseData:[String:AnyObject]) {
         print(responseData)
-        if let data:[String:AnyObject] = responseData["Result"] as? [String : AnyObject]
+        let data = responseData["Result"]
+        if data is NSNull
         {
-            ocrData = data
+            return
+        }
+            ocrData = responseData["Result"] as? [String : AnyObject]
             ocrTimer?.invalidate()
             ocrTimer = nil
-            self.performSegue(withIdentifier: "NavToQuoteVc", sender: nil)
-        }
-       
-       
+            self.performSegue(withIdentifier: "NavToLiveQuoteVc", sender: nil)
     }
     
     func getOCRFailed(errorMessage:String) {

@@ -22,8 +22,8 @@ class NetworkManager: NSObject {
     func uploadImage(headers:[String:String], url:String, image:UIImage) {
         let baseUrl = getBaseUrl(index: (UserDefaults.standard.value(forKey: "env_preference") as? String)!)
         let serverUrl = baseUrl + url
-        let imgData = UIImagePNGRepresentation(image)!
-
+        let imgData = UIImageJPEGRepresentation(image, 1.0)!
+//        let imgData = UIImagePNGRepresentation(UIImage(named: "policy-1.jpg")!)!
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             multipartFormData.append(imgData, withName: "PolicyDoc", fileName: "PolicyDoc.png", mimeType: "application/octed-stream")
         }, to:serverUrl)
