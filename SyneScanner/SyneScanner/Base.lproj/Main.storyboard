@@ -893,7 +893,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxO-Ii-uIo">
-                                                            <rect key="frame" x="10" y="35.5" width="135" height="19"/>
+                                                            <rect key="frame" x="10" y="36" width="135" height="19"/>
                                                             <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="19"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -957,7 +957,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XPM-Ji-Anv">
-                                                    <rect key="frame" x="55" y="12" width="135.5" height="33"/>
+                                                    <rect key="frame" x="55" y="11.5" width="135.5" height="33"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ete-tb-38U">
                                                             <rect key="frame" x="0.0" y="0.0" width="135.5" height="18"/>
@@ -2683,7 +2683,7 @@ We are now making insurance companies fight for your business. We will present y
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GUg-rI-Vdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1693" y="1087"/>
+            <point key="canvasLocation" x="1350" y="1087"/>
         </scene>
         <!--Call View Controller-->
         <scene sceneID="YsL-OS-5ub">
@@ -3811,10 +3811,10 @@ We are now making insurance companies fight for your business. We will present y
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CardDivider" translatesAutoresizingMaskIntoConstraints="NO" id="BhR-Ib-1gg">
                                                     <rect key="frame" x="25" y="57" width="270" height="1"/>
                                                 </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Yh-cy-3Fu">
-                                                    <rect key="frame" x="35" y="33.5" width="250" height="15"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="2Yh-cy-3Fu">
+                                                    <rect key="frame" x="35" y="35" width="250" height="12"/>
                                                     <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="Carnas-Thin" family="Carnas-Thin" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="2UV-7C-OBV" id="v7f-rA-Qqb"/>
@@ -3963,6 +3963,7 @@ We are now making insurance companies fight for your business. We will present y
                         <outlet property="rightaCureveTrailing" destination="kB5-P0-Vmv" id="NZQ-3d-i5i"/>
                         <outlet property="tableForm" destination="coH-et-pcK" id="6bw-tV-GDQ"/>
                         <outlet property="viewAmount" destination="qUF-5x-Hqo" id="PeB-UQ-UCQ"/>
+                        <segue destination="LSe-e6-zRQ" kind="show" identifier="LiveNavToCallVc" id="yty-5G-JuV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ntw-gP-wyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4015,4 +4016,7 @@ We are now making insurance companies fight for your business. We will present y
         <image name="star" width="79" height="76"/>
         <image name="sussful_policy" width="250" height="250"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="yty-5G-JuV"/>
+    </inferredMetricsTieBreakers>
 </document>

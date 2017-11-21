@@ -143,7 +143,7 @@ class LiveQouteFormViewController: BaseViewController {
     @IBAction func proceedBtnTapped(_ sender: Any) {
         SVProgressHUD.show()
         SVProgressHUD.dismiss(withDelay: 1) {
-            self.performSegue(withIdentifier: "NavToCallVc", sender: nil)
+            self.performSegue(withIdentifier: "LiveNavToCallVc", sender: nil)
         }
     }
     
