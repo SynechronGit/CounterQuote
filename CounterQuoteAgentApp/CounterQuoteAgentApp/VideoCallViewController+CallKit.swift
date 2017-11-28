@@ -12,6 +12,11 @@ import TwilioVideo
 import CallKit
 import AVFoundation
 
+/**
+ * CallKit implementation on Twilio Video Chat
+ */
+
+// MARK: - CXProvider delegate methods
 extension VideoCallViewController : CXProviderDelegate {
     
     func providerDidReset(_ provider: CXProvider) {
