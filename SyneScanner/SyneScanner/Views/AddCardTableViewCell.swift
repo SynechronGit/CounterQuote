@@ -39,7 +39,7 @@ class AddCardTableViewCell: UITableViewCell {
 extension AddCardTableViewCell: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let newLength = textField.text!.characters.count + string.characters.count - range.length
+        let newLength = textField.text!.count + string.count - range.length
         
         switch textField.tag {
         case 0:

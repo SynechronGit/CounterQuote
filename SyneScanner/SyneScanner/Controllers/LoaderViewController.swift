@@ -41,7 +41,7 @@ class LoaderViewController: BaseViewController {
         }
     }
     
-    func defaultsChanged() {
+    @objc func defaultsChanged() {
         if UserDefaults.standard.bool(forKey: "carriers_preference") {
             lblNote.text = "We are collecting more than 287 offers for you. We are now making insurance companies fight for your business. We will present you their offers in a bit."
         } else {
@@ -109,7 +109,7 @@ class LoaderViewController: BaseViewController {
     }
     
     
-    func pushToQuoteVc() {
+    @objc func pushToQuoteVc() {
         if UserDefaults.standard.bool(forKey: "demo_preference") {
             self.performSegue(withIdentifier: "NavToQuoteVc", sender: nil)
         } else {
@@ -138,7 +138,7 @@ class LoaderViewController: BaseViewController {
 extension LoaderViewController:GetOCRProxyDelgate
 {
     // Start OCR service
-    func startOCR() {
+    @objc func startOCR() {
         let getOCRproxy =  GetOCRProxy()
         getOCRproxy.delegate = self
         getOCRproxy.callGetOCRApi()

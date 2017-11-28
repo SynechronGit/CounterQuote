@@ -41,7 +41,7 @@ class InsuranceQuoteViewController: BaseViewController {
     }
     
     
-    func defaultsChanged() {
+    @objc func defaultsChanged() {
         if UserDefaults.standard.bool(forKey: "carriers_preference") {
             companyList = [["companyName": "Company 1", "price": "3500","imgName": "comp1"],["companyName": "Company 2", "price": "3200","imgName": "comp2"],["companyName": "Company 3", "price": "3000","imgName": "comp3"],["companyName": "Company 4", "price": "2800","imgName": "comp4"],["companyName": "Company 5", "price": "2500","imgName": "comp1"],["companyName": "Company 6", "price": "2500","imgName": "comp2"],["companyName": "Company 7", "price": "2000","imgName": "comp3"],["companyName": "Company 8", "price": "2000","imgName": "comp4"]]
         } else {

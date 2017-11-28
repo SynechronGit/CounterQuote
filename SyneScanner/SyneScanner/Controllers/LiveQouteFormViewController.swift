@@ -76,7 +76,7 @@ class LiveQouteFormViewController: BaseViewController {
         viewAmount.layer.cornerRadius = 8
     }
     
-    func defaultsChanged() {
+    @objc func defaultsChanged() {
         //        if UserDefaults.standard.bool(forKey: "demo_preference") {
         loadDataFromPlist()
         //        } else {
@@ -307,8 +307,8 @@ extension LiveQouteFormViewController:UITableViewDataSource,UITableViewDelegate 
         headerText!.append("*")
         let font:UIFont? = cell.headerLabel.font
         let fontSuper:UIFont? = UIFont(name: (font?.fontName)!, size:10)
-        let attString:NSMutableAttributedString = NSMutableAttributedString(string: headerText!, attributes: [NSFontAttributeName:font!])
-        attString.setAttributes([NSFontAttributeName:fontSuper!,NSBaselineOffsetAttributeName:10], range: NSRange(location:attString.length - 1,length:1))
+        let attString:NSMutableAttributedString = NSMutableAttributedString(string: headerText!, attributes: [NSAttributedStringKey.font:font!])
+        attString.setAttributes([NSAttributedStringKey.font:fontSuper!,NSAttributedStringKey.baselineOffset:10], range: NSRange(location:attString.length - 1,length:1))
         cell.headerLabel.attributedText = attString
         
         

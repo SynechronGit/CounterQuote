@@ -211,7 +211,7 @@ class VideoCallViewController: UIViewController {
         }
     }
     
-    func flipCamera() {
+    @objc func flipCamera() {
         if (self.camera?.source == .frontCamera) {
             self.camera?.selectSource(.backCameraWide)
         } else {

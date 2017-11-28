@@ -128,11 +128,11 @@ class CameraViewController: BaseViewController {
     
     // Performs toggle of flash button on the camera screen
     @IBAction func flashBtnClicked() {
-        if let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo), device.hasTorch {
+        if let device = AVCaptureDevice.default(for: AVMediaType.video), device.hasTorch {
             do {
                 try device.lockForConfiguration()
                 let torchOn = !device.isTorchActive
-                try device.setTorchModeOnWithLevel(1.0)
+                try device.setTorchModeOn(level: 1.0)
                 
                 if torchOn {
                     btnTorch.setImage(UIImage(named:"Torch-on"), for: .normal)
@@ -264,7 +264,7 @@ class CameraViewController: BaseViewController {
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
-    func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
      
     }
     

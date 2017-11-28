@@ -103,7 +103,7 @@ class AddCardViewController: BaseViewController {
         pickerMonthArray = months
     }
     
-     func defaultsChanged() {
+     @objc func defaultsChanged() {
         if UserDefaults.standard.bool(forKey: "demo_preference") {
             self.defaultValues()
         } else {
@@ -164,8 +164,8 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
             headerString.append("*")
             let font:UIFont? = cell.descriptionField.font
             let fontSuper:UIFont? = UIFont(name: (font?.fontName)!, size:10)
-            let attString:NSMutableAttributedString = NSMutableAttributedString(string: headerString, attributes: [NSFontAttributeName:font!])
-            attString.setAttributes([NSFontAttributeName:fontSuper!,NSBaselineOffsetAttributeName:10], range: NSRange(location:attString.length - 1,length:1))
+            let attString:NSMutableAttributedString = NSMutableAttributedString(string: headerString, attributes: [NSAttributedStringKey.font:font!])
+            attString.setAttributes([NSAttributedStringKey.font:fontSuper!,NSAttributedStringKey.baselineOffset:10], range: NSRange(location:attString.length - 1,length:1))
             cell.descriptionField.attributedPlaceholder = attString
             
             switch indexPath.row {
@@ -208,8 +208,8 @@ extension AddCardViewController: UITableViewDataSource,UITableViewDelegate {
             headerString.append("*")
             let font:UIFont? = cell.descriptionField.font
             let fontSuper:UIFont? = UIFont(name: (font?.fontName)!, size:8)
-            let attString:NSMutableAttributedString = NSMutableAttributedString(string: headerString, attributes: [NSFontAttributeName:font!])
-            attString.setAttributes([NSFontAttributeName:fontSuper!,NSBaselineOffsetAttributeName:10], range: NSRange(location:attString.length - 1,length:1))
+            let attString:NSMutableAttributedString = NSMutableAttributedString(string: headerString, attributes: [NSAttributedStringKey.font:font!])
+            attString.setAttributes([NSAttributedStringKey.font:fontSuper!,NSAttributedStringKey.baselineOffset:10], range: NSRange(location:attString.length - 1,length:1))
             cell.descriptionField.attributedPlaceholder = attString
             
             cell.descriptionField.text = emailId
@@ -277,7 +277,7 @@ extension AddCardViewController: TextFieldActionDelegate, UIPickerViewDelegate, 
     }
     
     // Reload all tableview cells with textfield values
-    func doneSecureAction(button: UIBarButtonItem) {
+    @objc func doneSecureAction(button: UIBarButtonItem) {
         var indexPaths = [IndexPath]()
         indexPaths.append(indexPath!)
         self.tableView.reloadRows(at: indexPaths, with: .top)

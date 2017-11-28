@@ -105,7 +105,7 @@ class ImagePreviewController: BaseViewController {
      * Method that will update the progress of uploading of images
      */
     // MARK: - Progress methods
-    func updateProgress() {
+    @objc func updateProgress() {
          let calculateProgress = SharedData.sharedInstance.calculateCurrentProgress()
         if calculateProgress.progressValue >= 1.0 {
            submitBtn.isEnabled = true
@@ -121,7 +121,7 @@ class ImagePreviewController: BaseViewController {
     }
     
     //Update progress value of collection view for each cell
-    func updateProgressValue() {
+    @objc func updateProgressValue() {
         progressValue = progressValue + 10
         if progressValue >= 100 {
             self.submitBtn.isEnabled = true

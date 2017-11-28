@@ -47,7 +47,7 @@ class ImageEditManager {
                                     "inputTopRight":CIVector(cgPoint: quadrangle.topRight),
                                     "inputBottomLeft":CIVector(cgPoint: quadrangle.bottomLeft),
                                     "inputBottomRight":CIVector(cgPoint: quadrangle.bottomRight)]
-        return image?.applyingFilter("CIPerspectiveCorrection", withInputParameters: rectangleCoordinates)
+        return image?.applyingFilter("CIPerspectiveCorrection", parameters: rectangleCoordinates)
     }
     
 }

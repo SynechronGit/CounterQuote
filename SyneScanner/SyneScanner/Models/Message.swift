@@ -108,7 +108,7 @@ class Message {
         }
     }
    
-    func downloadLastMessage(_ forLocation: String, completion: @escaping (Void) -> Swift.Void) {
+    func downloadLastMessage(_ forLocation: String, completion: @escaping () -> Swift.Void) {
         if let currentUserID = Auth.auth().currentUser?.uid {
             Database.database().reference().child("conversations").child(forLocation).observe(.value, with: { (snapshot) in
                 if snapshot.exists() {

@@ -6,9 +6,9 @@ target 'SyneScanner' do
   use_frameworks!
 
     pod 'Alamofire', '~> 4.5'
-    pod 'IQKeyboardManagerSwift', '4.0.10'
+    pod 'IQKeyboardManagerSwift'
     pod 'SVProgressHUD'
-    pod 'DKImagePickerController', '3.6.0'
+    pod 'DKImagePickerController'
     pod 'UICircularProgressRing'
     pod 'CardIO'
     pod 'SwiftGifOrigin', '~> 1.6.1'

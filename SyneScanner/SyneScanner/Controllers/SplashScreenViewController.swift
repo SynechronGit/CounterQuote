@@ -69,7 +69,7 @@ class SplashScreenViewController: BaseViewController {
     
     
     // MARK: - Perform Segue
-    func endSplashScreenView() {
+    @objc func endSplashScreenView() {
         self.performSegue(withIdentifier: "navToIntroVc", sender: nil)
         self.timer?.invalidate()
         self.timer = nil

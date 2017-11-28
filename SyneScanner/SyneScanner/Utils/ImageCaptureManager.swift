@@ -62,14 +62,14 @@ class ImageCaptureManager: NSObject {
           edgeDetectionView: EdgeDetectionView) {
         
         let captureSession = AVCaptureSession()
-        captureSession.sessionPreset = AVCaptureSessionPresetPhoto
+        captureSession.sessionPreset = AVCaptureSession.Preset.photo
         
-        let inputDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        let inputDevice = AVCaptureDevice.default(for: AVMediaType.video)
         let capturePhotoOutput = AVCapturePhotoOutput()
         let videoOutput = AVCaptureVideoDataOutput()
         videoOutput.alwaysDiscardsLateVideoFrames = true
         
-        guard let deviceInput = try? AVCaptureDeviceInput(device: inputDevice),
+        guard let deviceInput = try? AVCaptureDeviceInput(device: inputDevice!),
             captureSession.canAddInput(deviceInput),
             captureSession.canAddOutput(capturePhotoOutput),
             captureSession.canAddOutput(videoOutput) else {
@@ -82,7 +82,7 @@ class ImageCaptureManager: NSObject {
         captureSession.addOutput(capturePhotoOutput)
         
         layer.session = captureSession
-        layer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        layer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         
         self.captureSession = captureSession
         self.capturePhotoOutput = capturePhotoOutput
@@ -107,9 +107,9 @@ class ImageCaptureManager: NSObject {
         didNotifyFullConfidence = false
         self.timer?.invalidate()
         self.timer = nil
-        let authorizationStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+        let authorizationStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         if authorizationStatus == .notDetermined {
-            AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo, completionHandler: {[weak self] (granted) in
+            AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: {[weak self] (granted) in
                 if granted {
                     self?.captureSession.startRunning()
                 }
@@ -158,7 +158,7 @@ class ImageCaptureManager: NSObject {
 //MARK: AVCapturePhotoCaptureDelegate
 extension ImageCaptureManager: AVCapturePhotoCaptureDelegate {
     // Provides the delegate a captured image in a processed format (such as JPEG).
-    func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
+    func photoOutput(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
         DispatchQueue.global().async {[weak self] in
             guard let photoSampleBuffer = photoSampleBuffer,
                 let imageData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: photoSampleBuffer, previewPhotoSampleBuffer: previewPhotoSampleBuffer),
@@ -192,7 +192,7 @@ extension ImageCaptureManager: AVCapturePhotoCaptureDelegate {
 //MARK: AVCaptureVideoDataOutputSampleBufferDelegate
 extension ImageCaptureManager: AVCaptureVideoDataOutputSampleBufferDelegate {
     // Notifies the delegate that a new video frame was written
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+    func captureOutput(_ captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         if isCapturing
         {
             return
@@ -247,7 +247,7 @@ extension ImageCaptureManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         })
     }
     // Calls the delegate's required method
-    func callDelegateAutoCapture() {
+    @objc func callDelegateAutoCapture() {
         self.timer?.invalidate()
         self.timer = nil
         

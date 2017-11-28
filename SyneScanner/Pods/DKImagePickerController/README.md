@@ -28,7 +28,7 @@ It's a Facebook style Image Picker Controller by Swift. It uses [DKCamera][DKCam
 ## Requirements
 * iOS 8.0+
 * ARC
-* Swift 3 and Xcode 8
+* Swift 4 and Xcode 9
 
 ## Installation
 #### iOS 8 and newer
@@ -46,15 +46,14 @@ pod 'DKImagePickerController'
 > To use Swift libraries on apps that support iOS 7, you must manually copy the files into your application project.
 [CocoaPods only supports Swift on OS X 10.9 and newer, and iOS 8 and newer.](https://github.com/CocoaPods/blog.cocoapods.org/commit/6933ae5ccfc1e0b39dd23f4ec67d7a083975836d)
 
-<del>
+#### Swift 3.*
+> For Swift 3.*, use version < 3.8.0
 
 #### Swift 2.2
 > For Swift 2.2, use version <= 3.3.4
 
 #### Swift 2.3
-> For Swift 2.3, use version = 3.3.5
-
-</del>
+> For Swift 2.3, use version = 3.3.5 or the `Feature/Swift2.3` branch
 
 ## Getting Started
 #### Initialization and presentation
@@ -271,37 +270,21 @@ You can merge your branch into the `develop` branch. Any Pull Requests to be wel
 
 ## Change Log
 
-## [3.6.0](https://github.com/zhangao0086/DKImagePickerController/tree/3.6.0) (2017-08-24)
+## [3.8.0](https://github.com/zhangao0086/DKImagePickerController/tree/3.8.0) (2017-09-24)
 
-[Full Changelog](https://github.com/zhangao0086/DKImagePickerController/compare/3.5.6...3.6.0)
+[Full Changelog](https://github.com/zhangao0086/DKImagePickerController/compare/3.6.1...3.8.0)
 
-- Support Italian language.
+- Swift 4.
 
-- Support Arabic language
+- Fixed #380.
 
-- Ability to specify the exported file format.
+- Fixed #381.
 
-- Added support for fetchLimit.
+- Fixed #374.
 
-- Added support for inline mode.
+- Handle iOS 11 BarButtonItems bug.
 
-- Save image with metadata.
-
-- Updated DKCamera.
-
-## [3.5.6](https://github.com/zhangao0086/DKImagePickerController/tree/3.5.6) (2017-06-24)
-
-[Full Changelog](https://github.com/zhangao0086/DKImagePickerController/compare/3.5.5...3.5.6)
-
-- Fixes an issue may cause crashes.
-
-- Add norwegian translation for bokmål dialect
-
-- Fixed an issue cause crash when remove observer.
-
-- Updated the size of album list view to fit them when add or remove of photo albums.
-
-- Improved sync of albums.
+- In iOS 10.0, use AVCapturePhotoOutput instead AVCaptureStillImageOutput.
 
 ## License
 DKImagePickerController is released under the MIT license. See LICENSE for details.
