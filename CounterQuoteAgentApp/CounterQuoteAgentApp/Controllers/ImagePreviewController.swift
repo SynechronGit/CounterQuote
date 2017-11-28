@@ -87,7 +87,7 @@ class ImagePreviewController: BaseViewController {
 
     
     //Update progress value of collection view for each cell
-    func updateProgressValue() {
+    @objc func updateProgressValue() {
         progressValue = progressValue + 10
         if progressValue >= 100 {
             self.progressTimer?.invalidate()

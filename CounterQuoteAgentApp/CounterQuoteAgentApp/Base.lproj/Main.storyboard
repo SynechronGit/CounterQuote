@@ -787,7 +787,7 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dcs-aR-8pL">
                                                     <rect key="frame" x="56" y="6" width="20" height="18"/>
-                                                    <color key="backgroundColor" red="0.50588235290000005" green="0.28532762709999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.20784313730000001" green="0.10980392160000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="ura-5d-jzT"/>
                                                     </constraints>
@@ -1024,8 +1024,8 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                             <cells>
-                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="OSi-wY-meR" customClass="ContactsCVCell" customModule="QuickChat" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="18" width="120" height="123"/>
+                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="OSi-wY-meR" customClass="ContactsCVCell" customModule="CounterQuoteAgentApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="17.5" width="120" height="123"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="123"/>
@@ -1037,7 +1037,7 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:zgc-Dv-deQ:image" translatesAutoresizingMaskIntoConstraints="NO" id="zgc-Dv-deQ" customClass="RoundedImageView" customModule="QuickChat" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:zgc-Dv-deQ:image" translatesAutoresizingMaskIntoConstraints="NO" id="zgc-Dv-deQ" customClass="RoundedImageView" customModule="CounterQuoteAgentApp" customModuleProvider="target">
                                                 <rect key="frame" x="12" y="18" width="96" height="96"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -1061,7 +1061,7 @@
                                         <outlet property="profilePic" destination="zgc-Dv-deQ" id="Wh0-WI-Rvf"/>
                                     </connections>
                                 </collectionViewCell>
-                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Empty Cell" id="ZP4-dn-fFA" customClass="ContactsCVCell" customModule="QuickChat" customModuleProvider="target">
+                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Empty Cell" id="ZP4-dn-fFA" customClass="ContactsCVCell" customModule="CounterQuoteAgentApp" customModuleProvider="target">
                                     <rect key="frame" x="130" y="0.0" width="164" height="158"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1090,7 +1090,7 @@
                                 <outlet property="delegate" destination="h1d-gV-fyn" id="wIA-pc-gYz"/>
                             </connections>
                         </collectionView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aK-Nw-VTk" customClass="RoundedButton" customModule="QuickChat" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aK-Nw-VTk" customClass="RoundedButton" customModule="CounterQuoteAgentApp" customModuleProvider="target">
                             <rect key="frame" x="133" y="262" width="120" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="120" id="Zyv-UU-9Xy"/>
@@ -1119,7 +1119,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="397"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cgb-wu-ooC" customClass="RoundedImageView" customModule="QuickChat" customModuleProvider="target">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cgb-wu-ooC" customClass="RoundedImageView" customModule="CounterQuoteAgentApp" customModuleProvider="target">
                             <rect key="frame" x="93" y="41" width="190" height="190"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Cgb-wu-ooC" secondAttribute="height" multiplier="1:1" id="HuX-HM-hk1"/>
@@ -1143,7 +1143,7 @@
                             <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCa-3d-wSx" customClass="RoundedButton" customModule="QuickChat" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCa-3d-wSx" customClass="RoundedButton" customModule="CounterQuoteAgentApp" customModuleProvider="target">
                             <rect key="frame" x="128" y="337" width="120" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="1ot-V4-Ktu"/>

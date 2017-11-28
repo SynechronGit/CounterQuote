@@ -77,7 +77,7 @@ class QuoteFormViewController: BaseViewController {
         viewAmount.layer.cornerRadius = 8
     }
     
-    func defaultsChanged() {
+    @objc func defaultsChanged() {
         loadDataFromPlist()
     }
     
@@ -203,7 +203,7 @@ class QuoteFormViewController: BaseViewController {
     //}
     
     //MARK: - UIDatePicker delegate method
-    func dateChanged(_ sender: UIDatePicker) {
+    @objc func dateChanged(_ sender: UIDatePicker) {
         dateString = nil
         let componenets = Calendar.current.dateComponents([.year, .month, .day], from: sender.date)
         if let day = componenets.day, let month = componenets.month, let year = componenets.year {
@@ -213,7 +213,7 @@ class QuoteFormViewController: BaseViewController {
         }
     }
     
-    func myTextFieldDidChange(_ textField: UITextField) {
+    @objc func myTextFieldDidChange(_ textField: UITextField) {
         if let amountString = textField.text?.currencyInputFormatting() {
             textField.text = amountString
         }
@@ -261,8 +261,8 @@ extension QuoteFormViewController:UITableViewDataSource,UITableViewDelegate {
         headerText!.append("*")
         let font:UIFont? = cell.headerLabel.font
         let fontSuper:UIFont? = UIFont(name: (font?.fontName)!, size:10)
-        let attString:NSMutableAttributedString = NSMutableAttributedString(string: headerText!, attributes: [NSFontAttributeName:font!])
-        attString.setAttributes([NSFontAttributeName:fontSuper!,NSBaselineOffsetAttributeName:10], range: NSRange(location:attString.length - 1,length:1))
+        let attString:NSMutableAttributedString = NSMutableAttributedString(string: headerText!, attributes: [NSAttributedStringKey.font:font!])
+        attString.setAttributes([NSAttributedStringKey.font:fontSuper!,NSAttributedStringKey.baselineOffset:10], range: NSRange(location:attString.length - 1,length:1))
         cell.headerLabel.attributedText = attString
         
 //        if UserDefaults.standard.bool(forKey: "demo_preference") {
@@ -407,7 +407,7 @@ extension String {
         
         // remove from String: "$", ".", ","
         let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
-        amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.characters.count), withTemplate: "")
+        amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
         
         let double = (amountWithPrefix as NSString).doubleValue
         number = NSNumber(value: (double / 100))
