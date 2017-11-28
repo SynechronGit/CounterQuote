@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+    <dict>
+        <key>heading</key>
+        <string>Application Number</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>4743916-1</string>
+        <key>type</key>
+        <string>String</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Insured Name</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>Bear Burgur</string>
+        <key>type</key>
+        <string>String</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Mailing Address</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>33 Greenwich Ave New York,NY 10014</string>
+        <key>type</key>
+        <string>String</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Policy Effective Date</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>08/23/2017</string>
+        <key>type</key>
+        <string>Date</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Policy Expiration Date</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>08/22/2018</string>
+        <key>type</key>
+        <string>Date</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Producer Name</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>ABC CONSULTING,LLC</string>
+        <key>type</key>
+        <string>String</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Producer Code</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>100-202323</string>
+        <key>type</key>
+        <string>Number</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Builiding Coverage</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>$ 250,000</string>
+        <key>type</key>
+        <string>Currency</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Loss of Business Income</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>$ 100,000</string>
+        <key>type</key>
+        <string>Currency</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Business Personal Property</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>$ 50,000</string>
+        <key>type</key>
+        <string>Currency</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Deductible</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>$ 510,000</string>
+        <key>type</key>
+        <string>Currency</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Personal &amp; Advertising Injury</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>$ 350,000</string>
+        <key>type</key>
+        <string>Currency</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Damage to Premises</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>$ 150,000</string>
+        <key>type</key>
+        <string>Currency</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Deductible</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>$ 10,000</string>
+        <key>type</key>
+        <string>Currency</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Deductible</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>$ 10,000</string>
+        <key>type</key>
+        <string>Currency</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Property</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>$ 2500</string>
+        <key>type</key>
+        <string>Currency</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Genral Liability</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>$ 2500</string>
+        <key>type</key>
+        <string>Currency</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Excess Liability</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>$ 2500</string>
+        <key>type</key>
+        <string>Currency</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Auto Liability</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>$ 2500</string>
+        <key>type</key>
+        <string>Currency</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Property Coverage Premium</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>$ 1,000,000</string>
+        <key>type</key>
+        <string>Currency</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Genral Liability Coverage Premium</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>$ 2,000,000</string>
+        <key>type</key>
+        <string>Currency</string>
+    </dict>
+    <dict>
+        <key>heading</key>
+        <string>Excess Liability Coverage Premium</string>
+        <key>modalKey</key>
+        <string>modalKey</string>
+        <key>value</key>
+        <string>$ 2500</string>
+        <key>type</key>
+        <string>Currency</string>
+    </dict>
+
+</array>
+</plist>

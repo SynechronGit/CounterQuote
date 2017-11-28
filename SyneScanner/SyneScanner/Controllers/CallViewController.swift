@@ -12,6 +12,8 @@ import SVProgressHUD
 class CallViewController: BaseViewController {
 
     var isAnimationShow = false
+    @IBOutlet weak var innerView: UIView!
+
     @IBOutlet weak var proceedBtn: UIButton!
     @IBOutlet weak var callNowBtn: UIButton!
     @IBOutlet weak var callLaterBtn: UIButton!
@@ -40,13 +42,17 @@ class CallViewController: BaseViewController {
     // MARK: - Configure UI
     func configureUI() {
         self.bottomConstraintBackBtn.constant = -80
-        proceedBtn.setBorderToButton()
-        callNowBtn.setBorderToButton()
-        callNowBtn.layer.borderColor = UIColor.clear.cgColor
-        callLaterBtn.setBorderToButton()
-        callLaterBtn.layer.borderColor = UIColor.clear.cgColor
-        callNowBtn.addShadow()
-        callLaterBtn.addShadow()
+        
+        innerView.layer.cornerRadius = 12
+        innerView.layer.borderWidth = 1
+        innerView.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
+//        proceedBtn.setBorderToButton()
+//        callNowBtn.setBorderToButton()
+//        callNowBtn.layer.borderColor = UIColor.clear.cgColor
+//        callLaterBtn.setBorderToButton()
+//        callLaterBtn.layer.borderColor = UIColor.clear.cgColor
+//        callNowBtn.addShadow()
+//        callLaterBtn.addShadow()
         loadDataFromPlist()
     }
     

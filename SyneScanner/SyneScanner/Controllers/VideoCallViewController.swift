@@ -157,7 +157,7 @@ class VideoCallViewController: UIViewController {
     
     @IBAction func disconnect(sender: AnyObject) {
         self.room!.disconnect()
-        logMessage(messageText: "Attempting to disconnect from room \(room!.name)")
+      //  logMessage(messageText: "Attempting to disconnect from room \(room!.name)")
     }
     
     @IBAction func toggleMic(sender: AnyObject) {
