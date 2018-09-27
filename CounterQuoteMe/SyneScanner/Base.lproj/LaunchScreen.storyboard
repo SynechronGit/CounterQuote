@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Carnas Regular.otf">
+            <string>Carnas-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController storyboardIdentifier="videoCallVc" id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tPu-RP-tzw"/>
+                        <viewControllerLayoutGuide type="bottom" id="45l-zT-Bz4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="652-rP-ZVv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashBg" translatesAutoresizingMaskIntoConstraints="NO" id="ctD-lm-NT7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_left_line" translatesAutoresizingMaskIntoConstraints="NO" id="Rjk-65-XAf">
+                                <rect key="frame" x="0.0" y="454" width="71" height="193"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="VXa-55-aTb"/>
+                                    <constraint firstAttribute="height" constant="193" id="eTn-X6-k4q"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_right_line" translatesAutoresizingMaskIntoConstraints="NO" id="ggw-hT-CSf">
+                                <rect key="frame" x="298" y="20" width="77" height="205"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="3bf-le-eSD"/>
+                                    <constraint firstAttribute="height" constant="205" id="ua4-kD-ihC"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CQLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ugh-T5-Yds">
+                                <rect key="frame" x="117.5" y="262" width="140" height="143"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COUNTERQUOTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5H-8j-7zH">
+                                <rect key="frame" x="89" y="60" width="198.5" height="26"/>
+                                <fontDescription key="fontDescription" name="Carnas-Regular" family="Carnas-Regular" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ctD-lm-NT7" firstAttribute="top" secondItem="652-rP-ZVv" secondAttribute="top" id="55f-ov-b09"/>
+                            <constraint firstItem="45l-zT-Bz4" firstAttribute="top" secondItem="Rjk-65-XAf" secondAttribute="bottom" constant="20" id="6B8-re-4t4"/>
+                            <constraint firstItem="ctD-lm-NT7" firstAttribute="leading" secondItem="652-rP-ZVv" secondAttribute="leading" id="EPi-NM-XBO"/>
+                            <constraint firstItem="45l-zT-Bz4" firstAttribute="top" secondItem="ctD-lm-NT7" secondAttribute="bottom" id="ILE-vo-yZp"/>
+                            <constraint firstItem="Rjk-65-XAf" firstAttribute="leading" secondItem="652-rP-ZVv" secondAttribute="leading" id="QtU-sh-VG8"/>
+                            <constraint firstItem="S5H-8j-7zH" firstAttribute="centerX" secondItem="652-rP-ZVv" secondAttribute="centerX" id="W1i-7C-BXA"/>
+                            <constraint firstItem="ugh-T5-Yds" firstAttribute="centerX" secondItem="652-rP-ZVv" secondAttribute="centerX" id="Xyb-6T-dzd"/>
+                            <constraint firstAttribute="trailing" secondItem="ctD-lm-NT7" secondAttribute="trailing" id="cuV-hs-44I"/>
+                            <constraint firstItem="S5H-8j-7zH" firstAttribute="top" secondItem="tPu-RP-tzw" secondAttribute="bottom" constant="40" id="gVp-kH-Mzn"/>
+                            <constraint firstItem="ggw-hT-CSf" firstAttribute="top" secondItem="652-rP-ZVv" secondAttribute="top" constant="20" id="jBz-DJ-4Q3"/>
+                            <constraint firstItem="ugh-T5-Yds" firstAttribute="centerY" secondItem="652-rP-ZVv" secondAttribute="centerY" id="kUt-TF-rel"/>
+                            <constraint firstAttribute="trailing" secondItem="ggw-hT-CSf" secondAttribute="trailing" id="tx5-u8-tQY"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CQLogo" width="140" height="143"/>
+        <image name="splashBg" width="414" height="736"/>
+        <image name="splash_left_line" width="119" height="290"/>
+        <image name="splash_right_line" width="94" height="239"/>
+    </resources>
+</document>
