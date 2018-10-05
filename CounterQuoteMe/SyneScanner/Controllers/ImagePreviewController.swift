@@ -107,7 +107,7 @@ class ImagePreviewController: BaseViewController {
     // MARK: - Progress methods
     @objc func updateProgress() {
          let calculateProgress = SharedData.sharedInstance.calculateCurrentProgress()
-        if calculateProgress.progressValue >= 1.0 {
+        if calculateProgress.progressValue <= 1.0 {
            submitBtn.isEnabled = true
             submitBtn.layer.borderColor = UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1).cgColor
             submitBtn.setTitleColor(UIColor(red: 53/255, green: 28/255, blue: 71/255, alpha: 1), for: .normal)
